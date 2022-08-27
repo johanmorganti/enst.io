@@ -1,0 +1,810 @@
+<html>
+<body bgcolor="#ffffff" text="#6699ff" link="#0000cc" vlink="#0000cc">
+
+<h1><font color="#0000cc"><A NAME="Entete">Votre première page Web</h1></font></a><br>
+<h3><ol>
+<ol>Pour écrire une page Web il est nécessaire de savoir maîtriser le langage HTML, langage très simple qui ne demande pas de connaissances particulières en informatique, et donne des résultats très satisfaisants après seulement quelques heures de pratique. Mais expliquons tout d'abord de quoi il s'agit.<br>
+<br></ol>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c1">I - Présentation du langage HTML<br>
+<br></h1></font></a>
+<h3><ol>
+<ol>
+Pour écrire une page en HTML, vous pouvez utiliser n'importe quelque éditeur ASCII (celui du Borland C ou Emacs par exemple). Là, vous tapez votre texte tout simplement. Par exemple:<br>
+	<i><ol>Ceci est ma première page Web.<br></ol></i>
+Ensuite, si vous ne voulez pas que ce texte s'affiche simplement, sans effet, il est nécessaire de placer des balises qui donneront au browser (le logiciel lecteur de pages Web) des instructions sur la façon dont il doit afficher votre texte. Ce sont par exemple des balises pour avoir le texte en gras, en italique, pour avoir des tailles de caractères différentes, etc. Mais il en existe aussi pour définir l'endroit où l'on veut placer une image, ou pour définir des liens hypertextes.<br>
+D'une façon générale, ces balises se présentent sous la forme suivante:<br>
+	<ol><i>&ltmarqueur&gt Votre texte &lt/marqueur&gt<br></ol></i>
+ou encore<br>
+	<ol><i>&ltmarqueur attribut=argument&gt Votre texte &lt/marqueur&gt<br></ol></i>
+voire même tout simplement<br>
+	<ol><i>&ltmarqueur&gt<br></ol></i>
+Marqueur désigne la commande à apppliquer. Par exemple, si vous voulez afficher <b><font color="#6699cc">Texte</b></font> en gras comme ceci, vous devez taper:<br>
+	<ol><i>&ltb&gtTexte&lt/b&gt<br></ol></i>
+ou<br>
+	<ol><i>&ltB&gtTexte&lt/B&gt<br></i></ol>
+Les noms de marqueurs ont en effet la même fonction écrits en minuscules ou en majuscules.<br>
+Par contre, pour votre texte, tout est pris en compte (majuscule et minuscule), sauf des espaces incongrus. Si vous voulez mettre plusieurs espaces entre deux mots, le browser n'en affichera qu'un seul. Pour placer des mots à différents endroits du texte, il faut donc avoir recours à de petites astuces de placement. De plus, les retours à la ligne ne sont pas pris en compte. Il faudra là aussi les remplacer par des balises.<br>
+Il existe aussi des caractères spéciaux. Ainsi, le caractère &gt est à remplacer par &ampgt, &lt par &amplt, &amp par &ampamp, etc. Il en est de même pour tous les caractères accentués. De façon plus générale, on peut écrire tous les caractères ASCII en les remplaçant par &#numéro du caractère.<br>
+<br>
+</h3></ol></ol>
+</ol>
+<h1><font color="#0000cc"><A NAME="c2">
+II - Commandes générales<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c2.1"><ol>
+II.1 - Les balises globales<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Ces balises servent à délimiter une page HTML et à définir son entête et son corps:<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHTML&gt...&lt/HTML&gt délimite le début et la fin du document.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHEAD&gt...&lt/HEAD&gt définit l'entête du document.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBODY&gt...&lt/BODY&gt marque le corps du document.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&lt!...&gt est une balise de commentaire qui permet d'inclure des informations non affichées dans votre page.<br>
+<br>
+<b><font color="#6699cc">Exemples:<br></b></font>
+La plus petite page Web possible est<br>
+<ol><i>&ltHTML&gt<br>
+&lt/HTML&gt<br></ol></i>
+Et votre première page Web pourrait être<br>
+<ol><i>&ltHTML&gt<br>
+&lt! Dernière mise à jour: 22.02.96 &gt<br>
+&ltHEAD&gt<br>
+&lt/HEAD&gt<br>
+&ltBODY&gt<br>
+<br>
+Ceci est ma première page Web<br>
+&lt/BODY&gt<br>
+&lt/HTML&gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c2.2"><ol>
+II.2 - Les commandes d'entête<br>
+</h2></font></a></ol><br>
+<h3><ol><ol>
+Ces commandes doivent être placées entre les balises &ltHEAD&gt et &lt/HEAD&gt. Elles donnent des informations générales sur toute la page.<br>
+<img src="gifs/html_btn.gif" width=10 height=10> &ltTITLE&gt...&lt/TITLE&gt donne le titre du document, titre qui apparaît dans le bandeau supérieur de la fenêtre de votre browser.<br>
+<img src="gifs/html_btn.gif" width=10 height=10> &ltMETA&gt donne des informations concernant le document au serveur http. Il s'agit généralement de votre nom (NAME), du nom de l'auteur (AUTHOR), du contenu (CONTENT) et d'une directive HTTP-EQUIV prenant souvent la valeur Expires, Keywords, Reply_to.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font>
+<ol><i>&ltMETA NAME="Wrob" AUTHOR="Moi" CONTENT= "Aide HTML" HTTP-EQUIV= "Expires"&gt<br>
+<br></ol></i>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBASE...&gt donne la base de l'adresse URL qui sera placée devant les références relatives au document, de façon à ce que les fichiers soient cherchés à partir de cette dernière. Par exemple, &ltBASE http://www.enst. fr/&gt  signifie que tous les fichiers doivent être cherchés à partir de l'adresse URL http://www.enst.fr/ (Uniform Ressource Locators : nom donné aux hypertextes).<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c2.3"><ol>
+II.3 Les commandes URL<br>
+<br></h2></font></a></ol><h3><ol><ol>
+Ces commandes sont utilisées pour la gestion des liens hypertextes.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltA NAME="Marqueur1"&gt...&lt/A&gt définit un signet nommé Marqueur1 à l'endroit où cette commande est placée.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltA HREF="#Marqueur1"&gt...&lt/A&gt crée un lien vers le signet nommé Marqueur1.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltA HREF="url1"&gt...&lt/A&gt définit un lien vers l'URL url1.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltA HREF="URL#Marqueur1"&gt...&lt/A&gt définit un lien vers l'URL url1 au signet Marqueur1.<br>
+A la place des trois petits points, on peut inclure n'importe quelle partie de document HTML (une image, une texte, etc.), cette partie étant alors affichée dans une autre couleur pour bien la différencier du reste du document.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font>
+<ol><i>&ltA NAME="Chapitre1"&gtCeci est le début du chapitre 1.&lt/A&gt
+Contenu: blablablabla<br>
+Cliquez &ltA HREF="Chapitre1"&gtici&lt/A&gt pour revenir au début du chapitre 1<br>
+&ltA HREF="http://www.enst.fr"&gtRetour au serveur de l'ENST&lt/A&gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c3">
+III - Commandes de format de mots<br>
+<br></a></h1></font>
+<h3><ol><ol>
+Ces commandes permettent de mettre des parties du texte dans un format donné.<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c3.1"><ol>
+III.1 - Les types d'écriture<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltB&gt...&lt/B&gt permet de mettre le texte en caractère gras.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltI&gt...&lt/I&gt permet de mettre le texte en italique.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltU&gt...&lt/U&gt permet de souligner le texte.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltADDRESS&gt...&lt/ADDRESS&gt permet d'afficher une adresse (cela revient à mettre le texte en italique).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBLOCKQUOTE&gt...&lt/BLOCKQUOTE&gt permet d'afficher un paragraphe en italique et décalé par rapport au reste du texte.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltCITE&gt...&lt/CITE&gt affiche des citations.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltCODE&gt...&lt/CODE&gt permet d'afficher du code (listing de programme, etc.). Cette commande peut être très utile car elle respecte les retours à la ligne et les tabulations.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltTT&gt...&lt/TT&gt affiche le texte en style "machine à écrire".<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltVAR&gt...&lt/VAR&gt affiche du texte en italique.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltPRE&gt...&lt/PRE&gt affiche du texte dans un style préformaté. On peut éventuellement placer l'attribut WIDTH=nb qui fixe alors le nombre de caractère par ligne. Cette commande a pour avantage de respecter les retours à la ligne et les tabulations.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSAMP&gt...&lt/SAMP&gt s'utilise pour afficher un exemple.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSTRONG&gt...&lt/STRONG&gt permet de mettre des caractères plus épais (équivalent de gras).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltem&gt...&lt/em&gt sert à mettre en relief un groupe de caractères.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltkbd&gt...&lt/kbd&gt pemet d'afficher les entrées clavier.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltdfn&gt...&lt/dfn&gt est utilisé pour afficher une définition.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltlisting&gt...&lt/listing&gt affiche du listing informatique.<br>
+Comme vous pouvez le remarquer, certaines commandes affichent le texte de la même façon. Elles permettent seulement de définir la fonction du texte dans le document.<br>
+Il est vivement conseillé de faire une page test rassemblant tous ces types d'écritures pour bien voir les changements qu'ils apportent.<br>
+<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c3.2"><ol>
+III.2 - Les tailles<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHi&gt...&lt/Hi&gt permet d'afficher du texte dans la taille i sachant que plus i est grand, plus les caractères sont petits, et que i prend des valeurs comprises entre 1 et 6.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltFONT SIZE=x&gt sert à spécifier la taille de la police (x peut prendre des valeurs entre 1 et 7).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBASEFONT SIZE=valeur&gt définit la taille de la police par défaut. 7 tailles sont disponibles et la valeur par défaut est 3.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBIG&gt...&lt/BIG&gt permet d'afficher du texte en plus gros.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSMALL&gt...&lt/SMALL&gt permet d'afficher du texte en plus petit.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c3.3"><ol>
+III.3 - Quelques effets spéciaux<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSUP&ltA&gt...&lt/SUP&ltA&gt met le texte en exposant.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSUB&ltA&gt...&lt/SUB&ltA&gt met le texte en indice.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltCOLOR="#xxxxxx"&gt...&ltA&gt permet de colorier les caractères, xxxxxx représentant le code hexadécimal de la couleur.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltFONT COLOR="Green"&gt...&lt/FONT&gt affiche le texte en vert. On peut bien sûr remplacer Green par Red, White, etc.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltSTRIKE&gt...&lt/STRIKE&gt permet de barrer un texte.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltBLINK&gt...&lt/BLINK&gt permet de faire clignoter le texte.<br>
+<br></h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c4">
+IV - Commandes de placement<br>
+<br></h1></font></a>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	...&ltP&gt signale la fin d'un paragraphe. Il y a alors un saut de ligne et de paragraphe.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	...&ltP ALIGN=center | left | right&gt effectue la même opération, mais en centrant votre texte, en le justifiant à gauche ou à droite selon la valeur de ALIGN.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	...&ltBR&gt provoque un saut de ligne sans saut de paragraphe.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	...&ltBR CLEAR=all | left | right&gt effectue un saut de ligne sans saut de paragraphe, mais si CLEAR prend la valeur left, le saut se fait avec un déplacement vers le bas en respectant la marge gauche. De même avec right. Pour all, on respecte les deux marges.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltNOBR&gt... permet de mettre du texte sans saut de ligne, c'est à dire que le browser ne remettra pas en page votre texte si celui-ci ne rentre pas dans la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	...&ltWBR&gt permet dans un bloc marqué par NOBR d'ordonner une coupure de ligne.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltDIV ALIGN=left | center | right&ltA&gt...&lt/DIV&gt permet de justifier votre texte à droite, au centre, ou à gauche.<br>
+Il existe aussi des commandes traçant des traits horizontaux :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHR&gt trace un trait horizontal simple sur toute la largeur de la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHR SIZE=nombre&gt donne une épaisseur valant nombre au trait.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHR WIDTH=nombre | pourcentage&gt donne la longueur du trait, WIDTH étant soit un nombre de pixels donné, soit un pourcentage par rapport à la largeur de la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHR ALIGN=left | right | center&gt aligne le trait à droite, à gauche, ou le centre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltHR NOSHADE&gt trace un trait sans ombre.<br>
+<br>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c5">
+V - Commandes de listes<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c5.1"><ol>
+V.1 - Liste de définitions<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On utilise les quatres balises suivantes:<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltDL&gt...&lt/DL&gt délimitent la liste.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltDT&gt... donne le nom du terme à définir.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltDD&gt... donne la définition correspondante. Ces deux dernières balises doivent être placées à la suite l'une de l'autre.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font>
+<ol><i><br>
+&ltDL&gt<br>
+&ltDT&gtTerme à définir n°1<br>
+&ltDD&gtDéfinition du terme n°1<br>
+...<br>
+&ltDT&gtTerme à définir n°i<br>
+&ltDD&gtDéfinition du terme n°i<br>
+...<br>
+&lt/DL&gt<br>
+<br></ol></i></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c5.2"><ol>
+V.2 - Liste de directories (ou répertoires)<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On utilise trois balises :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltDIR&gt...&lt/DIR&gt délimitent la liste.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI&gt... définit un élément de la liste.<br>
+<br>
+Chaque élément de la liste sera précédé par un disque plein.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font>
+<br><ol><i>
+&ltDIR&gt<br>
+&ltLI&gtBlabla n°1<br>
+&ltLI&gtBlabla n°2<br>
+...<br>
+&lt/DIR&gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c5.3"><ol>
+V.3 - Liste à numéro<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On utilise trois balises :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltOL&gt...&lt/OL&gt délimitent la liste.<br><br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI&gt... définit un élément de la liste.<br>
+Chaque élément de la liste sera alors précédé par défaut par un numéro.<br>
+Cependant, on peut remplacer les numéros en utilisant les commandes suivantes :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI TYPE=A | a | I | i | 1 START=nb&gt définit d'autres types d'énumérateurs : les lettres majuscules ou minuscules, les chiffres romains majuscules ou minuscules, ou les nombres entiers. La valeur nb définit l'ordre du premier numérateur (2 pour démarrer par B, b, II, ii, 2).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI VALUE=nb&gt permet de changer la valeur du numérateur correspondant.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+</b></font><ol><i><br>
+&ltOL&gt<br>
+&ltLI VALUE=3&gtBlabla n°1<br>
+&ltLI VALUE=2&gtBlabla n°2<br>
+&lt/OL&gt<br>
+<br></i></ol>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c5.4"><ol>
+V.4 - Liste à puce<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On utilise trois balises :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltUL&gt...&lt/UL&gt délimitent la liste.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI&gt... définit un élément de la liste.<br>
+Chaque élément de la liste sera alors précédé par défaut par un disque. Cependant, on peut remplacer cet identificateur en utilisant la commande suivante :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltUL TYPE=disc | circle | square&gt définit d'autres types d'énumérateurs : un disque, un cercle, ou un carré.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+</b></font><ol><i><br>
+&ltUL TYPE=square&gt<br>
+&ltLI&gtBlabla n°1<br>
+&ltLI&gtBlabla n°2<br>
+...<br>
+&lt/UL&gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c5.5"><ol>
+V.5 - Menus<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On utilise trois balises :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltMENU&gt...&lt/MENU&gt délimitent la liste.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltLI&gt... définit un élément de la liste.<br>
+Chaque élément de la liste sera alors précédé par un disque.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+<br></b></font><i><ol>
+&ltMENU&gt<br>
+&ltLI&gtBlabla n°1<br>
+&ltLI&gtBlabla n°2<br>
+&lt/MENU&gt<br>
+<br></i></ol>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c5.6"><ol>
+V.6 - Emboîtement<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On peut bien sûr emboîter ces listes en niveaux.<br>
+<br>
+<b><font color="#6699cc">Exemple :<br>
+<br></b></font><i><ol>
+&ltUL&gt<br>
+&ltLI&gtNiveau n°1<br>
+&ltMENU&gt<br>
+	&ltLI&gtNiveau n°2<br>
+	&ltLI&gtNiveau n°2<br>
+&lt/MENU&gt<br>
+&ltLI&gtNiveau n°1<br>
+&lt/UL&gt<br></ol></i>
+<br>
+affichera :<br>
+<br>
+<UL><br>
+<LI>Niveau n°1<br>
+<MENU><br>
+	<LI>Niveau n°2<br>
+	<LI>Niveau n°2<br>
+</MENU><br>
+<LI>Niveau n°1<br>
+</UL><br>
+<br>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c6">
+VI - Images<br>
+<br></h1></font></a>
+<h3><ol><ol>
+Les images sont des éléments importants des pages Web car ce sont souvent elles qui définissent les liens hypertextes. De plus, elles agrémentent de façon non négligeable la lecture de votre page.<br>
+Comme nous allons le voir ci-dessous, leur utilisation est très simple à maitrîser.<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c6.1"><ol>
+VI.1 - Les formats<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Tout d'abord, le browser reconnaît quasiment tous les types d'images, notamment celles au formats GIF et JPEG, et ceci sans avoir à spécifier leur nature.<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c6.2"><ol>
+VI.2 - Commandes générales<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltIMG SRC="nom du fichier image"&gt affiche l'image contenue dans le fichier appelé, à l'endroit où est placée cette commande.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltIMG ALT=blabla SRC="xxxxx.xxx"&gt affiche là-aussi l'image, mais au cas où l'utilisateur aurait spécifié une lecture des pages Web sans images, on affiche le texte blabla à la place.<br>
+<br>
+Cette commande peut être incluse dans l'appel à un autre fichier hypertexte. Dans ce cas, elle sera encadrée d'un trait de couleur définie préalablement (trait de marque URL).<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+<br></b></font><ol><i>
+&ltA HREF="tarot.html"&gt&ltIMG SRC= "tarot.jpg"&gtClub Tarot&lt/A&gt<br>
+<br></i></ol>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c6.3"><ol>
+VI.3 - Commandes de placement<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	ALIGN=left | right | top | texttop | middle | absmiddle | baseline | bottom | absbottom permet d'aligner les images respectivement à gauche, à droite, en haut, en haut du texte, au milieu, au milieu par rapport à la ligne, en bas, en bas de la ligne,etc.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	VSPACE=v1 HSPACE=v2 contrôle respectivement l'espacement vertical au-dessus et en-dessous de l'image, et l'espacement horizontal à droite et à gauche de l'image.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	WIDTH=v1 HEIGHT=v2 définissent la longueur et la largeur de l'image, soit en pixel (v1=10 par exemple), soit en pourcentage par rapport à la largeur et la hauteur de la fenêtre de visualisation (v1=10%).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	BORDER=valeur définit l'épaisseur du trait de marque URL.<br>
+Ces commandes doivent être placées en attribut de la commande &ltIMG SRC="xxxxx.xxx&gt.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c6.4"><ol>
+VI.4 - Les fonds d'écran<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Il est possible de définir des fonds d'écran en incluant dans la commande &ltBODY&gt les attributs suivants:<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	BACKGROUND="xxx" où xxx peut être soit un code couleur, soit un nom de fichier, auquel cas le logiciel lecteur de pages Web se chargera automatiquement de calculer le nombre et la répartition des images à afficher, en fonction de la taille de votre fenêtre d'utilisation.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	BGCOLOR=code couleur définit aussi une couleur de fond.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	TEXT=code couleur définit la couleur du texte.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	LINK=code couleur définit la couleur des liens hypertextes.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	VLINK=code couleur définit la couleur des liens hypertextes visités.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font>
+<br><ol><i>
+&ltBODY BACKGROUND="gifs/fond1.jpg" LINK=#00FF00 VLINK=#119978 TEXT= #123345 &gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c7">
+VII - Les procédures CGI<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c7.1"><ol>
+VII.1 - Introduction<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Les procédures CGI (Common Gateway Interface) sont les seuls outils permettant de récolter des informations en provenance des lecteurs de Web. Que ce soit pour un sondage ou pour une recherche de fichiers, elles sont très utiles, car elles permettent à l'utilisateur d'un lecteur de Web d'agir sur le serveur, actions nécessitant des paramètres ou non. Dans les deux cas, le serveur pourra renvoyer par la suite un texte ou une page HTML de résultat spécialement conçue pour l'utilisateur qui a fait la requête.<br>
+Leur écriture ne concerne pas directement le langage HTML. En effet, de telles procédures nécessitent des langages plus évolués comme le C ou le Perl. Dans la suite, nous nous intéressons exclusivement aux balises et aux attributs qui font appel à des procédures CGI.<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c7.2"><ol>
+VII.2 - La balise FORM<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Les balises FORM servent d'interfaces d'échange d'informations entre un utilisateur et le serveur http. Cette interface est graphique et utilise de nombreux moyens interactifs (boutons poussoirs, listes déroulantes, boutons radios, etc.).<br>
+La balise FORM envoie une requête au serveur http sur lequel l'utilisateur est connecté, dès que ce dernier appuie sur le bouton d'envoi des données.<br>
+Remarque : plusieurs balises FORM peuvent être présentes dans un même document HTML, mais en aucun cas elles ne doivent être emboitées.<br>
+La commande générale est :<br>
+<br>
+<ol><i>&ltFORM ACTION="url" METHOD=xxx&gt... &lt/FORM&gt<br>
+<br></ol></i>
+L'attribut ACTION demande une adresse URL sur laquelle la requête issue de la balise FORM sera envoyée. Si l'attribut ACTION est absent, la requête sera envoyée sur le serveur courant.<br>
+L'attribut METHOD demande la méthode d'accès au serveur http. On trouve deux méthodes d'accès principales :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	GET provoque une requête pour laquelle le champ des données nécessaires est ajouté à l'adresse URL. Cette méthode limite donc la taille du message à 200 caractères (taille maximale d'une adresse URL).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	POST envoie un message à part entière et non pas par le biais de l'URL. Cette méthode est très recommandée quand beaucoup de données sont à transmettre et en général, elle est beaucoup plus fiable.<br>
+On peut d'autre part ajouter à la commande l'attribut ENCTYPE qui donne le type d'encodage désiré. Cet attribut n'est nécessaire qu'avec la méthode POST et actuellement il n'y a qu'une seule valeur possible :<br>
+<br>
+<ol><i>application/x-www-form-urlencoded<br></I>
+<br></ol>
+Il n'est bien entendu pas obligé d'ajouter cet attribut. Ce dernier n'aura une grande utilité que dans les versions futures, pour permettre l'encryptage des données.<br>
+<br>
+Nous allons maintenant voir les commandes permettant la saisie de la requête.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c7.3"><ol>
+VII.3 - La commande INPUT<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Elle doit se placer entre les deux balises &ltFORM&gt et &lt/FORM&gt, et utilise les attributs suivants :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	TYPE="text | etc." qui définit le type de donnée à saisir, c'est à dire du texte ("text"), un mot de passe ("password"), auquel cas les caractères tapés n'apparaissent pas à l'écran, une boîte à cocher ("checkbox"), des boutons radio ("radio"), un bouton poussoir provoquant l'envoi de la requête ("submit"), et un bouton poussoir provoquant la remise aux valeurs initiales de tous les champs de saisie ("reset").<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	NAME="champ1" qui donne le nom du champ, afin que ce dernier soit reconnaissable par la procédure CGI.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	VALUE=valeur qui sert à spécifier la valeur par défaut d'un champ de saisie.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	CHECKED qui indique que les boutons radio ou à cocher sont à ON par défaut.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	SIZE=valeur qui donne la taille du champ pour les champs de caractères. La valeur par défaut est 20 et si le texte tapé par l'utilisateur comporte deux valeurs séparées par une virgule, le champ texte aura une longueur (première valeur) et un nombre de lignes (deuxième valeur).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	MAXLENGTH=valeur qui définit le nombre maximum de caractères qui sont acceptés pour les champs textuels. Ce champ permet de gérer des défilements si MAXLENGTH est plus grand que SIZE.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+<br></b></font><i><ol>
+&ltFORM METHOD="POST" ACTION="cgi-bin/sondage"&gt<br>
+Nom &ltINPUT NAME="nom"&gt&ltBR&gt<br>
+&ltHR&gt<br>
+Prénom &ltINPUT NAME="prenom"&gt&ltBR&gt<br>
+&ltHR&gt<br>
+&ltINPUT TYPE="checkbox" CHECKED NAME="donnee1" VALUE="Marié"&gt Marié<br>
+Avez-vous des enfants ?<br>
+&ltINPUT TYPE="radio" NAME="donnee2" VALUE="Oui" CHECKED&gt<br>
+Oui<br>
+&ltINPUT TYPE="radio" NAME="donnee2" VALUE="Non" CHECKED&gt<br>
+Non<br>
+&ltINPUT TYPE="submit" VALUE="Go"&gt<br>
+&ltINPUT TYPE="reset" VALUE="Annuler"&gt<br>
+&lt/FORM&gt<br>
+<br></ol></i>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c7.4"><ol>
+VII.4 - La commande SELECT<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Cette commande permet de donner une liste des champs accessibles par un menu déroulant.<br>
+<br>
+La syntaxe est la suivante :<br>
+<br><ol><i>
+&ltSELECT NAME="Menu"&gt<br>
+&ltOPTION&gtFaire x<br>
+&ltOPTION&gtFaire y<br>
+&lt/SELECT&gt<br>
+<br></i></ol>
+Les attributs de la commande SELECT sont :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	NAME qui donne le nom symbolique du menu.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	SIZE qui donne le nombre d'éléments qui seront affichés dans le menu. Les autres valeurs sont alors disponibles grâce à des commandes de défilement.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	MULTIPLE qui indique que la commande SELECT pourra avoir plusieurs sélections.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	SELECTED indique que l'option est sélectionnée par défaut.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c7.5"><ol>
+VII.5 - La commande TEXTAREA<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Elle permet de saisir de grandes zones de textes et on l'utilise avec la syntaxe suivante :<br>
+<br><i><ol>
+&ltTEXTAREA NAME=xxx ROWS=n1 COLS=n2&gt valeur par défaut &lt/TEXTAREA&gt<br>
+<br></ol></i>
+L'attribut NAME désigne le nom symbolique de la donnée.<br>
+L'attribut ROWS donne le nombre de lignes du champ de saisie et COLS la longueur d'une ligne de saisie.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c7.6"><ol>
+VII.6 - La procédure ISMAP<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Cette procédure permet de repérer la position de la souris sur un graphique afin d'exécuter des actions différentes suivant la région cliquée. En effet, elle détecte les coordonnées du point cliqué et les envoie alors vers la procédure CGI chargée de les traiter. On peut par exemple faire un menu principal avec un graphique, et on accèderait aux sous-menus en cliquant sur telle ou telle zone de ce graphique.<br>
+ISMAP se rajoute tout simplement à la commande IMG, comme ceci :<br>
+<br><ol><i>
+&ltA HREF="/cgi-bin/menu.pl"&gt<br>
+&ltIMG SRC="gif/menu.gif" ISMAP&gt<br>
+&lt/A&gt<br>
+<br></i></ol>
+menu.pl est le nom de la procédure CGI qui sera appelée après le cliquage sur l'endroit pointé par la souris.<br>
+<br>
+<b><font color="#6699cc">Remarque:</b></font> on peut aussi s'affranchir de l'utilisation d'une procédure CGI en utilisant les MAP (cf chapitre X).<br>
+<br>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c8">
+VIII - Les tableaux<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c8.1"><ol>
+VIII.1 - Les balises<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltTABLE&gt...&lt/TABLE&gt permet de définir les limites du tableau.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltTR&gt...&lt/TR&gt délimite une ligne de tableau.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltTD&gt...&lt/TD&gt délimite une cellule à l'intérieur d'une ligne. Elles seront donc placées entre les balises &ltTR&gt et &lt/TR&gt.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltTH&gt...&lt/TH&gt délimite l'entête du tableau. Les caractères sont alors centrés et écrits en gras.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	&ltCAPTION&gt...&lt/CAPTION&gt peut être utilisée dans une balise TABLE (mais pas dans les balises TR ou TD) pour donner un titre au tableau, soit en haut (attribut ALIGN=TOP) ou en bas (attribut ALIGN=BOTTOM).<br>
+<br>
+<b><font color="#6699cc">Exemple:<br></b></font><ol><i>
+<br>
+&ltTABLE BORDER&gt<br>
+&ltCAPTION ALIGN=TOP&gt Titre du tableau<br>
+&lt/CAPTION&gt<br>
+&ltTH&gtTitre 1&lt/TH&gt<br>
+&ltTH&gtTitre 2&lt/TH&gt<br>
+&ltTR&gt<br>
+&ltTD&gtColonne 1 Ligne 1&lt/TD&gt<br>
+&ltTD&gtColonne 2 Ligne 1&lt/TD&gt<br>
+&lt/TR&gt<br>
+&ltTR&gt<br>
+&ltTD&gtColonne 1 Ligne 2&lt/TD&gt<br>
+&ltTD&gtColonne 2 Ligne 2&lt/TD&gt<br>
+&lt/TR&gt<br>
+&lt/TABLE&gt<br>
+<br></ol></i>
+affichera le tableau :<br>
+<br>
+<TABLE BORDER>
+<CAPTION ALIGN=TOP> Titre du tableau
+</CAPTION>
+<TH>Titre 1</TH>
+<TH>Titre 2</TH>
+<TR>
+<TD>Colonne 1 Ligne 1</TD>
+<TD>Colonne 2 Ligne 1</TD>
+</TR>
+<TR>
+<TD>Colonne 1 Ligne 2</TD>
+<TD>Colonne 2 Ligne 2</TD>
+</TR>
+</TABLE>
+<br></ol></i>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c8.2"><ol>
+VIII.2 - Les attributs<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+<a name="c.8.2.1"><b><font color="#6699cc">Les attributs de la commande TABLE<br>
+<br></b></font></a>
+<img src="gifs/html_btn.gif" width=10 height=10>	BORDER indique si le tableau doit avoir une bordure, ou pas. L'absence de cet attribut provoquera le "non-affichage" du bord au tableau.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	BORDER=valeur définit les bordures du tableau et valeur donne l'épaisseur du trait.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	CELLSPACING=valeur définit l'espacement inter-cellule. La valeur par défaut est 2.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	CELLPADDING=valeur définit la distance entre le bord de la cellule et son contenu.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	WIDTH=pourcentage donne la largeur du tableau en  pourcentage de la largeur du document. Le champ pourcentage devra être de la forme nb%.<br>
+<br>
+<a name="c8.2.2"><b><font color="#6699cc">Les attributs des commandes TR,TH et TD<br>
+</b></font><br></a>
+<img src="gifs/html_btn.gif" width=10 height=10>	ALIGN=CENTER | LEFT | RIGHT permet d'aligner les cellules au centre, à gauche ou à droite.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	VALIGN=TOP | BASELINE | MIDDLETOP permet d'aligner le texte verticalement en haut, en bas, ou de le centrer.<br>
+<br><a name="c8.2.3">
+<b><font color="#6699cc">Les attributs des commandes TH et TD<br>
+</b></font><br></a>
+<img src="gifs/html_btn.gif" width=10 height=10>	NOWRAP demande que les lignes dans les cellules ne soient pas coupées.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	COLSPAN=valeur définit le nombre de cellules à mettre. Par défaut, la valeur est à 1. Avec une valeur supérieure, on peut obtenir plusieurs colonnes.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	ROWSPAN=valeur fait la même chose que COLSPAN, mais pour le nombre de lignes par cellule à mettre.<br>
+<br>
+<b><font color="#6699cc">Exemple:<br>
+<br></b></font><ol><i>
+&ltTABLE BORDER=4 WIDTH=95%&gt<br>
+&ltTR&gt<br>
+&ltTD&gtColonne 1 Ligne 1&lt/TD&gt<br>
+&ltTD&gtColonne 2 Ligne 1&lt/TD&gt<br>
+&ltTD&gtColonne 3 Ligne 1&lt/TD&gt<br>
+&lt/TR&gt<br>
+&ltTR&gt<br>
+&ltTD COLSPAN=2&gtColonne 1 et 2 Ligne 2 &lt/TD&gt<br>
+&ltTD&gtColonne 3 Ligne 2&lt/TD&gt<br>
+&lt/TR&gt<br>
+&lt/TABLE&gt<br>
+<br>
+<br></i></ol>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c9">
+IX - Les frames<br>
+<br></h1></font></a>
+<h3><ol><ol>
+Les frames subdivisent la fenêtre de votre browser en plusieurs sous-fenêtres, chacune d'entre elles se comportant comme une page HTML indépendante.<br>
+Par exemple, vous pouvez diviser votre écran de lecture en trois fenêtres, une avec une icône pour retourner sur votre page principale, une avec un accès à votre adresse E-Mail et une autre où vous afficherez les pages HTML que vous visitez. Ainsi, tout en voyageant sur Internet par l'intermédiaire des pointeurs de votre page, l'utilisateur peut toujours retourner sur votre page principale en cliquant sur l'icône, ou vous envoyer un mail.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c9.1"><ol>
+IX.1 - La commande FRAMESET<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+On ne parle plus de balises &ltBODY&gt et &lt/BODY&gt dans une page fenêtrée, mais d'un sur-ensemble appelé FRAMESET. La syntaxe reste du même style :<br>
+<br>
+<i><ol>&ltFRAMESET&gt...&lt/FRAMESET&gt<br>
+<br></i></ol>
+Cette balise définit le partage de la fenêtre principale en diverses sous-fenêtres en utilisant les deux attributs ROWS et COLS.<br>
+ROWS="hauteur 1, hauteur 2, ..., hauteur n" définit les hauteurs respectives des diverses sous-fenêtres. Les hauteurs peuvent être soit des nombres de pixels, soit des pourcentages sous le format nbre%, soit des résultantes en remplacant hauteur i par *.<br>
+<br>
+<b><font color="#6699cc">Exemples :<br>
+</b></font><ol><i><br>
+&ltFRAMESET ROWS="10%,80,*,15%"&gt<br>
+<br></i></ol>
+divise la fenêtre principale en 4 sous-fenêtres, la première en partant du haut prenant 10% de la taille initiale, la deuxième faisant 80 pixels de hauteur, la quatrième prenant 15% de la taille initiale, et la troisième prenant le reste, à savoir (hauteur totale) - 80 - (hauteur totale) x 0.25.<br>
+<br>
+<ol><i>
+&ltFRAMESET ROWS="*,*,*"&gt<br>
+<br></i></ol>
+divise la fenêtre en trois sous-fenêtres d'égales dimensions.<br>
+<br><ol><i>
+&ltFRAMESET ROWS="2*,*"&gt<br>
+<br></ol></i>
+divise la fenêtre principale en deux fenêtres, une prenant 2/3 de l'écran et une autre prenant les 1/3 restants.<br>
+<br>
+COLS="largeur 1, largeur 2, ..., largeur n" fait la même chose mais avec les largeurs.<br>
+<br>
+<b><font color="#6699cc">Exemple :<br>
+<br></b></font><i><ol>
+&ltFRAMESET COLS="85%,*"&gt<br>
+<br></i></ol>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c9.2"><ol>
+IX.2 - La commande FRAME<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Entre les balises &ltFRAMESET&gt et &lt/FRAMESET&gt se place le contenu des fenêtres.<br>
+Ceci se fait en appelant la commande FRAME selon la syntaxe suivante :<br>
+<br>
+<i><ol>&ltFRAME SRC="xxx"&gt<br>
+<br></i></ol>
+où xxx est l'adresse de la page qui remplira cette sous-fenêtre.<br>
+<br>
+<br>
+<b><font color="#6699cc">Remarques :<br></b></font>
+<img src="gifs/html_btn.gif" width=10 height=10>	On appelera la balise FRAME autant de fois qu'il y a de sous-fenêtres, et ceci dans un ordre très précis : le premier FRAME s'adressera à la fenêtre la plus en haut, ou la plus à gauche selon la subdivision opérée (attribut ROWS ou COLS), et ainsi de suite de haut en bas, ou de gauche à droite.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	Si on veut rediviser une sous-fenêtre, on peut remplacer la balise FRAME par une nouvelle balise FRAMESET.<br>
+<br>
+<b><font color="#6699cc">Exemple :<br></b></font>
+<br><ol><i>
+&ltFRAMESET COLS="30%,70%"&gt<br>
+&ltFRAME SRC="x1.html"&gt<br>
+&ltFRAMESET ROWS="14%,*"&gt<br>
+&ltFRAME SRC="x2.html"&gt<br>
+&ltFRAME SRC="x3.html"&gt<br>
+&lt/FRAMESET&gt<br>
+&lt/FRAMESET&gt<br>
+<br></i></ol>
+Cet exemple divise tout d'abord l'écran en deux fenêtres F1 et F2, F1 prenant 30% de la largeur totale, et F2 le reste. Dans F1, il fait apparaître la page Web d'adresse x1.html. Puis il redivise F2 en deux autres fenêtres F3 et F4, F3 prenant 14% de la hauteur de F2 et F4 le reste. Dans F3 apparaîtra la page Web d'adresse x2.html, et dans F4 celle d'adresse x3.html.<br>
+<br>
+On peut utiliser de nombreux attributs avec la balise FRAME :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	NAME=nom définit le nom de la fenêtre, au cas où l'on voudrait la réutiliser dans une autre page Web (cf XI - La directive TARGET).<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	MARGINWIDTH=valeur donne la valeur en pixel des marges pour la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	MARGINHEIGHT=valeur donne la valeur en pixel de l'en-tête et du pied de page de la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	SCROLLING=yes | no | auto selectionne ou non les flêches déroulantes de défilement du texte, ou laisse au browser le choix en fonction de la taille de la fenêtre.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	NORESIZE indique que la taille de la fenêtre n'est pas redéfinissable par l'utilisateur.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c9.3"><ol>
+IX.3 - La commande NOFRAME<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Les frames ne sont pas lisibles par tous les browsers, c'est pourquoi on a créé la balise NOFRAME qui permet de définir une page HTML visible par ceux qui ne peuvent pas lire les frames.<br>
+La syntaxe est la suivante :<br>
+<br><i><ol>
+&ltNOFRAME&gt...&lt/NOFRAME&gt<br>
+<br></i></ol><b><font color="#6699cc">
+Exemple :<br>
+<br></b></font><i><ol>
+&ltFRAMESET ROWS="70%,30%"&gt<br>
+&ltNOFRAME&gtCette page ne peut être lue qu' avec un logiciel compatible Netscape 2.03<br>
+...<br>
+&lt/NOFRAME&gt<br>
+...<br>
+&lt/FRAMESET&gt<br>
+<br></i></ol>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c10">
+X - Les MAP<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c10.1"><ol>
+X.1 - Introduction<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Il est souvent necessaire de faire des menus à partir de graphiques et de localiser la position de la souris sur ces graphiques. C'est dans ce but qu'ont été développées les MAP.<br>
+La directive IMAGEMAP permet d'appeler une page HTML différente suivant la région où l'on clique dans une image. L'inconvénient de cette directive vient du fait que l'on doit positionner sur le serveur un fichier décrivant la géographie de l'image. Ceci nécessite une mise en oeuvre simple pour un cas particulier mais est difficile à maintenir pour un administrateur de site.<br>
+C'est pourquoi on a développé les MAP. Mais attention car les MAP ne fonctionnent actuellement qu'avec Netscape. Il se pourrait que les commandes changent avec l'arrivée de nouveaux browsers, c'est pourquoi nous donnerons seulement les grandes lignes de la procédure MAP.<br>
+<br>
+</h3></ol></ol>
+<h2><font color="#6666cc"><a name="c10.2"><ol>
+X.2 - La syntaxe<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+La balise &ltMAP&gt permet de définir géométriquement les différentes zones cliquables de l'image. La syntaxe est la suivante :<br>
+<br><i><ol>
+&ltMAP NAME=nom&gt<br>
+&ltAREA SHAPE=valeur COORDS="valeurs des coordonnées" HREF="url"&gt<br>
+&ltAREA SHAPE=valeur COORDS="valeurs des coordonnées" HREF="url"&gt<br>
+...<br>
+&ltAREA SHAPE=valeur COORDS="valeurs des coordonnées" HREF="url"&gt<br>
+&lt/MAP&gt<br>
+&ltIMG SRC="nom de l'image" USEMAP="#nom&gt<br>
+<br></i></ol>
+Les paramètres écrits en italique prennent les valeurs suivantes :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	NAME=nom donne le nom de la MAP, nom qui sera ensuite utilisé dans l'attribut USEMAP="#nom" de la balise IMG pour savoir à quel graphique se rapporte la MAP.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	SHAPE= rect | circle | poly | default définit la forme de la zone à cliquer.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	COORDS donne les coordonnées des points définissant la zone à cliquer. Pour rect, on rentre les coins opposés (par exemple "120,12,90,45"). Pour circle, on rentre le centre et un point du cercle. Pour poly, on rentre les coordonnées des points définissant le polygône. Pour default, on rentre les coordonnées des points singuliers non compris dans les formes précédentes.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	HREF="url" donne l'adresse de la page qui sera appelée par le cliquage.<br>
+<br>
+</h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c11">
+XI - La directive TARGET<br>
+<br></h1></font></a>
+<h2><font color="#6666cc"><a name="c11.1"><ol>
+XI.1 - Introduction<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+En utilisant les frames, vous subdivisez l'écran en différentes fenêtres. Lors de l'appel d'une autre page, vous pouvez choisir grace à la directive TARGET quelle zone de l'écran vous voulez choisir pour afficher cette autre page, ou alors vous pouvez décider d'ouvrir une deuxième fenêtre principale.
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c11.2"><ol>
+XI.2 - La syntaxe<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+TARGET est en fait un attribut de la balise &ltA&gt et s'utilise avec la syntaxe suivante :<br>
+<br><i><ol>
+&ltA HREF="url" TARGET="nom de la fenêtre"&gt ...&lt/A&gt<br>
+<br></ol></i>
+Lors de l'appel de la page Web d'adresse url, la directive TARGET donnera le nom de la fenêtre où devra être affichée cette page.<br>
+<b><font color="#6699cc">Remarques :<br></b></font>
+<img src="gifs/html_btn.gif" width=10 height=10>	les noms des diverses fenêtres sont définis par la commande FRAME (cf IX.2), en utilisant l'attribut NAME.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	des champs particuliers peuvent être attribués à TARGET. Ainsi TARGET="_blank" force l'appel d'une nouvelle page, TARGET="_self" force l'appel d'une page dans la même fenêtre, TARGET="_parent" force l'appel à la page mère, et TARGET="_top" force l'appel à la première page de la liste.<br>
+<br></h3></ol></ol>
+<h1><font color="#0000cc"><A NAME="c12">
+XII - Dernières recommandations<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Avant de commencer à écrire votre propre page Web, faites bien attention à ces quelques points :<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	le langage HTML est un langage évolutif et comme nous allons le voir dans la dernière partie de ce guide, de nombreuses améliorations sont en voie de développement. Ce guide comprend une grande partie des commandes de la version 2 et quelques approches de la version 3, mais certaines peuvent être amenées à disparaître, ou à évoluer dans leur syntaxe.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	le réseau Internet donne accès à de nombreuses informations, mais il ne faut pas en abuser. Vérifier bien l'origine de vos pointeurs, respecter les copyright, si vous voulez que l'on respecte les vôtres.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	ne mettez pas d'images trop importantes dans votre page, pensez à l'utilisateur qui voudra avoir accès à votre page et qui devra attendre n heures avant de voir votre page de présentation. Si vous voulez faire une banque d'images, créez plutôt une page de présentation avec toutes vos images cliquables dans un format réduit, et n'oubliez pas d'indiquer leur taille pour que l'utilisateur ait une idée du temps d'accès.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	donnez des noms sans majuscules à vos adresses URL. C'est beaucoup plus simple pour l'utilisateur qui n'est pas forcément familier avec la place de vos majuscules dans votre adresse.<br>
+<img src="gifs/html_btn.gif" width=10 height=10>	enfin, pensez aux utilisateurs qui surfent sur Internet sans charger les images. Mettez-leur un message à la place en utilisant l'attribut ALT de la commande IMG (cf VI.2).<br>
+<br></h3></ol></ol>
+<br>
+<h1><font color="#0000cc"><A NAME="c13">
+Annexe 1: Evolutions à venir<br>
+<br></h1></font></a>
+<h3><ol><ol>
+Comme nous l'avons signalé précedemment, le langage HTML est évolutif, ce qui signifie que de nombreuses améliorations sont en voie d'apparition. L'une d'entre elles est particulièrement interessante, il s'agit du Java.<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c13.1"><ol>
+Le Java<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Actuellement, la lecture de page Web est assez statique. Il est en effet très difficile voire impossible d'y introduire des animations, comme par exemple des jeux, ou des musiques. Conscients de cette lacune, les concepteurs de Netscape ont décidé de créer une nouvelle extension au langage HTML, le Java, qui permettra par l'intermédiaire du réseau d'installer et d'exécuter un programme sur la machine de l'utilisateur.<br>
+Le Java est un langage client-serveur, c'est à dire indépendant des plates-formes matérielles. De plus, il est orienté objet comme tous les langages modernes.<br>
+Pour simplifier la programmation en Java, on dispose d'un langage interprété appelé le JavaScript. Ainsi, pour faire un programme, on l'écrit d'abord avec JavaScript puis on le compile pour obtenir un fichier directement exécutable par la machine.<br>
+Actuellement, cet environnement de compilation des programmes Java, contenant compilateurs, debuggers et librairies est disponible en shareware à l'adresse http://www.javasoft.com.<br>
+<br>
+<br></h3></ol></ol>
+<h2><font color="#6666cc"><a name="c13.2"><ol>
+Le VRML<br>
+<br></h2></font></a></ol>
+<h3><ol><ol>
+Une autre évolution, qui semble celle-ci moins évidente, rejoint le concept de réalité virtuelle, il s'agit du VRML.<br>
+Le VRML remplace l'environnement habituel (fenêtres et liens hypertextes) par un espace virtuel en trois dimensions. En fait, quand vous lancez le logiciel lecteur de page VRML, il vous renvoie une fenêtre principale à l'intérieur de laquelle vous visualiserez des environnements tridimensionnels. Il ne vous restera plus qu'à vous promener dans ces espaces virtuels à l'aide de la souris, certains mouvements de la souris vous faisant avancer ou reculer, d'autres tourner, etc. Quant aux liens hypertextes, ils peuvent être remplacés par des objets en 3D placés dans l'espace virtuel. En cliquant dessus, vous accédez alors à d'autres environnements.<br>
+</h3></ol></ol>
+<listing>
+<h2><font color="#6666cc"><a name="c13.4">
+Annexe 2: Les caract&egraveres sp&eacuteciaux :
+
+A</h2></font></ol><h3><ol>
+
+&ampacute	á
+&ampacirc	â
+&ampaelig	æ
+&ampagrave	à
+&amparing	å
+&ampatilde	ã
+&ampauml	ä
+
+</h3></ol><h2><font color="#6666cc">C</h2></font><h3><ol>
+
+&ampccedil	ç
+
+</h3></ol><h2><font color="#6666cc">E</h2></font><h3><ol>
+
+&ampeacute	é
+&ampecirc	ê
+&ampegrave	è
+&ampeuml	ë
+
+</h3></ol><h2><font color="#6666cc">I</h2></font><h3><ol>
+
+&ampiacute	í
+&ampicirc	î
+&ampigrave	ì
+&ampiuml	ï
+
+</h3></ol><h2><font color="#6666cc">N</h2></font><h3><ol>
+
+&ampntilde	ñ
+
+
+</h3></ol><h2><font color="#6666cc">O</h2></font><h3><ol>
+
+&ampoacute	ó
+&ampocirc	ô
+&ampograve	ò
+&amposlash	ð
+&ampotilde	õ
+&ampouml	ö
+
+</h3></ol><h2><font color="#6666cc">S</h2></font><h3><ol>
+
+&ampszlig	ß
+
+</h3></ol><h2><font color="#6666cc">U</h2></font><h3><ol>
+
+&ampuacute	ú
+&ampucirc	û
+&ampugrave	ù
+&ampuuml	ü
+
+</h3></ol><h2><font color="#6666cc">Y</h2></font><h3><ol>
+
+&ampyacute	ý
+&ampyuml	ÿ
+
+
+</listing>
+<h3>
+</ol></ol>
+Pour obtenir les caractères majuscules, il suffit de remplacer la lettre minuscule qui suit le et commercial par la lettre majuscule correspondante.<br>
+
+<br>
+<ol>
+<b><font color="#6699cc">	Exemple :<br><br>
+</b></font>
+<i><ol>		&ampAacute	Á
+</i></ol>
+</h3>
+</body>
+</html>
+
+
+

@@ -1,0 +1,88 @@
+#!/usr/local/bin/perl
+#
+# mapconv by Jarkko.Sonninen@lut.fi
+# converts .om & .oo style maps into another format
+#
+# to use it, go to map directory and give mapnames as parameters
+# .oo and .oo extensions are stripped off the filenames
+# for example   
+#	mapconv map.01
+#	mapconv *.oo
+#
+
+
+$BMAPS = "../bmaps";
+
+open (BM, $BMAPS) || die "aargh";
+				# 
+while ($_=<BM>) {
+    if (/\\(\d+)\s+(\S*)/) {
+	if ($2 eq "dwall_3_3") {
+	    # kludge alert!
+	    # try to make an archetype with name "dwall_3_3" and enjoy!
+	    $face[$1] = "dwall3_3";
+	} else {
+	    $face[$1] = $2;
+	}
+    }
+} 
+close (BM);
+    
+while ($map = shift @ARGV) {
+    if ($map =~ /(.*)\.oo$|(.*)\.om$/) {
+	$map = $1;
+    }
+    open (OMAP, "<$map.oo") || die "cannot open $map.oo";
+    open (MAP, "<$map.om") || die "cannot open $map.om";
+
+    open (OO, ">$map") || die "aargh";
+
+    print "converting $map\n";
+    
+    $_=<MAP>; ($mapx) = /\w+\s+(\d+)/;
+    $_=<MAP>; ($mapy) = /\w+\s+(\d+)/;
+    $_=<MAP>; ($startx) = /\w+\s+(\d+)/;
+    $_=<MAP>; ($starty) = /\w+\s+(\d+)/;
+    $_=<MAP>; ($msgsize) = /\w+\s+(\d+)/;
+    $_=<MAP>; ($msglines) = /\w+\s+(\d+)/;
+
+    print OO "arch map\n";
+    print OO "x $mapx\n";
+    print OO "y $mapy\n";
+    print OO "hp $startx\n";
+    print OO "sp $starty\n";
+
+    if ($msglines) {
+	print OO "msg\n";
+	while ($msglines-- > 0) {
+	    $_=<MAP>;
+	    print "msg:$_";
+	    print OO $_;
+	}
+	print OO "endmsg\n";
+    }
+    print OO "end\n";
+
+    while ($_ = <OMAP>) {
+	print OO $_;
+    }
+    
+    print "$mapx x $mapy\n"; 
+    for ($i = 0; $i < $mapx; $i++) { 
+	for ($j = 0; $j < $mapy; $j++) {
+	    $_=<MAP>;
+	    if ($_ != 35) {
+		if ($face[$_]) { 
+		    print OO "arch $face[$_]\n";
+		    if ($i) {
+			print OO "x $i\n";
+		    }
+		    if ($j) {
+			print OO "y $j\n";
+		    }
+		print OO "end\n";
+		}
+	    }
+	}
+    }
+}

@@ -1,0 +1,193 @@
+<!-----------------------------------------------------------------------
+-									-
+-			  LE LANGAGE JAVASCRIPT				-
+-									-
+-			     Andrej Sobkowski				-
+-									-
+-									-
+-									-
+-			    Java et JavaScript				-
+-									-
+-									-
+------------------------------------------------------------------------>
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE = "JavaScript">
+<!--
+function verNum() {
+	numEl = document.ListForm.nbreElements.value;
+
+	if ((numEl <= '9') && (numEl > '0'))
+		makeList(numEl);
+	else
+		alert("Introduire un nombre entre 0 et 9 SVP");
+}
+
+function makeList(numEl) {
+	document.write("<HTML><BODY>");
+	document.write("<H1>Liste</H1>");
+	document.write("<OL>");
+	for (i = 1; i <= numEl; i++)
+		{
+		document.write("<LI>Option n." + i);
+		}
+	document.write("</OL>");	
+	document.write("</BODY></HTML>");
+}
+
+function verData() {
+	nomStr = document.nameForm.nom.value;
+	prenomStr = document.nameForm.prenom.value;
+	adresseStr = document.nameForm.adresse.value;
+
+	if ((nomStr == "") || (prenomStr == "") || (adresseStr == ""))
+		alert("Tous les champs doivent etre remplis");
+	else
+	{
+		document.write("<HTML><BODY>");
+		document.write("<H1>Donnees recues</H1>");
+		document.write("Nom     : " + nomStr + "<BR>");
+		document.write("Prenom  : " + prenomStr + "<BR>");
+		document.write("Email   : " + adresseStr + "<BR>");
+		document.write("</BODY></HTML>");
+	}
+}
+
+function setDate () {
+	today = new Date();
+
+	document.dateForm.day.value = today.getDate();
+	document.dateForm.month.value = today.getMonth();
+	document.dateForm.year.value = today.getYear();
+
+}
+
+function verSubmit () {
+	if (confirm('Soumettre la forme ?')) {
+		document.write('<H1> SUBMIT effectu&eacute;</H1>');	
+	}
+}
+//End Script -->
+</SCRIPT>
+</HEAD>
+
+<TITLE>JavaScript</TITLE>
+
+<BODY ONLOAD = "setDate();alert('Bonjour!')">
+<BR>
+<CENTER><FONT COLOR = "red"><H1>JavaScript</H1>
+by Andrej Sobkowski
+</FONT>
+</CENTER>
+
+<P>Nous pr&eacute;sentons maintenant le langage JavaScript, qui peut &ecirc;tre consid&eacute;r&eacute; (en faisant un gros effort d'imagination...) comme un sous(-sous)-langage de Java.
+<P>Mais ne soyez pas de&ccedil;us: JavaScript permet quand m&ecirc;me de r&eacute;aliser des petits programmes et d'effectuer efficacement des contr&ocirc;les sur les donn&eacute;es.
+
+<HR>
+
+<A NAME = "liste"><H2>Cr&eacute;ation d'une liste d'&eacuteI&eacute;ments</H2><BR>
+<FORM NAME = "ListForm" ONSUBMIT = "verNum()">
+<CENTER>
+<TABLE>
+<TR>
+<TD>Creation d'une liste - Nombre d'elements :
+<TD><INPUT TYPE = "text" NAME = "nbreElements" VALUE = "3" SIZE = 2>
+<TD><INPUT TYPE = "submit" NAME = "List" VALUE = "Go" ONCLICK = "verNum()">
+</TABLE>
+</CENTER>
+</FORM>
+
+<P>Cette mini-application utilise les fonctions <CODE>verNum()</CODE> et <CODE>makeList()</CODE> pr&eacute;sentes dans le bloc &lt;HEAD&gt; de cette page HTML. Por pouvoir visualiser le code, vous pouvez utiliser la commande View-Document Source du menu.
+<P>Remarquer la simplicit&eacute; de cr&eacute;ation de texte HTML.
+
+<HR>
+
+<A NAME = "param"><H2>Passage de param&egrave;tres des formes</H2><BR>
+<CENTER>
+Veuillez completes ce formulaire SVP
+<FORM NAME = "nameForm">
+<TABLE>
+<TR>
+<TD ALIGN = "right">Nom :
+<TD ALIGN = "left"><INPUT TYPE = "text" NAME = "nom" SIZE = 20>
+<TR>
+<TD ALIGN = "right">Prenom :
+<TD ALIGN = "left"><INPUT TYPE = "text" NAME = "prenom" SIZE = 20>
+<TR>
+<TD ALIGN = "right">Email :
+<TD ALIGN = "left"><INPUT TYPE = "text" NAME = "adresse" COLS = 20 ROWS = 4>
+</TABLE>
+<INPUT TYPE = "submit" VALUE = "Submit" ONCLICK = "verData()">
+</CENTER>
+</FORM>
+
+<P>Cet exemple (qui s'appuie sur la fonction <CODE>verData()</CODE>) montre comment r&eacute;cup&eacute;rer simplement les donn&eacute;es introduites dans une forme, en v&eacute;rifiant que tous les champs ait &eacute;t&eacute; remplis.
+
+<HR>
+
+<A NAME = "events"><H2>Les &eacute;v&eacute;nements</H2><BR>
+
+<FORM NAME = "myForm" ONSUBMIT = "verSubmit()">
+<CENTER>
+<TABLE>
+<TR>
+<TD> <INPUT TYPE = "button" VALUE = "Alerte"   ONCLICK = "alert('Message alerte')">
+<TD> <INPUT TYPE = "button" VALUE = "Dialogue" ONCLICK = "confirm('Boite de dialogue')">
+<TD> <INPUT TYPE = "button" VALUE = "Fenetre"  ONCLICK = "window.open('javascript.html')">
+</TABLE>
+<INPUT TYPE = "text" ONFOCUS = "self.status = 'Selection Texte'" ONBLUR = "self.status = 'Deselection Texte'">
+<INPUT TYPE = "button" VALUE = "SUBMIT" ONCLICK = "verSubmit()">
+</CENTER>
+</FORM>
+
+<P>Les diff&eacute;rents &eacute;l&eacute;ments peuvent r&eacute;pondre &agrave; des actions de l'utilisateur. Par exemple, un click de la souris ou la soumission d'une forme.
+<P>La seule fonction &eacute;crite est <CODE>verSubmit()</CODE>.
+
+<HR>
+
+<A NAME = "chaine"><H2>Traitement des cha&icirc;nes de caract&egrave;res</H2><BR>
+
+<CENTER>
+Introduire une chaine de caracteres
+<FORM NAME = "stringForm">
+<INPUT TYPE = "text" NAME = "inString" SIZE = 20>
+<TABLE>
+<TR>
+<TD ALIGN = "center" ><INPUT TYPE = "button" NAME = "Str" VALUE = "Majuscules" ONCLICK = "document.stringForm.inString.value = document.stringForm.inString.value.toUpperCase()">
+<TD ALIGN = "center"><INPUT TYPE = "button" NAME = "Str" VALUE = "Minuscules" ONCLICK = "document.stringForm.inString.value = document.stringForm.inString.value.toLowerCase()">
+</TABLE>
+</CENTER>
+</FORM>
+
+<P>Voici un exemple d'utilisation des fonctions pr&eacute;d&eacute;finies de JavaScript - <CODE>toUpperCase()</CODE> et <CODE>toLoweCase()</CODE>.
+
+<HR>
+
+<A NAME = "date"><H2>Traitement des objets Date</H2><BR>
+<FORM NAME = "dateForm">
+<CENTER>
+<TABLE>
+<TR>
+<TD>Jour
+<TD><INPUT TYPE = "text" NAME = "day" SIZE = 2>
+<TD>Mois
+<TD><INPUT TYPE = "text" NAME = "month" SIZE = 2>
+<TD>Annee
+<TD><INPUT TYPE = "text" NAME = "year" SIZE = 2>
+</TABLE>
+</CENTER>
+</FORM>
+
+<HR>
+
+<P>Cette forme est remplie automatiquement par la fonction <CODE>setDate()</CODE> qui est charg&eacute;e au moment du load de la page. A noter la pr&eacute;sence d'un eventHandler dans le &lt;BODY&gt;.
+
+<HR>
+
+<BR>
+<CENTER>
+ - ENST T&eacute;l&eacute;com Paris -<BR>
+M&eacute;moire de fin d'&eacute;tudes - Andrej Sobkowski
+</CENTER>
+</BODY>
+</HTML>

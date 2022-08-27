@@ -1,0 +1,99 @@
+
+<HTML>
+<BODY BGCOLOR="FFFFFF">
+<H4>
+Int&eacute;r&ecirc;t et principe de l'algorithme de Viterbi</H4>
+
+Comme nous l'avons vu pr&eacute;c&eacute;demment, l'encodage des codes correcteurs d'erreurs peut &ecirc;tre effectu&eacute; par des circuits dont la structure est &eacute;tonnamment simple. Le d&eacute;codage de canal (d&eacute;codage correcteur d'erreurs) est une fonction beaucoup plus complexe. Il repr&eacute;sente un des probl&egrave;mes  majeurs de la th&eacute;orie des communications. Il n'existe pas d'algorithme g&eacute;n&eacute;rique de complexit&eacute; acceptable permettant de d&eacute;coder d'une mani&egrave;re optimale n'importe quel code. Dans le cas des codes convolutionnels, on dispose de l'algorithme de Viterbi. La complexit&eacute; de cet algorithme est en O(2l) o&ugrave; l est la longueur du registre &agrave; d&eacute;calage pr&eacute;sent dans le codeur (voir partie sur l'encodage convolutionnel dans la norme GSM). Sa complexit&eacute; est donc exponentielle en fonction de celle du codeur. Il n'est donc utilis&eacute; que pour de faible valeur de l. Dans la norme GSM, l=4, et l=8 dans la norme CDMA IS95.
+Le principe de l'algorithme de Viterbi est celui de la programmation dynamique. Il est bas&eacute; sur la notion d'&eacute;tat et d'automate. On utilise le fait que le codeur correspond &agrave; un automate tr&egrave;s simple ayant un nombre limit&eacute;s d'&eacute;tats. Le r&eacute;cepteur, pour estimer la suite &eacute;mise, va chercher &agrave; estimer &agrave; chaque instant l'&eacute;tat du codeur.
+
+<H4>
+Mod&eacute;lisation du canal
+</H4>
+Nous ne pr&eacute;sentons ci-dessous que les r&eacute;sultats principaux permettant de comprendre le principe de l'algorithme de Viterbi. Pour un expos&eacute; plus d&eacute;taill&eacute;, sur les parties concern&eacute;es.
+<P>
+&Agrave; chaque instant, le d&eacute;codeur doit estim&eacute; pour une s&eacute;quence y=(yi) re&ccedil;ue quelle est la s&eacute;quence cod&eacute;e c=(ci) correspondante. En pratique, chaque yi repr&eacute;sente deux &eacute;chantillons de signal pris apr&egrave;s d&eacute;sentrelacement. On exprime yi sous la forme yi=ri+bi, o&ugrave; bi repr&eacute;sente le bruit et ri l'&eacute;l&eacute;ment de signal.
+<P>
+Les imperfections du signal sont mod&eacute;lis&eacute;es par un processus al&eacute;atoire gaussien suppos&eacute; i.i.d.
+
+Lorsque le bruit n'est pas n&eacute;gligeable, le signal re&ccedil;u pr&eacute;sente un &eacute;cart avec le signal putatif &eacute;mis, que nous mesurons par la distance euclidienne.
+Le calcul de la probabilit&eacute; P(yi/ci) donne alors:
+<BR>
+<IMG SRC="ViterEq1.GIF">
+
+<H4>
+Maximum de vraisemblance
+</H4>
+Une mani&egrave;re universelle de d&eacute;coder un code est de comparer la s&eacute;quence re&ccedil;ue y=(yi) &agrave; toutes les s&eacute;quences possibles c=(ci) qui peuvent &ecirc;tre &eacute;mises et de choisir la plus vraisemblable. Cette mani&egrave;re de proc&eacute;der n'a le plus souvent qu'un int&eacute;r&ecirc;t th&eacute;orique puisqu'elle devient vite exponentielle (2i comparaisons) au fur et &agrave; mesure que la longueur de la s&eacute;quence cro&icirc;t. Le crit&egrave;re de comparaison naturel que l'on consid&egrave;re en th&eacute;orie des communications est celui du "maximum de vraisemblance ".
+<P>
+Le d&eacute;codage de l'observation y suivant le crit&egrave;re du maximum de vraisemblance consiste &agrave; choisir la s&eacute;quence cod&eacute;e c* a posteriori la plus probable. Dans le cas o&ugrave; tous les messages (c'est-&agrave;-dire toutes les s&eacute;quences cod&eacute;es) sont a priori &eacute;quiprobables, ceci revient &agrave; maximiser suivant c la quantit&eacute; P(y/c).
+Le canal &eacute;tant sans m&eacute;moire, cette probabilit&eacute; s'&eacute;crit:<BR>
+<IMG SRC="ViterEq2.GIF" ><BR>
+On se place dans le cas gaussien, et on remplace chaque terme P(yi/ci) par son expression en fonction de la distance d(yi,ri).En prenant le logarithme des deux membres, on obtient une expression du type suivant:
+<BR>
+<IMG SRC="ViterEq3.GIF" >
+<BR>
+Il est alors clair que le d&eacute;codage au maximum de vraisemblance revient &agrave; minimiser une distance entre le mot re&ccedil;u y et les s&eacute;quences cod&eacute;es c. Cette distance peut s'exprimer de la fa&ccedil;on suivante:
+<P>
+
+<IMG SRC="ViterEq4.GIF" >
+
+<P>Elle est donc additive suivant les diff&eacute;rentes parties qui composent les s&eacute;quences.
+<H4>
+Treillis de codage
+</H4>
+Le diagramme du treillis permet de visualiser en fonction du temps (i en abscisses) les &eacute;volutions de l'&eacute;tat du codeur (s en ordonn&eacute;e). Ce treillis a une structure de graphe orient&eacute; (dans le sens du temps). Partant de l'&eacute;tat nul (s0=0000) &agrave; l'instant i=0, on peut suivre les &eacute;volutions possibles. A l'instant i=1, deux &eacute;tats sont accesibles (so et s=1000),... &agrave; l'instant i=l=4, les 2l=16 &eacute;tats peuvent &ecirc;tre atteints.
+<H4>
+D&eacute;finitions utiles pour d&eacute;crire l'algorithme de Viterbi
+</H4>
+Un noeud du treillis est un couple (i,s) o&ugrave; s appartient &agrave; l'ensemble S des &eacute;tats. &Agrave; un cheminement dans le treillis on peut faire correspondre d'une mani&egrave;re biunivoque une s&eacute;quence cod&eacute;e &eacute;mise par le codeur. Cette correspondance permet d'assimiler chemins et s&eacute;quences cod&eacute;es.<P>
+En r&eacute;gime stationnaire , c'est-&agrave;-dire pour i>l, on note qu'&agrave; chaque noeud du graphe arrivent (et partent) deux branches correspondant &agrave; deux &eacute;tats possibles (ui-1=0 ou ui-1=1). On d&eacute;signera par Pred(s) l'ensemble des &eacute;tats s' pr&eacute;c&eacute;dant l'&eacute;tat s. Chaque branche du treillis repr&eacute;sente une transition entre &eacute;tats s' et s de l'automate de codage. Elle peut &ecirc;tre &eacute;tique t&eacute;e par une double information: la s&eacute;quence binaire d'entr&eacute;e u[s',s] et le vecteur des &eacute;l&eacute;ments de signaux de sorties r[s',s] du codeur-modulateur.
+<H4>
+Principe du d&eacute;codage
+</H4>
+
+L'algorithme de Viterbi revient &agrave; chercher le chemin dans le treillis qui est le plus favorable, c'est-&agrave;-dire le plus court par rapport &agrave; la m&eacute;trique que nous avons d&eacute;finie. Il est bas&eacute; sur l'argument suivant:<BR>
+Le chemin le plus court entre deux noeuds (par exemple entre un noeud initial (i=0, s0) et un noeud final (i=Imax,s0) passe n&eacute;cessairement &agrave; chaque instant interm&eacute;diaire j par un &eacute;tat s.
+Du fait de la nature additive de la m&eacute;trique, les deux demi-chemins joignant (0,s0) et (j,s) d'une part, (j,s) et (Imax,s0) d'autre part, sont eux-m&ecirc;me optimaux;<P>
+Pour &eacute;tablir le chemin optimal entre les instants 0 et Imax, on va estimer, &agrave; chaque instant j, les chemins optimaux entre le noeud d'origine (i=0,s0) et tous les noeuds (j,s), s appartenant &agrave; S. Cette estimation peut &ecirc;tre faite r&eacute;cursivement en r&eacute;actualisant &agrave; chaque instant j un tableau de m&eacute;triques M[s] qui contient la plus petite distance entre la s&eacute;quence re&ccedil;ue (y0,y1,...,yj) et un chemin aboutissant au noeud (j,s). Il faut de m&ecirc;me garder trace dans un tableau Path[s] du meilleur chemin (identifi&eacute; par un s&eacute;quence d'entr&eacute;e u) aboutissant &agrave; ce noeud.
+<P>
+On obtient alors l'algorithme de Viterbi:
+<P>
+Pour i=0 &agrave; Imax faire
+<PRE>	{
+	Pour chaque &eacute;tat s de S faire
+		{
+		Mnew[s]=Min (Mold[s']+wid(yi,r[s',s])) pour s' appartenant &agrave; Pred(s);
+		soit s'* un &eacute;tat minimisant 
+		Pathnew[s]=concat (Pathold[s'*],u[s'*,s]);
+		}
+	Mold <-Mnew
+	Pathold<-Pathnew
+	}
+</PRE>
+<H4>
+Mod&eacute;lisation du canal
+</H4>
+A un moment donn&eacute;, le probl&egrave;me du d&eacute;codeur est d'estimer pour une s&eacute;quence re&ccedil;ue y=(yi), la s&eacute;quence cod&eacute;e c=c(ci) qui l'a provoqu&eacute;. Pratiquement, dans le sysyt&egrave;me GSM, yi repr&eacute;sente deux &eacute;chantillons de signal pris en sortie de l'&eacute;galiseur du r&eacute;cepteur apr&egrave;s d&eacute;sentrelacement.
+Le mod&egrave;le de canal utilis&eacute; par les th&eacute;oriciens et qui colle raisonnablement &agrave; la r&eacute;alit&eacute; permet d'exprimer l'&eacute;l&eacute;ment de signal re&ccedil;u yi, &eacute;l&eacute;ment de R2 en fonction du vecteur binaire &eacute;mis ci=(ci',ci''):<BR>
+	yi=ri+bi<BR>
+avec:
+<BR>
+<IMG SRC="ViterEq5.GIF" >
+<BR>
+ d&eacute;signant l'&eacute;nergie par symbole binaire cod&eacute;.<P>
+
+Les imperfections du canal sont mod&eacute;lis&eacute;es par un processus al&eacute;atoire gaussien suppos&eacute; i.i.d. (variables al&eacute;atoires ind&eacute;pendantes et identiquement distribu&eacute;es). Chaque couple bi=(bi',bi'') est ainsi un vecteur al&eacute;atoire normal centr&eacute;, de matrice de covariance diagonale, bi=N(0,siI2).Avec ces notations &&&ECIRC;GR&AGRAV&ECIRC;;V&ECIRC;;&AGRAV&ECIRC;;C&UGRAV&ECIRC;;T&&ECIRC;GR&AGRAV&ECIRC;;V&ECIRC;;;/si2 &eacute;quivaut &agrave; un rapport signal sur bruit. Ce mod&egrave;le int&egrave;gre une modulation antipodale symbolis&eacute; par la correspondance <IMG SRC="ViterEq6.GIF"> qui repr&eacute;sente d'une mani&egrave;re suffisemment exacte la modulation GMSK. Ce canal &agrave; entr&eacute;e binaire perturb&eacute; par un bruit additif blanc gaussien, est parfois d&eacute;sign&eacute; par la simple locution "canal binaire gaussien ".
+<P>
+Pour un canal de transmission parfait (c'est-&agrave;-dire sans multi-trajet, sans bruit et sans interf&eacute;rence) et en l'absence de distorsion dans les deux &eacute;metteurs-r&eacute;cepteurs, bi =0. Dans ce cas id&eacute;al, yi est li&eacute; d'une mani&egrave;re d&eacute;terministe au vecteur binaire &eacute;mis. Lorsque le bruit n'est pas n&eacute;gligeable, il est possible de mesurer un &eacute;cart d(yi,ri) entre le signal re&ccedil;u et un signal putatif &eacute;mis. Sous l'hypoth&egrave;se gaussienne dans laquelle nous nous pla&ccedil;ons, il est judicieux de consid&eacute;rer la distance euclidienne (ou son carr&eacute;):
+<BR>
+<IMG SRC="ViterEq7.GIF" >
+<BR>
+puisqu'elle intervient directement directement dans le calcul de la probabilit&eacute;, donn&eacute;e par:
+<BR>
+<IMG SRC="ViterEq8.GIF" >
+<BR>
+wi=2si2, qui nous permettra d'&eacute;tablir une m&eacute;trique de d&eacute;codage.
+
+</BODY>
+</HTML>

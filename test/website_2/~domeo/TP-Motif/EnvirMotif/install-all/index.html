@@ -1,0 +1,37 @@
+#!/bin/sh
+##############################################################################
+#
+# install-all = install motif + .login + .cshrc
+# E. Lecolinet - Telecom Paris - oct 95
+#
+##############################################################################
+
+
+### fichiers a copier depuis le directory $SOURCE_DIR :
+
+SOURCE_DIR=/inf/dantes/tp/domeo/TP-Motif/EnvirMotif
+COPY_FILES=".Xdefaults .xinitrc .xsession .mwmrc .emacs .xmodmaprc .inputrc"
+
+### version csh & tcsh :
+COPY_FILES=".login .cshrc "$COPY_FILES
+
+### ajouter dans RENAME_FILES les fichiers indesirables :
+RENAME_FILES="xinit startx "$COPY_FILES
+
+cd $HOME
+
+### rename old files :
+for F in $RENAME_FILES
+do
+  if [ -f $F.old.1 ]; then /usr/bin/mv $F.old.1 $F.old.2; fi
+  if [ -f $F ]; then /usr/bin/mv $F $F.old.1; fi
+done
+
+### copy new files :
+for F in $COPY_FILES
+do
+  echo install $SOURCE_DIR/$F
+  /usr/bin/cp $SOURCE_DIR/$F ${HOME}
+done
+
+

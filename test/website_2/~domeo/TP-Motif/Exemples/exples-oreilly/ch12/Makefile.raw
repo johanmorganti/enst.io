@@ -1,0 +1,8 @@
+PROGRAMS=alpha_list browse extended multiple scrolled_list search_list simple_list
+
+CFLAGS=
+LIBS= -lXm -lXt -lX11
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

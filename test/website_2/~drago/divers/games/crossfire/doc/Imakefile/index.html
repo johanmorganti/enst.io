@@ -1,0 +1,66 @@
+/*   CrossFire, A Multiplayer game for X-windows
+ *
+ *   $Id: Imakefile,v 1.12 1993/08/08 16:01:39 frankj Exp $
+ *
+ *   Copyright (C) 1992 Frank Tore Johansen
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program; if not, write to the Free Software
+ *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ *   The author can be reached via e-mail to frankj@ifi.uio.no.
+ */
+
+#include "../config/crossfire.tmpl"
+
+#define IHaveSubdirs
+#define PassCDebugFLags
+
+SUBDIRS = spoiler spell-docs
+
+FILES = Imakefile Crossedit.doc PlayerStats RunTimeCommands SurvivalGuide \
+	crossfire.doc crossfire.man crosslib.doc \
+	editable.README mapguide mapmakers_guide_to_runes \
+	spell_params.doc spell-paths spellcasters_guide_to_runes spoiler.ps \
+	teleporter.doc xbmtobdf.man xledit.man 
+
+
+spoiler.ps: force_depend
+	(cd spoiler; $(MAKE) $(MKFLAGS) all)
+
+crosslib.doc: force_depend
+	(cd ../common; make doc)
+
+force_depend:
+
+install::
+
+/* InstallManPage(crossfire) */
+
+/* InstallManPage(xledit) */
+
+InstallManPage(crossfire, $(MANDIR))
+InstallManPage(xbmtobdf, $(MANDIR))
+InstallManPage(xledit, $(MANDIR))
+
+depend::
+
+clean::
+
+all::
+
+MakeArchive(spell-docs spoiler)
+
+MakeSubdirs(spell-docs spoiler)
+
+InsertArchive($(FILES),doc)

@@ -1,0 +1,68 @@
+<HTML> <HEAD> <TITLE> Résumé de la thèse de Jocelyne Farhat-Gissler </TITLE>
+ </HEAD>
+
+<DT>
+
+<body>
+<p>
+<BR>
+<H1> Ordonnancement automatique d'applications présentant des contraintes de 
+QoS temporelles </H1> <BR>
+<BR>
+<BR>
+<I> Dans cette thèse, nous nous intéressons au support des applications
+présentant des contraintes temporelles 
+de qualité de service (QoS). La prise en compte de ces contraintes est 
+aujourd'hui faite manuellement par le concepteur d'applications qui doit 
+les traduire en directives d'ordonnancement. 
+
+<BR>
+<BR>
+
+Nous proposons une approche dans laquelle les contraintes de QoS temporelles
+sont automatiquement traduites en directives d'ordonnancement. Dans cette
+approche, nous suggérons au concepteur d'applications de programmer
+son application en spécifiant des contraintes temporelles (sous forme
+d'équations de QoS simples) entre des événements importants de son
+application. Ces contraintes temporelles sont alors traduites en
+directives d'ordonnancement. Les fils de contrôle (user-threads) de
+l'application sont découpés en brins auxquels sont associés les
+contraintes temporelles. Cette décomposition en brins guide
+l'ordonnancement des fils de contrôle applicatifs associés. Le système
+support met en oeuvre un mécanisme d'ordonnancement coopératif basé
+sur un dialogue entre l'ordonnanceur du système d'exploitation et
+l'ordonnanceur applicatif.  Les deux ordonnanceurs appliquent une politique
+d'ordonnancement EDF (Earliest Deadline First). Ils ordonnancent au 
+mieux (best-effort) en tenant compte des contraintes imposées. 
+
+<BR>
+<BR>
+
+Dû à cet environnement de meilleur effort, qui ne procure aucune garantie,
+les applications doivent être capable de s'adapter aux variations de la 
+charge dans le système. Pour cette raison, l'ordonnanceur applicatif
+met en oeuvre une politique de gestion des variations de la charge, 
+basée sur les spécifications du développeur d'applications.
+
+<BR>
+<BR>
+
+Un protocole de partage des ressources est également proposé pour 
+permettre aux différents fils de contrôle applicatifs de partager
+des ressources sans risque d'interblocage (deadlocks).
+
+<BR>
+<BR>
+
+Des mesures du coût additionnel engendré par l'ordonnancement
+automatique sont effectuées grâce à un démonstrateur que nous avons
+développé.  Les mesures sont encourageantes. Elles sont, cependant,
+très dépendantes de la structure du graphe de dépendances généré à
+partir des portions de code de l'application.
+
+<BR>
+<BR>
+
+</I></A>
+
+

@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>SOCIETE VIRTUELLE</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; SunOS 5.5 sun4d) [N
+etscape]">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#F5DEB3" BACKGROUND="bla.gif">
+
+<CENTER><P><IMG SRC="barre.bleu.bleu.gif" ALT="---------" HEIGHT=4 WIDTH=648>
+</P></CENTER>
+
+<H1 ALIGN=CENTER>La Soci&eacute;t&eacute; Virtuelle: De l'extension du WWW &agrave un environnement 3D  multi-utilisateurs partag&eacute;</H1>
+
+<P><IMG SRC="barre.bleu.bleu.gif" ALT="---------" HEIGHT=4 WIDTH=648> </P>
+
+<P>
+<HR></P>
+
+
+<TABLE CELLSPACING=0 CELLPADDING=0 >
+<TR>
+<CENTER><IMG SRC="vs.gif" > </CENTER>
+<BR>
+<H5>Exemple d'environnement en Soci&eacute;t&eacute; Virtuelle: deux utilisateurs repr&eacute;sent&eacute;s par les &eacute;l&eacute;ments rouges et verts partagent un espace de vid&eacute;oconf&eacute;rence.</H5>
+
+</TR>
+</TABLE>
+
+<H3><P>Ce document d&eacute;crit l'architecture et le protocole d'un syst&egrave;me destin&eacute &agrave d&eacutefinir un environnement 3D partag&eacute; par plusieurs utilisateurs en interaction. Cette description repose sur l'infrastructure du WWW courant et du langage VRML.
+Seront successivement abord&eacute;s les implications technologiques de la Soci&eacute;t&eacute; Virtuelle, l'&eacute;bauche d'une architecture globale supportant cet environnement, et un ensemble de protocoles d'&eacute;change.
+Enfin une impl&eacute;mentation exp&eacute;rimentale de la Soci&eacute;t&eacute; Virtuelle sera d&eacute;taill&eacute;e.
+</P></H3>
+
+<H2><FONT COLOR=BLUE>1. Introduction</H2></FONT>
+<H4><P></FONT>Le concept de Soci&eacute;t&eacute; Virtuelle est simple et intuitif; il s'agit en fait de cr&eacute;er un environnement dans lequel il est possible de construire des mondes 3D. VRML offre d&eacute;j&agrave; cette possibilit&eacute, mais ne permet ni la participation simultan&eacute;e de plusieurs personnes, ni leurs &eacute;ventuelles interactions. D'une certaine fa&ccedil;on, la Soci&eacute;t&eacute; Virtuelle rassemble dans un espace de communication le WWW classique et un cadre de description 3D.
+Le mod&egrave;le de Soci&eacute;t&eacute; Virtuelle est une extension naturelle des browsers WWW et VRML. A partir d'un fichier VRML, une sc&egrave;ne 3D est affich&eacute;e &agrave; l'&eacute;cran; l'utilisateur peut bien sur y naviguer, manipuler des objets, mais toujours seul. En mode de Soci&eacute;t&eacute; Virtuelle, il est non seulement possible de visualiser dans la sc&egrave;ne m&ecirc;me la pr&eacute;sence d'autres utilisateurs et leur action sur l'environnement, mais aussi de communiquer avec eux.
+Il existe actuellement quelques syst&egrave;mes qui vont dans le sens d'une virtualisation des communications (<A HREF="http://www.sics.se/dive/">DIVE</A>, NPSNET), mais ils demeurent limit&eacute;s: nombre r&eacute;duit d'utilisateurs, fonctionnement en LAN uniquement, possibilit&eacute d'interactivit&eacute; peu d&eacute;velopp&eacute;e.
+<P><BR></P>
+
+<H2><FONT COLOR=BLUE>2. Les pr&eacute; requis d'un syst&egrave;me de Soci&eacute;t&eacute; Virtuelle</H2></FONT>
+
+<P>La Soci&eacute;t&eacute; Virtuelle repose sur des technologies &eacuteprouv&eacute;es (WWW et VRML). Plusieurs aspects lui sont n&eacute;anmoins propres:
+<DL>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Rendre possible le partage des donn&eacute;es et de la sc&egrave;ne.</DD>
+</DT>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Rendre possible le mouvement dans une sc&egrave;ne.</DD>
+</DT>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Autoriser l'existence d'objets externes, i.e. les autres utilisateurs.</DD>
+</DT>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Permettre la "scalabilit&eacute;" (plusieurs utilisateurs simultan&eacute;ment dans le m&ecirc;me monde 3D).</DD>
+</DT>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Pouvoir travailler &agrave d&eacute;bit variable (9600 bps ~ 150 Mbps).</DD>
+</DT>
+<DT> 
+<DD><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> D&eacute;velopper une biblioth&egrave;que &eacute;tendue d'applications.</DD>
+</DT>
+</DL>
+
+Ces sp&eacute;cificit&eacute;s n&eacute;cessitent:
+<DL>
+<DT> 
+<DD><STRONG>1.</STRONG> Une architecture de r&eacute;f&eacute;rence de la Soci&eacute;t&eacute; Virtuelle (<STRONG> VSRA </STRONG>pour Virtual Society Reference Architecture) .</DD>
+</DT>
+<DT> 
+<DD><STRONG>2. </STRONG> Une extension de VRML.</DD>
+</DT>
+<DT> 
+<DD><STRONG>3. </STRONG> Une architecture de description des objets.</DD>
+</DT>
+<DT> 
+<DD><STRONG>4.</STRONG> Un protocole d'&eacute;change entre le serveur et le client (<STRONG> VSCP </STRONG> pour Virtual Society Server-Client Protocol).</DD>
+</DT>
+</DL>
+<P><BR></P>
+<H2><FONT COLOR=BLUE>3. L'architecture de r&eacute;f&eacute;rence de la Soci&eacute;t&eacute; Virtuelle</H2></FONT>
+
+<H3><FONT COLOR=GREEN>3.1 Architecture haut niveau</H3></FONT><BR>
+
+L'architecture de la Soci&eacute;t&eacute Virtuelle comprend 4 composantes principales:
+<DL>
+<DT> 
+<DD><FONT COLOR=RED><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Le client VS</DD>.</FONT><BR>
+Il s'agit d'un programme d'application qui permet de visualiser le monde 3D, dans notre cas un document VRML &agrave l'aide d'un browser VRML. Le client VS transmet et re&ccedil;oit toute modification g&eacute;om&eacute;trique de la sc&egrave;ne via le protocole VSCP (voir ci-dessous).
+</DT>
+<DT> 
+<DD><FONT COLOR=RED><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Le serveur VS.</FONT>
+C'est un serveur sp&eacute;cifique &agrave la Soci&eacute;t&eacute; Virtuelle. Sa t&acirc;che principale se borne &agrave recevoir toutes les modifications de l'environnement 3D r&eacute;alis&eacute;es par chaque utilisateur, pour ensuite les communiquer aux autres utilisateurs de fa&ccedil;on &agrave ce qu'ils puissent visualiser les changements de la sc&egrave;ne.</DD> 
+</DT>
+<DT> 
+<DD><FONT COLOR=RED><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Les "objets d'application" dans le serveur VS.</FONT>
+Un des principaux buts de la Soci&eacute;t&eacute; Virtuelle est que ses membres puissent rapidement et facilement construire leurs propres applications (un parc, une ville, un magasin, etc...). </DD>
+</DT>
+<DT> 
+<DD><FONT COLOR=RED><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Le VSCP (le protocole VS serveur-client).</FONT>
+C'est le protocole gr&acirc;ce auquel les diff&eacute;rents clients peuvent communiquer entre eux.</DD>
+</DT>
+</DL>
+<BR>
+<TABLE CELLSPACING=0 CELLPADDING=0 >
+<TR>
+<IMG SRC="vsnetwork.gif" > 
+<BR>
+<H5>Relation client-serveur entre le WWW et la  Soci&eacute;t&eacute; Virtuelle.</H5>
+</TR>
+</TABLE>
+<P><BR></P>
+<H3><FONT COLOR=GREEN>3.2 Communication entre les composantes de la Soci&eacute;t&eacute; Virtuelle</H3></FONT><BR>
+
+<P>L'entr&eacute;e dans la Soci&eacute;t&eacute; Virtuelle s'effectue &agrave; partir d'un document VRML et d'un browser WWW. Le document VRML renferme une description statique du monde 3D, qu'un programme du client VS visualise. Le visualisateur doit &ecirc;tre connect&eacute; &agrave un serveur VS de telle fa&ccedil;on qu'il puisse &ecirc;tre inform&eacute; de la pr&eacute;sence d'autres utilisateurs, et des modifications apport&eacute;es &agrave la sc&egrave;ne.
+La localisation du serveur VS s'effectue de la mani&egrave;re suivante: Le client VS transmet par son browser WWW une adresse URL, qui est en fait une demande de recherche du serveur appropri&eacute;. La r&eacute;ponse est ensuite &eacute;mise du serveur WWW vers le browser WWW sous la forme d'un document HTML, transmis ensuite au client VS. L'adresse URL devrait au moins contenir le nom du fichier VRML, tandis que le document HTML renfermerait l'adresse du serveur et le num&eacute;ro de port d'un serveur VS ad&eacute;quat.</P
+<P> Bien que cette proc&eacute;dure soit simple, elle ne n&eacute;cessite pas moins d'&ecirc;tre standardis&eacute;e au niveau de l'ensemble des clients VS. Cette proc&eacute; est d&eacute;nomm&eacute;e <STRONG> VSEP/WWW </STRONG> (Virtual Society Entry Protocol).
+Une fois la VSEP/WWW achev&eacute;e, la communication entre le serveur et le client est assur&eacute;e par le VSCP (Virtual Society Client Server Protocol). Son r&ocirc;le consiste essentiellement &agrave informer le serveur de toute modification apport&eacute;e par le client.</P>
+
+<P>
+Il est judicieux de d&eacute;crire le processus de communication par un exemple concret.
+De fa&ccedil;on g&eacute;n&eacute;rale un client VS est repr&eacute;sent&eacute; dans la  Soci&eacute;t&eacute; Virtuelle par un objet 3D (un robot par exemple), dont la position
+et l'attitude sont control&eacute;es par le client VS &agrave; l'aide par exemple d'une souris. L'utilisateur peut naviguer dans la sc&egrave;ne en d&eacute;pla&ccedil;ant sa repr&eacute;sentation et en modifiant sa posture. Toutes les informations de mouvement sont envoy&eacute;es du client VS vers le serveur VS en utilisant le protocole VSCP. Le serveur VS propage ensuite celles-ci vers les autres clients connect&eacute;s.</P>
+
+<P>
+Le r&ocirc;le de l'objet application au niveau du serveur VS est de:
+<DL>
+<DT> 
+<DD><STRONG>1. </STRONG><FONT COLOR=RED>Conserver en m&eacute;moire </FONT>l'&eacute;tat de l'application, i.e. l'information, et ex&eacute;cuter les instructions associ&eacute;es.<BR>
+</DT>
+<DT> 
+<DD><STRONG>2. </STRONG><FONT COLOR=RED>Envoyer des messages sp&eacute;cifiques</FONT> aux diff&eacute;rents clients en fonction de l'&eacute;tat courant de l'application.
+</DT>
+</DL>
+
+Par exemple si on ouvre un magasin dans la Soci&eacute;t&eacute; Virtuelle, lorsqu'un client y p&eacute;n&egrave;tre, il s'av&egrave;re judicieux de garder une trace de ses pr&eacute;f&eacute;rences en m&eacute;moire pour ses visites futures. Lors de son prochain passage, le commer&ccedil;ant pourra ainsi montrer &agrave; son client de nouveaux produits en accord avec ses pr&eacute;f&eacute;rences.</P>
+<P><BR></P>
+<H2><FONT COLOR=BLUE>4. Protocole du VSCP</H2></FONT>
+
+<H3><FONT COLOR=GREEN>4.1 Principales caract&eacute;ristiques du VSCP</H3></FONT><BR>
+
+<P>
+Trois contraintes ont fa&ccedil;onn&eacute; le protocole VSCP:
+<DL>
+<DT> 
+<DD><STRONG>1. </STRONG><FONT COLOR=RED> Autoriser un maximum de libert&eacute; au niveau de l'architecture du serveur VS.</FONT><BR>
+Il est assez &eacute;vident qu'&agrave; partir du moment o&ugrave; l'on se propose que le serveur VS puisse supporter les connections simultan&eacute;es de milliers d'utilisateurs, une architecture classique est parfaitement insuffisante.
+</DT>
+<DT> 
+<DD><STRONG>2. </STRONG><FONT COLOR=RED> Tenir compte des disparit&eacute;s en termes de d&eacute;bit d'informations entre le client et le serveur.</FONT><BR>
+Pour de faibles capacit&eacute;s, la communication en VS se limite &agrave;
+
+  <DL>
+  <DT>
+  <DD><STRONG>. </STRONG>Charger une page de description du monde VRML au moment de la connection.</DD>
+  </DT>
+  <DT> 
+  <DD><STRONG>. </STRONG>Cr&eacute;er les repr&eacute;sentations des autres clients connect&eacute;s.</DD>
+  </DT>
+  <DT> 
+  <DD><STRONG>. </STRONG>Envoyer et recevoir r&eacute;guli&egrave;rement les mises &agrave; jour de l'environnement.</DD>
+  </DT>
+  </DL>
+
+</DD>
+
+</DT>
+<DT> 
+<DD><STRONG>3. </STRONG><FONT COLOR=RED> Etendre la Soci&eacute;t&eacute; Virtuelle &agrave; des programmes d'applications non sp&eacute;cifiquement con&ccedil;ues pour la VS.</FONT><BR>Un des buts principaux de la VS consiste &agrave; permettre aux utilisateurs de lancer leurs propres applications dans le monde partag&eacute;, ce qui n&eacute;cessite un protocole d'&eacute;change particuli&egrave;rement souple et adaptable aux capacit&eacute;s du client.</DD>
+</DT>
+</DL>
+</P>
+
+<P><BR></P>
+
+<H3><FONT COLOR=GREEN>4.2 Les pr&eacute; requis du VSCP</H3></FONT><BR>
+
+Une architecture souple et ouverte telle que celle imagin&eacute;e ci-dessus n&eacute;cessite plusieurs pr&eacute; requis:
+<DL>
+<DT> 
+<DD><STRONG>1. </STRONG><FONT COLOR=RED>Transmission de message aux objets.</FONT><BR>
+Un programme d'application dans la  Soci&eacute;t&eacute; Virtuelle est en fait un ensemble d'objets 3D et d'actions qui leurs sont associ&eacute;es. Pour ex&eacute;cuter une de ces actions, le protocole doit envoyer l'identit&eacute; de l'objet cible ainsi que celle de l'action invoqu&eacute;e, et les arguments de la proc&eacute;dure de l'action.</DD>
+</DT>
+<DT> 
+<DD><STRONG>2. </STRONG><FONT COLOR=RED> Haute performance des transformations des objets 3D.</FONT><BR>
+Les messages de modification de mouvement ou de forme des objets 3D doivent &ecirc;tre transmis avec un forte priorit&eacute; par rapport &agrave tout autre type de message. Une attention particuli&egrave;re doit &ecirc;tre consacr&eacute;e au mouvement de l'objet repr&eacute;sentant l'utilisateur.</DD>
+</DT>
+<DT> 
+<DD><STRONG>3. </STRONG><FONT COLOR=RED> Extensibilit&eacute; du protocole aux applications personnelles.</FONT><BR>
+Les d&eacute;veloppeurs d'applications doivent &ecirc;tre en mesure de d&eacute;finir leurs propres types et formats de messages. On se propose ainsi de leur laisser un espace de maneuvre afin d'&eacute;tendre le protocole VSCP.</DD>
+</DT>
+</DL>
+</P>
+<P><BR></P>
+
+<H3><FONT COLOR=GREEN>4.3 Les sp&eacute;cifications du protocole</H3></FONT><BR>
+
+<DL>
+<DT> 
+<DD><STRONG> 1. </STRONG><FONT COLOR=RED> Transmission de messages orient&eacute;e objet.</FONT><BR>
+Le format du message est le suivant:
+
+<DL>
+<DT><DD>1) Identificateur de l'objet cible.</DD></DT>
+<DT><DD>2) S&eacute;lecteur du message.</DD></DT>
+<DT><DD>3) Arguments du message.</DD></DT>
+</DL>
+<BR>
+Il existe cependant deux exceptions: la cr&eacute;ation et la suppression d'objets sont en effet trait&eacute;es diff&eacute;remment:
+
+  <DL>
+  <DT>
+  <DD> <STRONG>. Toute cr&eacute;ation d'objet est initi&eacute;e par le serveur.</STRONG><BR>Si le serveur veut ajouter un objet &agrave; la sc&egrave;ne il envoit un message <STRONG> addObject</STRONG> aux clients. Ce message comporte deux arguments, un identificateur de l'objet et un descripteur de fichier VRML associ&eacute; &agrave l'objet.</DD>
+  </DT>
+  <DT>
+  <DD> <STRONG>. La supression d'objets </STRONG>est &eacute;galement initi&eacute;e par le serveur qui envoit une message <STRONG> deleteObject </STRONG> d'argument l'identificateur de l'objet.<DD>
+  </DT>
+  </DL>
+<BR>
+<DD><STRONG> 2. </STRONG><FONT COLOR=RED> Extensibilit&eacute; du protocole aux applications personnelles.</FONT><BR>
+Le r&ocirc;le du serveur VS consiste &agrave; transmettre les messages de l'application vers un "objet application" qui l'interpr&egrave;te et y r&eacute;pond.
+Cependant, le serveur n'a aucune facult&eacute; de compr&eacute;hension de la s&eacute;mantique du message d&eacute;finie par le seul utilisateur.
+Afin de s'assurer que les clients sont en mesure d'interpr&eacute;ter ces messages sp&eacute;cifiques, il est n&eacute;cessaire d'&eacute;tendre leur capacit&eacute; &agrave r&eacute;pondre &agrave toute forme de message d&eacute;fini comme une extension au protocole VSCP de base. On d&eacute;veloppe &agrave cet effet un <STRONG> scripting language </STRONG>: la signification d'un message est d&eacute;finie de la mani&egrave;re suivante: si un client re&ccedil;oit un message vers un objet cible 3D, et si l'objet a une m&eacute;thode pour ce message &eacute;crite en  <STRONG> scripting language </STRONG>, alors cette m&eacute;thode est ex&eacute;cut&eacute;e. Sinon il ne se passe rien.
+</DT>
+</DL>
+</P>
+<P><BR></P>
+
+
+
+<H2><FONT COLOR=BLUE>5. Liens avec VRML 1.0</H2></FONT>
+<P>Le format VRML 1.0 est un standard de description de mondes 3D qui a &eacute;t&eacute repris dans le cadre de l'&eacute;laboration de la Soci&eacute;t&eacute; Virtuelle. Il y a toutefois certains aspects de ce langage qui doivent &ecirc;tre revus afin de rendre possible le partage de l'environnment.</P>
+
+<H3><FONT COLOR=GREEN>5.1 Identit&eacute; des objets</H3></FONT><BR>
+
+<P>Le VSRA et le VSCP supposent que l'identificateur d'un objet est utilis&eacute; pour sp&eacute;cifier la cible des messages qui lui sont envoy&eacute;s. De ce point de vue VRML n'est pas satisfaisant, car on ne sait pas clairement quelle partie d'un objet VRML peut servir &agrave; son identification.
+Consid&eacute;rons le fragment de programme VRML suivant:
+
+<PRE>
+#VRML 1.0
+
+Separator {
+      
+      Transform {...}
+
+      Cone {...}
+
+      Transform {...}
+
+      Sphere {...}
+
+      Transform {...}
+
+      Box {...}
+
+}
+</PRE>
+
+Il existe une hi&eacute;rarchie &agrave l'int&eacute;rieur de l'objet: chacune des composantes se voit assign&eacute;e d'un identificateur propre. </P>
+
+<P>Cette architecture n'est pas sans poser probl&egrave;me. En effet, dans l'exemple ci-dessus, le cone, la sph&egrave;re, et la boite constituent-ils un m&ecirc;me et unique objet, ou sont-ils trois objets ind&eacute;pendants? Il existe de nombreux cas similaires o&ugrave; il faut d&eacute;cider d'une interpr&eacute;tation pr&eacute;cise.
+Cette ambiguit&eacute; est source de probl&egrave;mes lorsqu'un objet subit une transformation apr&egrave;s r&eacute;ception d'un message. Si par exemple le cone est d&eacute;plac&eacute;, cela signifie-t-il que le noeud le pr&eacute;c&eacute;dant est &eacute;galement modifi&eacute;, i.e. que la sph&egrave;re et la boite subissent la m&ecirc;me transformation?</P>
+<P>
+Le prochain format VRML devrait &ecirc;tre sp&eacute;cifi&eacute; en termes non pas de s&eacute;quences de commandes de dessin, mais plut&ocirc;t de description d'objets 3D. Les transformations, les mat&eacute;riaux 3D devraient &ecirc;tre trait&eacute;s comme des attributs de l'objet. Cette approche est en fait similaire &agrave; celle du syst&egrave;me <A HREF="http://www.sics.se/dive/"> <STRONG> DIVE </STRONG></A>.
+</P>
+<P><BR></P>
+<H3><FONT COLOR=GREEN>5.2 Nommer les objets</H3></FONT><BR>
+
+<P>
+Nommer les objets est possible en VRML gr&acirc;ce &agrave; la commande DEF. Sa port&eacute;e reste cependant limit&eacute;e car cette commande ne permet que de redessiner certaines entit&eacute;s. Or on cherche ici &agrave; utiliser un <STRONG> scripting language </STRONG> pour d&eacute;finir des actions sur les objets de la sc&egrave;ne, et la commande DEF est &agrave cet effet inutilisable.</P>
+<P>
+Par exemple, si un utilisateur &eacute;crit un script pour le bras d'un robot. Il appara&icirc;t naturel de vouloir acc&eacute;der &agrave; ses bras sous la forme "bras_gauche" et "bras_droit", quel que soit l'ordre de la s&eacute;quence des noeuds du script.
+Une solution &agrave long terme pourrait consister &agrave; d&eacute;finir un mode de liaison du <STRONG> scripting language </STRONG> &agrave; VRML.
+Cela revient &agrave d&eacute;finir un mode d'acc&egrave;s aux objets VRML ainsi qu'&agrave; leurs attributs &agrave; partir d'un scripting language particulier. Le mode de liaison devrait &ecirc;tre d&eacute;fini comme partie int&eacute;grante de VRML. L'avantage d'une telle approche est que les m&ecirc;mes noms &eacute;tiquetant les objets 3D pourraient &ecirc;tre utilis&eacute;s par n'importe quel scripting language.</P>
+<P><BR></P>
+<H2><FONT COLOR=BLUE>6. Impl&eacute;mentation</H2></FONT>
+
+<P>
+L'impl&eacute;mentation effectu&eacute;e est constitu&eacute;e d'un client VS capable de visualiser des mondes 3D, dont des fichiers VRML, et d'un simple serveur dont le r&ocirc;le se limite &agrave maintenir une coh&eacute;rence entre les requ&ecirc;tes des clients.
+Le client VS est d&eacute;riv&eacute; du syt&egrave;me <STRONG> DIVE </STRONG> dont on a remplac&eacute la couche de communication par le protocole VSCP.
+On utilise &eacute;galement un client type Netscape muni d'un browser WWW. Les exp&eacute;rimentations conduites ont &eacute;t&eacute; limit&eacute;es &agrave; un r&eacute;seau local LAN.</P>
+
+<P> Quelles sont les performances du syst&egrave;me? L'exp&eacute;rimentation a &eacute;t&eacute; conduite dans des conditions particuli&egrave;res. Le r&ocirc;le du serveur est limit&eacute; &agrave; la propagation des &eacute;changes entre les diff&eacute;rents clients en interaction. Cependant, en raison de consid&eacute;rations de performances, le degr&eacute; de partage de l'environnement entre les utilisateurs a &eacute;t&eacute; restreint. Ainsi le nombre de clients qu'un utilisateur peut observer dans la sc&egrave;ne est englob&eacute; dans un espace 3D centr&eacute; sur sa propre repr&eacute;sentation, appel&eacute;e <STRONG> Aura </STRONG>. Les actions des intervenants localis&eacute;s en dehors des fronti&egrave;res de cette Aura sont purement ignor&eacute;es. Cette limitation de la zone visuelle de l'utilisateur agit en fait comme un filtre sur les messages envoy&eacute;s par l'ensemble des utilisateurs. On peut ainsi restreindre le degr&eacute; de partage de la sc&egrave;ne parmi les utilisateurs. </P>
+<P><BR></P>
+<H2><FONT COLOR=BLUE>7. Conclusion</H2></FONT>
+
+<P>Deux points sont &agrave souligner parmi les nombreuses am&eacute;liorations susceptibles d'&ecirc;tre apport&eacute;es au syst&egrave;me actuel:
+
+<DL>
+  <DT>
+  <DD> <STRONG> <IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Architecture du serveur.</STRONG><BR> Le serveur ici utilis&eacute; est un site isol&eacute;, ce qui r&eacute;duit consid&eacute;rablement le probl&egrave;me de consistence des donn&eacute;es. Cependant, la fiabilit&eacute; du syst&egrave;me en est diminu&eacute;e.
+  </DT>
+  <DT>
+  <DD> <STRONG><IMG SRC="purpleball.gif" HEIGHT=14 WIDTH=14> Interface des applications.</STRONG> <BR>Le support de d&eacute;veloppement des applications utilisateurs a &eacute;galement &eacute;t&eacute; largement r&eacute;duit pour l'impl&eacute;mentation exp&eacute;rimentale. Deux voies sont possibles pour &eacute;tendre le VSCP aux applications personelles: l'une est simplement l'utilisation de VRML. L'autre consisterait &agrave; d&eacute;velopper une interface autorisant davantage d'interactivit&eacute;.
+  </DT>
+  </DL>
+</P>
+<P><BR></P>
+<H2><FONT COLOR=BLUE>8. R&eacute;f&eacute;rences</H2></FONT>
+<P> Le projet de <A HREF="http://www.csl.sony.co.jp/project/VS/index.html">Soci&eacute;t&eacute; Virtuelle </A>est toujours en phase de d&eacute;veloppement au sein du laboratoire <A HREF="http://www.csl.sony.co.jp">Sony CSL </A>(Computer Science Lab.). Quelques <A HREF="http://vs.sony.co.jp">r&eacute;alisations logicielles </A>d&eacute;velopp&eacute;es par le <STRONG> CSL </STRONG> ont &eacute;t&eacute; commercialis&eacute;es. Le syst&egrave;me <STRONG> DIVE </STRONG> est un produit d&eacute;velopp&eacute; par le <A HREF="http://www.sics.se/dce/group-research/group-research.html"> DCE </A> <STRONG> (Distributed Collaborative Environments) </STRONG> au <A HREF="http://www.sics.se/dce/dce.html"> SICS</A>  <STRONG> (Swedish Institute of Computer Science) </STRONG>.
+<P><BR>
+<BR>
+</P>
+
+<H5 ALIGN=RIGHT><A HREF="http://www.enst.fr/">Serveur ENST<BR>
+<A HREF="http://www.enst.fr/"><IMG SRC="ENST.gif" HEIGHT=33 WIDTH=60></A></A>
+</H5></DIV>
+
+<P><IMG SRC="barre.bleu.bleu.gif" ALT="---------" HEIGHT=4 WIDTH=648> <A HREF="MAILTO:xmichel@email.enst.fr">,<IMG SRC="3dmail.gif" ALIGN=LEFT></A></P>
+<H5 ALIGN=RIGHT><A HREF="http://www.enst.fr/~xmichel/">Homepage<BR>
+<A HREF="http://www.enst.fr/~xmichel"><IMG SRC="left.gif" ALIGN=RIGHT></A>
+
+</BODY>
+</HTML>

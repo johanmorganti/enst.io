@@ -1,0 +1,124 @@
+
+
+# ##########################################################
+#
+# Emplacement des Librairies X et Motif au Dept. INF:
+#
+XDIR = /usr/local/X11
+#XDIR = /usr/X11R5
+
+# INF
+# FICHIER_RGB       = /usr/lib/X11/rgb.txt
+# SIG
+FICHIER_RGB         = /usr/local/X11/lib/X11/rgb.txt
+FICHIER_XDEFAULTS   = .Xdefaults
+
+# ! NOTE IMPORTANTE: 
+# la variable d'environnement LD_LIBRARY_PATH devra commencer par
+# /usr/local/X11/lib (c'est a dire le repertoire ${XLIB}/lib)
+# (ou du moins figurer AVANT toute reference a "openwin")
+# pour que le programme s'execute correctement.
+
+
+# ##########################################################
+#
+# Options du Makefile
+#
+# KEEP_STATE => verification automatique des dependances
+# et des options de compilation. ==> ne PAS faire "make depend".
+#
+.KEEP_STATE:
+
+
+# ##########################################################
+# Nom de l'application
+#
+NAME		= xressources
+
+# ##########################################################
+#
+# Compilation:
+
+# Compilateur: preferer "gcc" (car compilateur ANSI C)
+#
+CC = gcc
+LD		= $(CC)
+
+# Options de compilation:
+# l'option -g est necessaire pour utiliser le debugger
+# l'option -O permet d'optimiser l'executable
+#
+CFLAGS += -g -c -DFICHIER_XDEFAULTS=${FICHIER_XDEFAULTS} -DFICHIER_RGB=${FICHIER_RGB}
+LDFLAGS		=  -g
+
+# Preciser l'emplacement des includes X et Motif
+CFLAGS += -I${XDIR}/include
+
+# Remarque: 
+# si le programme est compile avec "cc" au lieu de "gcc" ajouter
+# la ligne suivante (car "cc" n'est pas ANSI C sous SunOS4)
+#
+# CFLAGS += -D_NO_PROTO
+
+
+# ##########################################################
+#
+# Edition de Liens
+
+# Options du Link:
+# -L libpath => path des librairies a l'edition de liens (Link)
+# -R libpath => path des librairies a l'execution (Run-time) 
+# ! Attention: l'option -R n'est disponible QUE sur Solaris (pas sur SunOS4)
+#
+LDLIBS = -L${XDIR}/lib -lXm -lXt -lX11 
+#-lm -lXext -lXmu
+
+# Solaris
+#
+LDLIBS += -lsocket -lnsl -lgen
+
+#
+# Fichiers : headers, C, objets, executable
+#
+MAKE		= Makefile
+HDRS		=   
+SRCS		= xressources.c  
+SOURCES		= $(README) $(MAKE) $(HDRS) $(SRCS)
+OBJS		= xressources.o
+EXEC		= $(NAME)
+
+
+
+# ##########################################################
+#
+# Execution:
+
+# !!! Attention:
+# la variable d'environnement LD_LIBRARY_PATH devra commencer par
+# /usr/local/X11/lib (c'est a dire le repertoire ${XLIB}/lib)
+# pour que le programme s'execute correctement.
+
+
+# ##########################################################
+#
+# Regle de dependance pour la production de l'application
+#
+$(NAME):		$(OBJS)
+		$(LD) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
+
+.c.o:
+		$(CC) $(CFLAGS) $<
+#
+# !NB: Ne PAS faire "make depend" (car option .KEEP_STATE
+# qui fait cela automatiquement sans qu'on ait a se fatiguer ...)
+
+
+
+
+
+
+
+
+
+
+

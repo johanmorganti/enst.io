@@ -1,0 +1,8 @@
+PROGRAMS=arrow arrow_timer drawn multi_click pixmaps pushb xcal radio_box simple_radio toggle toggle_box
+
+CFLAGS=
+LIBS= -lXm -lXt -lX11
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Formulaire de consultation des fiches de pr&ecirc;t Dobitel</title>
+</head>
+<body bgcolor="#ffffe8">
+
+<center><H1>Formulaire de consultation des fiches de pr&ecirc;t Dobitel</H1></center>
+<p>
+
+<hr>
+<!--
+<h3>Nom : <input name=nom size=15>
+Prénom : <input name=prenom size=15></h3>
+-->
+
+<li><form method="post" action="cgi-bin/fiche-pret.cgi">
+<b>Type de document</b>: <b>
+ <select name="type" value="">
+ <option>Type de biblioth&egrave;que
+ </select>
+</b> (optionnel)
+<br>
+<li><b>Nom du demandeur</b>: <input name="nom" size=12> (obligatoire)
+<li><b>et &eacute;ventuellement nom de l'auteur</b>: <input name="auteur" size=12> (facultatif)
+<br>
+<input type="submit" value="Valider">
+<input type="reset" value="Annuler">
+</form>
+
+<hr>
+<form method="post" action="cgi-bin/fichenum-pret.cgi">
+<h3>Fiches disponibles: 1 à </h3>
+<h3>Numéro de la Fiche à consulter: <input name="fiche" size=6></h3>
+<p>
+<input type="submit" value="Valider">
+<input type="reset" value="Annuler">
+</form>
+<p>
+<hr>
+
+<address><a href="mailto:bibpret@sg.enst.fr">Documentation Technique</a></address>
+<br>
+Page maintenue par Philippe Dax, last update 3/5/96
+
+</body>
+</html>

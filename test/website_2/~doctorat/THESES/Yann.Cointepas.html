@@ -1,0 +1,529 @@
+<html>
+<head>
+<title>
+Segmentation et modélisation 3D des structures cérébrales, à partir d'IRM, pour la résolution des problèmes directs et inverses en EEG et en MEG - Yann Cointepas
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Yann Cointepas ">
+<meta name="Titre" content=" Segmentation et modélisation 3D des structures cérébrales, à partir d'IRM, pour la résolution des problèmes directs et inverses en EEG et en MEG ">
+<meta name="Title" content=" 3D segmentation and modelisation of cerebral structures, from MRI, for direct and inverse problem resolution with EEG and MEG ">
+<meta name="Departement" content=" Image ">
+
+<meta name="Directeur" content=" Isabelle Bloch et Line Garnero ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content=" 
+INTRODUCTION
+
+
+L'un des enjeux cruciaux du développement des sciences cognitives est sans aucun doute notre
+capacité à suivre, au cours du temps et à l'intérieur du cerveau, le traitement de l'information chez
+l'homme. Cette imagerie dynamique du fonctionnement de réseaux neuronaux distribués suppose
+une ou des techniques parfaitement atraumatiques, possédant à la fois une grande précision
+temporelle (la milliseconde au moins) et une grande précision de localisation (le cm3 au moins).
+C'est dans cette perspective que se situe la création à l'hôpital de la Salpétrière d'un centre
+EEG-MEG, la magnétoencéphalographie étant l'une des techniques nécessaires à une imagerie
+fonctionnelle cérébrale complète. Il existe essentiellement deux classes de méthodes qui permettent
+actuellement une étude fonctionnelle et atraumatique du cerveau humain vivant : l'imagerie
+métabolique (TEP, SPECT, IRMf) et l'imagerie électromagnétique (EEG et MEG). Dans les deux
+cas, il est possible de repérer les zones du cerveau activées lors de tâches sensori-motrices et/ou
+cognitives complexes. Cependant, outre le fait que ces méthodes donnent des images différentes et
+complémentaires (métabolique et électromagnétique) elles se différencient également par : 
+
+   1.leur résolution temporelle qui est de l'ordre de la minute dans le cas de la TEP ou du SPECT
+     (notons que celle de l'IRM fonctionnelle est de l'ordre de la demie seconde) alors que l'EEG
+     ou la MEG permettent de suivre l'activité cérébrale milliseconde par milliseconde ; 
+   2.leur résolution spatiale qui est de l'ordre du cm3 avec les TEP de dernière génération alors
+     que l'EEG ou la MEG ne positionnent des générateurs actifs qu'au prix d'hypothèses
+     simplificatrices dans la résolution du problème inverse (Renault et Garnero, 1994). La MEG
+     et l'EEG sont totalement non-invasives ; elles permettent d'enregistrer et de positionner (en
+     fonction d'hypothèses) sur une image anatomique (IRM) l'activité électrique cérébrale. 
+
+
+PROJET DE RECHERCHE
+
+
+Ce programme est fondamentalement inter-disciplinaire afin de développer des méthodes
+nouvelles pour améliorer la solution du problème inverse en EEG-MEG et les techniques de
+fusion multimodales. Trouver la distribution de courant qui est à l'origine des cartes de potentiel
+ou de champ magnétique relevées à la surface du scalp est un problème complexe, non encore
+résolu à l'heure actuelle. D'une part, une première difficulté se pose au niveau du problème direct,
+c'est-à-dire du calcul du potentiel et du champ magnétique relevés à la surface de la tête et induits
+par une activité neuronale connue. D'autre part, le problème inverse est mal posé, et ne possède pas
+de solution unique. Il est donc nécessaire d'introduire des informations a priori sur la distribution
+recherchée, d'où la nécessité de fusionner des informations venant d'autres modalités d'imagerie,
+en particulier de l'imagerie anatomique.
+
+
+SEGMENTATION ET MAILLAGE
+
+
+Les problèmes direct et inverses décrits dans la partie suivante nécessitent un modèle de la tête et
+des structures cérébrales étudiées, qui doit être le plus réaliste possible et adapté à l'anatomie
+individuelle. Nous proposons donc d'établir ce modèle à partir de données IRM de haute
+résolution, fournissant des informations précises sur l'anatomie individuelle. Il s'agit donc de
+segmenter les différentes structures puis de mailler ces structures, en accord avec les méthodes qui
+seront utilisées pour résoudre les problèmes direct et inverse.
+
+La segmentation pourra largement bénéficier de l'expérience du département Images de l'ENST
+dans ce domaine, en particulier en imagerie cérébrale (thèses de J.F. Mangin, T. Géraud, B.
+Verdonck, L. Aurdal, N. Rougon), ainsi que des travaux qui y sont effectués en fusion de données.
+
+La problème à traiter ici est de deux ordres. Tout d'abord, il s'agira d'étudier avec précision
+quelles sont les contraintes imposées par les étapes ultérieures de résolution des problèmes direct et
+inverse. Cela nous conduira vraisemblablement à modifier les méthodes développées
+précédemment afin que les contraintes soient satisfaites. Ensuite, un travail important sera
+consacré à la segmentation du cerveau lui-même, de ses enveloppes, de la matière grise et de la
+matière blanche, afin de compléter les travaux précédents. La segmentation de l'os nécessitera une
+attention particulière : c'est une tâche peu traitée dans la littérature, difficile en raison de la qualité
+médiocre des images dans les régions osseuses et de l'hétérogénéité de l'os (épaisseur et texture très
+variables d'une zone à l'autre). On aura donc intérêt à considérer le problème de la segmentation
+des différentes structures de manière globale plutôt que comme une succession d'algorithmes de
+segmentation de chaque structure individuellement. Cela constituera un des aspetcs originaux du
+travail.
+
+Une des contraintes importantes à respecter est d'ordre topologique. Les méthodes développées
+devront donc inclure des critères topologiques forts permettant de respecter la disposition relative
+des structures et leur agencement spatial et topologique. Ces contraintes peuvent être introduites
+dans des méthodes de divers types. Nous pensons par exemple à des méthodes de surfaces
+déformables où la topologie souhaitée serait imposée a priori et conservée au cours des itérations,
+ou encore à des méthodes reposant sur une première classification modifiée ensuite à l'aide d'un
+modèle de type atlas anatomique. Cela constituera un autre aspect original de la thèse.
+
+Le maillage des structures ainsi segmentées devra également respecter les contraintes imposées par
+les méthodes de résolution. Le maillage pourra être surfacique (maillage des interfaces entre
+structures de conductivité homogène) pour les méthodes de type intégrale de surface, ou volumique
+pour les méthodes de type différences finies ou éléments finis. Les maillages volumiques devront
+s'appuyer sur les interfaces entre structures et donc être contraints sur la frontière de chaque zone
+de conductivité homogène. Cette partie bénéficiera des nombreux travaux réalisés au département
+Images de l'ENST sur les maillages adaptatifs et contraints (thèses de W. H. Du, X. Chen, M. E.
+Algorri).
+
+
+PROBLEME DIRECT ET PROBLEME INVERSE
+
+
+Les modèles les plus couramment utilisés sont les modèles sphériques de la tête. Cependant ces
+modèles sont très simplifiés, et il convient de développer des modèles plus réalistes en tenant
+compte plus exactement de la structure géométrique et des propriétés électriques des milieux. Il
+faut donc résoudre les équations de Maxwell dans des milieux complexes. Elles n'ont alors pas
+dans ce cas de solutions analytiques simples. L'approche retenue pour cette thèse est de modéliser
+une forme réaliste de tête en la décomposant en milieux de conductivité uniforme. Les formes
+géométriques des différentes structures obtenues dans la première partie de la thèse après
+segmentation d'images IRM donnent des informations anatomiques précises. Après avoir effectué
+un maillage surfacique des différentes surfaces des constituants de la tête, des méthodes
+d'intégrales de frontière peuvent être utilisées pour calculer les distributions de champ magnétique
+et de potentiel (Hämäläinen et al., 1993). Si on veut tenir compte de propriétés de conduction plus
+hétérogènes, et des conductions anisotropes de certains milieux comme l'os, il est nécessaire de
+développer des méthodes de différences finies ou d'éléments finis (Bertrand et al., 1991). Pour le
+problème inverse, il est également nécessaire de disposer tout d'abord d'une information
+anatomique du patient donnée par l'IRM. En effet, nous avons montré précédemment qu'il était
+important de calculer les distributions des champs dans un modèle réaliste. Au niveau du problème
+inverse, l'information anatomique nous permet de modéliser les surfaces corticales activées et d'y
+contraindre la localisation des dipôles, leur orientation étant perpendiculaire à ces surfaces.
+
+
+
+Du fait de l'instabilité du problème inverse, (un problème est dit instable quand une petite erreur
+sur les données entraîne de graves perturbations sur les variables estimées), nous développerons
+également des méthodes d'inversion utilisant la théorie de la régularisation. Ces méthodes peuvent
+être déterministes ou stochastiques. L'intérêt d'employer ces dernières, bien qu'elles soient plus
+coûteuses en temps de calcul, est de pouvoir introduire des informations sur les corrélations
+spatiales et temporelles des activités neuronales entre elles. Ces corrélations pourront être estimées
+à partir de connaissances neurophysiologiques mais aussi en fonction de résultats obtenus en TEP
+ou mieux dans des expériences où EEG et TEP sont acquis simultanément (Tzourio et al. 1994).
+
+
+APPLICATION A UN PROTOCOLE D'ATTENTION SELECTIVE AUDITIVE
+
+
+Les outils de segmentation et de traitement des images élaborés seront appliqués pour effectuer la
+localisation des générateurs responsables des cartes de potentiel ou de champ magnétique relevées
+à la surface du scalp en MEG ou en EEG, avec les logiciels d'inversion développés au LENA .
+
+Une illustration à une question de Sciences Cognitives sera ensuite effectuée. Il s'agira de trouver
+les zones propres aux phénomènes d'attention dans une expérience d'attention sélective auditive.
+Le protocole correspondant est bien connu au LENA, et de nombreuses données ont été
+enregistrées à la fois à l'aide d'électrodes sur le scalp, ou par des électrodes intracrâniennes (dans le
+cas de patients épileptiques). D'autre part, une expérience de fusion TEP-EEG a été réalisée avec
+ce même protocole, ce qui a permis de révéler neuf régions actives en TEP au cours de ce
+protocole, et d'exhiber des corrélations entre les signaux enregistrés en potentiels évoqués et les
+zones actives en TEP. La majorité des sujets enregistrés a subi en parallèle un examen d'IRM
+anatomique.
+
+Au cours de cette expérience, qui peut simuler les phénomènes d'attention dans une écoute
+téléphonique, des sons de tonalité grave ou aiguë sont envoyés de façon aléatoire dans les deux
+oreilles, 80% des sons étant graves, et les sons déviants sont les aigus. La tâche du sujet est alors de
+répondre aux sons déviants arrivant dans une oreille particulière (la droite ou la gauche). Des
+tâches de référence sont également enregistrées où le sujet est entièrement au repos, ou reçoit les
+sons sans consigne précise (condition passive).
+
+Ces expériences ont révélé des différences de signaux de potentiels évoqués , en particulier sur la
+N100, entre les sons déviants reçus dans la bonne oreille, et ceux reçus dans l'autre oreille. En TEP,
+des réponses différentielles dans la tâche d'attention ont aussi été détectées dans les régions
+préfrontales, et dans le cyngulum et l'aire motrice situées du côté ipsilatéral à l'oreille attentive.
+
+La localisation des générateurs permettrait ainsi de repérer les zones du cerveau responsables de
+cette différence, qui pourraient ainsi réagir spécifiquement aux sons attendus, et donc porter la
+trace attentionnelle de ce type de stimulus. Cette localisation sera faite en utilisant des données
+déjà enregistrées, mais des expériences similaires seront refaites en MEG, voire en enregistrement
+simultané MEG et EEG sur le magnétoencéphalographe installé à l'Hôpital La Salpêtrière, avec
+bien entendu un examen complémentaire en IRM anatomique, pour toute la modélisation
+anatomique individuelle des sujets. Les neuf zones actives détectées en TEP seront dans un premier
+temps modélisées à partir des images anatomiques, et la recherche des générateurs sera contrainte
+sur ces zones.
+
+La localisation précise des générateurs permettra en premier lieu de vérifier si les effets
+attentionnels observés en TEP le sont aussi en imagerie électrique, et ainsi de valider les méthodes
+de fusion TEP/EEG ou TEP/MEG. D'autre part, grâce à la résolution temporelle de l'EEG et la
+MEG, il sera possible de différencier les aires actives en fonction de la nature et de la direction des
+sons reçus, et d'autre part d'analyer la réponse temporelle de chacune des régions, et la
+synchronisation entre ces régions au cours de la tâche.
+
+
+CONTEXTE DE LA RECHERCHE
+
+
+La recherche sera effectuée au département Images de l'ENST, en collaboration étroite avec le
+LENA (Bernard Renault, Line Garnero). Les descriptifs de ces deux laboratoires sont joints à ce
+dossier.
+
+De plus, la thèse bénéficiera d'un projet fédérateur de recherche en imagerie cérébrale, financé par
+le GIS Sciences de la Cognition, coordonné par l'ENST. Ce projet est dédié à l'analyse d'images
+anatomiques du cerveau, afin de servir de support aux études fonctionnelles. Le sujet de thèse
+proposé s'intègre donc parfaitement dans ce cadre, tout en proposant une réelle étude fonctionnelle.
+
+Le protocole décrit dans ce sujet sera la principale application de la thèse, et servira d'étude de test
+pour valider la méthodologie qui sera développée. Outre l'intérêt présenté par le protocole
+lui-même, il faut noter l'importance de cette validation, qui permettra par la suite d'appliquer
+cette méthodologie à d'autres protocoles cognitifs.
+
+
+REFERENCES
+
+
+Bertrand O., Thévenet M., Perrin F. 3D finite element method in brain electrical activity studies.
+In: "Biomagnetic Localization and 3D Modelling" J. Nenonen, H.M. Rajala, et T. Katila (eds),
+Helsinski University of Technology Report, 1991.
+
+Dale A.M., Sereno M.I. Improved localization of Cortical Activity by combining EEG and MEG
+with MRI Cortical surface reconstruction : a linear approach, Journal of Cognitive Neurosciences,
+5, 162-176, 1993.
+
+De Munck P. The potential distribution in a layered anisotropic spheroidal volume conductor.
+Journal of Applied Physic, 64, 464-470, 1988.
+
+Hämäläinen M., Hari R., Ilmoniemi RJ., Knuutila J., Lounasmaa O.V.,
+Magnetoencephalography-theory, instrumentation and applications to noninvasive studies of the
+working human brain. Rewiews of Modern Physics, 65, 413-498, 1993.
+
+Ioannides, A.A., Bolton, J.P.R. and Clarke, C.J.S. Continuous probabilistic solutions to the
+biomagnetic inverse problem. Inverse Problem, 6, 523-542, 1990.
+
+Lu Z.-L., Williamson, S.J. and Kaufman, L. Behavioral lifetime of human auditory sensory
+memory predicted by physiological measures. Science, 258, 1668-1669, 1992.
+
+Molginer A., Grossman J.A.I., Ribary U., Joliot M., Volkmann J., Rapaport D., Beasley R.W.,
+Llinas R.R. Somatosensory cortical plasticity in adult humans revealed by
+magnetoencephalography. Proceedings of the National Academy of Sciences USA, 90, 3593-3597,
+1993.
+
+Näätänen R., Role of attention in auditory information revealed by event-related brain potentials,
+Behavorial and Brain Sciences, 13, 201-288, 1990.
+
+Nunez, P.L. Localization of brain activity with electro encephalography. Advance in Neurology,
+54, 39-65, 1990.
+
+Renault B., Line Garnero L., L'Imagerie Electromagnétique Cérébrale, Principe de Base et
+Perspectives, Colloque de l'Académie des Sciences: Instrumentation physique en biologie et en
+médecine, pages 131-139, 1994.
+
+N. Tzourio, F. El Massioui, B. Mazoyer, B. Renault, Integration of PET and EEG in selective
+attention studies, Journal of Psychophysiology, 8, 178, 1994.
+
+Salmelin, R., Hari, R., Lounasmaa, O.V. and Sams, M. Dynamics of brain activation during
+picture naming. Nature, 368, 463-465, 1994.
+ ">
+<meta name="Abstract" content="   ">
+<meta name="Motcle" content=" segmentation, modelisation 3D, IRM, EEG, MEG, MRI ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http://www-ima.enst.fr/~cointepa ">
+<meta name="Statut" content=" non Soutenue ">
+<meta name="Date" content="   ">
+<meta name="Lieu" content="  ">
+<meta name="Adresse" content=" Yann.Cointepas@enst.fr ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Segmentation et modélisation 3D des structures cérébrales, à partir d'IRM, pour la résolution des problèmes directs et inverses en EEG et en MEG  </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Yann Cointepas<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Image<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3>
+INTRODUCTION
+
+
+L'un des enjeux cruciaux du développement des sciences cognitives est sans aucun doute notre
+capacité à suivre, au cours du temps et à l'intérieur du cerveau, le traitement de l'information chez
+l'homme. Cette imagerie dynamique du fonctionnement de réseaux neuronaux distribués suppose
+une ou des techniques parfaitement atraumatiques, possédant à la fois une grande précision
+temporelle (la milliseconde au moins) et une grande précision de localisation (le cm3 au moins).
+C'est dans cette perspective que se situe la création à l'hôpital de la Salpétrière d'un centre
+EEG-MEG, la magnétoencéphalographie étant l'une des techniques nécessaires à une imagerie
+fonctionnelle cérébrale complète. Il existe essentiellement deux classes de méthodes qui permettent
+actuellement une étude fonctionnelle et atraumatique du cerveau humain vivant : l'imagerie
+métabolique (TEP, SPECT, IRMf) et l'imagerie électromagnétique (EEG et MEG). Dans les deux
+cas, il est possible de repérer les zones du cerveau activées lors de tâches sensori-motrices et/ou
+cognitives complexes. Cependant, outre le fait que ces méthodes donnent des images différentes et
+complémentaires (métabolique et électromagnétique) elles se différencient également par : 
+
+   1.leur résolution temporelle qui est de l'ordre de la minute dans le cas de la TEP ou du SPECT
+     (notons que celle de l'IRM fonctionnelle est de l'ordre de la demie seconde) alors que l'EEG
+     ou la MEG permettent de suivre l'activité cérébrale milliseconde par milliseconde ; 
+   2.leur résolution spatiale qui est de l'ordre du cm3 avec les TEP de dernière génération alors
+     que l'EEG ou la MEG ne positionnent des générateurs actifs qu'au prix d'hypothèses
+     simplificatrices dans la résolution du problème inverse (Renault et Garnero, 1994). La MEG
+     et l'EEG sont totalement non-invasives ; elles permettent d'enregistrer et de positionner (en
+     fonction d'hypothèses) sur une image anatomique (IRM) l'activité électrique cérébrale. 
+
+
+PROJET DE RECHERCHE
+
+
+Ce programme est fondamentalement inter-disciplinaire afin de développer des méthodes
+nouvelles pour améliorer la solution du problème inverse en EEG-MEG et les techniques de
+fusion multimodales. Trouver la distribution de courant qui est à l'origine des cartes de potentiel
+ou de champ magnétique relevées à la surface du scalp est un problème complexe, non encore
+résolu à l'heure actuelle. D'une part, une première difficulté se pose au niveau du problème direct,
+c'est-à-dire du calcul du potentiel et du champ magnétique relevés à la surface de la tête et induits
+par une activité neuronale connue. D'autre part, le problème inverse est mal posé, et ne possède pas
+de solution unique. Il est donc nécessaire d'introduire des informations a priori sur la distribution
+recherchée, d'où la nécessité de fusionner des informations venant d'autres modalités d'imagerie,
+en particulier de l'imagerie anatomique.
+
+
+SEGMENTATION ET MAILLAGE
+
+
+Les problèmes direct et inverses décrits dans la partie suivante nécessitent un modèle de la tête et
+des structures cérébrales étudiées, qui doit être le plus réaliste possible et adapté à l'anatomie
+individuelle. Nous proposons donc d'établir ce modèle à partir de données IRM de haute
+résolution, fournissant des informations précises sur l'anatomie individuelle. Il s'agit donc de
+segmenter les différentes structures puis de mailler ces structures, en accord avec les méthodes qui
+seront utilisées pour résoudre les problèmes direct et inverse.
+
+La segmentation pourra largement bénéficier de l'expérience du département Images de l'ENST
+dans ce domaine, en particulier en imagerie cérébrale (thèses de J.F. Mangin, T. Géraud, B.
+Verdonck, L. Aurdal, N. Rougon), ainsi que des travaux qui y sont effectués en fusion de données.
+
+La problème à traiter ici est de deux ordres. Tout d'abord, il s'agira d'étudier avec précision
+quelles sont les contraintes imposées par les étapes ultérieures de résolution des problèmes direct et
+inverse. Cela nous conduira vraisemblablement à modifier les méthodes développées
+précédemment afin que les contraintes soient satisfaites. Ensuite, un travail important sera
+consacré à la segmentation du cerveau lui-même, de ses enveloppes, de la matière grise et de la
+matière blanche, afin de compléter les travaux précédents. La segmentation de l'os nécessitera une
+attention particulière : c'est une tâche peu traitée dans la littérature, difficile en raison de la qualité
+médiocre des images dans les régions osseuses et de l'hétérogénéité de l'os (épaisseur et texture très
+variables d'une zone à l'autre). On aura donc intérêt à considérer le problème de la segmentation
+des différentes structures de manière globale plutôt que comme une succession d'algorithmes de
+segmentation de chaque structure individuellement. Cela constituera un des aspetcs originaux du
+travail.
+
+Une des contraintes importantes à respecter est d'ordre topologique. Les méthodes développées
+devront donc inclure des critères topologiques forts permettant de respecter la disposition relative
+des structures et leur agencement spatial et topologique. Ces contraintes peuvent être introduites
+dans des méthodes de divers types. Nous pensons par exemple à des méthodes de surfaces
+déformables où la topologie souhaitée serait imposée a priori et conservée au cours des itérations,
+ou encore à des méthodes reposant sur une première classification modifiée ensuite à l'aide d'un
+modèle de type atlas anatomique. Cela constituera un autre aspect original de la thèse.
+
+Le maillage des structures ainsi segmentées devra également respecter les contraintes imposées par
+les méthodes de résolution. Le maillage pourra être surfacique (maillage des interfaces entre
+structures de conductivité homogène) pour les méthodes de type intégrale de surface, ou volumique
+pour les méthodes de type différences finies ou éléments finis. Les maillages volumiques devront
+s'appuyer sur les interfaces entre structures et donc être contraints sur la frontière de chaque zone
+de conductivité homogène. Cette partie bénéficiera des nombreux travaux réalisés au département
+Images de l'ENST sur les maillages adaptatifs et contraints (thèses de W. H. Du, X. Chen, M. E.
+Algorri).
+
+
+PROBLEME DIRECT ET PROBLEME INVERSE
+
+
+Les modèles les plus couramment utilisés sont les modèles sphériques de la tête. Cependant ces
+modèles sont très simplifiés, et il convient de développer des modèles plus réalistes en tenant
+compte plus exactement de la structure géométrique et des propriétés électriques des milieux. Il
+faut donc résoudre les équations de Maxwell dans des milieux complexes. Elles n'ont alors pas
+dans ce cas de solutions analytiques simples. L'approche retenue pour cette thèse est de modéliser
+une forme réaliste de tête en la décomposant en milieux de conductivité uniforme. Les formes
+géométriques des différentes structures obtenues dans la première partie de la thèse après
+segmentation d'images IRM donnent des informations anatomiques précises. Après avoir effectué
+un maillage surfacique des différentes surfaces des constituants de la tête, des méthodes
+d'intégrales de frontière peuvent être utilisées pour calculer les distributions de champ magnétique
+et de potentiel (Hämäläinen et al., 1993). Si on veut tenir compte de propriétés de conduction plus
+hétérogènes, et des conductions anisotropes de certains milieux comme l'os, il est nécessaire de
+développer des méthodes de différences finies ou d'éléments finis (Bertrand et al., 1991). Pour le
+problème inverse, il est également nécessaire de disposer tout d'abord d'une information
+anatomique du patient donnée par l'IRM. En effet, nous avons montré précédemment qu'il était
+important de calculer les distributions des champs dans un modèle réaliste. Au niveau du problème
+inverse, l'information anatomique nous permet de modéliser les surfaces corticales activées et d'y
+contraindre la localisation des dipôles, leur orientation étant perpendiculaire à ces surfaces.
+
+
+
+Du fait de l'instabilité du problème inverse, (un problème est dit instable quand une petite erreur
+sur les données entraîne de graves perturbations sur les variables estimées), nous développerons
+également des méthodes d'inversion utilisant la théorie de la régularisation. Ces méthodes peuvent
+être déterministes ou stochastiques. L'intérêt d'employer ces dernières, bien qu'elles soient plus
+coûteuses en temps de calcul, est de pouvoir introduire des informations sur les corrélations
+spatiales et temporelles des activités neuronales entre elles. Ces corrélations pourront être estimées
+à partir de connaissances neurophysiologiques mais aussi en fonction de résultats obtenus en TEP
+ou mieux dans des expériences où EEG et TEP sont acquis simultanément (Tzourio et al. 1994).
+
+
+APPLICATION A UN PROTOCOLE D'ATTENTION SELECTIVE AUDITIVE
+
+
+Les outils de segmentation et de traitement des images élaborés seront appliqués pour effectuer la
+localisation des générateurs responsables des cartes de potentiel ou de champ magnétique relevées
+à la surface du scalp en MEG ou en EEG, avec les logiciels d'inversion développés au LENA .
+
+Une illustration à une question de Sciences Cognitives sera ensuite effectuée. Il s'agira de trouver
+les zones propres aux phénomènes d'attention dans une expérience d'attention sélective auditive.
+Le protocole correspondant est bien connu au LENA, et de nombreuses données ont été
+enregistrées à la fois à l'aide d'électrodes sur le scalp, ou par des électrodes intracrâniennes (dans le
+cas de patients épileptiques). D'autre part, une expérience de fusion TEP-EEG a été réalisée avec
+ce même protocole, ce qui a permis de révéler neuf régions actives en TEP au cours de ce
+protocole, et d'exhiber des corrélations entre les signaux enregistrés en potentiels évoqués et les
+zones actives en TEP. La majorité des sujets enregistrés a subi en parallèle un examen d'IRM
+anatomique.
+
+Au cours de cette expérience, qui peut simuler les phénomènes d'attention dans une écoute
+téléphonique, des sons de tonalité grave ou aiguë sont envoyés de façon aléatoire dans les deux
+oreilles, 80% des sons étant graves, et les sons déviants sont les aigus. La tâche du sujet est alors de
+répondre aux sons déviants arrivant dans une oreille particulière (la droite ou la gauche). Des
+tâches de référence sont également enregistrées où le sujet est entièrement au repos, ou reçoit les
+sons sans consigne précise (condition passive).
+
+Ces expériences ont révélé des différences de signaux de potentiels évoqués , en particulier sur la
+N100, entre les sons déviants reçus dans la bonne oreille, et ceux reçus dans l'autre oreille. En TEP,
+des réponses différentielles dans la tâche d'attention ont aussi été détectées dans les régions
+préfrontales, et dans le cyngulum et l'aire motrice situées du côté ipsilatéral à l'oreille attentive.
+
+La localisation des générateurs permettrait ainsi de repérer les zones du cerveau responsables de
+cette différence, qui pourraient ainsi réagir spécifiquement aux sons attendus, et donc porter la
+trace attentionnelle de ce type de stimulus. Cette localisation sera faite en utilisant des données
+déjà enregistrées, mais des expériences similaires seront refaites en MEG, voire en enregistrement
+simultané MEG et EEG sur le magnétoencéphalographe installé à l'Hôpital La Salpêtrière, avec
+bien entendu un examen complémentaire en IRM anatomique, pour toute la modélisation
+anatomique individuelle des sujets. Les neuf zones actives détectées en TEP seront dans un premier
+temps modélisées à partir des images anatomiques, et la recherche des générateurs sera contrainte
+sur ces zones.
+
+La localisation précise des générateurs permettra en premier lieu de vérifier si les effets
+attentionnels observés en TEP le sont aussi en imagerie électrique, et ainsi de valider les méthodes
+de fusion TEP/EEG ou TEP/MEG. D'autre part, grâce à la résolution temporelle de l'EEG et la
+MEG, il sera possible de différencier les aires actives en fonction de la nature et de la direction des
+sons reçus, et d'autre part d'analyer la réponse temporelle de chacune des régions, et la
+synchronisation entre ces régions au cours de la tâche.
+
+
+CONTEXTE DE LA RECHERCHE
+
+
+La recherche sera effectuée au département Images de l'ENST, en collaboration étroite avec le
+LENA (Bernard Renault, Line Garnero). Les descriptifs de ces deux laboratoires sont joints à ce
+dossier.
+
+De plus, la thèse bénéficiera d'un projet fédérateur de recherche en imagerie cérébrale, financé par
+le GIS Sciences de la Cognition, coordonné par l'ENST. Ce projet est dédié à l'analyse d'images
+anatomiques du cerveau, afin de servir de support aux études fonctionnelles. Le sujet de thèse
+proposé s'intègre donc parfaitement dans ce cadre, tout en proposant une réelle étude fonctionnelle.
+
+Le protocole décrit dans ce sujet sera la principale application de la thèse, et servira d'étude de test
+pour valider la méthodologie qui sera développée. Outre l'intérêt présenté par le protocole
+lui-même, il faut noter l'importance de cette validation, qui permettra par la suite d'appliquer
+cette méthodologie à d'autres protocoles cognitifs.
+
+
+REFERENCES
+
+
+Bertrand O., Thévenet M., Perrin F. 3D finite element method in brain electrical activity studies.
+In: "Biomagnetic Localization and 3D Modelling" J. Nenonen, H.M. Rajala, et T. Katila (eds),
+Helsinski University of Technology Report, 1991.
+
+Dale A.M., Sereno M.I. Improved localization of Cortical Activity by combining EEG and MEG
+with MRI Cortical surface reconstruction : a linear approach, Journal of Cognitive Neurosciences,
+5, 162-176, 1993.
+
+De Munck P. The potential distribution in a layered anisotropic spheroidal volume conductor.
+Journal of Applied Physic, 64, 464-470, 1988.
+
+Hämäläinen M., Hari R., Ilmoniemi RJ., Knuutila J., Lounasmaa O.V.,
+Magnetoencephalography-theory, instrumentation and applications to noninvasive studies of the
+working human brain. Rewiews of Modern Physics, 65, 413-498, 1993.
+
+Ioannides, A.A., Bolton, J.P.R. and Clarke, C.J.S. Continuous probabilistic solutions to the
+biomagnetic inverse problem. Inverse Problem, 6, 523-542, 1990.
+
+Lu Z.-L., Williamson, S.J. and Kaufman, L. Behavioral lifetime of human auditory sensory
+memory predicted by physiological measures. Science, 258, 1668-1669, 1992.
+
+Molginer A., Grossman J.A.I., Ribary U., Joliot M., Volkmann J., Rapaport D., Beasley R.W.,
+Llinas R.R. Somatosensory cortical plasticity in adult humans revealed by
+magnetoencephalography. Proceedings of the National Academy of Sciences USA, 90, 3593-3597,
+1993.
+
+Näätänen R., Role of attention in auditory information revealed by event-related brain potentials,
+Behavorial and Brain Sciences, 13, 201-288, 1990.
+
+Nunez, P.L. Localization of brain activity with electro encephalography. Advance in Neurology,
+54, 39-65, 1990.
+
+Renault B., Line Garnero L., L'Imagerie Electromagnétique Cérébrale, Principe de Base et
+Perspectives, Colloque de l'Académie des Sciences: Instrumentation physique en biologie et en
+médecine, pages 131-139, 1994.
+
+N. Tzourio, F. El Massioui, B. Mazoyer, B. Renault, Integration of PET and EEG in selective
+attention studies, Journal of Psychophysiology, 8, 178, 1994.
+
+Salmelin, R., Hari, R., Lounasmaa, O.V. and Sams, M. Dynamics of brain activation during
+picture naming. Nature, 368, 463-465, 1994.
+
+              <H3> Mot-Cl&eacute;s :</H3> segmentation, modelisation 3D, IRM, EEG, MEG, MRI
+               <h3> <br> Directeur de la th&egrave;se : Isabelle Bloch et Line Garnero </h3>
+               <hr> <h3> Th&egrave;se non Soutenue  <br><i>
+            Date de soutenance pr&eacute;vue:    <br>
+            Lieu de la soutenance:    </i>
+           </h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : 3D segmentation and modelisation of cerebral structures, from MRI, for direct and inverse problem resolution with EEG and MEG</H2> <H3> Abstract :</H3>   <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:Yann.Cointepas@enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www-ima.enst.fr/~cointepa">ma page</A>
+                     </h4>
+                </body>
+                </html>

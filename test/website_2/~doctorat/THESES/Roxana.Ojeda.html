@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>
+Invariance asymptotique pour les series temporelles lineaires  - Roxana Ojeda
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Roxana Ojeda ">
+<meta name="Titre" content=" Invariance asymptotique pour les series temporelles lineaires  ">
+<meta name="Title" content=" Asymptotic invariance for stationary linear time-series  ">
+<meta name="Departement" content=" Signal ">
+
+<meta name="Directeur" content=" Dr. Jean-Francois Cardoso  ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content="  Cette these est consacree a la construction de tests statistiques de gaussianite et linearite en suivant une approche basee sur le principe d'invariance. L'idee consiste a appliquer des transformations aux signaux pour en tirer, de facon asymptotique, l'influence des parametres qui decrivent leurs modeles. On simplifie donc l'hypothese a tester et l'on obtient des tests tres faciles a implanter, sachant qu'ils sont independants du signal a traiter. Tout processus gaussien stationnaire peut etre modelise comme la sortie d'un filtre a phase minimale excite par un processus independant et identiquement distribue (i.i.d.) gaussien. Cette representation suggere une methode possible pour tester la gaussianite d'une sequence : tester la gaussianite de la sequence d'innovation. De cette facon, le probleme de l'analyse de la gaussianite d'un processus correle se transforme en celui plus simple de tester la gaussianite d'un processus i.i.d.. Puisqu'un processus lineaire est le melange convolutif entre la reponse impulsionnelle d'un filtre lineaire et une excitation i.i.d., nous pouvons retrouver l'excitation par deconvolution de l'observation avec le filtre inverse. En observant le mecanisme de generation d'un processus lineaire, nous proposons une nouvelle methode pour tester la propriete de linearite d'un processus : tester la propriete i.i.d. de son excitation. Pour mettre en oeuvre ces idees, nous construisons une statistique basee sur certaines fonctions non lineaires, a memoire finie, d'une estimation de la sequence d'excitation. Pour le test de gaussianite, l'estimation de l'innovation est obtenue par egalisation du processus observe avec un predicteur lineaire d'ordre k, suivi d'une normalisation par une estimation de la variance de l'innovation. Pour le test de linearite, nous proposons comme egaliseur un filtre MA bilateral de taille 2k+1. Les coefficients sont obtenus comme solutions approximatives de certaines equations d'identification exprimees en fonction de la sortie du filtre, quand celui-ci est excite par l'observation. Nous considerons que la sortie de l'egaliseur est l'excitation estimee. En utilisant des conditions techniques raisonnables et en travaillant sur la vitesse relative de l'ordre du filtre inverse k et du nombre d'echantillons T, nous demontrons la convergence en loi de la statistique sous l'hypothese nulle.  ">
+<meta name="Abstract" content="  This thesis presents an invariant approach to test the gaussianity and linearity properties of a time-series. The idea consists in transforming the observed process in order to obtain tests that are independent of nuissance parameters. As a consequence, the method has a very easy implementation. A gaussian stationary process can be represented as the output of a minimum-phase filter excited by an independently and identically distributed (i.i.d.) gaussian process. Based on this representation, we test the gaussianity of the process, not directly on the process itself, but on its innovation sequence. Then, we transform the problem of gaussianity test in the simplier problem of i.i.d. gaussianity test. Since a linear stationary process is by definition the convolution between the impulse response of a linear system and an i.i.d. excitation, it is immediately that by deconvolution with the inverse filter, we can to find the excitation. This procedure suggests to replace a linearity test of a process by an i.i.d. test of its excitation. The tests are based on a quadratic form in differences between sample means and expected values of certain finite memory nonlinear functions of the estimated excitation sequence. Under reasonable assumptions on the regularity of the process, the test statistic converges under the null hypothesis to a chi-squared distribution by letting the order of the inverse filter grows as a function of the sample size.  ">
+<meta name="Motcle" content=" Tests non parametriques (nonparametric tests), test de gaussianite (gaussianity test), test de linearite (linearity test), deconvolution (deconvolution), estimation de l'innovation (innovation estimation).  ">
+<meta name="Photo" content=" http://www-sig.enst.fr/ ">
+<meta name="Page" content=" http://www-sig.enst.fr/ ">
+<meta name="Statut" content=" Soutenue ">
+<meta name="Date" content="  13 Juin 1997  ">
+<meta name="Lieu" content=" ENST  ">
+<meta name="Adresse" content=" ojeda@email.enst.fr ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Invariance asymptotique pour les series temporelles lineaires   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br> <img align="left" src="http://www-sig.enst.fr/"><h2 align="right"> Auteur :   Roxana Ojeda<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Signal<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3> Cette these est consacree a la construction de tests statistiques de gaussianite et linearite en suivant une approche basee sur le principe d'invariance. L'idee consiste a appliquer des transformations aux signaux pour en tirer, de facon asymptotique, l'influence des parametres qui decrivent leurs modeles. On simplifie donc l'hypothese a tester et l'on obtient des tests tres faciles a implanter, sachant qu'ils sont independants du signal a traiter. Tout processus gaussien stationnaire peut etre modelise comme la sortie d'un filtre a phase minimale excite par un processus independant et identiquement distribue (i.i.d.) gaussien. Cette representation suggere une methode possible pour tester la gaussianite d'une sequence : tester la gaussianite de la sequence d'innovation. De cette facon, le probleme de l'analyse de la gaussianite d'un processus correle se transforme en celui plus simple de tester la gaussianite d'un processus i.i.d.. Puisqu'un processus lineaire est le melange convolutif entre la reponse impulsionnelle d'un filtre lineaire et une excitation i.i.d., nous pouvons retrouver l'excitation par deconvolution de l'observation avec le filtre inverse. En observant le mecanisme de generation d'un processus lineaire, nous proposons une nouvelle methode pour tester la propriete de linearite d'un processus : tester la propriete i.i.d. de son excitation. Pour mettre en oeuvre ces idees, nous construisons une statistique basee sur certaines fonctions non lineaires, a memoire finie, d'une estimation de la sequence d'excitation. Pour le test de gaussianite, l'estimation de l'innovation est obtenue par egalisation du processus observe avec un predicteur lineaire d'ordre k, suivi d'une normalisation par une estimation de la variance de l'innovation. Pour le test de linearite, nous proposons comme egaliseur un filtre MA bilateral de taille 2k+1. Les coefficients sont obtenus comme solutions approximatives de certaines equations d'identification exprimees en fonction de la sortie du filtre, quand celui-ci est excite par l'observation. Nous considerons que la sortie de l'egaliseur est l'excitation estimee. En utilisant des conditions techniques raisonnables et en travaillant sur la vitesse relative de l'ordre du filtre inverse k et du nombre d'echantillons T, nous demontrons la convergence en loi de la statistique sous l'hypothese nulle. 
+              <H3> Mot-Cl&eacute;s :</H3> Tests non parametriques (nonparametric tests), test de gaussianite (gaussianity test), test de linearite (linearity test), deconvolution (deconvolution), estimation de l'innovation (innovation estimation). 
+               <h3> <br> Directeur de la th&egrave;se : Dr. Jean-Francois Cardoso  </h3>
+               <hr> <h3> Th&egrave;se Soutenue  
+                    <br><i>Date de soutenance :   13 Juin 1997 </i></h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : Asymptotic invariance for stationary linear time-series </H2> <H3> Abstract :</H3>  This thesis presents an invariant approach to test the gaussianity and linearity properties of a time-series. The idea consists in transforming the observed process in order to obtain tests that are independent of nuissance parameters. As a consequence, the method has a very easy implementation. A gaussian stationary process can be represented as the output of a minimum-phase filter excited by an independently and identically distributed (i.i.d.) gaussian process. Based on this representation, we test the gaussianity of the process, not directly on the process itself, but on its innovation sequence. Then, we transform the problem of gaussianity test in the simplier problem of i.i.d. gaussianity test. Since a linear stationary process is by definition the convolution between the impulse response of a linear system and an i.i.d. excitation, it is immediately that by deconvolution with the inverse filter, we can to find the excitation. This procedure suggests to replace a linearity test of a process by an i.i.d. test of its excitation. The tests are based on a quadratic form in differences between sample means and expected values of certain finite memory nonlinear functions of the estimated excitation sequence. Under reasonable assumptions on the regularity of the process, the test statistic converges under the null hypothesis to a chi-squared distribution by letting the order of the inverse filter grows as a function of the sample size.  <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:ojeda@email.enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www-sig.enst.fr/">ma page</A>
+                     </h4>
+                </body>
+                </html>

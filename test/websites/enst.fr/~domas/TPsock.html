@@ -1,0 +1,187 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version 2.7.5 -->
+</head>
+
+<body bgcolor="#dddddd">
+<p>
+
+<img src="/gif/grandvertjaune.gif">
+
+<center>
+<b>DOM INF  Module AS</b><p>
+<b>1995-96</b><p>
+<b></b><p>
+<b></b><p>
+<b><i></i>TP<i></i></b><p>
+<b><i></i>Communications entre processus distants<i></i></b><p>
+<b><i></i>Mise en oeuvre des sockets</b><p>
+<b></b><p>
+<b>B. Dupouy</b><p>
+</center>
+
+<img src="/gif/grandvertjaune.gif">
+
+<b></b><p>
+<b>Note pr&eacute;liminaire&nbsp;:</b><p>
+<b>Les fichiers sources des exemples sont dans&nbsp;: ~domas/sockdir/sockdir</b><p>
+<b><blink>ATTENTION :</b></blink> <br>
+ Sur une machine SVR4 (ici, sur Solaris), ajouter a la compilation : <br>
+   -lsocket (pour les sockets) <br>
+   -lnsl (pour htons...) <br>
+<p>
+On enverra le(s) fichier(s) source(s) traitant l'exercice et le <tt>makefile</tt>
+permettant leur bonne utilisation &agrave;&nbsp;:<br>
+<center>
+dupouy@enst</tt>
+ou &agrave;
+gadret@enst</tt>
+</center>
+
+<tt></tt><br>
+<tt></tt>Le texte du message d'envoi doit contenir la cha&icirc;ne TPDOM
+
+<img src="/gif/grandvertjaune.gif">
+<p>
+<center><b>SOMMAIRE</center></b>
+
+<h3>
+<ol>
+<li><a href="TPsock.html#RTFToC1">I.SOCKETS : RAPPELS</a><ol>
+<li><a href="TPsock.html#RTFToC2">I.1Fonctionnement</a></ol>
+<li><a href="TPsock.html#RTFToC3">II.COMMUNICATION CLIENT/SERVEUR </a><ol>
+<li><a href="TPsock.html#RTFToC4">II.1Code du serveur (serv_fork.c) </a>
+<li><a href="TPsock.html#RTFToC5">II.2Code des clients (cli_fork.c)</a></ol>
+<li><a href="TPsock.html#RTFToC6">III.EXERCICES A RENDRE : UTILISATION DE SELECT</a><ol>
+<li><a href="TPsock.html#RTFToC7">III.1Code &agrave; compl&eacute;ter pour le serveur (sel_serv.file)</a>
+<li><a href="TPsock.html#RTFToC8">III.2Code &agrave; compl&eacute;ter pour les clients (sel_cli.file)</a></ol></ol></body></html>
+
+<img src="/gif/grandvertjaune.gif">
+</h3>
+
+<h3><a name="RTFToC1">I.SOCKETS : RAPPELS </a></h3>
+
+<h3> <a name="RTFToC2">I.1Fonctionnement </a></h3>
+<p>
+On remarquera sur le sch&eacute;ma suivant&nbsp;:<p>
+<ul>
+<li>sin_port,  le num&eacute;ro de port,<br>
+<li>sin_addr, le(s) num&eacute;ro(s) InterNet de la machine, num&eacute;ro
+attribu&eacute; par l'administrateur syst&egrave;me (un par carte Ethernet sur
+la machine)<br>
+<li>le num&eacute;ro Ethernet de la carte, num&eacute;ro unique attribu&eacute;
+(mat&eacute;riel) par le constructeur, <br>
+</ul>
+
+<center>
+<table border=+6><td>
+<IMG SRC="/~domas/sockdir/TPsock1.gif">
+</td></table>
+</center>
+
+<p>
+
+<h3>
+<a name="RTFToC3">II.
+COMMUNICATION CLIENT/SERVEUR 
+</a></h3>
+<p>
+C'est sur ce type de canevas que l'on construit les applications
+distribu&eacute;es.<p>
+Le serveur se contente d'attendre les demandes des clients. La gestion de la
+communication sera prise en charge par un processus fils, pendant que le
+serveur se remet en attente de demande de connexions d'autres clients.<p>
+<p>
+Sch&eacute;ma de principe, apr&egrave;s fin de l'attente sur accept, le serveur
+cr&eacute;&eacute; un processus fils, ce dernier fermera le socket
+d'&eacute;coute, tandis que le serveur fermera celui de communications&nbsp;:<p>
+<p>
+
+<center>
+<table border=+6><td>
+<IMG SRC="/~domas/sockdir/TPsock2.gif"><p>
+</td></table>
+</center>
+
+<p>
+Le serveur se lib&egrave;re ainsi de la gestion des communications pour se
+consacrer &agrave; l'&eacute;coute des demandes de connexions dont le nombre
+est limit&eacute; par listen&nbsp;:<p>
+<p>
+<center>
+<table border=+6><td>
+<IMG SRC="/~domas/sockdir/TPsock3.gif"><p>
+</td></table>
+</center>
+<p>
+<p>
+On vous demande de faire tourner les deux programmes suivant et d'en comprendre
+le fonctionnement afin de pouvoir mener &agrave; son terme l'exercice qui vous
+est propos&eacute; par la suite.<p>
+<p>
+Le serveur sera de pr&eacute;f&eacute;rence lanc&eacute;&nbsp;:<br>
+ - sur une machine diff&eacute;rente de celle des clients,<br>
+ - dans une autre fen&ecirc;tre, sur la machine courante.<br>
+<p>
+On utilisera la commande <tt>netstat</tt> pour suivre les dialogues entre
+les clients et les serveurs.<br>
+<b>Remarque :</b> <br>
+SIGCHLD n'est pas g&eacuter&eacute, la commande <tt>ps</tt> permettra
+de voir les <tt>zombies</tt> r&eacutesultant de la terminaison des processus
+ fils du serveur.
+
+<h3>
+<a name="RTFToC4">II.1 Code du serveur (serv_fork.c) </a>
+</h3>
+
+<a href="/~domas/sockdir/serv_fork.c">Cliquez ici pour le consulter</a>
+
+<h3>
+<a name="RTFToC5">II.2 Code des clients (cli_fork.c) </a>
+</h3>
+
+Le client transmet au serveur les informations qu'on lui a donn&eacute;es en 
+utilisant le clavier.
+<br>
+On peut aussi rediriger <tt>stdin</tt> de toutes les fa&ccedil;ons 
+possibles &nbsp;:<br>
+<tt>
+ls -il  | cli_fork<br>
+cat *.c | cli_fork<br>
+man ls  | cli_fork<br>
+</tt>
+<br>
+<a href="/~domas/sockdir/cli_fork.c">Cliquez ici pour consulter cli_fork.c</a>
+
+<h3>
+<a name="RTFToC6">III. EXERCICE A RENDRE : UTILISATION DE SELECT </a>
+</h3>
+
+<p>
+<tt>select</tt> permet de se mettre &agrave; l'&eacute;coute sur plusieurs fichiers
+simultan&eacute;ment, nous allons &eacute;tudier l'&eacute;criture d'un serveur
+utilisant cette fonction.<br>
+<p>Utiliser la commande : <br>
+<tt>
+man -s 3c select<br>
+</tt>
+pour avoir les d&eacutetails du fonctionnement de <tt>select</tt>.<br>
+<p>Pour comprendre le m&eacutecanisme de cet appel syst&egraveme, on vous demande de compl&eacute;ter le code du client et du
+serveur dont on donne les squelettes ci-dessous.<br>
+<p>
+On cr&eacute;era de nombreux processus clients pour constater le bon
+fonctionnement du serveur. <p>
+
+<h3>
+<a name="RTFToC7">III.1 Code &agrave; compl&eacute;ter pour le serveur (sel_serv.file) </a>
+</h3>
+
+<a href="/~domas/sockdir/sel_serv.file">Cliquez ici pour consulter sel_serv.file</a>
+
+<h3>
+<a name="RTFToC8">III.2 Code &agrave; compl&eacute;ter pour les clients (sel_cli.file) </a>
+</h3>
+
+<a href="/~domas/sockdir/sel_cli.file">Cliquez ici pour consulter sel_cli.file</a>
+
+</body></html>

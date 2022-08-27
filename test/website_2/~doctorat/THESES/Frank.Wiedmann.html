@@ -1,0 +1,377 @@
+<html>
+<head>
+<title>
+D&eacute;veloppements pour des applications<BR> grand public du r&eacute;flectom&egrave;tre six-portes&nbsp;:<BR> algorithme de calibrage robuste,<BR> r&eacute;flectom&egrave;tre &agrave; tr&egrave;s large bande<BR> et r&eacute;flectom&egrave;tre int&eacute;gr&eacute; MMIC - Frank Wiedmann
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Frank Wiedmann ">
+<meta name="Titre" content=" D&eacute;veloppements pour des applications<BR> grand public du r&eacute;flectom&egrave;tre six-portes&nbsp;:<BR> algorithme de calibrage robuste,<BR> r&eacute;flectom&egrave;tre &agrave; tr&egrave;s large bande<BR> et r&eacute;flectom&egrave;tre int&eacute;gr&eacute; MMIC ">
+<meta name="Title" content=" <BR> Developments facilitating high-volume<BR> applications of six-port reflectometers:<BR> robust calibration algorithm,<BR> reflectometer having very large bandwidth<BR> and reflectometer realized in MMIC technology ">
+<meta name="Departement" content=" Communications ">
+
+<meta name="Directeur" content=" Bernard HUYART  ">
+<meta name="Laboratoire" content=" Groupe Hyperfr&eacute;quences  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content=" Le r&eacute;flectom&egrave;tre six-portes
+est un dispositif de mesure en hyperfr&eacute;quences
+qui permet de d&eacute;terminer le facteur de r&eacute;flexion
+d'un dispositif sous test
+(qui est directement li&eacute; avec son imp&eacute;dance d'entr&eacute;e)
+ou alternativement de trouver le rapport en module et phase
+entre deux diff&eacute;rents signaux.
+Ce type de mesure est utilis&eacute; tr&egrave;s souvent
+dans le domaine des hyperfr&eacute;quences,
+d'un cot&eacute; dans les laboratoires pour caract&eacute;riser des composants
+et de l'autre cot&eacute; dans des applications
+comme les radars de s&eacute;curit&eacute; pour les automobiles,
+les d&eacute;modulateurs num&eacute;riques
+ou le contr&ocirc;le d'antennes adaptatives.
+<P>
+L'un des avantages du r&eacute;flectom&egrave;tre six-portes
+par rapport aux autres syst&egrave;mes qui mesurent les m&ecirc;mes quantit&eacute;s
+est sa structure tr&egrave;s simple&nbsp;:
+il s'agit essentiellement d'un circuit lin&eacute;aire avec six acc&egrave;s
+dont quatre sont connect&eacute;s &agrave; des d&eacute;tecteurs de puissance.
+Il est donc beaucoup plus facile &agrave; r&eacute;aliser et moins co&ucirc;teux
+que les autres types de syst&egrave;me
+qui n&eacute;cessitent g&eacute;n&eacute;ralement des composants plus sophistiqu&eacute;s
+comme par exemple des m&eacute;langeurs de bonne qualit&eacute;.
+<P>
+Apr&egrave;s un calibrage du r&eacute;flectom&egrave;tre six-portes,
+il est possible de calculer le facteur de r&eacute;flexion
+du dispositif sous test
+ou le rapport en module et phase entre deux signaux diff&eacute;rents
+ainsi que des informations sur la pr&eacute;cision de ces valeurs
+&agrave; partir des puissances mesur&eacute;es par les quatre d&eacute;tecteurs.
+On peut donc dire que le calcul num&eacute;rique &agrave; l'aide d'un ordinateur
+remplace le besoin
+de disposer d'un circuit de mesure tr&egrave;s sophistiqu&eacute;
+qui permet d'obtenir les r&eacute;sultats d'une mani&egrave;re plus directe.
+<P>
+Malgr&eacute; cet avantage consid&eacute;rable
+que pr&eacute;sente la simplicit&eacute; du circuit,
+les r&eacute;flectom&egrave;tres six-portes
+sont &agrave; ce jour surtout utilis&eacute;s
+dans des laboratoires de m&eacute;trologie
+en raison de la bonne pr&eacute;cision des mesures
+qu'ils permettent de r&eacute;aliser&nbsp;;
+par contre, leur emploi dans des produits commercialis&eacute;s
+est tr&egrave;s faible et concerne principalement des applications
+tr&egrave;s sp&eacute;cialis&eacute;s.
+Il existe plusieurs raisons pour ce fait,
+entre autres la bande de fr&eacute;quences assez r&eacute;duite
+dans laquelle fonctionnent la plupart des r&eacute;flectom&egrave;tres six-portes,
+l'encombrement de certaines de ces structures
+qui contiennent souvent plusieurs coupleurs directifs,
+et aussi des probl&egrave;mes qui peuvent appara&icirc;tre
+dans la proc&eacute;dure de calibrage du syst&egrave;me
+dans certaines situations.
+<P>
+Dans cette th&egrave;se, nous pr&eacute;sentons donc plusieurs d&eacute;veloppements
+pour r&eacute;soudre ces probl&egrave;mes
+afin de rendre possible une utilisation des r&eacute;flectom&egrave;tres six-portes
+&agrave; plus grande &eacute;chelle dans des produits industriels.
+Il s'agit d'abord d'un algorithme de calibrage tr&egrave;s robuste
+qui &eacute;limine les difficult&eacute;s que pouvaient pr&eacute;senter
+dans certaines situations les algorithmes utilis&eacute;s auparavant.
+Puis, nous avons d&eacute;velopp&eacute; un r&eacute;flectom&egrave;tre six-portes
+en technologie hybride &agrave; bas co&ucirc;t
+avec une surface de 20&nbsp;cm&sup2; incluant les d&eacute;tecteurs de puissance,
+qui fonctionne sur une tr&egrave;s large bande de fr&eacute;quences,
+de 1.5&nbsp;MHz &agrave; 2200&nbsp;MHz.
+Finalement, nous pr&eacute;sentons un r&eacute;flectom&egrave;tre six-portes
+que nous avons r&eacute;alis&eacute; en technologie int&eacute;gr&eacute;e monolithique MMIC.
+Le circuit occupe une surface de 2.2&nbsp;mm&sup2;
+incluant les d&eacute;tecteurs
+et fonctionne entre 1.3&nbsp;GHz et 3.0&nbsp;GHz.
+Ses meilleures caract&eacute;ristiques se trouvent autour de la fr&eacute;quence
+de 1.8&nbsp;GHz, la fr&eacute;quence de la nouvelle gamme de radiomobiles DCS&nbsp;1800.
+<P>
+Tous ces d&eacute;veloppements devraient beaucoup faciliter
+l'utilisation des r&eacute;flectom&egrave;tres six-portes
+dans des applications industrielles destin&eacute;es &agrave; un grand public
+comme des radars de s&eacute;curit&eacute; pour les automobiles
+ou des d&eacute;modulateurs num&eacute;riques pour les radiomobiles.
+Nous esp&eacute;rons que les r&eacute;sultats de notre travail
+aideront &agrave; convaincre un plus grand nombre de fabricants
+des avantages de ce dispositif encore relativement nouveau. ">
+<meta name="Abstract" content=" The six-port reflectometer is a high-frequency measurement device
+which allows to determine the reflection coefficient
+of a device under test
+(which depends directly on its input impedance)
+or alternatively to find the ratio in terms of amplitude and phase
+between two different signals.
+This type of measurement is often used in the high-frequency domain,
+on the one hand in laboratories in order to characterize components,
+and on the other hand in applications
+like security distance radar for automobiles,
+digital demodulators or control of adaptive antennas.
+<P>
+One of the advantages of the six-port reflectometer
+with respect to other systems which measure the same quantities
+is its very simple structure:
+it is essentially a linear circuit with six ports,
+four of which are connected to power detectors.
+In consequence, it can be realized much more easily and with lower costs
+than these other types of instruments
+which generally require more sophisticated components
+as for example high quality mixers.
+<P>
+After calibrating the six-port reflectometer,
+it is possible to calculate the reflection coefficient
+of the device under test
+or the ratio in terms of amplitude and phase
+between two different signals,
+as well as information about the precision of these values,
+from the electrical powers measured by the four detectors.
+One can say that numerical calculations using a computer
+replace the need for a very sophisticated measurement circuit
+which permits to obtain the results in a more direct way.
+<P>
+In spite of the considerable advantage
+presented by the simplicity of the circuit,
+six-port reflectometers are to this day mostly used
+in metrology laboratories
+because of the high measurement precision
+they allow to achieve;
+however, they are very little used in commercial products,
+except very specialized applications.
+There are several reasons for this,
+among others the rather narrow frequency span
+of most six-port reflectometers,
+the large dimensions of certain structures
+which often contain several directional couplers,
+as well as problems which may appear in certain situations
+during the calibration procedure.
+<P>
+In this thesis, we present several developments to solve these problems
+in order to make possible the implementation of six-port reflectometers
+in high-volume industrial products.
+First, we introduce a very robust calibration algorithm
+which eliminates the problems which
+the algorithms used before might present in certain situations.
+Next, we give details about our newly developed six-port reflectometer
+in low-cost hybrid technology with a surface of 20&nbsp;cm&sup2;
+including the power detectors,
+which has a very large frequency span,
+from 1.5&nbsp;MHz to 2200&nbsp;MHz.
+Finally, we present a six-port reflectometer we have realized
+in monolithic microwave integrated circuit (MMIC) technology.
+This circuit occupies a surface of 2.2&nbsp;mm&sup2; including the detectors
+and functions between 1.3&nbsp;GHz and 3.0&nbsp;GHz.
+It is most accurate around the frequency of 1.8&nbsp;GHz,
+the frequency of the new mobile phone series DCS&nbsp;1800.
+<P>
+All these developments should greatly facilitate
+the use of six-port reflectometers in industrial applications
+aimed at the general public
+such as security distance radars for automobiles
+or digital demodulators for mobile phones.
+We hope that the results of our work will help to convince
+a larger number of companies of the advantages
+of this still relatively new device. ">
+<meta name="Motcle" content=" r&eacute;flectom&egrave;tre six-portes, six-port reflectometer, circuit int&eacute;gr&eacute;, integrated circuit, MMIC, calibrage, calibration, large bande, wideband ">
+<meta name="Photo" content=" http://www-com.enst.fr/thesards/frank.gif ">
+<meta name="Page" content=" http://www-com.enst.fr/~wiedmann/ ">
+<meta name="Statut" content=" Soutenue ">
+<meta name="Date" content=" 8 juillet 1997 ">
+<meta name="Lieu" content="  ">
+<meta name="Adresse" content=" wiedmann@com.enst.fr ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  D&eacute;veloppements pour des applications<BR> grand public du r&eacute;flectom&egrave;tre six-portes&nbsp;:<BR> algorithme de calibrage robuste,<BR> r&eacute;flectom&egrave;tre &agrave; tr&egrave;s large bande<BR> et r&eacute;flectom&egrave;tre int&eacute;gr&eacute; MMIC  </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br> <img align="left" src="http://www-com.enst.fr/thesards/frank.gif"><h2 align="right"> Auteur :   Frank Wiedmann<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Communications<br>
+             </h3><h3 align="right"> Laboratoire d'accueil : Groupe Hyperfr&eacute;quences <br></h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3>Le r&eacute;flectom&egrave;tre six-portes
+est un dispositif de mesure en hyperfr&eacute;quences
+qui permet de d&eacute;terminer le facteur de r&eacute;flexion
+d'un dispositif sous test
+(qui est directement li&eacute; avec son imp&eacute;dance d'entr&eacute;e)
+ou alternativement de trouver le rapport en module et phase
+entre deux diff&eacute;rents signaux.
+Ce type de mesure est utilis&eacute; tr&egrave;s souvent
+dans le domaine des hyperfr&eacute;quences,
+d'un cot&eacute; dans les laboratoires pour caract&eacute;riser des composants
+et de l'autre cot&eacute; dans des applications
+comme les radars de s&eacute;curit&eacute; pour les automobiles,
+les d&eacute;modulateurs num&eacute;riques
+ou le contr&ocirc;le d'antennes adaptatives.
+<P>
+L'un des avantages du r&eacute;flectom&egrave;tre six-portes
+par rapport aux autres syst&egrave;mes qui mesurent les m&ecirc;mes quantit&eacute;s
+est sa structure tr&egrave;s simple&nbsp;:
+il s'agit essentiellement d'un circuit lin&eacute;aire avec six acc&egrave;s
+dont quatre sont connect&eacute;s &agrave; des d&eacute;tecteurs de puissance.
+Il est donc beaucoup plus facile &agrave; r&eacute;aliser et moins co&ucirc;teux
+que les autres types de syst&egrave;me
+qui n&eacute;cessitent g&eacute;n&eacute;ralement des composants plus sophistiqu&eacute;s
+comme par exemple des m&eacute;langeurs de bonne qualit&eacute;.
+<P>
+Apr&egrave;s un calibrage du r&eacute;flectom&egrave;tre six-portes,
+il est possible de calculer le facteur de r&eacute;flexion
+du dispositif sous test
+ou le rapport en module et phase entre deux signaux diff&eacute;rents
+ainsi que des informations sur la pr&eacute;cision de ces valeurs
+&agrave; partir des puissances mesur&eacute;es par les quatre d&eacute;tecteurs.
+On peut donc dire que le calcul num&eacute;rique &agrave; l'aide d'un ordinateur
+remplace le besoin
+de disposer d'un circuit de mesure tr&egrave;s sophistiqu&eacute;
+qui permet d'obtenir les r&eacute;sultats d'une mani&egrave;re plus directe.
+<P>
+Malgr&eacute; cet avantage consid&eacute;rable
+que pr&eacute;sente la simplicit&eacute; du circuit,
+les r&eacute;flectom&egrave;tres six-portes
+sont &agrave; ce jour surtout utilis&eacute;s
+dans des laboratoires de m&eacute;trologie
+en raison de la bonne pr&eacute;cision des mesures
+qu'ils permettent de r&eacute;aliser&nbsp;;
+par contre, leur emploi dans des produits commercialis&eacute;s
+est tr&egrave;s faible et concerne principalement des applications
+tr&egrave;s sp&eacute;cialis&eacute;s.
+Il existe plusieurs raisons pour ce fait,
+entre autres la bande de fr&eacute;quences assez r&eacute;duite
+dans laquelle fonctionnent la plupart des r&eacute;flectom&egrave;tres six-portes,
+l'encombrement de certaines de ces structures
+qui contiennent souvent plusieurs coupleurs directifs,
+et aussi des probl&egrave;mes qui peuvent appara&icirc;tre
+dans la proc&eacute;dure de calibrage du syst&egrave;me
+dans certaines situations.
+<P>
+Dans cette th&egrave;se, nous pr&eacute;sentons donc plusieurs d&eacute;veloppements
+pour r&eacute;soudre ces probl&egrave;mes
+afin de rendre possible une utilisation des r&eacute;flectom&egrave;tres six-portes
+&agrave; plus grande &eacute;chelle dans des produits industriels.
+Il s'agit d'abord d'un algorithme de calibrage tr&egrave;s robuste
+qui &eacute;limine les difficult&eacute;s que pouvaient pr&eacute;senter
+dans certaines situations les algorithmes utilis&eacute;s auparavant.
+Puis, nous avons d&eacute;velopp&eacute; un r&eacute;flectom&egrave;tre six-portes
+en technologie hybride &agrave; bas co&ucirc;t
+avec une surface de 20&nbsp;cm&sup2; incluant les d&eacute;tecteurs de puissance,
+qui fonctionne sur une tr&egrave;s large bande de fr&eacute;quences,
+de 1.5&nbsp;MHz &agrave; 2200&nbsp;MHz.
+Finalement, nous pr&eacute;sentons un r&eacute;flectom&egrave;tre six-portes
+que nous avons r&eacute;alis&eacute; en technologie int&eacute;gr&eacute;e monolithique MMIC.
+Le circuit occupe une surface de 2.2&nbsp;mm&sup2;
+incluant les d&eacute;tecteurs
+et fonctionne entre 1.3&nbsp;GHz et 3.0&nbsp;GHz.
+Ses meilleures caract&eacute;ristiques se trouvent autour de la fr&eacute;quence
+de 1.8&nbsp;GHz, la fr&eacute;quence de la nouvelle gamme de radiomobiles DCS&nbsp;1800.
+<P>
+Tous ces d&eacute;veloppements devraient beaucoup faciliter
+l'utilisation des r&eacute;flectom&egrave;tres six-portes
+dans des applications industrielles destin&eacute;es &agrave; un grand public
+comme des radars de s&eacute;curit&eacute; pour les automobiles
+ou des d&eacute;modulateurs num&eacute;riques pour les radiomobiles.
+Nous esp&eacute;rons que les r&eacute;sultats de notre travail
+aideront &agrave; convaincre un plus grand nombre de fabricants
+des avantages de ce dispositif encore relativement nouveau.
+              <H3> Mot-Cl&eacute;s :</H3> r&eacute;flectom&egrave;tre six-portes, six-port reflectometer, circuit int&eacute;gr&eacute;, integrated circuit, MMIC, calibrage, calibration, large bande, wideband
+               <h3> <br> Directeur de la th&egrave;se : Bernard HUYART  </h3>
+               <hr> <h3> Th&egrave;se Soutenue  
+                    <br><i>Date de soutenance :  8 juillet 1997</i></h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : <BR> Developments facilitating high-volume<BR> applications of six-port reflectometers:<BR> robust calibration algorithm,<BR> reflectometer having very large bandwidth<BR> and reflectometer realized in MMIC technology</H2> <H3> Abstract :</H3> The six-port reflectometer is a high-frequency measurement device
+which allows to determine the reflection coefficient
+of a device under test
+(which depends directly on its input impedance)
+or alternatively to find the ratio in terms of amplitude and phase
+between two different signals.
+This type of measurement is often used in the high-frequency domain,
+on the one hand in laboratories in order to characterize components,
+and on the other hand in applications
+like security distance radar for automobiles,
+digital demodulators or control of adaptive antennas.
+<P>
+One of the advantages of the six-port reflectometer
+with respect to other systems which measure the same quantities
+is its very simple structure:
+it is essentially a linear circuit with six ports,
+four of which are connected to power detectors.
+In consequence, it can be realized much more easily and with lower costs
+than these other types of instruments
+which generally require more sophisticated components
+as for example high quality mixers.
+<P>
+After calibrating the six-port reflectometer,
+it is possible to calculate the reflection coefficient
+of the device under test
+or the ratio in terms of amplitude and phase
+between two different signals,
+as well as information about the precision of these values,
+from the electrical powers measured by the four detectors.
+One can say that numerical calculations using a computer
+replace the need for a very sophisticated measurement circuit
+which permits to obtain the results in a more direct way.
+<P>
+In spite of the considerable advantage
+presented by the simplicity of the circuit,
+six-port reflectometers are to this day mostly used
+in metrology laboratories
+because of the high measurement precision
+they allow to achieve;
+however, they are very little used in commercial products,
+except very specialized applications.
+There are several reasons for this,
+among others the rather narrow frequency span
+of most six-port reflectometers,
+the large dimensions of certain structures
+which often contain several directional couplers,
+as well as problems which may appear in certain situations
+during the calibration procedure.
+<P>
+In this thesis, we present several developments to solve these problems
+in order to make possible the implementation of six-port reflectometers
+in high-volume industrial products.
+First, we introduce a very robust calibration algorithm
+which eliminates the problems which
+the algorithms used before might present in certain situations.
+Next, we give details about our newly developed six-port reflectometer
+in low-cost hybrid technology with a surface of 20&nbsp;cm&sup2;
+including the power detectors,
+which has a very large frequency span,
+from 1.5&nbsp;MHz to 2200&nbsp;MHz.
+Finally, we present a six-port reflectometer we have realized
+in monolithic microwave integrated circuit (MMIC) technology.
+This circuit occupies a surface of 2.2&nbsp;mm&sup2; including the detectors
+and functions between 1.3&nbsp;GHz and 3.0&nbsp;GHz.
+It is most accurate around the frequency of 1.8&nbsp;GHz,
+the frequency of the new mobile phone series DCS&nbsp;1800.
+<P>
+All these developments should greatly facilitate
+the use of six-port reflectometers in industrial applications
+aimed at the general public
+such as security distance radars for automobiles
+or digital demodulators for mobile phones.
+We hope that the results of our work will help to convince
+a larger number of companies of the advantages
+of this still relatively new device. <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:wiedmann@com.enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www-com.enst.fr/~wiedmann/">ma page</A>
+                     </h4>
+                </body>
+                </html>

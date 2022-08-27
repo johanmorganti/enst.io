@@ -1,0 +1,121 @@
+<HTML><HEAD>
+<!-- This document was created from RTF source by rtftohtml version 3.0.1 -->
+<TITLE>Model-Based Surprise and Explanation: a way to negotiate concepts - Explanation as a solution to a model-based surprise</TITLE></HEAD>
+<BODY BACKGROUND="fond.gif" TEXT=#1809BB>
+<A HREF="ecai9201.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="ecai9203.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="ecai92.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+<hr size=4>
+<H1>
+Explanation as a solution to a model-based surprise</H1>
+<b></b><p>
+<b></b>Explanations that occur after a model-based surprise are interesting for
+at least two reasons: first they occur naturally, as we saw (this point is also
+illustrated in [Heritage 1990]), and thus we may hope that their use could
+improve the acceptability of human/machine interactions under certain
+circumstances. But the problem is to reproduce these explanations on artificial
+systems. This is the second point. As we will see now, this type of explanation
+is heavily constrained, so that, in certain situations, one can write programs
+that are able to recognize and to synthesize such explanations.<p>
+ <p>
+We expressed the surprise contained in [ex_canteen] with a logical
+representation that can be rewritten as:<p>
+<p>
+[ normal_workday <b>&amp; </b>students_are_absent ] ==&gt; <b>F</b><p>
+<p>
+<b>F</b> stands here for an ever false proposition. Thus [ <i>a</i> <b>&amp;
+</b><i>b </i>]  <b>F</b> means that <i>a<b> </b></i>and <i>b</i> are logically
+incompatible. The explanation given by B aims at denying <i>normal_workday</i>:
+<i>if</i> the forum takes place today, <i>then </i>today is not a normal day
+(classes have been cancelled). Any model-based surprise can be written this way
+as a logical incompatibility, and thus we are exactly in the situation
+mentioned by Inhelder and Piaget, where subjects have to "suppress
+contradictions or incompatibilities". M. Baker [1991] describes also "internal
+conflicts" as leading to explanatory dialogues, and shows situations in which
+inconsistencies are related to dialogic cooperation at the sociological level.
+But our suggestion of using surprise-based explanations in explanatory systems
+comes more simply from the observation that interlocutors in conversation do
+utter their internal logical conflicts spontaneously, and that other
+interlocutors do their utmost to find relevant explanations.<p>
+<p>
+The situation of logical conflict is interesting because it is heavily
+constrained: only few explanations are admissible (even if not necessarily
+accepted) as solutions to an incompatibility. Let us take first the simple case
+of an explanation working as a <i>direct invalidation</i>. If we express the
+logical incompatibility this way:<p>
+<p>
+[ p<sub>1</sub> <b>&amp; </b>p<sub>2 </sub><b>&amp; . . . &amp;
+</b>p<sub>n</sub> ] ==&gt;  <b>F</b><p>
+<p>
+then a direct invalidation consists in denying one of the terms
+<i>p<sub>i</sub></i> considered as belonging to the contradiction by the person
+uttering surprise. So any explanation which denies one <i>p<sub>i</sub></i> or
+which proves that <i>p<sub>i</sub></i>  must be false is thus admissible. This
+was the case in [ex_canteen].<p>
+Another possibility for explaining a logically surprising situation is
+illustrated by the following example:<p>
+<p>
+[ex_toy] <p>
+context: E is surprised by the fact that her great child G (two years old) is
+playing a lot with a broken toy. The mother, F, gives an explanation.<p>
+<i>E1- One could think they leave the toys when they are broken. Listen: G
+played with a car which had no wheels left. I'm not saying he liked it better,
+but he played with it at least as much as with the others.</i><p>
+<i>F1- In fact it's because he is imagining he is a mechanic, and he is going
+to repair it.</i><p>
+<i></i><p>
+We can represent E's surprise logically:<p>
+<p>
+[ plays_with( G, <b>Toy</b>) <b>&amp; not</b> functional(<b>Toy</b>) ]   ==&gt;
+<b>F</b><p>
+<p>
+where <b><i>Toy</i></b> is instantiated on the car with no wheels left. F's
+explanation can be understood as an <i>indirect invalidation</i>, i.e. an
+invalidation of another clause including further premises:<p>
+<p>
+[ plays_with( G, <b>Toy</b>) <b>&amp; not</b> functional(<b>Toy</b>) <b>&amp;
+not </b>playing_at_repairing( <b>Toy</b>) ] ==&gt;  <b>F</b><p>
+<b></b><p>
+F's explanation could be paraphrased this way: "if the child did not play at
+repairing the toy, then it would be indeed surprising that he plays with it.
+But this is not the case."<p>
+<p>
+This kind of explanation through indirect invalidation is admissible as long as
+the surprised speaker can accept it as denying a forgotten premise
+p<sub>n+1</sub>. In other words, this speaker has to accept that<p>
+<p>
+[ p<sub>1</sub> <b>&amp; </b>p<sub>2 </sub><b>&amp; . . . &amp;
+</b>p<sub>n</sub> <b>&amp; </b>p<sub>n+1</sub> ] ==&gt;  <b>F</b><p>
+<p>
+represents the actual incompatibility. The explanation (<b>not
+</b>p<sub>n+1</sub>) then appears as an invalidation of this augmented
+incompatibility. We should not wonder that some premises may be "forgotten" by
+the first speaker. After all, any incompatibility noticed in real life
+presupposes that the world still exists, that people are at a single location
+at any time, and so on. But requiring that a given fact p<sub>n+1</sub> can be
+recognized as part of the initial incompatibility remains a very strong
+constraint on what can or cannot be considered as an admissible explanation. In
+the preceding excerpt, F could have denied hypotheses like:<p>
+<ul>
+<li>	not (the child is insane)
+<li>	the child can tell the difference between functional and non-functional
+toys
+<li>	functional toys were equally accessible to the child
+<li>	not (the child is specifically attracted by this broken toy)</ul><p>
+but not:<p>
+ <ul>
+<li>	the child likes chocolate
+<li>	this toy has a name beginning with C
+<li>	the climate in Oregon is mild</ul><p>
+These constraints which limit the logical form of explanations that may follow
+a model-based surprise are strict enough to allow artificial systems to utter
+or to recognize such explanations. We will see now that a system like SAVANT3,
+which was designed to help students acquire new technical concepts, is able to
+<i>recognize</i> both direct and indirect invalidations. We will then make some
+suggestions upon the <i>synthesis</i> of relevant explanations as reactions to
+a surprise expressed by the user.<p>
+<P><hr size=4>
+<A HREF="ecai9201.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="ecai9203.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="ecai92.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+</body></html>

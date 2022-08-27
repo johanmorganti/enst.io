@@ -1,0 +1,22 @@
+<HTML>
+<TITLE>
+Les codes cycliques
+</TITLE>
+
+<BODY BGCOLOR="FFFFFF">
+
+Il n'est pas question de présenter ici toute la théorie sur les codes cycliques. Nous ne présenterons que quelques principes de base pour aider à la compréhension de l'ensemble.
+Les codes cycliques sont des codes linéaires en blocs auxquels on a ajouté des contraintes sur la structure des mots de code.
+
+<H4> Codes linéaires en blocs </H4>
+
+Rappelons simplement qu'un code linéaire en bloc (n,k) code un mot de k bits en un mot de n bits( n>k). Il est dit "en blocs" parce que tous les mots du code ont la même longueur.
+<BR> Ces n-k bits supplémentaires pemettront le cas échéant de détecter des erreurs. Ils sont appelés bits de parité.
+<P> Ce code étant linéaire, il est souvent représenté sous forme matricielle G. Pour obtenir le mot de code C (représenté sous forme vectorielle), il suffira de faire le produit matriciel i.G, où i est le mot d'information sous forme vectorielle.
+
+<H4> Les codes cycliques </H4>
+
+Les codes cycliques sont des codes linéaires pour lesquels toute permutation circulaire des bits d'un mot de code donnera un autre mot de code. Ainsi si le mot (C0,C1,C2...,Cn-1) est dans le code, le mot (C1,C2,C3...,Cn-1,C0) y est aussi. Cette propriété cyclique permettra une notation polynomiale particulièrement pratique du code, rendant leur utilisation facile.
+
+</BODY>
+</HTML>

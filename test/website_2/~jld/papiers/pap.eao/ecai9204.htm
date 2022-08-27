@@ -1,0 +1,76 @@
+<HTML><HEAD>
+<!-- This document was created from RTF source by rtftohtml version 3.0.1 -->
+<TITLE>Model-Based Surprise and Explanation: a way to negotiate concepts - Some extensions and limits of surprise-based explanations</TITLE></HEAD>
+<BODY BACKGROUND="fond.gif" TEXT=#1809BB>
+<A HREF="ecai9203.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="ecai9205.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="ecai92.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+<hr size=4>
+<H1>
+Some extensions and limits of surprise-based explanations</H1>
+<b></b><p>
+<b></b>The kind of explanations we are dealing with in this paper may be
+proposed in any situation in which the functioning of the system does not match
+the user's expectations. This includes some interactions with knowledge-base
+systems, for end-users, but also experts during the elicitation and maintenance
+phases. This concerns also help and advisory systems, as far as the system is
+able to detect unsatisfied expectations in the user's request.<p>
+<p>
+In any case, implementing surprise-based explanation capabilities requires that
+the systems has a very good representation of the user's knowledge. For
+instance, if we want a system to detect surprise, as PARADISE does, in a user's
+utterance and then to reply by giving an explanation, using a knowledge
+structured as a set of incompatibilities, then the system has to select a
+clause which contains terms of the user's request, say
+<i>r<sub>1</sub></i><sub> </sub>and <i>r<sub>2</sub></i>, and terms that were
+actualized in the present situation: <i>s<sub>1</sub></i>,
+<i>s<sub>2</sub></i>.<p>
+<p>
+[ r<sub>1</sub> <b>&amp; </b>r<sub>2 </sub><b>&amp; </b>s<sub>1</sub> <b>&amp;
+</b>s<sub>2 </sub><b>&amp; </b>o<sub>1</sub> ] ==&gt;  <b>F</b><p>
+<b></b><p>
+If such a clause exists, then a good guess would be that <p>
+<p>
+[ r<sub>1</sub> <b>&amp; </b>r<sub>2 </sub><b>&amp; </b>s<sub>1</sub> <b>&amp;
+</b>s<sub>2 </sub> ]   ==&gt; <b>F</b><p>
+<p>
+is an accurate representation of what the users believes and of his/her
+surprise: for him/her, r<sub>1</sub> and<b> </b>r<sub>2 </sub>cannot be
+simultaneously true, if we know that s<sub>1</sub> <b>&amp; </b>s<sub>2</sub>.
+The system will then try to explain the surprise by invalidating the clause. If
+one of the terms in the system's clause can be proven false, then the system is
+able to utter an admissible explanation. For example "<i>but o<sub>1</sub> is
+false</i>" or "<i>its because not o<sub>1</sub></i>" would be perceived as
+<i>relevant </i>explanations by the user. The system may also suggest these
+explanations when a term in the clause is unknown to him or has been learned
+directly from the user: "<i>but perhaps not o<sub>1</sub></i>". When all terms
+in the clause can be proven true, then the system can find another clause used
+to prove one of these terms, and recursively try to invalidate this new
+clause.<p>
+<p>
+However such results can only be obtained under very specific conditions:<p>
+<ul>
+<li>	user's requests are provoked by deceived model-based expectations
+<li>	user's requests contain such expected elements
+<li>	user and system manipulate the same concepts
+<li>	the system contains a "complete" set of clauses linking these concepts:
+consistency rules and strategic rules (as was shown by Clancey [1987]) have to
+be included
+<li>	the system constains a knowledge that is not necessarily used during
+inferences, but that is necessary to justify inference rules (as was shown in
+XPLAIN by Swartout [1983] )
+<li>	the system is able to isolate a subset of clauses which accurately
+represents the user's expertise</ul><p>
+A possible consequence of this is that an explanatory module that would include
+surprise-based explanation capabilities should be autonomous, as emphasized by
+B. Safar [1992]. But a transposition of the mechanisms outlined above onto KBS
+explanatory modules raises many problems. One of them is that the backward
+chaining underlying this mechanism will not necessarily match the trace of the
+KBS inferences. A possible solution would be that the explanation  module
+avoids using inference rules that were not actually present in the trace. But
+many aspects of these transposition problems are still to be investigated.<p>
+<P><hr size=4>
+<A HREF="ecai9203.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="ecai9205.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="ecai92.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+</body></html>

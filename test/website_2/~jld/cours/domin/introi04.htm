@@ -1,0 +1,283 @@
+<HTML><HEAD>
+<!-- This document was created from RTF source by rtftohtml version 3.0.1 -->
+<TITLE>Introduction au cours de dominante I.A. - Quelques domaines de l'I.A.</TITLE></HEAD>
+<BODY BACKGROUND="fond.gif" TEXT=#1809BB>
+<A HREF="introi03.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="introi05.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="introi01.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/upg.gif" ALT="Up " border=0></A>
+ <A HREF="introi.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+<hr size=4>
+<H2>
+Quelques domaines de l'I.A.</H2>
+<UL>
+<LI><A HREF="#Heading5">L'exploration heuristique : &eacute;viter l'explosion</A>
+<LI><A HREF="#Heading6">L'ordinateur expert</A>
+<LI><A HREF="#Heading7">Des langages &agrave; part pour l'I.A.</A>
+<LI><A HREF="#Heading8">Comprendre la langue des hommes</A>
+<LI><A HREF="#Heading9">La robotique : vers la vie artificielle</A>
+<LI><A HREF="#Heading10">L'ordinateur capable d'apprendre</A>
+<LI><A HREF="#Heading11">La pens&eacute;e sans cerveau</A>
+</UL>
+<hr size=4>
+<b></b>
+<h3>
+<A NAME="Heading5">L'exploration heuristique : &eacute;viter l'explosion</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>L'exploration combinatoire guid&eacute;e par des heuristiques est
+caract&eacute;ristique des premiers d&eacute;veloppements de l'Intelligence
+Artificielle. Il s'agissait alors d'utiliser la puissance de l'ordinateur pour
+explorer toutes les alternatives qui s'offraient au moment de juger du meilleur
+plan &agrave; adopter. L'exemple le plus connu est celui du jeu
+d'&eacute;checs. Mais m&ecirc;me l'ordinateur le plus puissant du monde est
+incapable de g&eacute;rer la complexit&eacute; intrins&egrave;que, li&eacute;e
+&agrave; l'explosion combinatoire, de la plupart des probl&egrave;mes de
+planification (que ce soit le jeu d'&eacute;checs ou le probl&egrave;me bien
+connu du voyageur de commerce). L'attitude adopt&eacute;e par les chercheurs de
+l'&eacute;poque a &eacute;t&eacute; de renoncer &agrave; l'optimalit&eacute;,
+pour tenter de trouver dans chaque cas une solution acceptable dans un temps
+raisonnable. Ils utilis&egrave;rent des heuristiques, des recettes
+approximatives, pour guider les choix et &eacute;viter une exploration
+exhaustive de l'espace des possibilit&eacute;s. Par exemple, pour le jeu
+d'&eacute;checs, une heuristique possible consiste &agrave; accorder des
+valeurs aux pi&egrave;ces, et &agrave; ne pas explorer les suites des actions
+qui mettent en p&eacute;ril des pi&egrave;ces trop pr&eacute;cieuses.<p>
+Cette approche est moins utilis&eacute;e maintenant. Trouver de bonnes
+heuristiques est loin d'&ecirc;tre &eacute;vident, et l'avantage obtenu sur les
+humains gr&acirc;ce &agrave; la puissance d'exploration est souvent peu
+significatif. De plus, il devenait de plus en plus difficile de qualifier
+d'intelligents de tels programmes si "brutaux". Les chercheurs se sont
+tourn&eacute;s alors vers des techniques plus &eacute;labor&eacute;es.
+<h3>
+<A NAME="Heading6">L'ordinateur expert</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>Pendant que la plupart des chercheurs travaillaient &agrave;
+repousser les limites de la combinatoire, une &eacute;quipe de
+l'universit&eacute; de Stanford s'effor&ccedil;ait d&egrave;s 1965 de traiter
+un probl&egrave;me pour lequel aucune solution algorithmique, m&ecirc;me
+hautement combinatoire, n'&eacute;tait connue. Il s'agissait d'associer au
+spectre de masse la formule d&eacute;velopp&eacute;e du corps chimique
+correspondant. Leur programme, DENDRAL, constitue sans doute le premier
+syst&egrave;me expert jamais con&ccedil;u.<p>
+L'id&eacute;e qui consistait &agrave; traiter des probl&egrave;mes difficiles
+en utilisant la connaissance des experts n'&eacute;tait pas nouvelle. Elle
+avait d&eacute;j&agrave; &eacute;t&eacute; employ&eacute;e par exemple pour le
+jeu d'&eacute;checs. Non, l'id&eacute;e nouvelle, c'&eacute;tait de rendre
+cette connaissance <i>explicite</i>. Au lieu d'&ecirc;tre traduite sous forme
+d'algorithme puis noy&eacute;e dans le code du programme, la connaissance de
+l'expert est exprim&eacute;e sous forme de r&egrave;gles. Le programme va lire
+ces r&egrave;gles, et il va <i>raisonner </i>en tentant de les encha&icirc;ner
+jusqu'&agrave; obtenir un r&eacute;sultat. Dans le cas de DENDRAL, le programme
+encha&icirc;nait des r&egrave;gles de mani&egrave;re &agrave; associer une
+formule chimique au spectre observ&eacute;.<p>
+Certes, le travail de l'ordinateur reste en grande partie combinatoire. Mais
+cette fois, la connaissance experte du domaine (par ex. la chimie) n'intervient
+pas pour guider les choix, elle devient l'objet de ces choix. On peut alors
+plus facilement qualifier l'ordinateur d'intelligent : en pr&eacute;tendant que
+la combinatoire qu'il effectue est exactement celle qui est effectu&eacute;e
+par les experts humains (ce point sera discut&eacute; ci-dessous).
+<h3>
+<A NAME="Heading7">Des langages &agrave; part pour l'I.A.</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>D&egrave;s 1958, John McCarthy qui est l'un des fondateurs de
+l'I.A., a dot&eacute; cette discipline d'un langage totalement nouveau, LISP,
+que certains ont pu consid&eacute;rer comme "parfait" &agrave; bien des
+&eacute;gards (contrairement &agrave; FORTRAN ou COBOL qui &eacute;taient
+n&eacute;s quelques mois plus t&ocirc;t). LISP est un langage fonctionnel,
+inspir&eacute; des travaux de math&eacute;maticiens comme Kurt G&ouml;del. Dans
+LISP, aucune distinction de forme n'est faite entre les instructions et les
+donn&eacute;es. Tout est &eacute;l&eacute;ment d'une liste. C'est le cas du
+programme lui m&ecirc;me, ce qui ouvre la possibilit&eacute; pour le
+programmeur d'&eacute;crire des programmes qui se modifient eux-m&ecirc;mes en
+cours d'ex&eacute;cution !<p>
+L'autre langage de l'Intelligence Artificielle est certainement Prolog, qui a
+&eacute;t&eacute; cr&eacute;&eacute; en partie en France au d&eacute;but des
+ann&eacute;es 1970. Programmer en Prolog, c'est programmer en logique. Ce qui
+veut dire : fournir une connaissance &agrave; la machine, au lieu de lui
+indiquer en d&eacute;tail ce qu'elle doit faire. La machine utilise le
+programme &eacute;crit en Prolog de la m&ecirc;me fa&ccedil;on que le
+syst&egrave;me expert utilise la connaissance explicite fournie par l'expert
+humain et qui est contenue dans les r&egrave;gles. On parle de programmation
+<i>d&eacute;clarative</i>, par opposition &agrave; la programmation
+<i>imp&eacute;rative</i> employ&eacute;e avec tous les autres langages.<p>
+Mais les listes ou la logique peuvent se r&eacute;v&eacute;ler parfois
+inad&eacute;quats pour repr&eacute;senter les connaissances. Les chercheurs de
+l'I.A. ont eu recours &agrave; des langages leur permettant de
+repr&eacute;senter des graphes conceptuels, c'est-&agrave;-dire des langages
+dans lesquels ont peut exprimer ce que sont les concepts du domaine
+trait&eacute;, leurs caract&eacute;ristiques et leurs relations. Ces travaux
+ont conduit aux langages &agrave; objets (par exemple SmallTalk) qui sont
+actuellement tr&egrave;s largement employ&eacute;s en g&eacute;nie logiciel.
+<h3>
+<A NAME="Heading8">Comprendre la langue des hommes</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>M&ecirc;me si des langages comme LISP, Prolog ou SmallTalk se
+rapprochent des exigences de la pens&eacute;e humaine, nous sommes encore
+tr&egrave;s loin de la programmation au moyen de la langue naturelle. Les
+difficult&eacute;s li&eacute;es &agrave; la compr&eacute;hension des langues
+humaines ont &eacute;t&eacute; consid&eacute;rablement sous-estim&eacute;es au
+d&eacute;part. Jusqu'en 1964, des efforts importants ont &eacute;t&eacute;
+consacr&eacute;s &agrave; la recherche en traduction automatique
+(motiv&eacute;s en partie par la guerre froide et la n&eacute;cessit&eacute;
+d'accumuler des informations sur l'autre camp), lorsqu'il apparut assez
+soudainement que tout espoir de traduire sans une compr&eacute;hension fine du
+sens du texte, r&eacute;alis&eacute;e &agrave; partir d'une base de
+connaissances, &eacute;tait tout &agrave; fait vain. Depuis cette
+&eacute;poque, les efforts se sont surtout concentr&eacute;s sur d'autres
+aspects du traitement des langues, notamment le traitement de la morphologie
+des mots et de la phrase.<p>
+La strat&eacute;gie que l'on retrouve &agrave; tous les niveaux du traitement
+automatique de la langue consiste &agrave; <i>reconna&icirc;tre</i> les
+"briques" et leur combinaison. Mais cela est loin d'&ecirc;tre simple, car les
+langues semblent &ecirc;tre extr&ecirc;mement complexes, soit
+intrins&egrave;quement, soit du fait de notre ignorance de leurs
+m&eacute;canismes.<p>
+Une langue s'appuie sur &agrave; peine quelques dizaines de phon&egrave;mes.
+Mais parmi toutes les combinaisons imaginables de ces briques de base, seules
+certaines sont acceptables dans cette langue. Des r&egrave;gles qui interdisent
+par exemple la succession "t"-"p" dans les mots du fran&ccedil;ais sont
+pr&eacute;cieuses lorsqu'il s'agit de segmenter un flot de parole orale ou de
+reconna&icirc;tre des mots mal orthographi&eacute;s. On retrouve la
+dualit&eacute; brique/combinaison dans la structure de la phrase. Dans ce cas
+ce sont des morph&egrave;mes (les mots, les marques de temps, etc.) qui sont
+combin&eacute;s selon les r&egrave;gles de la syntaxe. <i>Reconna&icirc;tre</i>
+la syntaxe est un premier pas vers la compr&eacute;hension du sens
+(identification du sujet, d'une subordonn&eacute;e, etc.). Par exemple les deux
+sens de la phrase "La petite brise la glace" correspondent &agrave; deux
+structures syntaxiques diff&eacute;rentes. <p>
+Dans un traitement automatique, la structure syntaxique va &ecirc;tre
+repr&eacute;sent&eacute;e par un arbre. A partir des noeuds de cet arbre, on
+peut ensuite, dans un traitement s&eacute;mantique, esp&eacute;rer
+<i>reconna&icirc;tre</i> une structure de pr&eacute;dicat logique : "Le fils de
+Pierre aime Marie"  [[[Le fils] [de Pierre]] [aime Marie]]  <i>aimer(jean,
+marie)</i>. Ce pr&eacute;dicat est lui m&ecirc;me une brique dans une base de
+connaissance fournie &agrave; l'ordinateur. La machine peut alors
+<i>reconna&icirc;tre</i> un argument logique dans cette phrase. Elle pourra
+peut-&ecirc;tre d&eacute;duire que Jacqueline risque d'&ecirc;tre jalouse de
+Marie.
+<h3>
+<A NAME="Heading9">La robotique : vers la vie artificielle</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>La robotique n'est pas &agrave; proprement parler une branche de
+l'Intelligence artificielle. Lorsqu'il s'agit de doter le robot de
+capacit&eacute;s de perception ou d'action, des disciplines comme le traitement
+du signal ou la m&eacute;canique sont &eacute;galement concern&eacute;es. En
+revanche, lorsqu'on veut que le robot acqui&egrave;re une certaine autonomie
+comportementale, qu'il ait des capacit&eacute;s de r&eacute;solution de
+probl&egrave;me, qu'il se pr&eacute;occupe de sa viabilit&eacute;
+(&eacute;nergie, rep&eacute;rage, dangers, ...) on doit le doter de
+connaissances et de moyens de raisonner sur ces connaissances, bref : le doter
+d'une intelligence artificielle.<p>
+Mais la robotique est aussi une occasion pour certains chercheurs du courant
+Vie Artificielle d'explorer non pas l'intelligence telle qu'on la voit &agrave;
+l'oeuvre chez les humains ou les animaux, mais l'intelligence telle qu'elle
+pourrait &ecirc;tre. Ces chercheurs tentent d'utiliser les contraintes de la
+viabilit&eacute; pour faire &eacute;voluer des robots (r&eacute;els ou
+virtuels) qui d&eacute;couvriront eux-m&ecirc;mes des moyens originaux pour
+r&eacute;soudre des probl&egrave;mes. Certaines de ces cr&eacute;atures (penser
+&agrave; des fourmis artificielles) peuvent par exemple d&eacute;couvrir le
+moyen de r&eacute;soudre des t&acirc;ches collectivement, comme trouver un
+chemin optimal vers une source d'&eacute;nergie (dans un environnement
+physique) ou d&eacute;tourner les ressources CPU d'un ordinateur (dans un
+environnement virtuel), sans qu'aucun individu ait une repr&eacute;sentation de
+la solution dans son ensemble.
+<h3>
+<A NAME="Heading10">L'ordinateur capable d'apprendre</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>En pr&eacute;voyant qu'avant la fin du XXdeg. si&egrave;cle un
+ordinateur pourrait se faire passer pour un humain dans une communication
+&agrave; distance, Alan Turing pensait &agrave; un programme qui aurait appris
+par lui-m&ecirc;me, au contact des humains, toutes les connaissances
+n&eacute;cessaires. Il n'imaginait pas les difficult&eacute;s
+consid&eacute;rables qui attendaient ceux qui, par la suite, se sont
+pr&eacute;occup&eacute; d'apprendre aux machines &agrave; apprendre.<p>
+Avec le recul , on s'aper&ccedil;oit que les programmes d'apprentissage
+utilisent fondamentalement deux types de m&eacute;thodes pour extraire,
+&agrave; partir des donn&eacute;es qui leur sont pr&eacute;sent&eacute;es, les
+formes qui sont "dignes" d'&ecirc;tre m&eacute;moris&eacute;es. La
+premi&egrave;re m&eacute;thode consiste &agrave; rep&eacute;rer des
+r&eacute;gularit&eacute;s statistiques, et &agrave; m&eacute;moriser ces
+r&eacute;gularit&eacute;s. Cela permet par exemple de former des concepts
+&agrave; partir d'une masse d'exemples. Un concept appris sera une conjonction
+d'attributs communs &agrave; tout un groupe d'exemples jug&eacute;s
+suffisamment similaires. Un programme peut ainsi grouper les cas de maladie
+mentale et fournir les listes de sympt&ocirc;mes (ou des arbres de
+d&eacute;cision) qui permettent de caract&eacute;riser les groupes obtenus. La
+m&ecirc;me technique peut permettre d'apprendre un plan d'action efficace ou
+d'apprendre &agrave; reconna&icirc;tre une forme visuelle sous des apparences
+diff&eacute;rentes.<p>
+La deuxi&egrave;me m&eacute;thode pour apprendre est fondamentalement
+diff&eacute;rente. Elle consiste &agrave; <i>reconna&icirc;tre</i> une
+structure dans les donn&eacute;es fournies, et &agrave; m&eacute;moriser cette
+structure. L'apprentissage par l'explication, par exemple, part de la
+description d'un objet particulier (un seul peut suffire). Il d&eacute;montre
+par exemple qu'il s'agit d'un v&eacute;hicule parce qu'il peut se mouvoir
+&agrave; l'aide de ses chenilles, qu'il comporte des si&egrave;ges et que son
+moteur &agrave; &eacute;nergie solaire le rend autonome. Il forme alors une
+sp&eacute;cialisation du concept de v&eacute;hicule, et il pourra utiliser ce
+nouveau concept dans l'avenir pour reconna&icirc;tre plus vite d'autres objets
+du m&ecirc;me type (m&ecirc;me si ces objets n'ont pas la m&ecirc;me couleur,
+puisque la couleur n'est jamais intervenue pour d&eacute;montrer qu'on avait
+affaire &agrave; un v&eacute;hicule).<p>
+Dans ces deux m&eacute;thodes, la m&eacute;thode statistique et la
+m&eacute;thode par reconnaissance de structure, l'existence d'une connaissance
+pr&eacute;alable est essentielle, soit pour caract&eacute;riser les concepts
+invariants, soit pour reconna&icirc;tre la structure. Toute la
+difficult&eacute; consiste &agrave; doter la machine de cette connaissance, des
+moyens de mesurer les ressemblances, et des moyens d'apparier les structures.
+Nous sommes encore tr&egrave;s loin du r&ecirc;ve de Turing sur ce plan.
+<h3>
+<A NAME="Heading11">La pens&eacute;e sans cerveau</A></h3>
+
+<b><i></i></b><p>
+<b><i></i></b>L'intelligence peut &ecirc;tre source d'inspiration ou objet de
+mod&eacute;lisation. De nombreux chercheurs se sont donn&eacute; comme objectif
+de reproduire sous forme de programme certains processus &agrave; l'oeuvre dans
+le cerveau humain. On peut ainsi chercher &agrave; reproduire des
+capacit&eacute;s de raisonnement, de m&eacute;morisation, de d&eacute;cision ou
+des capacit&eacute;s linguistiques, en pr&eacute;tendant que le programme est
+une image fid&egrave;le du processus mis en oeuvre dans le fonctionnement
+c&eacute;r&eacute;bral. On peut par exemple sugg&eacute;rer que les actions que
+nous encha&icirc;nons au restaurant (choix d'une table, lecture du menu,
+commande, commande des desserts, paiement, etc.) sont gouvern&eacute;es par un
+<i>script</i> standard maintenu en m&eacute;moire. Puis laisser entendre que le
+programme qui reproduit la performance humaine au moyen de la s&eacute;lection
+d'un script appropri&eacute; reproduit ce que les humains r&eacute;alisent de
+mani&egrave;re automatique.<p>
+Pendant longtemps, il a fallu se contenter de mod&egrave;les du raisonnement et
+de la m&eacute;moire, sans qu'aucun chercheur parvienne &agrave; proposer de
+mod&egrave;le cr&eacute;dible pour un type de processus pourtant
+extr&ecirc;mement banal. L'association, l'analogie, la
+g&eacute;n&eacute;ralisation, que nous effectuons continuellement,
+instantan&eacute;ment et sans effort, restaient hors d'atteinte des tentatives
+pour r&eacute;aliser des mod&eacute;lisations cognitives plausibles. Les
+ann&eacute;es 1980 ont connu un bouleversement &agrave; cet &eacute;gard.
+Certains chercheurs ont tent&eacute; de s'inspirer et de faire des
+mod&egrave;les non pas de l'intelligence en tant que processus, mais du cerveau
+lui m&ecirc;me ! L'id&eacute;e &eacute;tait ancienne, mais elle n'est devenue
+cr&eacute;dible que lorsque certains sont parvenus &agrave; r&eacute;soudre des
+probl&egrave;mes non triviaux de classification et de
+g&eacute;n&eacute;ralisation au moyen de neurones artificiels.<p>
+Le connexionnisme est une branche de l'Intelligence Artificielle qui
+&eacute;tudie les capacit&eacute;s, d'une richesse insoup&ccedil;onn&eacute;e
+au d&eacute;part, des r&eacute;seaux de neurones artificiels. Ces
+r&eacute;seaux ont des capacit&eacute;s &agrave; peu pr&egrave;s
+compl&eacute;mentaires de celles des autres techniques de l'I.A. Leur principal
+pouvoir est cette capacit&eacute; de g&eacute;n&eacute;raliser les exemples qui
+leur sont pr&eacute;sent&eacute;s, ce qui les rend tr&egrave;s utiles notamment
+pour classifier (ils peuvent classer une forme visuelle qu'ils n'ont jamais vue
+auparavant, parce qu'elle ressemble <i>globalement</i> &agrave; certains
+exemples appris). Ils peuvent plus g&eacute;n&eacute;ralement apprendre un
+"mapping" quelconque d'un ensemble topologique dans un autre, en interpolant
+par continuit&eacute; entre les exemples qui leur sont donn&eacute;s.<p>
+<P><hr size=4>
+<A HREF="introi03.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/leftg.gif" ALT="<< " border=0></A>
+ <A HREF="introi05.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/rightg.gif" ALT="" border=0></A>
+ <A HREF="introi01.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/upg.gif" ALT="Up " border=0></A>
+ <A HREF="introi.htm"><IMG SRC="/~jld/rtf2html/r2hwin/docs/images/topg.gif" ALT="Title " border=0></A>
+</body></html>

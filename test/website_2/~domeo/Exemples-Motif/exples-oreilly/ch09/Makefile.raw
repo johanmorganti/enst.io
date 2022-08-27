@@ -1,0 +1,8 @@
+PROGRAMS=app_scroll getusers monitor_sb simple_sb traversal
+
+CFLAGS=
+LIBS= -lXm -lXt -lX11
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

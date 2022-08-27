@@ -1,0 +1,100 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version2.7.5 -->
+
+<title>LEONART - Inter-Satellites Links Tools </title>
+
+</head>
+
+
+<body BGCOLOR="#ffffff" text="#000000" LINK="#000fff" VLINK="#7070ff">
+
+<center>
+
+<a href="leonart.html">
+<IMG SRC="../images/leonartlogo.icon2.gif" ALT="[logo]" ALIGN="bottom">
+</a>
+<br>
+Index
+<br>
+
+<h3>
+Low Earth Orbit Numerical Analysis & Research Tools
+</h3>
+
+
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+<br>
+</center>
+
+<body>
+
+
+
+<left><b> <h2> LEONART-FAT : Fade Analysis tools </h2></b></left>
+
+
+
+<p> 
+The FAT module proposes the simulation
+of a basic set of satellite-mobile radio channel fading models.  In correlation
+with elevation data computed by the <a href="CAT.html"> CAT  </a> module for a given constellation, the
+necessary fade margins can be computed for a given link availability, or, the
+resulting link availability computed for a given fade margin.
+</p>
+
+<left><p><b><h3> Fade models </h3></b></p></left>
+
+
+<p> The FAT module proposes the simulation of a basic set of
+satellite-mobile radio channel fading models.  Fade models that are provided are
+empirical and distribution models.  
+</p>
+
+<p> Empirical models are models based on
+measurements and provide a derived equation to compute the fade exceeded for a
+given link availability as a function of satellite elevation.  Two models are
+implemented in LEONART which are the NASA ERS (Empirical Roadside Shadowing)
+model, and the Coverage model or Large Scale-Small Scale (LS-SS) model which are
+described in the NASA Reference Publication 1274.  Fade or availability curves can be displayed as a
+function of elevation.  
+</p>
+
+<p> 
+The distribution models provided are the Rice and
+Rayleigh and the Lutz fade models, which combines Rice and Rayleigh
+distributions in a number of environments.  The Rice distribution provides a
+model of the unshadowed link between a satellite and a mobile, and the Rayleigh
+distribution a model of the shadowed link.  The Lutz model takes into account
+the two possible states of the link (shadowed or not) to model the fade
+distribution in various environments from fade measurements.  The FAT module
+enables the constitution of a Lutz model database.  The density and distribution
+curves of each model can be displayed.
+</p>
+
+<left><p><b><h3> Fade margins and link availability computations </h3></b></p></left>
+
+<p> 
+availability computations<p> The CAT module provides the distribution of the
+elevation of the best elevation satellite in visibility.  The fade models
+provide the fade margin or either the link availability as a function of the
+elevation.  From this two set of data, for a given constellation and users zone,
+and for a given fade model, the expected value of the fade margin or the link
+availability can be computed for each user.  Fade margins and link
+availability reports can be edited and analyzed, for various link availability
+and fade margins respectively.
+</p>
+
+
+<center>
+<br>
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+</center>
+
+
+<I>Last modified 06/27/96</I><br>
+For more information contact:
+<ADDRESS><A HREF="mailto:deridder@tlse.enst.fr">deridder@tlse.enst.fr</A></ADDRESS>
+
+</body>
+</html>

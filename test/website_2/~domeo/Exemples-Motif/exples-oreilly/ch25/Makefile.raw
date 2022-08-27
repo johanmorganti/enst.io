@@ -1,0 +1,12 @@
+PROGRAMS=editor_uil editor.uid menubar.uid dialogs.uid
+
+CFLAGS=
+LIBS= -lMrm -lXm -lXt -lX11
+
+.SUFFIXES : .uil .uid
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@
+
+.uil.uid: ; uil -o $@ $<

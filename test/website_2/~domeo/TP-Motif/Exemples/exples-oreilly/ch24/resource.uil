@@ -1,0 +1,27 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+/* resource.uil - Basic example of setting widget resources. */
+
+module resource
+
+object root : XmPushButton {
+  arguments {
+    XmNlabelString = "Candy-Gram!";
+    XmNmarginWidth = 350;
+    XmNmarginHeight = 350;
+    XmNunitType = Xm100TH_MILLIMETERS;
+    XmNforeground = color ('SlateGrey');
+    XmNbackground = color ('LemonChiffon');
+    XmNfontList = font ('*times-bold-r-normal*180-100-100*');
+  };
+};
+
+end module;

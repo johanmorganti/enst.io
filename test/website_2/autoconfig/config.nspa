@@ -1,0 +1,12 @@
+function FindProxyForURL(url, host)
+{
+  if (isPlainHostName(host) ||
+      dnsDomainIs(host, ".enst.fr") ||
+      dnsDomainIs(host, ".eu.org"))
+    return "DIRECT";
+  if (dnsDomainIs(host, ".epita.fr") ||
+      dnsDomainIs(host, ".epi.net") ||
+      dnsDomainIs(host, ".intrinsec.com"))
+    return "PROXY ebone-proxy.univie.ac.at:3128; DIRECT";
+  return "PROXY www-proxy.enst.fr:3128; PROXY aquilon.enst.fr:80; DIRECT";
+}

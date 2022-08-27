@@ -1,0 +1,37 @@
+#!/usr/local/bin/perl
+#
+# Rajout d'une ou plusieurs photos dans la base de donnees
+#
+# Samuel Tardieu novembre 1992
+#
+
+sub usage 
+{
+ print "Usage: $0 repertoire_destination images\n";
+ exit(1);
+}
+
+$_=$rep=shift(@ARGV) || &usage;
+if (!/\/$/) {$rep.='/';}
+
+while ($_=$orig=shift(@ARGV)) {
+      if (/\/([^\/]*)$/) {$_=$1;}
+      if (/#/) {next;}
+      if (/^(.*) ([^ ]*)$/) {
+	 $nom=$1;
+	 $prenom=$2;
+	 $nom=~y/A-Z \-/a-z\-\-/d;
+         $prenom=~s/:8e/e/go;
+	 $prenom=~s/:8f/e/go;
+         $prenom=~s/:91/e/go;
+	 $prenom=~s/:94/i/go;
+	 $prenom=~s/:95/i/go;
+	 $prenom=~s/:99/o/go;
+	 $prenom=~s/:8d/c/go;
+	 $prenom=~s/:9f/u/go;
+	 $prenom=~s/:9d/u/go;
+	 $prenom=~y/A-Z \-/a-z\-\-/d;
+         $orig=~s/ /\\ /go;
+	 system("/usr/local/pbm/tifftopnm  < $orig | /usr/local/pbm/pgmtoppm white | /usr/local/pbm/ppmtogif > $rep$nom"."_$prenom.gif");
+      }
+}

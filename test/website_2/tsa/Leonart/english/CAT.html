@@ -1,0 +1,204 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version2.7.5 -->
+
+<title>LEONART - Low Earth Orbit Numerical Analysis & Research Tools </title>
+
+</head>
+
+
+<body BGCOLOR="#ffffff" text="#000000" LINK="#000fff" VLINK="#7070ff">
+
+<center>
+
+<a href="leonart.html">
+<IMG SRC="../images/leonartlogo.icon2.gif" ALT="[logo]" ALIGN="bottom">
+</a>
+<br>
+Index
+<br>
+
+<h3>
+Low Earth Orbit Numerical Analysis & Research Tools
+</h3>
+
+
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+<br>
+</center>
+
+<body>
+
+
+
+<left><b> <h2> LEONART-CAT : Coverage Analysis Tools </h2></b></left>
+
+
+
+<p> This module
+enables the configuration of satellite constellations, stations and mobile users
+zones.  It simulates satellite ephemeris, generate visibility data between the
+satellites of the constellation and users or stations.  Time statistics about
+visibility are computed and displayed in the form of reports, curves, images and
+maps.
+</p>
+
+ 
+<left><p><b><h3> CAT Configurator </h3></b></p></left>
+
+<p> The CAT Configurator proposes an interface to set
+up constellation of satellites, ground stations and mobile user zones.  
+</p>
+
+<p> The configuration of a <i>constellation</i> means to give the six orbital elements of each
+satellite at a reference date.  This can be done satellite by satellite, or the
+constellation generator can be used.  It provides entries for inclined
+constellations of the Walker type, or optimized polar Beste
+constellations with a reduced set of parameters.  The orbital
+elements of each satellite are generated automatically.  Any type of orbit type
+can be generated:  LEO, MEO, HEO and of course GEO.
+</p>
+
+<p> The <i>ground stations</i> configuration consists in defining its name, location (longitude and latitude),
+and minimum elevation angle under which radio links are no more possible.
+</p>
+
+<p> The <i>mobile user zone</i> configuration consists in giving for each user its location and
+minimum elevation angle.  A user mesh generator is provided to define large
+zones with a great number of users.
+</p>
+
+<left><p><b><h3> CAT Simulator </h3></b></p></left>
+
+
+
+
+<p> The CAT Simulator provides an interface to initialize simulation parameters and to run
+the simulation programs, that are totally independent of the interface.  The
+main simulations that are provided are the following:
+</p>
+
+<ul>
+
+<p> 
+<li> <b> Orbital simulations</b></li>
+</p>
+
+<p>
+After the selection of a constellation file, it
+computes the satellites position in time, i.e.  the ephemeris.
+</p>
+
+<p> 
+<li> <b> Visibility simulations</b></li>
+</p>
+
+<p>
+The visibility simulations are made after
+the selection of a constellation ephemeris file, a ground station file and a
+user zone file.  Visibility data of the satellites by the ground stations and by
+the users can be computed.  The mutual visibility, which means the simultaneous
+visibility of a satellite by a user and a station, can also be computed.
+</p>
+
+
+<p> 
+<li> <b> Elevation angles simulations</b></li>
+</p>
+
+<p> 
+The elevation angles with
+which a satellite is seen by a station or the users of the service zone are computed at each time simulation step.  They are then used by the CAT Analyzer or
+the <a href="FAT.html"> FAT  </a> for fade margins computations.
+</p>
+
+</ul>
+
+<left><p><b><h3> CAT Analyzer </h3></b></p></left>
+
+<p> 
+The CAT Analyzer provides powerful tools to process the simulation data of CAT and to
+display them in friendly formats.
+</p>
+
+<ul>
+
+<p> 
+<li> <b> Visibility simulation data analysis </b></li>
+</p>
+
+
+<p>
+The first step in analyzing visibility simulation data is the generation
+of a time statistical report.  For each station or mobile user, 15 statistical
+parameters are computed and stored into a data file.  Typical statistical
+parameters of interest are the <i>mean time ratio of visibility of at least 1
+satellite</i>, the <i>mean time ratio of visibility of n satellites
+simultaneously</i>, the <i>minimum, mean, maximum time of
+no-visibility</i>,...<p> This statistical report can then be edited in text
+format for a given user or ground station.  A selected statistical parameter can
+be displayed for each mobile user of t he service zone on a map with color
+levels , or as curve of the evolution of the parameters value as a
+function of latitude or longitude.  <p> Time visibility curves can also be
+obtained, showing the evolution of the number of satellites in visibility as a
+function of time for a given user or ground station.
+</p>
+
+<p> 
+<li> <b> Elevation simulation data analysis </b></li>
+</p>
+
+
+<p> 
+The elevation simulation provides the
+elevation angle with which each satellite of the constellation is seen by each
+user or station as a function of time.  The analysis enables the computation of
+an elevation time statistics report.  This report can be edited as text for a
+given user or station.  For a mobile user zone, a selected elevation statistical
+parameter can be displayed as a colored map or longitude/latitude curve.  
+</p>
+
+<p>
+Elevation distributions can also be computed for ground stations as curves or
+images (double visibility case).  The evolution of the elevation of the best
+elevation satellite as a function of time can also be displayed on a curve for
+a given station or user.
+</p>
+
+<p> The elevation distribution data can then be used as
+input parameters for the Fade Analysis Tools, <a href="FAT.html"> FAT  </a>, in order to compute fade
+margins and availability.
+</p>
+
+</ul>
+
+<left><p><b><h3> Utilities </h3></b></p></left>
+
+<p> 
+Some additional visual analysis of data is provided by LEONART :
+</p>
+
+<ul>
+
+<p> 
+<li> Satellites ground tracks display on a map.</li>
+<li> Satellites footprints on a map.</li>
+<li>  Ground stations visibility circles on a map.</li>
+</p>
+
+</ul>
+
+
+
+<center>
+<br>
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+</center>
+
+
+<I>Last modified 06/27/96</I><br>
+For more information contact:
+<ADDRESS><A HREF="mailto:deridder@tlse.enst.fr">deridder@tlse.enst.fr</A></ADDRESS>
+
+</body>
+</html>

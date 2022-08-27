@@ -1,0 +1,1698 @@
+<html>
+<head>
+<title>L'Internet</title>
+</head>
+
+<body bgcolor="#dddddd">
+
+<img src="/gif/grandvertjaune.gif">
+
+<center>
+<h1>L'Internet</h1>
+<p>
+<font size=+2>Dominante Informatique</font><p>
+<font size=+1><i><a href="http://www-inf.enst.fr/~dax/">Philippe Dax</a></i></font><p>
+</center>
+
+<img src="/gif/grandvertjaune.gif">
+
+<ul>
+<li>	<a href="#Concepts">Concepts et structures de l'Internet</a>
+<ul>
+<li>	<a href="#Définition">Définition de l'Internet</a>
+<li>	<a href="#Historique">Historique de l'Internet</a>
+<li>	<a href="#Organisation">Organisation de l'Internet</a>
+<li>	<a href="#Protocoles">Protocoles de l'Internet</a>
+<li>	<a href="#Fonctionnement">Fonctionnement de l'Internet</a>
+</ul>
+<li>	<a href="#outils">Outils et utilisation de l'Internet</a>
+<ul>
+<li>	<a href="#DNS">Serveur de noms</a>
+<li>	<a href="#Telnet">Connexion à distance</a>
+<li>	<a href="#Ftp">Transfert de fichiers</a>
+<li>	<a href="#Email">Courrier électronique</a>
+<li>	<a href="#News">Nouvelles distribuées</a>
+<li>	<a href="#Serveurs information">Serveurs d'information</a>
+<li>	<a href="#Annuaires">Annuaires électroniques</a>
+<li>	<a href="#Outils admin">Outils réseaux</a>
+</ul>
+<li>	<a href="#Perspectives">Evolutions et perspectives de l'Internet</a>
+<ul>
+<li>	<a href="#Multicast">Expériences multicast</a>
+<li>	<a href="#Sécurité">Sécurité, adressage</a>
+<li>	<a href="#Futur">Futur de l'Internet</a>
+</ul>
+<li>	<a href="#Renseignements">Renseignements pratiques</a>
+<ul>
+<li>	<a href="#Raccordement">Comment se raccorder à l'Internet ?</a>
+<li>	<a href="#DialupIP">L'Internet à coût raisonnable, micros</a>
+<li>	<a href="#Prestataires">Fournisseurs de services Internet (ISP)</a>
+</ul>
+<li>	<a href="#Stats">Statistiques d'utilisation</a>
+<li>	<a href="#Bibliographie">Bibliographie, pointeurs sur les bonnes adresses</a>
+</ul>
+
+<img src="/gif/grandvertjaune.gif">
+
+<h1><a name="Concepts">Concepts et structures de l'Internet</a></h1>
+
+<h2><a name="Définition">Définition de l'Internet</a></h2>
+
+<ul>
+<li>	Au sens strict:
+Réseau d'interconnexion de tous les réseaux qui utilisent
+la famille des protocoles IP
+<li>	Par extension:
+Ensemble de tous les réseaux qui coopèrent pour former un
+réseau virtuel unique pour leurs utilisateurs : l'Internet-Mail,
+appelé aussi "The Matrix".
+<li>	De manière générale:
+Un méta-réseau de données global à couverture
+mondiale.
+
+<li>	qui utilise l'Internet ?
+<ul>
+<li>	 au début : communauté des informaticiens
+<li>	 puis : communauté des organismes de R&amp;D et académiques
+<li>	 entreprises commerciales offrant des services
+<li>	 individus
+</ul>
+</ul>
+
+<h2><a name="Constitution">Constitution de l'Internet</a></h2>
+
+<ul>
+<li>	réseaux
+<ul>
+<li>	 locaux d'entreprises (LAN)
+<li>	 campus universitaires (CAN)
+<li>	 régionaux (plaques)
+<li>	 transits national et international (WAN)
+</ul>
+<li>	routeurs
+<li>	passerelles (gateways)
+<li>	serveurs Unix
+<li>	stations de travail
+<li>	micro-ordinateurs
+<li>	serveurs de terminaux
+</ul>
+
+<h2><a name="Tuyaux">Les "tuyaux" de l'Internet</a></h2>
+
+<ul>
+<li>	Supports physiques des réseaux locaux
+<ul>
+<li>	 Ethernet 10 Mbits (10 base 5, 10 base 2, 10 base T, 100 base T)
+<li>	 Fddi 100 Mbits
+<li>	 Token ring
+<li>	 Infrarouge
+</ul>
+<li>	Supports physiques longue distance (opérateurs)
+<ul>
+<li>	 Lignes spécialisées (Transfix : 9600, 19200, 64K, ..., 2M,
+34M)
+<li>	 Réseau public à commutation de données (Transpac,
+IP/X25)
+<li>	 RNIS (Numéris : 64K, 2M)
+<li>	 Réseau téléphonique (RTC, modem 14,4K V32bis, V42,
+V42bis)
+<li>	 ATM
+<li>	 Radio
+</ul>
+<li>	Routeurs (La "glue")
+<ul>
+<li>	 routage des paquets et éventuellement filtrage
+<li>	 Cisco, Wellfleet, NSC, Proteon, Digital,...
+</ul>
+<li>	Passerelles (vers des réseaux non Internet)
+<ul>
+<li>	 trafic Uucp
+<li>	 trafic Bitnet
+<li>	 trafic X400
+</ul>
+</ul>
+
+
+<h2><a name="Historique">Historique de l'Internet</a></h2>
+<ul>
+<li>	DoD 1969 (premières spécifications) : Guerre froide ?
+<li>	ARPA (Advanced Research Projects Agency)
+<li>	BBN (Bolt, Beranek and Newman)
+<li>	Réseau Arpanet (DARPA - 1973)
+<li>	Cyclades - Cigale (1972-1975 en France, Louis Pouzin)
+<li>	Premiers protocoles (1974 - Robert  Kahn, Vinton Cerf)
+<li>	Unix BSD4.2 (Berkeley - 1980)
+</ul>
+
+
+<h2><a name="Organisation">Organisation de l'Internet</a></h2>
+<ul>
+<li>	ISOC (Internet Society, 1992)
+<li>	BOT (Board of Trustees)
+<li>	IAB (Internet Architecture Board - iab@isi.edu)
+<li>	IETF (Internet Engineering Task Force)
+<li>	IRTF (Internet Research Task Force)
+<li>	IESG (Internet Engineering Steering Group)
+<li>	IRSG (Internet Research Steering Group)
+<li>	IANA (Internet Assigned Number Authority - iana@isi.edu)
+<li>	NIC (Network Information Center - nic.ddn.mil)
+<li>	INTERNIC (Internet Network Information Center - info@internic.net)
+<li>	Les NOC/NCC (Network Operator/Computer Center)
+</ul>
+
+
+<h2><a name="ISOC">l'Internet Society - ISOC, BOT, IAB, IESG, IETF, IESG, IRTF</a></h2>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet1.gif"></center>
+<p>
+<ul>
+<li>	IETF
+<ul>
+<li>	 travaux sur l'évolution à court terme (6 mois à 2
+ans)
+<li>	 9 domaines (areas), 60 groupes de travail
+<li>	 sous la responsabilité de l'IESG
+</ul>
+<li>	IRTF
+<ul>
+<li>	 travaux sur l'évolution à long terme
+<li>	 sous la responsabilité de l'IRSG
+</ul>
+</ul>
+
+
+<h2><a name="Autres structures">Autres structures autour de l'Internet</a></h2>
+<ul>
+<li>	FARNET (Federation of American Research Networks - 1987)
+<li>	CNIDR (Clearinghouse for Networked Information Discovery and Retrieval -1992)
+<li>	FNC (Federal Networking Council)
+<li>	RARE (Réseaux Associés pour la Recherche Européenne)
+<li>	RIPE (Réseaux IP Européens)
+<li>	CCIRN (Coordinating Committee for Intercontinental Research Networks)
+<li>	EFF (Electronic Frontier Foundation)
+<li>	CIX (Commercial Internet eXchange)
+</ul>
+
+
+<h2><a name="Grands réseaux">Quelques grands réseaux de l'Internet</a></h2>
+<ul>
+<li>	NSFnet (National Science Foundation Network)
+<li>	ANS (Advanced Networks &amp; Services)
+<li>	NYSERnet (New-York State Education and Research Network)
+<li>	PSInet (Performance System Inc. Network)
+<li>	SURAnet (Southeastern Universities Research Association Network)
+<li>	MIDnet (Middle West Network)
+<li>	CERFnet (California Education and Research Federation Network)
+<li>	BARRnet (Bay Area Regional Research Network)
+<li>	NEARnet (New England Academic Research Network)
+<li>	Europanet (Europe, CEE - DGXIII)
+<li>	Eunet (Europe - 28 pays)
+<li>	Ebone (Europe)
+</ul>
+
+
+<h2><a name="Quelques chiffres">Quelques chiffres sur l'Internet</a></h2>
+<ul>
+<li>	46.000 réseaux interconnectés (12/94)
+<li>	60.000 réseaux alloués (10/94)
+<li>	240.500 noms de domaines enregistrés, 33500 en europe, 2500 en France (01/96)
+<li>	9.500.000 ordinateurs, 1.900.000 en Europe, 137.300 en France (01/96)
+<li>	39.000.000 d'utilisateurs (mail), 27 millions (www), 450000 en France
+<li>	1000-2000 fournisseurs de services (ISP)
+<li>	83 pays à connectivité IP (08/94)
+<li>	154 pays à connectivité mail (06/94)
+<li>	croissance des réseaux de 12%/mois -&gt; 160%/an
+<li>	150.000 nouveaux utilisateurs /mois
+</ul>
+<a href="http://www.gni.fr/isoc-fr/babillard.html">Chiffres &agrave; jour</a>
+
+
+<h2><a name="Commutation de paquets">Réseaux à commutation de paquets</a></h2>
+<ul>
+<li>	Approche circuit virtuel (X25)
+<ul>
+<li>	 métaphore du téléphone
+<li>	 un seul paquet d'appel contient les adresses source/destin
+<li>	 le paquet d'appel établit un circuit virtuel figé
+<li>	 les paquets de données n'ont plus besoin des adresses
+<li>	 acquitement de noeuds en noeuds (LAP B), point à point
+<li>	 échanges de crédits permanents (contrôle de congestion)
+<li>	 maintient d'états (variables) dans le réseau (X75)
+<li>	 riche en états (mémorisation des ressources réservées)
+<li>	 intelligence dans le réseau
+</ul>
+<li>	Approche datagramme (TCP/IP)
+<ul>
+<li>	 métaphore postale
+<li>	 paquets indépendants
+<li>	 chaque paquet contient leurs adresses source/destination
+<li>	 pas d'acquitement interne, contrôle de bout en bout (TCP)
+<li>	 maintient de tables de routage par calcul (voisinage)
+<li>	 sans état
+<li>	 intelligence dans le hôte et l'application
+</ul>
+</ul>
+
+
+<h2><a name="Couches">Modèle en couches de l'Internet</a></h2>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet2.gif"></center>
+<p>
+
+<h2><a name="Protocoles">Protocoles de base de l'Internet</a></h2>
+
+Protocoles des couches basses (réseau et transport)
+nécessaires aux protocoles des couches hautes.
+
+<ul>
+<li>	Résolution d'adresse locales (LAN)
+<ul>
+<li>	 <b>ARP</b> (Address Resolution Protocol)
+<li>	 <b>RARP</b> (Reverse Address Resolution Protocol)
+</ul>
+<li>	Adressage et routage
+<ul>
+<li>	 <b>IP</b> (Internet Protocol)
+</ul>
+<li>	Contrôle
+<ul>
+<li>	 <b>ICMP</b> (Internet Control Message Protocol)
+</ul>
+<li>	Transport
+<ul>
+<li>	 <b>TCP</b> (Transport Control Protocol)
+<li>	 <b>UDP</b> (User Datagram Protocol)
+</ul>
+</ul>
+
+
+<h2><a name="Protocoles de gestion">Protocoles de gestion de l'Internet</a></h2>
+Nécessaires au fonctionnement même de l'Internet
+<p>
+<ul>
+<li>	Routage dynamique auto-adaptatif
+<ul>
+<li>	 <b>RIP</b> (<u>R</u>outing <u>I</u>nformation <u>P</u>rotocol) : distance
+vector
+<li>	 <b>IGP</b> (<u>I</u>nterior <u>G</u>ateway <u>P</u>rotocol)
+<li>	 <b>OSPF</b> (<u>O</u>pen <u>S</u>hortest <u>P</u>ath <u>F</u>irst)
+<li>	 <b>EGP</b> (<u>E</u>xterior <u>G</u>ateway <u>P</u>rotocol)
+<li>	 <b>BGP</b> (<u>B</u>order <u>G</u>ateway <u>P</u>rotocol)
+</ul>
+<li>	Service de nommage distribué
+<ul>
+<li>	 <b>DNS</b> (<u>D</u>omain <u>N</u>ame <u>S</u>ystem)
+</ul>
+<li>	Administration de réseaux
+<ul>
+<li>	 <b>SNMP</b> (<u>S</u>imple <u>N</u>etwork <u>M</u>anagement
+<u>P</u>rotocol)
+</ul>
+</ul>
+
+
+<h2><a name="Adressage">Adressage IP</a></h2>
+<ul>
+<li>	Adresse sur un mot de 32 bits
+<li>	Représentation décimale sur 4 octets
+<li>	Adressage par réseau/host, routage par réseau
+</ul>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet3.gif"></center>
+<p>
+
+<h2><a name="Protocoles application">Protocoles d'application de l'Internet</a></h2>
+<ul>
+<li>	<b>TELNET</b> (<u>Te</u>rmina<u>l</u> <u>Net</u>work)
+<li>	<b>FTP</b> (<u>F</u>ile <u>T</u>ransfert <u>P</u>rotocol)
+<li>	<b>SMTP</b> (<u>S</u>imple <u>M</u>ail <u>T</u>ransport <u>P</u>rotocol)
+<li>	NNTP (<u>N</u>ews <u>N</u>etwork <u>T</u>ransfert <u>P</u>rotocol)
+<li>	SNMP (<u>S</u>imple <u>N</u>etwork <u>M</u>anagement <u>P</u>rotocol)
+<li>	NTP (<u>N</u>etwork <u>T</u>ime <u>P</u>rotocol)
+<li>	HTTP (<u>H</u>yper <u>T</u>ext <u>T</u>ransport <u>P</u>rotocol)
+</ul>
+
+
+
+<h1><a name="Fonctionnement">Fonctionnement de l'Internet</a></h1>
+
+
+<h2><a name="Interconnexion1">Interconnexion point à point</a></h2>
+Réseau d'interconnexion = <b>internet </b>(inter-network)
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet4.gif"></center>
+<p>
+Les réseaux A et B ne peuvent communiquer entre eux que si ils sont
+interconnectés par un réseau C qu'ils partagent.
+<br>
+Les réseaux A et B possèdent chacun une adresse IP du
+réseau C.
+<br>
+Le réseau C est un réseau d'interconnexion dit aussi
+"<b><i>>internet</i></b>".
+<p>
+Un internet est un réseau de réseaux de machines capables de
+communiquer globalement par le biais du protocole IP et ses services.
+internet d'entreprise : internet privé dans une société
+internet public : les services Internet offerts au public
+
+
+<h2><a name="Interconnexion2">Interconnexion par routeur partagé</a></h2>
+Interconnexion de réseaux
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet5.gif"></center>
+<p>
+
+<h2><a name="Topologie">Topologie de l'Internet</a></h2>
+
+<h3>Réseaux de routeurs</h3>
+
+Raccordement de réseaux 
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet6.gif"></center>
+<p>
+
+<h3>Evolution du réseau NSFnet</h3>
+
+Infrastructures de réseaux : exemple <b>NSFnet</b>
+<p>
+<b>Maillage réduit</b>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet7.gif"></center>
+<p>
+
+<h3>Evolution du réseau NSFnet</h3>
+
+Infrastructures de réseaux : exemple <b>NSFnet</b>
+<p>
+<b>Maillage fort</b>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet8.gif"></center>
+<p>
+
+<h3>Evolution du réseau NSFnet</h3>
+
+Infrastructures de réseaux : exemple <b>NSFnet</b>
+<p>
+<b>Bus</b>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet9.gif"></center>
+<p>
+
+<h3>Réseaux de réseaux en étoile</h3>
+
+Infrastructures de réseaux : exemple <b>Fnet/Eunet</b>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet10.gif"></center>
+<p>
+
+<h3>Réseau de transit de plaques régionales</h3>
+
+Infrastructures de réseaux : exemple <b>RENATER</b>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet11.gif"></center>
+<p>
+
+
+<h1><a name="Outils">Outils et utilisation de l'Internet</a></h1>
+
+
+<h2><a name="Services">Services de l'Internet</a></h2>
+<ul>
+<li>	Service de nommage (dns)
+<li>	Connexion à distance (telnet)
+<li>	Transfert de fichiers (ftp)
+<li>	Courrier électronique (smtp)
+<li>	Nouvelles distribuées (nntp)
+<li>	Administration de réseaux (snmp)
+<li>	Distribution du temps (ntp)
+<li>	Serveurs d'information (gopher, wais, http)
+<li>	Multimédia (igmp, dvmrp, mospf, pim, rtp)
+</ul>
+
+
+<h2><a name="DNS">DNS Serveur de nom</a></h2>
+<ul>
+<li>	Objectif : adresser les machines par leur nom
+<ul>
+<li>	 association d'un nom à un numéro IP unique
+<li>	 principe du domainage pour assurer l'unicité des noms
+<li>	 administration décentralisée d'autorités de domaines
+<li>	 organisation hiérarchisée (pays, organisation, machine)
+<li>	 référence au gestionnaire supérieur si échec
+local
+<li>	 utilisation de caches pour améliorer les performances
+</ul>
+<li>	Domaines hiérarchiques
+</ul>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet12.gif"></center>
+<p>
+</ul>
+
+
+<h2><a name="Telnet">Telnet Connexion à distance</a></h2>
+<ul>
+<li>	Ouverture d'une session de login distante
+<p>
+<pre>
+<tt>
+    % <b>telnet sirocco.enst.fr</b>
+    trying 137.194.160.2...
+    Connected to sirocco.enst.fr.
+    Escape character is '^]'.
+
+    SunOS UNIX (sirocco)
+
+    login: <b>moi</b>
+    password:........
+</tt>
+</pre>
+<p>
+<li>	Connexion à une application distante
+<li>	syntaxe (port: nom d'un service ou numéro de service):
+<p>
+<i>telnet hostname port</i>
+<p>
+<li>	exemples :
+<pre>
+    telnet email.enst.fr mail
+    telnet email.enst.fr 25
+    telnet solo.enst.fr solo
+    telnet metro.jussieu.fr 10000
+</tt>
+</pre>
+
+<li>	Mode commande (caractère <tt>^] </tt>-&gt; prompt: telnet&gt; )
+Commandes : ?, open, close, set, mode, status, display, z, quit
+<li>	Fonctionnement : client-serveur
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet13.gif"></center>
+<p>
+<li>	Cousin non recommandé : rlogin (proxy)
+<ul>
+<li>	"facility" de Berkeley basée sur la confiance distante du couple
+hôte-utilisateur
+<li>	fichiers : <tt>~/.rhosts, /etc/hosts.equiv</tt>
+<li>	avantage : le "password" ne transite pas sur le réseau
+<li>	inconvénient : modification du <tt>.rhost</tt> par un tiers
+</ul>
+</ul>
+
+
+<h2><a name="Ftp">Ftp Transfert de fichiers</a></h2>
+<ul>
+<li>	Transfert de fichiers à distance
+<pre>
+<tt>
+    % <b>ftp hostname</b>
+    Connected to hostname.
+    Name (hostname:moi):<b>&lt;rc&gt;</b>
+    331 Password required for moi.
+    Password:<b>........</b>
+    230 User moi logged in.
+    ftp&gt;
+</tt>
+</pre>
+
+<li>	Commandes internes
+?, cd, lcd, ls, dir, pwd, open, close, bin, ascii, get, put, prompt, hash,
+mget, mput, del, mkdir, quit.
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet14.gif"></center>
+<p>
+<li>	Service détourné de son objectif initial.
+<ul>
+<li>  "hack" anonymous -&gt; ftp anonyme
+</ul>
+</ul>
+
+
+<h2><a name="Anonymous">Ftp anonyme</a></h2>
+<ul>
+<li>	Exemple de session ftp sur un site archive
+<pre>
+<tt>
+    % <b>ftp ftp.enst.fr</b>
+    Connected to ftp.enst.fr.
+    220 sirocco.enst.fr FTP server (SunOS 4.1.3) ready.
+    Name (ftp.enst.fr:moi): <b>anonymous</b>
+    331 Guest login ok, send e-mail address as password.
+    Password:<b>moi@organisme.fr</b>
+    230 Guest login ok, access restrictions apply.
+    ftp&gt; <b>cd pub</b>
+</tt>
+</pre>
+<li>	Archives
+<ul>
+<li> répertoire de consultation : /pub
+<li> répertoire de dépot : /incoming
+</ul>
+<li>	Sécurité
+<ul>
+<li> chroot("/home/ftp");
+</ul>
+</ul>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet15.gif"></center>
+<p>
+
+
+<h2><a name="Email">Courrier électronique</a></h2>
+
+<h3>MUA/MTA</h3>
+
+<ul>
+<li>	Protocole <b>SMTP</b> (RFC821)
+<pre>
+<tt>
+	 telnet hôte-distant smtp
+	 HELO monhôte, MAIL From: moi,RCPT To: toi, DATA
+	 HELP, VRFY lui, EXPN elle, QUIT
+</tt>
+</pre>
+<li>	Clients (Mail User Agent)
+<ul>
+<li>	mail (/bin/mail, /usr/ucb/mail)
+<li>	mailx (System V - HP, Sun-Solaris)
+<li>	elm (+ extensions Mime multimédia en réception)
+<li>	pine (+ extensions Mime multimédia en réception)
+<li>	mh, xmh (+ extensions Mime en émis/réception)
+<li>	mailtool (openwin, multimédia en émis/réception)
+<li>	xmail (openwin, X11)
+<li>	meuf (openwin, X11)
+<li>	eudora (Mac, Pc)
+</ul>
+<li>	Serveur <b>sendmail</b> (Mail Transport Agent)
+<ul>
+<li>	smtp client en mode utilisateur
+<li>	smtp serveur en mode "daemon" (-bd)
+<li>	mode de fonctionnement "store and forward"
+<li>	résolution de l'adresse : triplet (user, proto, gateway)
+<li>	gestion des files d'attentes (-q)
+</ul>
+</ul>
+
+
+<h3><a name="RFC822">RFC822 - adressage par domaine</a></h3>
+
+<ul>
+<li>	adressage RFC822 dans l'Internet
+<ul>
+<li>	user@subdomain.domain
+<tt>loginname@email.enst.fr</tt>
+<tt>Prenom.Nom@enst.fr  &lt;-- forme recommandée</tt>
+<li>	noms des top-level domaines
+<ul>
+<li>	 USA: edu, com, gov, mil, us
+<li>	 autres pays (ISO 3166): fr, uk, de, se, it, es, dk, nl, be, il,br, su, ie, fi, no, au, at, nz, jp, za, ...
+<li>	 org, net, int
+</ul>
+</ul>
+<li>	domaines institutionnels
+<ul>
+<li>	 ac, co, go  (uk, jp, ho, in, ...)
+</ul>
+<li>	adressage RFC822 dans les pseudo-domaines
+<ul>
+<li>	 user@sitename.bitnet (frint21, froner72,...)
+<li>	 user@sitename.uucp
+</ul>
+<li>	adressage local Unix
+<ul>
+<li>	mail user
+<li>	mail user@host
+</ul>
+<li>	localisation des boîtes aux lettres (mailhost)
+<ul>
+<li>	/usr/spool/mail (BSD), /usr/mail (SYSV)
+</ul>
+<li>	forwarding
+<ul>
+<li>	~/.forward
+<i>user@host[, "|filtre"]</i>
+</ul>
+<li>	aliasing
+<ul>
+<li>	/etc/aliases
+<i>alias:	email</i>
+<tt>user:	user@host</tt>
+<li>	listes
+<i>alias:	:include:list-file</i>
+<tt>liste:	:include:/usr/share/mailing/liste</tt>
+</ul>
+</ul>
+
+
+<h2><a name="MIME">MIME</a></h2>
+<ul>
+<li>	MIME (Multipurpose Internet Mail Extension : RFC1341)
+<li>	Enrichissement du contenu des messages RFC822
+<ul>
+<li>	corps du message en plusieures parties (multi-part)
+<li>	texte ascii, ISO-latin, richtext
+<li>	documents PostScript
+<li>	images au format Gif, Tiff, Jpeg
+<li>	son numérisé
+<li>	vidéo encodée Mpeg
+<li>	pointeurs vers des documents externes par ftp
+<li>	type du document : Content-Type: type/sous-type
+<li>	mode de codage : Content-Transfert-Encoding: encodage
+<pre>
+<tt>
+    Mime-Version: 01
+    Content-Type: text/plain charset=iso-8859-1
+</tt>
+</pre>
+<li>	Metamail (RFC 1521)
+<ul>
+<li>	/etc/mailcap
+<li>	méthodes pour visualiser et composer
+<li>	types de documents, méthodes d'encodage/décodage
+</ul>
+</ul>
+</ul>
+
+
+<h2><a name="POP">POP</a></h2>
+<ul>
+<li>	POP (Post Office Protocol)
+<ul>
+<li>	 récupération à distance de la boîte aux lettres
+<li>	 ne pas confondre avec "Point of Presence"
+<li>	 pop account (compte distant)
+<li>	 smtp client côté micro-ordinateur
+<li>	 versions de protocoles : POP2, POP3
+<li>	 clients : mh, xmh, NeXTMail, Eudora (Mac), Popmail (PC)
+<li>	 serveurs : popper (Berkeley), pop3d
+<li>	 autre protocole : IMAP (Internet Mail Access Protocol)
+</ul>
+</ul>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet16.gif"></center>
+<p>
+
+
+<h2><a name="Listes">Listes de diffusion - listserv - majordomo - tulp</a></h2>
+<ul>
+<li>	Listserv (service hérité du Réseau Bitnet - IBM/VM,
+DEC)
+<li>	Majordomo, Tulp, Almanac (inspirés de listserv - Unix)
+<li>	Serveurs (<tt>listserv@mail-server)</tt>
+<ul>
+<li>	 listserv@mail-server, majordomo@mail-server
+<li>	 ordre dans le corps (<tt>list, help, index, sub, signoff</tt>)
+<li>	 subject vide, signature vide
+<li>	 aide à l'utilisation du service (<tt>help</tt>)
+<li>	 catalogue des listes gérées par un serveur (<tt>list</tt>)
+</ul>
+<li>	Listes (<tt>list@mail-server</tt>)
+<ul>
+<li>	 liste restreinte de membres impliqués dans un groupe
+<li>	 mail diffusé à l'ensemble des membres de la liste
+<li>	 liste gérée par un responsable de liste (owner)
+<li>	 propriétaire de la liste <i>list</i> :
+<tt>list-request@mail-server</tt>
+<li>	 gestion à distance par mail par son propriétaire
+<li>	 inscription à distance si autorisée (<tt>sub, signoff</tt>)
+<li>	 la liste peut être privée aux membres (<tt>send private</tt>)
+<li>	 serveur de fichiers propre à la liste (<tt>index, get</tt>)
+<li>	 notion de Réflecteur (hiérarchisation géographique)
+</ul>
+</ul>
+
+
+<h2><a name="Filtres">Filtres, Répondeurs - procmail, filter, vacation</a></h2>
+<ul>
+<li>	Filtrage automatique
+<ul>
+<li>	 classement dans des dossiers (folders)
+<li>	 suppression systématique (<tt>/dev/null</tt>)
+<li>	 déclenchement d'un traitement approprié
+<li>	 analyse des champs <tt>From:</tt> et <tt>Subject:</tt>
+<li>	 procmail (<tt>.procmailrc</tt>)
+<li>	 .<tt>forward: nom, "|/usr/local/bin/procmail"</tt>
+<li>	 filter (elm)
+</ul>
+<li>	Répondeurs automatiques
+<ul>
+<li>	 prise compte du message et envoi d'un accusé
+<li>	 base de données des correspondants : <tt>vacation -i</tt>
+<li>	 fichier message : <tt>.vacation.msg</tt>
+<pre>
+<tt>
+    From: moi@inf.enst.fr
+    Subject: Je suis en vacances
+    X-Sender: repondeur automatique vacation
+    Precedence: bulk
+    Je suis absent pour la semaine. Je prendrais
+    connaissance de votre message des que je serais
+    de retour.
+    En cas d'urgence contactez secretariat@inf.enst.fr
+</tt>
+</pre>
+<li>	 validation <tt>.forward</tt> : <tt>\moi, "|/usr/ucb/vacation moi"</tt>
+</ul>
+</ul>
+
+
+<h2><a name="News">News Nouvelles distribuées</a></h2>
+<ul>
+<li>	Clients : lecteurs de news
+<ul>
+<li>	 news (vnews), readnews
+<li>	 rn, xrn (X11), mxrn (motif), trn
+<li>	 nn
+<li>	 tin, rtin
+<li>	 gnus (emacs)
+<li>	 TheNews (Mac), NewsWatcher (Mac), Nuntius (Mac)
+<li>	 grep, more, less (<tt>/var/spool/news/*</tt>)
+</ul>
+<li>	Serveurs: gestion de news (alimentation et expiration)
+<ul>
+<li>	 A-news : Jim Ellis &amp; Tom Truscott (1979)
+<li>	 B-news : Marc Horton (1982), Rick Adams (1986)
+<li>	 C-news : Henry Spencer (1987)
+<li>	 Inn (InterNetwork News) : Rich Saltz (1992)
+</ul>
+<li>	Protocoles
+<ul>
+<li>	 uucp, rnews
+<li>	 nntp (News Network Transport Protocol)
+<li>	 nnrp (sous-ensemble de nntp pour la lecture des news)
+</ul>
+<li>	Top hiérarchies
+<ul>
+<li>	 historiques : comp, news, sci, soc, rec, talk, misc
+<li>	 autres : gnu, alt, bit, biz, bionet, vmsnet, u3b, k12
+<li>	 pays : au, de, fr, jp, nz
+<li>	 locales : inria, enst,...
+</ul>
+<li>	Configuration, abonnement personnel
+<ul>
+<li>	 <tt>~/.newsrc</tt> (: abonné, ! non abonné)
+</ul>
+<li>	Newsgroups (~3000)
+<ul>
+<li>	 enst.inf.install        (local à l'Enst)
+<li>	 fr.cuisine                 (distribution en France)
+<li>	 eunet.jokes             (distribution en Europe)
+<li>	 comp.archives        (computers)
+<li>	 news.newusers       (news mode d'emploi)
+</ul>
+</ul>
+<p>
+<center><IMG SRC="/~dax/polys/internet/Internet17.gif"></center>
+<p>
+
+
+<h2><a name="FAQ">FAQ Frequently Asked Questions</a></h2>
+<ul>
+<li>	Réponses toutes faites aux questions souvent posées
+<li>	Evite une recherche ou un postage dans les news
+<li>	Réduit l'occupation de bande passante
+<li>	Sert d'index de recherche (Ascii ou par WAIS) : sorte de cache
+<li>	Newsgroups
+<ul>
+<li>	 news.answers             (Faq postées mensuellement)
+<li>	 comp.news.answers  (Faq comp postées mensuellement)
+</ul>
+<li>	Outils
+<ul>
+<li>	 getfaq newsgroup
+<li>	 faqbuilder   (pseudo format nroff)
+</ul>
+</ul>
+
+
+<h2><a name="Communications interactives">Communications interactives</a></h2>
+
+<ul>
+<li>	Communications interactives entre utilisateurs
+<ul>
+<li>	 <b>Talk</b>
+<p>
+L'écran ou la fenêtre est partagée en 2 zones.
+Dans la première zone l'émetteur voit ce qu'il tape  et est
+repercuté dans la deuxième zone du récepteur, dans la
+deuxième zone l'émetteur voit ce que tape son correspondant.
+<p>
+<li>	 <b>Xtalk</b>
+<p>
+L'émetteur peut ouvrir une fenêtre xtalk sur l'écran de son
+correspondant qui répondra dans cette fenêtre (nécessite un
+xhost préalable).
+<p>
+<li>	 <b>Ytalk</b>
+<p>
+Dialogue à 2 ou plusieurs interlocuteurs.
+L'écran ou la fenêtre est partitionné autant de fois qu'il
+y a d'interlocuteurs présents.
+<p>
+<li>	 <b>Irc</b> (Internet Relay Chat)
+<p>
+Forum continu textuel entre plusieurs utilisateurs.
+Identification par un "pseudonyme".
+Sélection d'un canal (channel) de conversation.
+Réseau virtuel de serveurs IRC permettant de propager les canaux et les
+"pseudo" actifs.
+</ul>
+</ul>
+
+
+<h2><a name="Serveurs information">Serveurs d'informations</a></h2>
+
+<ul>
+<li>	Sites archives (ftp anonyme)
+<ul>
+<li>	 ftp.enst.fr
+<li>	 ftp.inria.fr, ftp.cicb.fr, ftp.irisa.fr, ftp.univ-lyon1.fr
+<li>	 nic.funet.fi
+<li>	 <tt>ftp.servers</tt>
+</ul>
+<li>	Finger, Whois, Netfind, Solo (recherche d'une personne)
+<li>	Archie (recherche d'un logiciel par expressions régulières)
+<li>	Gopher (recherche guidée par menus de proche en proche)
+<li>	Wais (recherche par mots clés et domaine d'intérêt)
+<li>	WWW (hypertexte distribué)
+<li>	Annuaires électroniques X500, CSO, Whois
+</ul>
+
+
+<h2><a name="Recherche personne">Recherche d'une personne</a></h2>
+<ul>
+<li>	Finger (information sur un ou des utilisateurs)
+<ul>
+<li>	 <i>finger user@host</i>
+<li>	 <i>finger @host</i>
+<li>	 <tt>finger @inf.enst.fr</tt>
+</ul>
+<li>	whois (recherche d'un responsable réseau ou d'un site)
+<ul>
+<li>	 <tt>whois [-h rs.internic.net] username</tt>
+</ul>
+<li>	Netfind
+<ul>
+<li>	 <tt>telnet bruno.cs.colorado.edu</tt>
+<tt>login: netfind</tt>
+</ul>
+<li>	CSO (Communication Service Office)
+<ul>
+<li>	 ph (client) / qi (serveur) souvent interfacé avec gopher
+</ul>
+<li>	USENET (news - posters)
+<ul>
+<li>	 <tt>mail-serveur@pit-manager.mit.edu</tt>
+<tt>send usenet-addresses/username</tt>
+</ul>
+<li>	SOLO : Simple Object LOokup protocol (1994)
+<ul>
+<li>	 <tt>telnet solo.enst.fr solo</tt>
+<tt>solo &lt;username*,enst,fr&gt; ? email, phone, room;</tt>
+</ul>
+<li>	KIS : Knowbot Information Service (1994)
+<ul>
+<li>	 méta serveur de pages blanches (robots de recherche)
+<li>	 <tt>telnet info.cnri.reston.va.us 185</tt>
+</ul>
+</ul>
+
+
+<h2><a name="Archie">Archie - Recherche d'un logiciel</a></h2>
+<ul>
+<li>	Localisation d'un logiciel sur un site ftp ou un index Wais
+<li>	Exploitation du ls-lR.Z de~ftp/pub de chaque site serveur ftp
+<li>	Recherche sur un index de 1200 serveurs, soit 2,1M fichiers
+<li>	Requête : chaîne de caractères (exacte ou expr.
+régulière)
+<li>	Résultats renvoyés : sites, répertoire, ligne ls -l
+<li>	Clients :
+<ul>
+<li>	 archie (client ligne)
+<li>	 xarchie (client X)
+<li>	 telnet archie.funet.fi
+<li>	 mail archie@archie.mcgill.ca
+</ul>
+<li>	Serveurs :
+<ul>
+<li>	 une vingtaine dans le monde, équivalents (même base)
+<li>	 1ere version domaine public: Université McGill.ca
+<li>	 version commerciale: Bunyip Information Systems
+</ul>
+
+<li>	Principaux serveurs
+
+<pre>
+archie.mcgill.edu             archie.rutgers.edu            archie.sura.net
+archie.unl.edu                archie.ans.edu                archie.au
+archie.funet.fi               archie.doc.ic.ac.uk           archie.wide.ad.jp
+archie.univ-rennes1.fr        archie.th-darmstadt.de        archie.nz
+</pre>
+
+<li>	Client archie (commande mode ligne)
+<ul>
+<li>	 usage: archie [-[cers][l][t][m#][h host][L][N#] string
+<p>
+    -c : ne tient pas compte des majuscules/minuscules<br>
+    -e : chaîne exacte (par défaut)<br>
+    -r : expression régulière<br>
+    -s : sous-chaîne sans tenir compte des maj/min<br>
+    -l : première occurrence de la chaîne pour chaque ligne<br>
+    -t : tri par odre inverse de la date<br>
+    -m#: nomnre maximum d'occurrences (par défaut 95)<br>
+    -h host: nom du serveur<br>
+    -L : liste des serveurs connus et du serveur par défaut<br>
+</ul>
+</ul>
+
+
+<h2><a name="Gopher">Gopher - Navigation par menus</a></h2>
+<ul>
+<li>	Gopher : petit rongeur américain du Minnesota
+<li>	Gopher (recherche guidée par menus de proche en proche)
+<li>	Clients :
+<ul>
+<li>	 gopher gopher.enst.fr (client fenêtre alpha-numérique)
+<li>	 xgopher (client X)
+</ul>
+<li>	Serveur :
+<ul>
+<li>	 gopherd
+</ul>
+<li>	Implémentations :
+<ul>
+<li>	 Unix : gopher, xgopher, gopherd (Sun, HP, NeXT, IBM,...)
+<li>	 Vms : gopher, xgopher
+<li>	 Mac : TurgoGopher, GopherApp
+<li>	 PC : PC gopher III
+</ul>
+<li>	Quelques chiffres
+<ul>
+<li>	 3700 serveurs gopher dans le monde (24/01/94)
+<li>	 9ème position du trafic (2,2%)
+</ul>
+
+<li>	Champs
+<ul>
+<li>	 type : type de fichier
+<li>	 name: nom de la rubrique dans le menu
+<li>	 path : sélecteur d'accès
+<li>	 host : nom de machine distante
+<li>	 port : numéro du port d'attache
+</ul>
+<li>	Types
+
+<pre>
+0  fichier                                   1  répertoire
+2  serveur de pages blanches CSO             3  erreur
+4  fichier Mac (binhex)                      5  archive DOS binaire
+6  fichier Unix encosé (uuencode)            7 serveur de recherche sur index
+8  session telnet                            9  fichier binaire
++  serveur de secours                        T  session tn3270
+g  fichier image (GIF)                       I  autres formats d'images
+s  fichier audio                             M fichier MIME
+</pre>
+
+<li>	Passerelles
+<ul>
+<li>	 ftp (intégré au serveur) : ftp:<i>host</i>@/<i>path</i>/
+<li>	 wais (intégré au serveur) : waissrc:/<i>path</i>/<i>source.src</i>
+<li>	 archie, whois, NNTP (cf go4gw), X500 (cf go500gw)
+</ul>
+</ul>
+
+
+<h2><a name="Veronica">Veronica - Index du gopherspace</a></h2>
+<ul>
+<li>	Aide à la recherche de documents dans l'espace gopher mondial (gopher
+space)
+<li>	Indexation de l'ensemble des menus des serveurs gopher déclarés
+en utilisant WAIS
+<li>	Permet une recherche par mots libres avec opérateurs booléens
+<li>	Veronica est aussi une rubrique de gopher
+</ul>
+
+
+<h2><a name="Wais">Wais - Wide Area Information Service</a></h2>
+<ul>
+<li>	Wais (recherche par mots clés et domaine d'intérêt)
+<li>	Protocole Z39-50 (orienté documentaire)
+<li>	Clients :
+<ul>
+<li>	 waissearch, waisq (mode ligne, scripts shell)
+<li>	 xwais (X11)
+<li>    HyperWais (Mac)
+</ul>
+<li>	Serveur :
+<ul>
+<li>	 waisserver
+</ul>
+<li>	Indexation
+<ul>
+<li>	 waisindex
+</ul>
+<li>	Sources
+<ul>
+<li>	 fichiers.src contruits par waisindex ou récupérés
+<li>    directory-of-servers.src  (quake.think.com)
+</ul>
+</ul>
+
+
+<h2><a name="WWW">WWW - World Wide Web</a></h2>
+<ul>
+<li>	WWW (hypertexte distribué)
+<li>	URL : Universal Resource Locator (nommage d'un objet)
+<ul>
+<li>	 <b><i>protocol://hostname:port/pathname#n?params</i></b>
+<p>
+<pre>
+<tt>
+	http://www.enst.fr:80/index.html
+	gopher://gopher.enst.fr:70/
+	ftp://ftp.enst.fr/pub
+</tt>
+</pre>
+</ul>
+<li>	Clients :
+<ul>
+<li>	 Mosaic (Unix, Mac, Pc, Vms) sous X11
+<li>	 netscape (Unix, Mac)
+<li>	 chimera (X11)
+<li>	 lynx (terminaux alpha-numériques type VT100)
+<li>	 viola (hypercard)
+<li>	 tkWWW (browser WWW en tcl/tk), perlWWW
+<li>	 WWW wwwhost (mode ligne)
+</ul>
+<li>	Serveurs :
+<ul>
+<li>	 httpd (Cern, proxy-cache)
+<li>	 httpd (NCSA, version 1.4)
+</ul>
+<li>	Indexation :
+<ul>
+<li>	 WWWW (World Wide Web Worm)
+</ul>
+</ul>
+
+
+<h2><a name="Browsers">Browsers WWW - Netscape, Mosaic</a></h2>
+<ul>
+<li>	Client WWW (hypertexte distribué)
+<li>	Multiclient - multiprotocole
+<ul>
+<li>	 http
+<li>	 file
+<li>	 gopher
+<li>	 news
+<li>	 ftp
+<li>	 telnet
+<li>	 solo, x500
+<li>	 urn ???
+</ul>
+<li>	Outil générique très complet
+<ul>
+<li>	 aide en ligne
+<li>	 visualisation du source HTML distant
+<li>	 boutons de navigation
+<li>	 mémorisation de l'historique des pages
+<li>	 dispositifs d'annotations
+<li>	 impression des pages sur imprimante Laser
+<li>	 mail de la page à un correspondant
+</ul>
+</ul>
+
+
+<h2><a name="Html">Langage Html</a></h2>
+
+<ul>
+<li>	<b>HTML</b> (HyperText Markup Language)
+<li>	Sous ensemble SGML (Standard Generalized Markup Language)
+<li>	Page html : quelques éléments de syntaxe
+<li>	syntaxe : <b><i>&lt;tag&gt;texte&lt;/tag&gt;</i></b>
+<li>	exemples :
+<p>
+<pre>
+<tt>
+&lt;title&gt;Titre du document&lt;/title&gt;
+&lt;h1&gt;entête de document&lt;/h1&gt;
+&lt;h2&gt;entête de chapitre&lt;/h2&gt;
+&lt;h3&gt;entête de section&lt;/h3&gt;
+
+&lt;a href="http://host/file.html"&gt; ancre &lt;/a&gt; .lien distant
+&lt;a href="filename.html"&gt; ancre &lt;/a&gt; ..lien local
+&lt;a name="etiquette"&gt; point de brachement local au document
+&lt;a href="filename.html"#etiquette&gt; ancre &lt;/a&gt;  lien local
+
+&lt;img src="path_image.gif"&gt; suite du texte
+
+&lt;ul&gt; ... &lt;/ul&gt; -&gt; liste d'éléments non numérotée
+&lt;ol&gt; ... &lt;/ol&gt; -&gt; liste d'éléments numérotée
+&lt;dl&gt; ... &lt;/dl&gt; -&gt; liste descriptive d'éléments
+&lt;li&gt; -&gt; élément de liste (item)
+&lt;dt&gt; -&gt; élément de liste descriptive
+
+&lt;p&gt; -&gt; fin de paragraphe...&lt;p&gt;
+&lt;pre&gt; ... &lt;/pre&gt; -&gt; texte prédéfini (listing)
+&lt;hr&gt; -&gt; trait horizontal
+
+&lt;em&gt;<i>italique </i>&lt;/em&gt; &lt;strong&gt;<b>gras</b>&lt;/strong&gt; &lt;kbd&gt;courier&lt;/kbd&gt;
+accents: &amp;eacute; &amp;agrave; &amp;ccedil; ou ISO-latin1: é à &ccedil;
+caractères spéciaux : &amp;lt, &amp;gt, &amp;amp
+</tt>
+</pre>
+
+</ul>
+
+
+<h2><a name="Html+">Extension Html+</a></h2>
+<ul>
+<li>	<b>HTML+</b> (Internet Draft)
+<ul>
+<li>	 Tableaux &lt;table&gt;
+<li>	 Figures &lt;fig&gt; : position, légende, parties réactives
+<li>	 Formulaires &lt;form ...&gt; : saisie interactive de texte
+</ul>
+<li>	CGI (Common Gateway Interface)
+<ul>
+<li>	 Scripts (C, perl, shell) exécutés par le serveur
+<li>	 produisent des documents formatés HTML pour le client
+</ul>
+<li>	Exemple :
+<p>
+<pre>
+<tt>
+&lt;FORM ACTION="http://host/cgi-bin/script-form"
+method=POST&gt;
+
+&lt;H1&gt; Formulaire d'inscription &lt;/H1&gt;
+Pour vous inscrire veuillez remplir les
+rubriques ci-dessous.
+&lt;P&gt;
+
+Nom : &lt;INPUT NAME="nom" SIZE="30"&gt;&lt;br&gt;
+Prenom : &lt;INPUT NAME="prenom" SIZE="30"&gt;&lt;br&gt;
+&lt;INPUT VALUE="valider" TYPE=submit&gt;&lt;br&gt;
+&lt;INPUT VALUE="annuler" TYPE=reset&gt;&lt;br&gt;
+&lt;/FORM&gt;
+</tt>
+</pre>
+</ul>
+
+
+<h2><a name="Annuaires">Annuaires électroniques</a></h2>
+<ul>
+<li>	X500 (norme OSI - 1988)
+<li>	X509 (sécurité, authentification, certificats)
+<li>	Implémentations
+<ul>
+<li>	 quipu (Isode)
+<li>	 paradize (E3X)
+</ul>
+<li>	Clients = DUA (Directory User Agent)
+<ul>
+<li>	 dish (mode ligne - administrateur)
+<li>	 xdi, pod, doog, fred, fredtcl
+</ul>
+<li>	Serveurs = DSA (Directory System Agent)
+<ul>
+<li>	 DIT (Directory Information Tree)
+<li>	 EDB (Entry Data Base) : lignes au fomat attribut=valeur
+<pre>
+<tt>
+    CN= Prénom Nom
+    S= Nom
+    telephoneNumber= +33 1 45817687
+    mail= nom@email.enst.fr
+    roomNumber= C221
+</tt>
+</pre>
+<li>	 DN/RDN (Relative/Distinguish Name) : adr. absolue/relative
+<pre>
+<tt>
+    @C=fr@O=Telecom Paris@OU=students@OU=promo96@CN=Prénom Nom
+</tt>
+</pre>
+<li>	Protocoles
+<li>	 DSP entre DSA (Directory System Protocol)
+<li>	 DAP, LDAP de DUA à DSA (Directory Access Protocol)
+</ul>
+</ul>
+
+
+<h2><a name="Outils admin">Outils réseaux</a></h2>
+<ul>
+<li>	Acheminement de paquets point à point
+<ul>
+<li>	 ping [-s] (envoi d'un pacquet ICMP et attente de son echo)
+<li>	 spray (envoi d'une séquence de paquets, test des pertes)
+</ul>
+<li>	Interfaces
+<ul>
+<li>	 ifconfig (configuration de l'interface Ethernet)
+<li>	 netstat -i (statistiques sur les interfaces visibles)
+</ul>
+<li>	Analyse de protocoles, analyse de trafic
+<ul>
+<li>	 etherfind (Sun)
+<li>	 tcpdump (Domain Public par Van Jacobson)
+<li>	 nnstat
+<li>	 etherman, interman, packetman (graphique)
+</ul>
+<li>	Résolution de noms
+<ul>
+<li>	 nslookup (BIND)
+<li>	 dig
+<li>	 nsl, resolv
+</ul>
+<li>	Détermination de routes
+<ul>
+<li>	 netstat -r
+<li>	 traceroute, prtraceroute
+</ul>
+<li>	NFS
+<ul>
+<li>	 nfsstat
+</ul>
+<li>	Benchmarks, analyse de performances
+<ul>
+<li>	 ttcp
+<li>	 nhfsstone
+</ul>
+</ul>
+
+
+<h1><a name="Perspectives">Evolutions et perspectives de l'Internet</a></h1>
+
+<h2><a name="Multicast">Diffusion de groupe - IP-Multicast</a></h2>
+<ul>
+<li>	Réseau virtuel MBONE (expériences multimédia)
+<ul>
+<li>	 IP multicast (classe D: 224.xx.yy.zz) : adressage de groupe (protocole
+IGMP)
+<li>	 Portée : TTL (time to live) : LAN, site, région, continent,
+monde
+<li>	 Seuil : threshold (propagation si ttl &gt; threshold)
+<li>	 Réseau FMBONE en France
+<li>	 Routage provisoire soft par daemons mrouted (tunnels)
+<li>	 Technique de "tunneling" : encapsulation IP dans IP
+<li>	Applications multicast
+<li>	 <b>sd</b> (Session Directory) : annonce les conférences
+<li>	 <b>vat</b> (Visual Audio Tool) : audio-conférence
+<li>	 <b>wb</b> (White-Board) : paper-board-conférence
+<li>	 <b>nv</b> (Network-Video) : video-conférence
+<li>	 <b>telesia</b> : video/audio-conférence
+<li>	 <b>mcm</b> (MultiCast Mosaic) : slide-conférence
+</ul>
+</ul>
+
+
+<h2><a name="Sécurité">Sécurité dans l'Internet</a></h2>
+<ul>
+<li>	Filtrage des réseaux et des machines (routeurs)
+<ul>
+<li>	 par adresses source/destination
+<li>	 par types de services
+</ul>
+<li>	Firewall, garde-barrière
+<li>	Tcp-wrappers
+<ul>
+<li>	 tcpd
+<li>	 in.gate
+</ul>
+<li>	Authentification
+<ul>
+<li>	 authd (RFC 931)
+<li>	 identd (RFC 1413)
+</ul>
+<li>	PGP (Pretty Good Privacy)
+<li>	S/Key (One-Time Password System) : password jetable
+<li>	Secure IP (RFC 1038)
+<li>	PEM (Privacy Enhancement Mail)
+<li>	attendre IPv6...
+</ul>
+
+
+<h2><a name="Futur">Futur de l'Internet</a></h2>
+<ul>
+<li>	Solution temporaire à l'explosion des adresses
+<ul>
+<li>	 CIDR (Classless InterDomain Routing) : classes C aggrégées
+</ul>
+<li>	Solution définitive <b>IPv6</b> (Toronto - août 1994)
+<ul>
+<li>	 IPng (Projet IP next generation) : remplacement de IPv4
+<li>	 TUBA (TCP/UDP with Big Addresses, TCP/CLNP)
+<li>	 SIPP (Simple IP Plus)
+<li>	 <b>IPv6</b> (futur IP), inspiré de SIPP : 16 octets/128bits
+<li>	 Prévision an 2000: plus d'un réseau IP par être humain (15000 réseaux/m2)
+</ul>
+<li>	Privatisation / Commercialisation
+<ul>
+<li>	 CIX, GIX, FIX
+<li>	 Kiosque
+</ul>
+<li>	Applications
+<ul>
+<li>	 Multimédia
+<li>	 Impression à distance (remote printing, fax)
+<li>	 Mobiles (radio, infrarouge)
+<li>	 Télévision Interactive
+</ul>
+</ul>
+
+
+<h1><a name="Renseignements">Renseignements pratiques</a></h1>
+
+<h2><a name="Raccordement">Comment se raccorder à l'Internet ?</a></h2>
+<ul>
+<li>	Analyse des besoins
+<li>	Analyse des coûts
+<li>	Choix d'une informatique
+<li>	Choix d'un support
+
+<pre>
+Type de support      Débit (bps)      Type de           Application      Application
+                                      facturation       favorable        défavorable
+Transfix (HDLC)      9,6K à 2M        distance et       toutes           aucune 
+                                      classe débit
+Transpac (X25)       9,6K à 19,2K     volume            telnet           ftp
+Numéris (RNIS)       64K ou 2M        durée             ftp              telnet
+Téléphone  (RTC)     9,6K à 14,4K     durée et          ponctuelles      longue durée
+                     28,8K            distance
+</pre>
+
+<li>	Choix des équipements de télécommunication
+<ul>
+<li>	 routeur, commutateur X25, PAD, modem
+</ul>
+<li>	Choix d'un fournisseur de services réseaux
+</ul>
+
+
+<h2><a name="DialupIP">DialupIP, PPP</a></h2>
+<ul>
+<li>	Matériel
+<ul>
+<li>	 Modem 14,4Kbps -V32, V32bis, V42, V42bis
+</ul>
+<li>	Protocoles
+<ul>
+<li>	 SLIP, CSLIP (Single Line IP)
+<li>	 PPP (Point to Point Protocol)
+</ul>
+<li>	PPP
+<ul>
+<li>	 ligne asynchrone et synchrone
+<li>	 variante de HDLC/SDLC
+<li>	 compression des en-têtes des paquets IP (3 à 9 / 40)
+<li>	 raccourcis et astuces (mémorisation des champs fixes)
+<li>	 protocole de ligne LCP
+<li>	 protocoles de négociation NCP : IPCP, ATCP, DNCP
+<li>	 protocoles d'authentification :
+PAP (password)
+CHAP (clés secrètes MD5)
+<li>	 implémentations : Sun, Mac, Pc, serveurs de terminaux
+<li>	 matériel : Telebit, Livingston, Xyplex
+<li>	 logiciel commercial : MorningStar
+<li>	 logiciel domaine public : pppd (merit.edu)
+</ul>
+</ul>
+
+
+<h2><a name="Mac">Internet et Macintosh</a></h2>
+<ul>
+<li>	Matériel
+<ul>
+<li>	 Modem 14,4Kbps -V32, V32bis, V42, V42bis
+</ul>
+<li>	Logiciel de base commercial
+<ul>
+<li>	 MacOS 6.7, 7.x
+<li>	 MacTcp (inclu dans MacOS 7.5)
+</ul>
+<li>	Applications du domaine public
+<ul>
+<li>	 PPP
+<li>	 Eudora (mail)
+<li>	 Nuntius, NewsWatcher, TheNews (news - nntp)
+<li>	 Telnet-NCSA (telnet)
+<li>	 Fetch (ftp)
+<li>	 TurboGopher (gopher)
+<li>	 HyperWais (wais)
+<li>	 Mac-Mosaic, Samba, MacWeb (www)
+<li>	 Anarchie (archie)
+<li>	 Talk
+<li>	 Ping
+</ul>
+</ul>
+
+
+<h2><a name="PC">Internet et PC</a></h2>
+<ul>
+<li>	Matériel
+<ul>
+<li>	 Modem 14,4Kbps -V32, V32bis, V42, V42bis
+</ul>
+<li>	Logiciel de base commercial
+<ul>
+<li>	 Dos, Windows3.1
+<li>	 Ftp-Software, Chameleon, Trumpet-Winsock
+</ul>
+<li>	Logiciel de base domaine public
+<ul>
+<li>	 Winsock.dll
+<li>	 Linux, 386BSD, FreeBSD : <u>problème résolu -&gt; Unix</u>
+</ul>
+<li>	Applications du domaine public
+<ul>
+<li>	 PPP
+<li>	 Eudora, Popmail (mail)
+<li>	 Telnet-NCSA (telnet)
+<li>	 PC-Gopher3 (gopher)
+<li>	 PC-Mosaic, Cello, DosLynx (www)
+</ul>
+</ul>
+
+
+<h2><a name="Prestataires">Prestataires de services réseau en France</a></h2>
+<ul>
+<li>	Fnet (EuNet France)
+<ul>
+<li>	 services de base : mail-relay
+<li>	 InterEunet : connectivité IP nationale et internationale
+<li>	 News
+<li>	 Uucp, IP/X25, IP/RNIS, DialupIP
+<li>	 Single-User-IP (PPP)
+<li>	 Utopia (individuels) : POP, Eudora, micros, Minitel
+</ul>
+<li>	RENATER
+<ul>
+<li>	 Connectivité IP inter-plaques régionales et internationale sur
+EBONE via le RNI de FT
+<li>	 bientôt OSI : CLNP, CLNS, CONS ou jamais ???
+</ul>
+<li>	Oléane
+<ul>
+<li>	 Connectivité IP nationale et internationale
+<li>	 accord avec Pipex (UK)
+</ul>
+<li>	FDN (French Data Network)
+<ul>
+<li>	 mail et news par uucp RTC avec UUNET
+<li>	 connectivité IP via une cascade Renater ?, PPP
+</ul>
+<li>	Calvanet
+<ul>
+<li>	 mail et news
+</ul>
+<li>	Compuserve
+<ul>
+<li>	 mail et news
+</ul>
+<li>	FranceNet
+<ul>
+<li>	 mail et news, PPP
+</ul>
+<li>	WorldNet
+<ul>
+<li>	 mail et news, PPP
+</ul>
+<li>	Frmug
+<ul>
+<li>	 mail et news
+</ul>
+<li>	3615 Internet, 3616 Altern, 3617 Email, 3619 Usnet, 3614 Teaser
+<ul>
+<li>	 mail et news sur Minitel
+</ul>
+<li>	Transpac (service RAIN: Réseau d'Accès à l'INternet)
+<ul>
+<li>	 lignes spécialisés IP basse vitesse (9,6Kbps, 19,2Kbps)
+</ul>
+<li>	EdelWeb
+<ul>
+<li>	 installation et abritage de serveurs Web
+</ul>
+<li>	Internet-Way
+</ul>
+
+
+<h1><a name="Stats">Statistiques</a></h1>
+
+<h2><a name="Stats pays">Statistiques de trafic par pays</a></h2>
+
+<font size=-2>
+<pre>
+ NSFNET Backbone Service Traffic Distribution by Country (December 1993)
+
+                       Packet Total:     50,719,649,350
+                       Byte Total:    9,848,131,712,650
+                       Networks:                           13,064
+                       Countries:                                   67
+
+  Nets	 Country              	   Bytes In To               Bytes Out From	 % In	% Out
+ ====	 ===============	     ===========	     ===========	  ====	====
+ 7991	  United States       	   8867355613400	   8030279197600	 90.04	 81.54
+  527	  Canada              	    190742070200	    462861900750	  1.94	 4.70
+  511	  United Kingdom             89975928550	    166136878850	  0.91	 1.69
+  265	  Australia           	     89686976300	    132630564600	  0.91	 1.35
+  593	  France              	     75643314400	    109779956850	  0.77	 1.11
+  103	  Sweden              	     74256739700	     72717319500	  0.75	 0.74
+  134	  Finland             	     63001328750	     47092060750	  0.64	 0.48
+  542	  Germany             	     61379753050	    122557189750	  0.62	 1.24
+  166	  Netherlands         	     60895282750	     72458646900	  0.62	 0.74
+  117	  Taiwan              	     50498282750	     60379026450	  0.51	 0.61
+  118	  Switzerland         	     48917180050	     54115658350	  0.50	 0.55
+  377	  Japan               	     31805727350	     75710017000	  0.32	 0.77
+  222	  Italy               	     27034603750	     48529509000	  0.27 0.49
+   94	  Norway                     19571771000	     39486707350	  0.20 0.40
+   56	  Korea          	     11590573800	     44734797000	  0.12 0.45
+  106	  Austria             	     11026125700	     24790379750	  0.11	 0.25
+   50	  Mexico              	      8662436050             24739838300	  0.09	 0.25
+   80     Israel   	              7743207650             23541794450	  0.08	 0.24
+   21     Singapore           	      6522328650             28949023800	  0.0	 0.29
+   14	  Denmark             	      6045530200             20063048450	  0.06	 0.20
+   18	  Hong Kong           	      4705501600	     28806130150	  0.05	 0.29
+   45	  Belgium             	      4343549900             16001005550	  0.04	 0.16
+   49	  Spain                       3918076050             13243121100	  0.04	 0.13
+   83	  New Zealand         	      3444539500	     11472845500	  0.03	 0.12
+</pre>
+</font>
+
+<h2><a name="Stats services">Statistiques de trafic par services</a></h2>
+
+<font size=-2>
+<pre>
+                    NSFNET  Traffic Distribution Highlights (December 1993)
+
+                      Packet Total:       52,417,597,400
+                      Byte Total:    10,185,121,052,450
+
+Service Name       Port  Rank  Packet Count % Pkts Rank Byte Count    % Byts
+===========        ====  ====  ============ =====  ==== ============= ====
+ftp-data             20     1   11757469000 22.430    1 4164838475150 40.891
+telnet               23     2    7590181500 14.480    5  536184127350  5.264
+nntp                119     3    4590070600  8.757    2  991068886050  9.731
+smtp                 25     4    3644221600  6.952    4  606446555950  5.954
+domain               53     5    2691049750  5.134    7  255179249000  2.505
+ip                   -4     6    2562667050  4.889    3  745122285050  7.316
+icmp                 -1     7    2008762450  3.832    9  163148186850  1.602
+irc                6667     8    1292230900  2.465   10  132916914000  1.305
+gopher               70     9    1148324150  2.191    6  309690082950  3.041
+ftp                  21    10     955966800  1.824   12   73387018100  0.721
+www                  80    11     685153950  1.307    8  225443122450  2.213
+finger               79    12     401464100  0.766   15   32566313450  0.320
+X0                 6000    13     400702400  0.764   13   68692731700  0.674
+vmnet               175    14     342443050  0.653   11  121839842450  1.196
+login/who           513    15     298095650  0.569   14   33171450900  0.326
+talk                517    16     257900650  0.492   17   26659343850  0.262
+snmp                161    18     188262750  0.359   21   19668096800  0.193
+ntp                 123    19     154673400  0.295   28   11645970800  0.114
+cmd/syslog          514    21      90489250  0.173   16   27772145000  0.273
+netrjs-1             71    23      79117750  0.151   18   26507872500  0.260
+efs/router          520    24      71085000  0.136   20   19892922550  0.195
+uucp                540    28      48689450  0.093   24   13609214150  0.134
+ipx                 213    29      43730500  0.083   27   11789191800  0.116
+ntalk               518    30      38158750  0.073   40    4096407100  0.040
+z39.50              210    34      29648100  0.057   35    8582493050  0.084
+</pre>
+</font>
+
+<h2><a name="Cocasse">Quelques chiffres cocasses</a></h2>
+
+Annual rate of growth for Gopher traffic: 997%
+<p>
+Annual rate of growth for World-Wide Web traffic: 341,634%
+<p>
+Average time between new networks connecting to the Internet: 10 minutes
+<p>
+Number of  articles about the Internet during the first nine months of 1993:
+over 2300
+<p>
+Number of on-line coffeehouses in San Francisco: 18 (cost $0.25/4min)
+<p>
+Date of first known Internet mail message sent by Bill Clinton: 2 March 1993
+<p>
+Date on which first Stephen King story published via the Internet before print
+publication: 19 Sept 1993
+<p>
+Date after which more than half the registered networks were commercial: Aug
+1991
+<p>
+Number of Internet hosts in United States, per 1000 population: 4
+Number of Internet hosts in July, 1993: 1,776,000
+<p>
+Number of USENET articles posted on a typical day in February, 1993: 35,000
+Number of megabytes posted: 44
+Number of users posting: 80,000
+Number of sites represented: 25,000
+<p>
+Number of countries reachable by electronic mail: 137 (approx.)
+<p>
+Date of first National Public Radio program broadcast simultaneously on the
+Internet: 21 May 1993
+<p>
+Round-trip time from Digital CRL to mcmvax.mcmurdo.gov (Antartica): 640 ms
+<p>
+
+
+<h1><a name="Bibliographie">Bibliographie sur l'Internet</a></h1>
+
+<ul>
+<li>	Documents techniques
+<ul>
+<li>	 RFC (ftp://ftp.enst.fr/pub/rfc)
+</ul>
+<li>	Revues techniques
+<ul>
+<li>	 ACM (sept 1994)
+<li>	 TRIBUNIX (sept-oct 1994, sept-oct 1995)
+</ul>
+<li>	Livres
+<ul>
+<li>	 Internetworking with TCP/IP (Douglas E. Comer)
+<li>	 The World Internet User's Guide &amp; Catalog (Ed Krol - O'Reilly)
+<li>	 Le Monde de l'Internet (Ed Krol traduit en fran&ccedil;ais, J. Guidon, P. Cubaud)
+<li>	 The Internet System (Marshall Rose - 1993)
+<li>	 The Matrix (John F. Quaterman)
+<li>	 Internet (N. Pioch)
+<li>	 Le routage dans l'Internet (Christian Huitema - Eyrolles)
+<li>	 Et Dieu créa l'Internet (Christian Huitema - Eyrolles)
+</ul>
+<li>	Journaux à grand tirage
+<ul>
+<li>	 Tous ont fait un ou plusieurs articles sur l'Internet
+</ul>
+</ul>
+
+
+<img src="/gif/grandvertjaune.gif">
+
+<address>&copy; (Copyright) <a href="mailto:dax@inf.enst.fr">Philippe dax / dax@inf.enst.fr</a> - 1994,1995,1996</address>
+<img src="/cgi-bin/Count.cgi?ft=2|md=5|dd=C|sh=1|df=dax_internet.cnt" align=absmiddle>
+ visitors since Oct 1995.
+Last modified: Dec 14, 1995
+
+</body>
+</html>

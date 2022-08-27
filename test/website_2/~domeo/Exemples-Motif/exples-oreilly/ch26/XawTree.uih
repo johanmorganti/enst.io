@@ -1,0 +1,31 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+/* UIL declarations for the Xaw Tree widget. */
+
+! Declare the creation procedure
+procedure 
+  XawCreateTreeWidget();
+
+! Declare resources
+value
+  XtNautoReconfigure : argument ('autoReconfigure', boolean);
+  XtNhSpace          : argument ('hSpace',          integer);
+  XtNlineWidth       : argument ('lineWidth',       integer);
+  XtNvSpace          : argument ('vSpace',          integer);
+  XtNgravity         : argument ('gravity',         integer);
+    NorthGravity : 2;
+    WestGravity  : 4;
+    EastGravity  : 6;
+    SouthGravity : 8;
+
+  ! Constraint resources
+  XtNtreeGC          : argument ('treeGC',          any);
+  XtNtreeParent      : argument ('treeParent',      widget);

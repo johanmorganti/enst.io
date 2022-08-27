@@ -1,0 +1,1438 @@
+%!
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%DocumentFonts: (atend)
+%%EndComments
+%
+% FrameMaker PostScript Prolog 3.0, for use with FrameMaker 3.0
+% Copyright (c) 1986,87,89,90,91 by Frame Technology Corporation.
+% All rights reserved.
+%
+% Known Problems:
+%	Due to bugs in Transcript, the 'PS-Adobe-' is omitted from line 1
+/FMversion (3.0) def 
+% Set up Color vs. Black-and-White
+	/FMPrintInColor systemdict /colorimage known
+		systemdict /currentcolortransfer known or def
+% Uncomment this line to force b&w on color printer
+%   /FMPrintInColor false def
+/FrameDict 195 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} def
+	} if
+/FMVERSION {
+	FMversion ne {
+		/Times-Roman findfont 18 scalefont setfont
+		100 100 moveto
+		(FrameMaker version does not match postscript_prolog!)
+		dup =
+		show showpage
+		} if
+	} def 
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/organgle FMLOCAL
+	/orgfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne dup {setmanualfeed} if
+	/manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	/yscale exch def
+	/xscale exch def
+	currenttransfer cvlit /orgxfer exch def
+	currentscreen cvlit /orgproc exch def
+	/organgle exch def /orgfreq exch def
+	setpapername 
+	manualfeed {true} {papersize} ifelse 
+	{manualpapersize} {false} ifelse 
+	{desperatepapersize} if
+	end 
+	} def 
+	/pagesave FMLOCAL
+	/orgmatrix FMLOCAL
+	/landscape FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch neg translate pop 
+		}
+		{pop pop}
+		ifelse
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+	} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin
+	array /fillvals exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fy translate 
+	rotate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	} bind def
+/FMENDEPSF {
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	/FMdicttop countdictstack 1 add def 
+	statusdict begin stopped end 
+	countdictstack -1 FMdicttop {pop end} for 
+	} def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped pop 
+		end
+		} if
+	} def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+/freq dpi 18.75 div 8 div round dup 0 eq {pop 1} if 8 mul dpi exch div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setpattern {
+	 /bwidth  exch def
+	 /bpside  exch def
+	 /bstring exch def
+	 /onbits 0 def  /offbits 0 def
+	 freq sangle landscape {90 add} if 
+		{/y exch def
+		 /x exch def
+		 /xindex x 1 add 2 div bpside mul cvi def
+		 /yindex y 1 add 2 div bpside mul cvi def
+		 bstring yindex bwidth mul xindex 8 idiv add get
+		 1 7 xindex 8 mod sub bitshift and 0 ne
+		 {/onbits  onbits  1 add def 1}
+		 {/offbits offbits 1 add def 0}
+		 ifelse
+		}
+		setscreen
+	 {} settransfer
+	 offbits offbits onbits add div FMsetgray
+	/graymode false def
+	} bind def
+/grayness {
+	FMsetgray
+	graymode not {
+		/graymode true def
+		orgxfer cvx settransfer
+		orgfreq organgle orgproc cvx setscreen
+		} if
+	} bind def
+	/HUE FMLOCAL
+	/SAT FMLOCAL
+	/BRIGHT FMLOCAL
+	/Colors FMLOCAL
+FMPrintInColor 
+	
+	{
+	/HUE 0 def
+	/SAT 0 def
+	/BRIGHT 0 def
+	% array of arrays Hue and Sat values for the separations [HUE BRIGHT]
+	/Colors   
+	[[0    0  ]    % black
+	 [0    0  ]    % white
+	 [0.00 1.0]    % red
+	 [0.37 1.0]    % green
+	 [0.60 1.0]    % blue
+	 [0.50 1.0]    % cyan
+	 [0.83 1.0]    % magenta
+	 [0.16 1.0]    % comment / yellow
+	 ] def
+      
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	/K { 
+		Colors exch get dup
+		0 get /HUE exch store 
+		1 get /BRIGHT exch store
+		  HUE 0 eq BRIGHT 0 eq and
+			{1.0 SAT sub setgray}
+			{HUE SAT BRIGHT sethsbcolor} 
+		  ifelse
+		} def
+	/FMsetgray { 
+		/SAT exch 1.0 exch sub store 
+		  HUE 0 eq BRIGHT 0 eq and
+			{1.0 SAT sub setgray}
+			{HUE SAT BRIGHT sethsbcolor} 
+		  ifelse
+		} bind def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	/FMsetgray {setgray} bind def
+	/K { 
+		pop
+		} def
+	}
+ifelse
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setpattern} 
+	{grayness}
+	ifelse
+	} bind def
+/V { 
+	gsave eofill grestore
+	} bind def
+/N { 
+	stroke
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+	/rad FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	newpath
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rad arcto
+	x2 y2 x2 y1 rad arcto
+	x2 y1 x1 y1 rad arcto
+	x1 y1 x1 y2 rad arcto
+	closepath
+	16 {pop} repeat
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath fill
+	grestore
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	stroke
+	grestore
+	} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 4 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+	dup 
+	8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+	/r exch def
+	/d exch def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+	/proc1 FMLOCAL
+	/proc2 FMLOCAL
+	/newproc FMLOCAL
+/Fmcc {
+    /proc2 exch cvlit def
+    /proc1 exch cvlit def
+    /newproc proc1 length proc2 length add array def
+    newproc 0 proc1 putinterval
+    newproc proc1 length proc2 putinterval
+    newproc cvx
+} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch Fmcc settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/bitmapsave save def 
+	colorsetup
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	translate rotate scale /h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	colorsetup
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} {is} {is} true 3 colorimage
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        
+        /is w string def
+        
+        ws 0 w getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {ip} {gip} {bip} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        
+        /is w string def
+        
+        ws 0 w getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {ip gip bip w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+        translate rotate scale /h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+%%EndProlog
+%%BeginSetup
+(3.0) FMVERSION
+1 1 595.28 841.89 0 1 9 FMDOCUMENT
+0 0 /Times-Italic FMFONTDEFINE
+1 0 /Helvetica-Bold FMFONTDEFINE
+2 0 /Times-Roman FMFONTDEFINE
+3 0 /Courier FMFONTDEFINE
+4 0 /Times-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: A4
+%%EndPaperSize
+595.28 841.89 0 FMBEGINPAGE
+135.48 225.36 213.43 237.3 R
+7 X
+0 K
+V
+0 10 Q
+0 X
+(Langages :) 135.48 230.64 T
+135.48 211.25 220.52 223.2 R
+7 X
+V
+0 X
+(Envir) 135.48 216.53 T
+(onnements :) 157.32 216.53 T
+135.48 197.15 227.61 209.1 R
+7 X
+V
+0 X
+(Interfaces :) 135.48 202.43 T
+135.36 182.65 227.49 195.39 R
+7 X
+V
+0 X
+(Bases de donn\216es :) 135.36 188.73 T
+134.65 140.32 226.77 153.1 R
+7 X
+V
+0 X
+(Divers :) 134.65 146.44 T
+135.48 168.94 227.61 180.89 R
+7 X
+V
+0 X
+(M\216thodologies :) 135.48 174.22 T
+135.48 154.84 227.61 166.79 R
+7 X
+V
+0 X
+(R\216seaux :) 135.48 160.12 T
+28.35 429.32 566.93 443.49 R
+6 X
+V
+1 12 Q
+0 X
+(Formation) 268.32 432.04 T
+28.35 684.44 566.93 698.61 R
+6 X
+V
+439.37 798 559.84 820.63 R
+7 X
+V
+2 10 Q
+0 X
+(32-36, rue de Plaisance,) 439.37 813.96 T
+(75014 Paris.) 439.37 801.96 T
+1 12 Q
+(Denis B) 28.35 809.71 T
+1 10 Q
+(ONNET) 73 809.71 T
+2 F
+(T\216l. :) 439.37 791.48 T
+474.8 774.99 566.93 797.6 R
+7 X
+V
+0 X
+(01 45 81 73 74 \050bur) 474.8 790.94 T
+(.\051) 553.37 790.94 T
+(01 40 44 04 90 \050dom.\051) 474.8 778.94 T
+(Fax. :) 439.37 766.32 T
+474.8 766.31 566.93 773.4 R
+7 X
+V
+0 X
+(01 45 81 31 19) 474.8 766.74 T
+(E-mail :) 439.37 756.01 T
+474.8 750.51 566.93 762.47 R
+7 X
+V
+3 9 Q
+0 X
+(bonnet@sncf.fr) 474.8 756.47 T
+28.35 751.13 212.6 800.74 R
+7 X
+V
+2 10 Q
+0 X
+(N\216 le 2 ao\236t 1970 \210 T) 28.35 794.07 T
+(alence \05033\051.) 114.25 794.07 T
+(Nationalit\216 fran\215aise.) 28.35 782.07 T
+(C\216libataire.) 28.35 770.07 T
+(D\216gag\216 des obligations militaires.) 28.35 758.07 T
+1 16 Q
+(Ing\216nieur et docteur ENST) 197.23 729.47 T
+0 14 Q
+(Informatique, Intelligence Arti\336cielle et Statistiques) 152.48 714.39 T
+1 12 Q
+(Exp\216riences Professionnelles) 212.65 687.15 T
+28.35 650.71 106.3 674.64 R
+7 X
+V
+1 9 Q
+0 X
+(1994-1997) 28.35 668.64 T
+0 10 Q
+(\050SNCF/ARECOM\051) 28.35 656.97 T
+134.65 592.31 566.93 674.64 R
+7 X
+V
+2 F
+0 X
+1.03 (Emploi \050CDI\051 d\325ing\216nieur de recherche ARECOM d\216tach\216 aupr\217s de la SNCF \050d\216partement prospective,) 134.65 667.97 P
+0.59 (Paris Saint Lazare\051.) 134.65 655.97 P
+4 F
+0.59 (D\216veloppement) 217.45 655.97 P
+2 F
+0.59 ( d\325un logiciel g\216n\216rique de pr\216vision par r\216seau de neurones: concep-) 283.52 655.97 P
+0.28 (tion, r\216alisation et interfa\215age.) 134.65 643.97 P
+4 F
+0.28 (Recher) 259.55 643.97 P
+0.28 (che) 289.89 643.97 P
+2 F
+0.28 ( et) 304.32 643.97 P
+4 F
+0.28 (suivi) 317.09 643.97 P
+2 F
+0.28 ( de) 337.09 643.97 P
+4 F
+0.28 (contrats) 352.08 643.97 P
+2 F
+0.28 ( pour l\325industrialisation de ce logiciel aupr\217s) 387.05 643.97 P
+0.56 (de plusieurs services de la SNCF dans le cadre de projets communs \050direction grandes lignes, direction de) 134.65 631.97 P
+0.44 (l\325\216quipement\051.) 134.65 619.97 P
+4 F
+0.44 (V) 196.15 619.97 P
+0.44 (eille technologique) 202.45 619.97 P
+2 F
+0.44 ( dans le domaine des r\216seaux de neurones, de la pr\216vision et du traite-) 282.01 619.97 P
+-0.01 (ment du signal. Activit\216 d\325) 134.65 607.97 P
+4 F
+-0.01 (expertise) 241.48 607.97 P
+2 F
+-0.01 ( de connaissances et de) 279.78 607.97 P
+4 F
+-0.01 (conseil) 374.92 607.97 P
+2 F
+-0.01 ( dans le cadre de la) 403.8 607.97 P
+4 F
+-0.01 (politique d\325achat) 482.55 607.97 P
+2 F
+-0.01 ( de) 555.01 607.97 P
+(la SNCF) 134.65 595.97 T
+(.) 168.56 595.97 T
+4 F
+(Encadr) 173.55 595.97 T
+(ement) 205.03 595.97 T
+2 F
+( de stagiaires.) 231.11 595.97 T
+28.35 561.3 106.3 585.23 R
+7 X
+V
+1 9 Q
+0 X
+(1993) 28.35 579.23 T
+0 10 Q
+(\050Renault\051) 28.35 567.56 T
+134.65 549.79 566.93 585.23 R
+7 X
+V
+2 F
+0 X
+-0.15 (Stage \0506 mois\051 dans le service syst\217mes experts de Renault.) 134.65 578.56 P
+4 F
+-0.15 (Etude) 373.27 578.56 P
+2 F
+-0.15 ( dans le cadre d\325un projet commun avec le) 398.81 578.56 P
+0.58 (service de la pr\216vision concernant l\325utilisation des r\216seaux de neurones pour la pr\216vision des immatricula-) 134.65 566.56 P
+(tions trimestrielles en France.) 134.65 554.56 T
+28.35 518.78 106.3 542.71 R
+7 X
+V
+1 9 Q
+0 X
+(1991) 28.35 536.71 T
+0 10 Q
+(\050Port de Bor) 28.35 525.04 T
+(deaux\051) 78.5 525.04 T
+134.65 507.27 566.93 542.71 R
+7 X
+V
+2 F
+0 X
+0.95 (Stage \0502 mois\051 \210 la direction informatique du Port Autonome de Bordeaux.) 134.65 536.04 P
+4 F
+0.95 (D\216veloppement) 447.77 536.04 P
+2 F
+0.95 ( sur PC d\325un) 513.83 536.04 P
+0.04 (outil interactif de repr\216sentation des navires pr\216sents au port en temps r\216el : analyse des besoins, conception) 134.65 524.04 P
+(et communication avec un serveur Unix.) 134.65 512.04 T
+28.35 476.26 106.3 500.19 R
+7 X
+V
+1 9 Q
+0 X
+(1991-1997) 28.35 494.19 T
+0 10 Q
+(\050divers\051) 28.35 482.52 T
+134.65 450.58 566.93 500.19 R
+7 X
+V
+2 F
+0 X
+0.56 (D\216veloppement d\325une) 134.65 493.52 P
+4 F
+0.56 (base de donn\216es) 226.81 493.52 P
+2 F
+0.56 ( sur PC pour l\325ENSCI \050Ecole Nationale Sup\216rieure de C\216ramiques) 296.23 493.52 P
+-0.09 (Industrielles, Limoges\051 pour la gestion des notes des \216l\217ves. Activit\216 d\325) 134.65 481.52 P
+4 F
+-0.09 (enseignement) 419.15 481.52 P
+2 F
+-0.09 (, d\325) 476.89 481.52 P
+4 F
+-0.09 (encadr) 490.12 481.52 P
+-0.09 (ement) 519.37 481.52 P
+2 F
+-0.09 ( et de) 545.45 481.52 P
+4 F
+1.23 (formation) 134.65 469.52 P
+2 F
+1.23 ( pour Formacom \050AutoCAD\051 et pour l\325ENST \050r\216seaux de neurones, pr\216vision\051. Cr\216ation d\325) 177.39 469.52 P
+4 F
+1.23 (un) 555.81 469.52 P
+(serveur web) 134.65 457.52 T
+2 F
+( \050) 186.55 457.52 T
+3 9 Q
+(http://www.enst.fr/~milc) 192.37 457.52 T
+2 10 Q
+(\051 pour le groupe Intelligence Arti\336cielle de l\325ENST) 321.79 457.52 T
+(.) 526.18 457.52 T
+28.35 398.31 106.3 422.24 R
+7 X
+V
+1 9 Q
+0 X
+(1994-1997) 28.35 416.24 T
+0 10 Q
+(\050Th\217se\051) 28.35 404.57 T
+134.65 351.37 566.93 422.24 R
+7 X
+V
+2 F
+0 X
+0.61 (Pr\216paration d\325une) 134.65 415.57 P
+4 F
+0.61 (th\217se de doctorat) 209.7 415.57 P
+2 F
+0.61 ( \210 l\325Ecole Nationale Sup\216rieure des T\216l\216communications \050Paris\051, sp\216-) 283.64 415.57 P
+-0.04 (cialit\216 Informatique et R\216seau : \307 V) 134.65 403.57 P
+-0.04 (ers une approche modulaire de la pr\216vision \310 sous la direction du Profes-) 275.96 403.57 P
+1.64 (seur A. Grumbach. Publications et pr\216sentations orales d\325articles dans des) 134.65 391.57 P
+4 F
+1.64 (conf\216r) 449.16 391.57 P
+1.64 (ences internationales) 476.18 391.57 P
+2 F
+0.86 (\050ICANN, ESANN,...\051 et nationales.) 134.65 379.57 P
+4 F
+0.86 (Animation) 282.41 379.57 P
+2 F
+0.86 ( de la session \307 R\216seaux de neurones et pr\216vision \310 d\325une) 327.95 379.57 P
+(conf\216rence internationale \050StatExpo\051.) 134.65 367.57 T
+4 F
+(Reviewer) 286.74 367.57 T
+2 F
+( pour la revue IEEE) 326.7 367.57 T
+0 F
+(T) 408.58 367.57 T
+(ransactions on Neural Networks) 413.58 367.57 T
+2 F
+(.) 543.24 367.57 T
+28.35 333.07 127.56 357 R
+7 X
+V
+1 9 Q
+0 X
+(1991-1994) 28.35 351 T
+0 10 Q
+(\050Dipl\231me d\325ing\216nieur\051) 28.35 339.33 T
+134.65 314.48 566.93 357 R
+7 X
+V
+4 F
+0 X
+0.2 (Dipl\231me d\325ing\216nieur civil) 134.65 350.33 P
+2 F
+0.2 ( de l\325) 243.32 350.33 P
+4 F
+0.2 (Ecole Nationale Sup\216rieur) 264.25 350.33 P
+0.2 (e des T\216l\216communications) 376.62 350.33 P
+2 F
+0.2 ( \050Paris\051. Options de) 488.61 350.33 P
+0.53 (seconde ann\216e : Informatique, T) 134.65 338.33 P
+0.53 (raitement du Signal et Economie. Option de troisi\217me ann\216e : Intelligence) 265.46 338.33 P
+(Arti\336cielle et Sciences Cognitives.) 134.65 326.33 T
+28.35 300.3 127.56 314.48 R
+7 X
+V
+1 9 Q
+0 X
+(1988-1991) 28.35 308.48 T
+134.65 300.3 566.93 314.48 R
+7 X
+V
+2 10 Q
+0 X
+-0.11 (Classes de Math\216matiques Sup\216rieures et Math\216matiques Sp\216ciales \050P\325\051 au lyc\216e M. Montaigne \050Bordeaux\051.) 134.65 307.81 P
+219.68 227.34 566.93 237.14 R
+7 X
+V
+0 X
+(Pascal, Lisp, Prolog, C, C++, V) 219.68 230.48 T
+(isual Basic, Java, Perl, shell Unix, Matlab, HTML.) 345.86 230.48 T
+219.68 215.88 566.93 222.97 R
+7 X
+V
+0 X
+-0.09 (Dos, W) 219.68 216.3 P
+-0.09 (indows \0503.x et 95\051, MacOS \050system 7\051, Unix/X1) 249.73 216.3 P
+-0.09 (1 \050BSD et Solaris\051, V) 441.41 216.3 P
+-0.09 (AX/VMS.) 525.56 216.3 P
+219.68 201.71 566.93 208.8 R
+7 X
+V
+0 X
+(Dos \050T) 219.68 202.13 T
+(urbo Pascal et GC-Lisp\051, W) 247.37 202.13 T
+(indows 3.x \050V) 358.28 202.13 T
+(isual Basic\051, Unix \050C++/X1) 414.59 202.13 T
+(1/Motif\051.) 524.88 202.13 T
+219.68 187.54 566.93 194.62 R
+7 X
+V
+0 X
+(Oracle \050SQL\051, Access.) 219.68 187.96 T
+219.68 124.6 566.93 152.94 R
+7 X
+V
+0 X
+0.48 (AutoCAD \050CAO\051, T) 219.68 146.28 P
+0.48 (eX/LaT) 302.4 146.28 P
+0.48 (eX, FrameMaker) 332.78 146.28 P
+0.48 (, Microsoft Of) 401.14 146.28 P
+0.48 (\336ce \050bureautique\051, XPress,) 459.38 146.28 P
+(Free-hand, Photoshop \050P) 219.68 134.28 T
+(AO\051, petite exp\216rience de la gestion de syst\217me sous Solaris.) 317.87 134.28 T
+28.35 246.73 106.3 269.24 R
+7 X
+V
+1 9 Q
+0 X
+(G\216n\216rales) 28.35 263.24 T
+134.65 246.73 566.93 269.24 R
+7 X
+V
+2 10 Q
+0 X
+-0.23 (R\216seaux de neurones, statistiques, probabilit\216s, traitement du signal, er) 134.65 262.58 P
+-0.23 (gonomie, sciences cognitives, logique) 415.77 262.58 P
+(\337oue, syst\217mes experts, g\216nie logiciel, management de l\325innovation, gestion de projet.) 134.65 250.58 T
+28.35 276.33 566.93 290.5 R
+6 X
+V
+1 12 Q
+0 X
+(Comp\216tences techniques) 224.99 279.04 T
+219.68 173.36 566.93 180.45 R
+7 X
+V
+2 10 Q
+0 X
+(Merise, OMT) 219.68 173.78 T
+(, Corba.) 273.9 173.78 T
+219.68 156.28 566.93 166.28 R
+7 X
+V
+0 X
+(TCP/IP \050protocole et outils internet/intranet : web, news, ftp, telnet, e-mail\051.) 219.68 159.61 T
+134.65 91.96 184.25 97.8 R
+7 X
+V
+0 F
+0 X
+(Anglais :) 134.65 91.13 T
+184.25 90.71 566.93 97.8 R
+7 X
+V
+2 F
+0 X
+(Courant \050nombreuses pr\216sentations en anglais dans le cadre de conf\216rences internationales\051.) 184.25 91.13 T
+134.65 77.79 191.34 83.62 R
+7 X
+V
+0 F
+0 X
+(Allemand :) 134.65 76.96 T
+184.25 76.54 552.76 83.62 R
+7 X
+V
+2 F
+0 X
+(Rudiments \0504 ans\051.) 184.25 76.96 T
+134.65 56.53 184.25 69.45 R
+7 X
+V
+0 F
+0 X
+(Arabe :) 134.65 62.78 T
+184.25 63.62 510.24 69.45 R
+7 X
+V
+2 F
+0 X
+(D\216butant \0502 ans\051.) 184.25 62.78 T
+28.35 103.34 566.93 117.51 R
+6 X
+V
+1 12 Q
+0 X
+(Divers) 279.3 106.05 T
+28.35 41.1 127.56 48.19 R
+7 X
+V
+1 9 Q
+0 X
+(Divers) 28.35 42.19 T
+134.65 5.67 566.93 48.19 R
+7 X
+V
+2 10 Q
+0 X
+0.12 (Nombreux s\216jours \210 l\325\216tranger \050Japon, Am\216rique et Afrique du Nord, Europe\051. Pr\216sidence d\325Ing\216nieur Sans) 134.65 41.52 P
+0.05 (Fronti\217re \050ISF\051 \210 l\325ENST) 134.65 29.52 P
+0.05 (. Or) 234.81 29.52 P
+0.05 (ganisation d\325une soir\216e de gala pour \336nancer une mission d\325ISF) 250.22 29.52 P
+0.05 (. R\216alisation de) 504.93 29.52 P
+(plusieurs court-m\216trages.) 134.65 17.52 T
+28.35 89.16 127.56 96.25 R
+7 X
+V
+1 9 Q
+0 X
+(Langues) 28.35 90.25 T
+28.35 228.09 91.3 236.43 R
+7 X
+V
+0 X
+(Informatiques) 28.35 230.43 T
+FMENDPAGE
+%%EndPage: "1" 0
+%%Trailer
+%%BoundingBox: 0 0 595.28 841.89
+%%Pages: 1 -1
+%%DocumentFonts: Times-Italic
+%%+ Helvetica-Bold
+%%+ Times-Roman
+%%+ Courier
+%%+ Times-Bold

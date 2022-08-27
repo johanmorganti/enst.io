@@ -1,0 +1,461 @@
+<html>
+<head>
+<title>TP - Internet</title>
+</head>
+
+<body bgcolor="#dddddd">
+
+<center>
+<h1>TP - Internet</h1>
+<p>
+<font size=+2>Dominante Informatique</font><p>
+<font size=+1><i><a href="http://www-inf.enst.fr/~dax/">Philippe Dax</a></i></font>
+<p>
+</center>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<h2>Sommaire</h2>
+
+<ul>
+<li><a href="#section0">Pr&eacute;paration et conventions
+</ul>
+<ol><ol>
+<li><a href="#section1">Conna&icirc;tre sa machine
+<menu>
+<li><a href="#section11">Nom</a>
+<li><a href="#section12">Num&eacute;ro IP</a>
+<li><a href="#section13">Interfaces r&eacute;seau</a>
+</menu>
+<li><a href="#section2">Conna&icirc;tre son r&eacute;seau local</a>
+<menu>
+<li><a href="#section21">Domaine d'administration</a>
+<li><a href="#section22">Noms des machines du domaine d'administration</a>
+<li><a href="#section23">Sous domaine Internet</a>
+<li><a href="#section24">Routes</a>
+</menu>
+<li><a href="#section3">Accessibilit&eacute; &agrave; une machine</a>
+<menu>
+<li><a href="#section31">Test de l'existence et performances</a>
+<li><a href="#section32">Trace d'un trajet</a>
+</menu>
+<li><a href="#section4">Applications r&eacute;seau de base</a>
+<menu>
+<li><a href="#section41">Telnet</a>
+<li><a href="#section42">FTP</a>
+</menu>
+<li><a href="#section5">Communications interactives</a>
+<menu>
+<li><a href="#section51">Talk</a>
+<li><a href="#section52">IRC</a>
+</menu>
+<li><a href="#section6">Navigation dans l'Internet</a>
+<menu>
+<li><a href="#section61">Gopher</a>
+<li><a href="#section62">World Wide Web (WWW)</a>
+</menu>
+<li><a href="#section7">Autres services</a>
+<menu>
+<li><a href="#section71">News</a>
+<li><a href="#section72">Archie (recherche d'un logiciel)</a>
+<li><a href="#section73">Finger (recherche d'une personne)</a>
+<li><a href="#section74">Whois (recherche d'un contact r&eacute;seau)</a>
+</menu>
+<li><a href="#section8">Construction de pages HTML - exercice</a>
+<menu>
+<li><a href="#section81">Disposition des fichiers</a>
+<li><a href="#section82">El&eacute;ments du langage HTML</a>
+<li><a href="#section83">Formulaires en HTML+</a>
+</menu>
+</ol></ol>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section0">
+<h2>Pr&eacute;paration et conventions</h2>
+
+<!--
+Configurer le PATH de la mani&egrave;re suivante :<p>
+<tt>PATH=$PATH:/usr/etc:/usr/sbin; export PATH</tt><p>
+<p>
+-->
+
+Dans ce document les termes "<i>machine</i>" et "<i>loginname</i>" d&eacute;signent 
+respectivement le nom d'une machine et le nom de login de l'utilisateur. Le 
+terme "<i>pattern</i>" d&eacute;signe une cha&icirc;ne de caract&egrave;res. Le 
+signe $ d&eacute;signe le prompt d'invitation du shell, il n'est pas &agrave; 
+taper. Le signe ^ d&eacute;signe la touche &lt;CONTROL&gt; (^C pour interrompre 
+un processus, ^D pour indiquer une fin de fichier). Le caract&egrave;re # 
+indique le d&eacute;but d'un commentaire.<p>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section1">
+<h2>1. Conna&icirc;tre sa machine</h2>
+<a name="section11">
+<h3>1.1. Nom</h3>
+Il existe 2 commandes, celle de BSD et celle de SystemV. Il est 
+pr&eacute;f&eacute;rable d'utiliser la seconde.<p>
+<pre>
+<tt>$ hostname</tt>
+<tt>$ uname -n, uname -a</tt></pre>
+
+<a name="section12">
+<h3>1.2. Num&eacute;ro IP</h3>
+Le num&eacute;ro IP de la machine est associ&eacute; &agrave; son nom 
+dans le fichier <tt>/etc/hosts</tt> qui n'est consult&eacute; qu'au 
+d&eacute;marrage de la machine, ensuite le mapping <i>nom &lt;-&gt; adresse</i>
+sera r&eacute;solu soit par le service NIS (Network Information Service), soit 
+par le DNS (Domain Name System).<p>
+<pre>
+<tt>$ cat /etc/hosts</tt>
+<tt>$ grep `uname -n` /etc/hosts</tt></pre>
+
+<a name="section13">
+<h3>1.3. Interfaces r&eacute;seau</h3>
+La command <i>ifconfig</i> permet de configurer ou consulter les 
+caract&eacute;ritiques de l'interface r&eacute;seau.<p>
+La commande "<i>netstat -i</i>" renvoie des statistiques d'utilisation sur la 
+ou les interfaces.<p>
+<pre>
+<tt>$ ifconfig -a</tt>
+<tt>$ netstat -i</tt></pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section2">
+<h2>2. Conna&icirc;tre son r&eacute;seau local</h2>
+<a name="section21">
+<h3>2.1. Domaine d'administration</h3>
+La commande <i>domainname</i> permet de conna&icirc;tre le nom du 
+domaine d'administration NIS, c'est-&agrave;-dire le nom du domaine o&ugrave; 
+sont maintenues les informations syst&egrave;me et r&eacute;seau propre au 
+domaine (passwd, group, hosts, netgroup, services, rpc, aliases,...). Chaque 
+d&eacute;partement dispose de son propre domaine (inf.enst.fr, cal.enst.fr, 
+res.enst.fr, com.enst.fr...). Les &eacute;l&egrave;ves d&eacute;pendent de 
+cal.enst.fr, et ne peuvent donc changer leur mot de passe que dans ce 
+domaine.<p>
+<pre>
+<tt>$ domainname</tt></pre>
+
+<a name="section22">
+<h3>2.2. Noms des machines du domaine d'administration</h3>
+La commande <i>ypcat</i> permet de consulter les tables (maps) du 
+domaine NIS local, l'argument repr&eacute;sente le nom de la map.<p>
+Les commandes <i>nslookup</i> (standard) et <i>nsl</i> (domaine public) 
+permettent de r&eacute;soudre, via le serveur de noms DNS, un nom de machine en 
+renvoyant son adresse IP et inversemment. Ces commandes ne sont pas 
+limit&eacute;es aux machines du domaine local et peuvent donc s'appliquer 
+&agrave; toutes les machines de l'Internet. Dans ce cas, il est 
+n&eacute;cessaire de qualifier les noms.<p>
+<pre>
+<tt>$ ypcat hosts</tt>
+<tt>$ nslookup</tt>
+<tt>&gt; <i>machine</i></tt>>
+<tt><i></i>&gt; ^D                      # quitter par ^D</tt>
+<tt>$ nslookup <i>machine</i></tt>
+<tt>$ nsl <i>machine</i></tt>
+<tt>$ nsl `nsl <i>machine</i>`</tt></pre>
+
+<a name="section23">
+<h3>2.3. Sous domaine Internet</h3>
+Le nom du domaine Internet, r&eacute;gi par le DNS, est situ&eacute; 
+dans le fichier <tt>/etc/resolv.conf</tt> ainsi que l'adresse des serveurs de 
+noms les plus proches qui se chargeront de r&eacute;soudre les noms des 
+machines qu'utiliseront les autres applications r&eacute;seau.<p>
+<pre>
+<tt>$ cat /etc/resolv.conf</tt>
+<tt>$ grep domain /etc/resolv.conf | awk '{print $2}'</tt></pre>
+
+<a name="section24">
+<h3>2.4. Routes</h3>
+L'option -r de la commande <i>netstat</i> permet de conna&icirc;tre les 
+routes que vont prendre les paquets &agrave; partir de la machine locale. La 
+route <i>default </i>indique la route que prendront les paquets qui sont 
+destin&eacute;s &agrave; l'ext&eacute;rieur du r&eacute;seau local. L'option 
+-nr ne traduit pas les destinations en noms et conserve donc les adresses IP.<p>
+<pre>
+<tt>$ netstat -r</tt>
+<tt>$ netstat -nr</tt></pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section3">
+<h2>3. Accessibilit&eacute; &agrave; une machine</h2>
+<a name="section31">
+<h3>3.1. Test de l'existence et performances</h3>
+La commande <i>ping</i> envoie un paquet de 64 octets &agrave; la 
+machine distante et attend son &eacute;cho. C'est le noyau de la machine 
+distante et non une application (type daemon) qui r&eacute;pondra. Si la 
+r&eacute;ponse est positive, cela signifie que la machine distante a 
+initialis&eacute; son interface mais cela ne permet pas d'affirmer qu'elle soit 
+op&eacute;rationnelle au point de vue des applications r&eacute;seau (telnet 
+par exemple). L'option -s donne des statistiques sur le temps de transit 
+aller-retour du paquet appel&eacute; "<i>Round Robin Trip</i>".<p>
+<pre>
+<tt>$ ping <i>machine</i></tt>
+<tt>$ ping -s <i>machine</i></tt></pre>
+
+<a name="section32">
+<h3>3.2. Trace d'un trajet</h3>
+La commande <i>traceroute</i> permet de suivre la route que prend un 
+paquet jusqu'&agrave; sa destination finale. Elle donne &eacute;galement le 
+temps en ms que le paquet met pour atteindre les diff&eacute;rents routeurs qui 
+constituent les &eacute;tapes du trajet du paquet entre sa source et sa 
+destination.<p>
+<pre>
+<tt>$ traceroute <i>machine</i></tt>
+<tt><i></i>$ traceroute www.inria.fr</tt>
+<tt>$ traceroute research.att.com</tt></pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section4">
+<h2>4. Applications r&eacute;seau de base</h2>
+Les services de base r&eacute;seau sont <i>telnet </i>pour la connexion 
+&agrave; distance et <i>ftp</i> pour le transfert de fichiers.<p>
+<a name="section41">
+<h3>4.1. Telnet</h3>
+Telnet permet d'ouvrir une session de login distante si la commande ne 
+comporte qu'un seul argument, en l'occurrence le nom de la machine distante ou 
+son num&eacute;ro IP. Si un second argument est pr&eacute;sent, il 
+repr&eacute;sente un nom de service ou un num&eacute;ro de port, dans ce cas 
+telnet permet d'ex&eacute;cuter une application distante qui &eacute;coute sur 
+le port en question.<p>
+<pre>
+<tt>$ telnet <i>machine</i></tt>
+
+<tt>$ telnet email.enst.fr smtp</tt>
+<tt>&gt; expn <i>loginname</i></tt>
+<tt>&gt; quit</tt></pre>
+
+<a name="section42">
+<h3>4.2. FTP</h3>
+Ftp normal pour acc&eacute;der aux fichiers d'un compte autoris&eacute;, 
+ce qui n&eacute;cessite de conna&icirc;tre le mot de passe du compte en 
+question. Ftp poss&egrave;de son propre "prompt", le caract&egrave;re "&gt;". 
+Pour conna&icirc;tre les commandes propres &agrave; ftp, taper ?., pour quitter 
+ftp, taper <i>quit.</i> Les autres principales commandes sont <i>cd</i> pour 
+changer de r&eacute;pertoire, <i>ls</i> pour lister un r&eacute;pertoire,
+<i>bin</i> pour se mettre en mode de transfert binaire, <i>hash</i> pour suivre 
+l'&eacute;volution du transfert de mani&egrave;re visuelle, <i>get </i>pour 
+r&eacute;cup&eacute;rer un fichier, <i>pwd</i> pour voir o&ugrave; l'on est,
+<i>lcd</i> pour changer localement de r&eacute;pertoire courant, etc.<p>
+<pre>
+<tt>$ ftp <i>machine</i></tt>
+<tt>&gt;username: &lt;return&gt;</tt>
+<tt>&gt;password: votre password</tt></pre>
+<p>
+Ftp anonyme permet d'acc&eacute;der &agrave; des serveurs d'archive ftp. La 
+"Netiquette" conseille que le mot de passe doit &ecirc;tre votre adresse 
+&eacute;lectronique email. Les commandes internes de ftp d&eacute;crites plus 
+haut sont ici aussi valables. Essayez de naviguer dans le serveur d'ENST:
+<a href=ftp://ftp.enst.fr/pub><tt>ftp.enst.fr</tt></a>.<p>
+<pre>
+<tt>$ ftp ftp.enst.fr</tt>
+<tt>&gt;username: anonymous</tt>
+<tt>&gt;password: <i>loginname</i>@<i>machine</i>.enst.fr</tt>
+<tt>&gt;cd pub</tt>
+<tt>&gt;ls</tt>
+<tt>&gt;cd unix</tt>
+<tt>&gt;ls -C</tt>
+<tt>&gt;quit</tt>
+</pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section5">
+<h2>5. Communications interactives</h2>
+<a name="section51">
+<h3>5.1. Talk</h3>
+La commande <i>talk</i> permet de communiquer en temps r&eacute;el avec 
+un autre utilisateur connect&eacute;. L'&eacute;cran est partag&eacute; en 2 
+zones, la zone de l'&eacute;metteur et la zone du r&eacute;cepteur.
+<i>Ytalk</i> permet de dialoguer &agrave; 2 ou plus de 2 interlocuteurs, 
+l'&eacute;cran est alors partag&eacute; en autant de zones que d'interlocuteurs 
+connect&eacute;s. Pour r&eacute;pondre &agrave; une sollicitation de talk 
+utilisez la m&ecirc;me sysntaxe que l'appel : <tt>talk
+<i>loginname@machine</i></tt>.<p>
+<pre>
+<tt>$ talk <i>loginname</i>@<i>machine</i>      # arr&ecirc;t par ^C</tt>
+<tt>$ ytalk <i>loginname</i>@<i>machine</i></tt></pre>
+
+<a name="section52">
+<h3>5.2. IRC</h3>
+IRC (Internet Relay Chat) est un forum interactif gr&acirc;ce auquel les 
+utilisateurs peuvent venir rejoindre, sous un pseudonyme, des canaux (channels) 
+de discussions interactives.<p>
+<pre>
+<tt>$ irc</tt>
+<tt>&gt; /help</tt>
+&gt; /pseudo zigzag
+&gt; /list -min 20
+&gt; /join #france</pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section6">
+<h2>6. Navigation dans l'Internet</h2>
+<a name="section61">
+<h3>6.1. Gopher</h3>
+Gopher est un outil de navigation par menus de proche en proche. Les 
+rubriques d'un menu peuvent correspondre &agrave; un r&eacute;pertoire ou 
+&agrave; un lien vers un autre site. Essayer la commande :<p>
+<pre>
+<tt>$ gopher gopher.enst.fr</tt></pre>
+
+<a name="section62">
+<h3>6.2. World Wide Web (WWW)</h3>
+Il existe de nombeux clients WWW (browsers) pour acc&eacute;der aux 
+diff&eacute;rents serveurs WWW de l'Internet. Netscape est le plus performant. 
+Lynx peut &ecirc;tre utilis&eacute; sur des terminaux alpha-num&eacute;riques 
+non graphiques, le d&eacute;placement s'op&eacute;rant &agrave; partir des 
+fl&egrave;ches du clavier.<p>
+<pre>
+<tt>$ netscape &amp;</tt>
+<tt>$ Mosaic &amp;</tt>
+<tt>$ lynx</tt>
+<tt>$ lynx &lt;<i>URL</i>&gt;</tt></pre>
+<p>
+R&eacute;gler vos pr&eacute;f&eacute;rences en s&eacute;lectionnant le bouton 
+Options. La page d'accueil doit &ecirc;tre r&eacute;gl&eacute;e sur l'URL
+<a href="http://www.enst.fr">
+<tt>http://www.enst.fr/</tt></a>. Le cache disque local doit &ecirc;tre mis 
+&agrave; zero car un cache g&eacute;n&eacute;ral remplit d&eacute;j&agrave; 
+cette t&acirc;che.<p>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section7">
+<h2>7. Autres services</h2>
+<a name="section71">
+<h3>7.1. News</h3>
+<pre>
+<tt>$ rtin</tt>
+<tt>$ rtin fr.network.internet</tt>
+<tt>$ more .newsrc</tt>
+<tt>$ xrn</tt></pre>
+Ou bien utilisez directement les browers WWW (Netscape, Mosaic) avec l'URL :
+<a href="http://www.enst.fr/~tardieu/news/"><tt>http://www.enst.fr/~tardieu/news/</tt></a>.
+
+<a name="section72">
+<h3>7.2. Archie (recherche d'un logiciel)</h3>
+<pre>
+<tt>$ archie <i>pattern</i></tt>
+<tt>$ xarchie</tt></pre>
+
+<a name="section73">
+<h3>7.3. Finger (recherche d'une personne)</h3>
+<pre>
+<tt>$ finger <i>username</i></tt>
+<tt>$ finger @<i>machine</i></tt></pre>
+
+<a name="section74">
+<h3>7.4. Whois (recherche d'un contact r&eacute;seau)</h3>
+<pre>
+<tt>$ whois -h whois.ripe.net enst.fr</tt>
+<tt>$ whois -h whois.ripe.net dax</tt></pre>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<a name="section8">
+<h2>8. Construction de pages HTML - exercice</h2>
+<a name="section81">
+<h3>8.1. Disposition des fichiers</h3>
+Cr&eacute;er dans votre r&eacute;pertoire principal (r&eacute;pertoire 
+de connexion) le r&eacute;pertoire <tt>public_html.</tt> Ce r&eacute;pertoire 
+ainsi que votre r&eacute;pertoire principal doivent &ecirc;tre traversables par 
+les autres (mode 755 ou "<tt>drwxr_xr_x</tt>").
+Les fichiers sous <tt>~/public_html </tt>doivent &ecirc;tre 
+accessibles en lecture pour tous (mode 644 soit "<tt>-rw-r--r--</tt>"),
+puisque vous allez pr&eacute;senter vos pages aux 
+autres utilisateurs. Pour de plus amples d'informations, pointez sur l'URL :
+<a href="http://www-inf.enst.fr/~vercken/HTML.html">
+<tt>http://www-inf.enst.fr/~vercken/HTML.html.</tt></a><p>
+
+<a name="section82">
+<h3>8.2. El&eacute;ments du langage HTML</h3>
+La syntaxe g&eacute;n&eacute;rale est du type <b><i>&lt;tag&gt;texte 
+libre&lt;/tag&gt;</i></b>. Un document est encadr&eacute; par &lt;html&gt; 
+document &lt;/html&gt;, il est compos&eacute; d'une en-t&ecirc;te &lt;head&gt; 
+en-t&ecirc;te &lt;/head&gt; suivie du corps du document &lt;body&gt; corps du 
+document &lt;/body&gt;. Voici ci-dessous quelques &eacute;l&eacute;ments de 
+syntaxe pour construire des pages HTML.<p>
+<pre>
+<tt>
+<b>&lt;html&gt;</b>
+<b>&lt;head&gt;</b>
+<b>&lt;title&gt;</b>Titre du document<b>&lt;/title&gt;</b>
+<b>&lt;/head&gt;</b>
+<b>&lt;body&gt;</b>
+<b>&lt;h1&gt;</b>ent&ecirc;te de document<b>&lt;/h1&gt;</b>
+<b>&lt;h2&gt;</b>ent&ecirc;te de chapitre<b>&lt;/h2&gt;</b>
+<b>&lt;h3&gt;</b>ent&ecirc;te de section<b>&lt;/h3&gt;</b>
+<b>&lt;a</b> <b>href=</b>"http://host/file.html"<b>&gt;</b> ancre <b>&lt;/a&gt;</b> lien distant
+<b>&lt;a</b> <b>href=</b>"filename.html"<b>&gt;</b> ancre <b>&lt;/a&gt;</b> lien local
+<b>&lt;a</b> <b>href=</b>"filename.html"<b>#</b>etiquette<b>&gt;</b> ancre <b>&lt;/a&gt;</b>  lien local
+<b>&lt;a name=</b>"etiquette"<b>&gt;</b> point de branchement local au document
+<b>&lt;img src=</b>"path_image.gif"<b>&gt;</b> suite du texte
+<b>&lt;ul&gt;</b> ... <b>&lt;/ul&gt;</b> -&gt; liste d'&eacute;l&eacute;ments non num&eacute;rot&eacute;e
+<b>&lt;ol&gt;</b> ... <b>&lt;/ol&gt;</b> -&gt; liste d'&eacute;l&eacute;ments num&eacute;rot&eacute;e
+<b>&lt;dl&gt;</b> ... <b>&lt;/dl&gt;</b> -&gt; liste descriptive d'&eacute;l&eacute;ments
+<b>&lt;li&gt;</b> -&gt; &eacute;l&eacute;ment de liste (item)
+<b>&lt;dt&gt;</b> -&gt; terme de liste descriptive
+<b>&lt;dd&gt;</b> -&gt; &eacute;l&eacute;ment de liste descriptive
+<b>&lt;p&gt;</b> -&gt; fin de paragraphe (saut de ligne) ...<b>&lt;p&gt;</b>
+<b>&lt;br&gt;</b> -&gt; retour &agrave; la ligne...<b>&lt;br&gt;</b>
+<b>&lt;pre&gt;</b> ... <b>&lt;/pre&gt;</b> -&gt; texte pr&eacute;d&eacute;fini (listing)
+<b>&lt;hr&gt;</b> -&gt; trait horizontal
+<b>&lt;font size=</b>+1<b>&gt;</b> agrandissement de la fonte <b>&lt;/font&gt;</b>
+<b>&lt;em&gt;</b><i>italique</i><b>&lt;/em&gt;&lt;strong&gt;gras&lt;/strong&gt;&lt;code&gt;</b>courier<b>&lt;/code&gt;</b>
+accents: <b>&amp;eacute;</b> <b>&amp;agrave;</b> <b>&amp;ccedil;</b> ou ISO-latin1: &eacute; &agrave; &ccedil;
+caract&egrave;res sp&eacute;ciaux : <b>&amp;lt</b>, <b>&amp;gt</b>, <b>&amp;amp</b>, pour &lt; &gt; &amp; <b>&lt;/body&gt;</b>
+<b>&lt;/html&gt;</b>
+</tt>
+</pre>
+<p>
+A l'aide des &eacute;l&eacute;ments de syntaxe pr&eacute;sent&eacute;s dans le 
+tableau ci-dessus et de l'URL mentionn&eacute;e plus haut, cr&eacute;ez votre 
+page d'accueil personnelle. Pour consulter votre page, utilisez la commande : 
+"<tt>netscape http://www-stud.enst.fr/~<i>loginname</i></tt>".<p>
+
+<a name="section83">
+<h3>8.3 Formulaires en HTML+</h3>
+HTML+ propose des extensions, notamment les formulaires dont quelques 
+&eacute;l&eacute;ments de syntaxe sont d&eacute;crits dans le tableau 
+ci-dessous.<p>
+<pre>
+<tt>
+<b>&lt;FORM ACTION=</b>"http://host/~loginname/cgi-bin/script-form"
+<b>METHOD=POST&gt;</b>
+
+<b>&lt;H1&gt;</b> Formulaire d'inscription <b>&lt;/H1&gt;</b>
+Pour vous inscrire veuillez remplir les rubriques ci-dessous.
+
+Nom : <b>&lt;INPUT NAME</b>="nom" <b>SIZE=</b>"30"&gt;<b>&lt;br&gt;</b>
+Prenom : <b>&lt;INPUT NAME=</b>"prenom" <b>SIZE=</b>"30"&gt;<b>&lt;br&gt;</b>
+<b>&lt;INPUT VALUE=</b>"valider" <b>TYPE=submit&gt;&lt;br&gt;</b>
+<b>&lt;INPUT VALUE=</b>"annuler" <b>TYPE=reset&gt;&lt;br&gt;</b>
+<b>&lt;/FORM&gt;</b>
+</tt>
+</pre>
+<p>
+S&eacute;lectionnez l'URL
+<a href="http://www-inf.enst.fr/~dax/polys/formulaire/formulaire.html">
+<tt>http://www-inf.enst.fr/~dax/polys/formulaire/formulaire.html</tt></a>
+pour voir et apprendre comment on construit un formulaire c&ocirc;t&eacute; 
+client (formulaire-simple.html) et comment on traite c&ocirc;t&eacute; serveur 
+les informations saisies.<p>
+A partir des &eacute;l&eacute;ments d&eacute;couverts essayez de cr&eacute;er 
+un formulaire personnel avec le script CGI associ&eacute; en langage C.
+<p>
+<a href="http://bib1.ulb.ac.be/BST/html/toc.htm">Un cours complet sur l'édition de documents HTML</a>
+
+<IMG SRC="/gif/grandvertjaune.gif">
+
+<address>&copy; (Copyright) <A HREF="mailto:dax@inf.enst.fr">Philippe Dax</A> - 1995,1996</address>
+<img src="/cgi-bin/Count.cgi?ft=5|frgb=0;0;0|tr=0|trgb=0;0;0|wxh=15;20|md=6|dd=A|st=5|sh=1|df=dax_internet_tp.cnt" align=absmiddle>
+ visitors since Sep 1995.
+Last updated: Sep 10, 1995
+
+</body></html>

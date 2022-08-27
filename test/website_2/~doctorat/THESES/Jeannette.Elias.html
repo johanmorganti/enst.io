@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>
+Supervision de la qualité de service sur des systèmes distribués temps-réel  - Jeannette Elias
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Jeannette Elias ">
+<meta name="Titre" content=" Supervision de la qualité de service sur des systèmes distribués temps-réel  ">
+<meta name="Title" content=" Monitoring of the Quality of Service in real-time distributed systems  ">
+<meta name="Departement" content=" Informatique ">
+
+<meta name="Directeur" content=" Mr Ulrich Finger  ">
+<meta name="Laboratoire" content=" CNET-PAA/TSA/TLR  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content="  Nous nous sommes intéressés à la conception et la construction des systèmes distribués temps-réel ouverts et predictibles.
+
+ 
+ La prédictibilité signifie que les utilisateurs sont autorisés à spécifier leur besoin en termes de Qualite de Service (QoS) et à obtenir des garanties de satisfaction de leurs besoins. La QoS décrit et mesure la façon dont le système exécute ses fonctions. Elle se manifeste sous plusieurs formes: contraintes temporelles, les propriétés en volume etc...
+ 
+ 
+ L'ouverture implique l'adaptabilité aux milieux hétérogènes. 
+ 
+ La base arhitecturale de notre travail est le modèle de référence ODP. Il fournit les concepts de base pour la construction des systèmes hétérogènes. C'est un modèle orienté objet.
+ Nous cherchons à spécialiser ce modèle par l'intégration de la QoS en précisant la forme de la déclaration de QoS (offerte et requise), les mécanismes et les algorithmes de l'établissement de QoS, de la supervision et du contrôle ...
+ Il s'agit de construire un modèle générique reliant les garanties temporelles applicatives aux événements observables. 
+ 
+ L'approche de supervision adoptée fournit une vue unifiée de supervision. L'élément fondamental de cette approche est que toutes les activités de la supervision sont specifiées en termes d'événements qui peuvent se produire dans un système et en termes d'actions que l'instrumentation opère sur ces événements. Cette supervision est présentée sous une forme abstraite et uniforme d'événements sans se soucier de mecanismes de mise en oeuvre.
+ 
+ Comme nous nous situons dans un cadre orienté objet (modèle fortement encapsulé), la supervision des contraintes se limite à observer les événements aux interfaces d'objets sans pouvoir observer le comportement interne de l'objet. Pour cela, la supervision est effectuée en niveaux d'observation: niveau applicatif et niveau plus fin celui du système d'exploitation. Ce dernier nous permet de voir l'état du système (état des gestionnaires de ressources etc...) et d'avoir une idée plus précise sur le comportement des objets et éventuellement savoir interpréter un défaut de QoS.
+ 
+ La thèse comporte à la fois un travail de modélisation et de prototypage. Ce dernier s'effectue sur le système Chorus.
+ 
+  ">
+<meta name="Abstract" content="   ">
+<meta name="Motcle" content=" ODP, orienté-objet, QoS, supervision, contraintes temporelles ...  ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http:// ">
+<meta name="Statut" content=" non Soutenue ">
+<meta name="Date" content="  à fixer  ">
+<meta name="Lieu" content="  ">
+<meta name="Login" content=" elias ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#7070ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Supervision de la qualité de service sur des systèmes distribués temps-réel   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Jeannette Elias<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Informatique<br>
+             </h3><h3 align="right"> Laboratoire d'accueil : CNET-PAA/TSA/TLR <br></h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3> Nous nous sommes intéressés à la conception et la construction des systèmes distribués temps-réel ouverts et predictibles.
+
+ 
+ La prédictibilité signifie que les utilisateurs sont autorisés à spécifier leur besoin en termes de Qualite de Service (QoS) et à obtenir des garanties de satisfaction de leurs besoins. La QoS décrit et mesure la façon dont le système exécute ses fonctions. Elle se manifeste sous plusieurs formes: contraintes temporelles, les propriétés en volume etc...
+ 
+ 
+ L'ouverture implique l'adaptabilité aux milieux hétérogènes. 
+ 
+ La base arhitecturale de notre travail est le modèle de référence ODP. Il fournit les concepts de base pour la construction des systèmes hétérogènes. C'est un modèle orienté objet.
+ Nous cherchons à spécialiser ce modèle par l'intégration de la QoS en précisant la forme de la déclaration de QoS (offerte et requise), les mécanismes et les algorithmes de l'établissement de QoS, de la supervision et du contrôle ...
+ Il s'agit de construire un modèle générique reliant les garanties temporelles applicatives aux événements observables. 
+ 
+ L'approche de supervision adoptée fournit une vue unifiée de supervision. L'élément fondamental de cette approche est que toutes les activités de la supervision sont specifiées en termes d'événements qui peuvent se produire dans un système et en termes d'actions que l'instrumentation opère sur ces événements. Cette supervision est présentée sous une forme abstraite et uniforme d'événements sans se soucier de mecanismes de mise en oeuvre.
+ 
+ Comme nous nous situons dans un cadre orienté objet (modèle fortement encapsulé), la supervision des contraintes se limite à observer les événements aux interfaces d'objets sans pouvoir observer le comportement interne de l'objet. Pour cela, la supervision est effectuée en niveaux d'observation: niveau applicatif et niveau plus fin celui du système d'exploitation. Ce dernier nous permet de voir l'état du système (état des gestionnaires de ressources etc...) et d'avoir une idée plus précise sur le comportement des objets et éventuellement savoir interpréter un défaut de QoS.
+ 
+ La thèse comporte à la fois un travail de modélisation et de prototypage. Ce dernier s'effectue sur le système Chorus.
+ 
+ 
+              <H3> Mot-Cl&eacute;s :</H3> ODP, orienté-objet, QoS, supervision, contraintes temporelles ... 
+               <h3> <br> Directeur de la th&egrave;se : Mr Ulrich Finger  </h3>
+               <hr> <h3> Th&egrave;se non Soutenue  <br><i>
+            Date de soutenance pr&eacute;vue:    à fixer <br>
+            Lieu de la soutenance:    </i>
+           </h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : Monitoring of the Quality of Service in real-time distributed systems </H2> <H3> Abstract :</H3>   <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:elias@enst.fr">mail</A> <br>
+                  </h4>
+                </body>
+                </html>

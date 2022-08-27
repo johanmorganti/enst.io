@@ -1,0 +1,203 @@
+<HTML>
+<HEAD>
+<TITLE> Biblioth&egrave;que graphique Unix </TITLE>
+<!-- Changed by: Annie Danzart, 25-Apr-1996 -->
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER>
+<A NAME="AVERTISSEMENT"></A>
+<H1> Biblioth&egrave;que graphique</H1>
+
+<p>Interface de programmation permettant
+dans une application &eacute;crite en C
+d'utiliser des fonctions graphiques de base 
+d&eacute;velopp&eacute;es sous Motif
+<p>
+
+Projet encadr&eacute par Annie Danzart et Eric Lecolinet<BR>
+R&eacute;alis&eacute par Fleur Deheuvels, Yves-Andr&eacute; Gagnard,<BR> Philippe Matsumoto et Nicolas Porteix (promo 97)<p>
+<p>
+</CENTER>
+
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+<p>
+
+<h2>Avertissement</h2>
+Cette biblioth&egrave;que doit &ecirc;tre correctement mentionn&eacute;e pour la compilation (<tt>#include &lt;graphiqu.h&gt;</tt>) et pour l'&eacute;dition de liens (<tt>gcc -lgraphic</tt>). Elle permet de r&eacute;aliser simplement
+quelques trac&eacute;s graphiques de base. Il est &agrave; noter que toutes les
+fonctions travaillent avec des coordonn&eacute;es utilisateur, c'est &agrave;
+dire relativement aux intervalles de valeurs d&eacute;finis lors de la
+cr&eacute;ation d'une fen&ecirc;tre graphique.<p>
+En ce qui concerne les couleurs, une palette est d&eacute;finie par
+d&eacute;faut avec 256 couleurs dont les 16 premi&egrave;res sont les
+m&ecirc;mes que les 16 premi&egrave;res couleurs des PC.<p>
+Une fonction vous permettra de red&eacute;finir vos propres couleurs avec leurs
+composantes (Rouge, Vert, Bleu).
+
+<p>
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+<A NAME="FONCTIONS"></A>
+<h2>Fonctions graphiques </h2>
+
+<h3>Cr&eacute;ation et suppression d'une fen&ecirc;tre graphique</h3>
+<DL>
+  <DT><tt>void Initialisation_Graphique (float xmin, float  ymin, float  xmax, float  ymax);</tt><BR></DT>
+  <DD><font size=-1>Cette fonction ouvre une fen&ecirc;tre graphique dont les dimensions sont d&eacute;limit&eacute;es par le rectangle (xmin, ymin,xmax, ymax). Les coordonn&eacute;es sont des coordonn&eacute;es <u>utilisateurs</u> (nombres r&eacute;els).<BR>
+(xmin,ymin) est le point en bas &agrave; gauche et (xmax,ymax) est le point en haut &agrave; droite.</font></DD><P>
+
+  <DT><tt>void Fin_Graphique(void);</tt><BR></DT>
+  <DD><font size=-1>L'appel de cette fonction est <u>obligatoire</u> pour supprimer la fen&ecirc;tre graphique, faute de quoi le processus qui la g&egrave;re ne s'arr&ecirc;tera pas et n&eacute;cessitera d'&ecirc;tre tu&eacute;.</font></DD>
+     
+<DT><tt><p>void Efface(void);</tt><BR></DT>
+<DD>Efface le contenu de la fen&ecirc;tre.</font></DD>
+</DL>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif"  border=0>
+<A NAME="TRACES"></A>
+<h3>Trac&eacute;s &eacute;l&eacute;mentaires</h3>
+<DL>
+  <DT><tt>void Trait (float x1, float  y1, float  x2, float  y2, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; d'un trait entre les points (x1,y1) et (x2,y2) avec la couleur num&eacute;ro <tt>couleur</tt>.</font></DD><p>
+
+  <DT><tt>void Croix (float x, float y, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; d'une croix autour du point de coordonn&eacute;es (x,y) dans un trait de la couleur num&eacute;ro <tt>couleur</tt></font></DD>.<p>
+
+  <DT><tt>void Point (float x, float y, int  couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; du point  de coordonn&eacute;es (x,y) de la couleur num&eacute;ro <tt>couleur</tt>.</font></DD><p>
+
+  <DT><tt>void Cercle (float x, float y, int  rayon, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; d'un cercle de centre (x,y) et de rayon <tt>rayon</tt> avec la couleur num&eacute;ro <tt>couleur</tt>.</font></DD><p>
+
+  <DT><tt>void Disque (float x, float y, int  rayon, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Remplissage dans la couleur num&eacute;ro <tt>couleur</tt> d'un cercle de centre (x,y) et de rayon <tt>rayon</tt>.</font></DD><p>
+
+  <DT><tt>void DrawPoly(int nbr_points, float *poly_points, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; avec la couleur num&eacute;ro <tt>couleur</tt> d'un polygone dont les coordonn&eacute;es sont stock&eacute;es dans le tableau de r&eacute;els <tt>poly_points</tt>. Le nombre de points du polygone est sp&eacute;cifi&eacute; dans la variable <tt>nbr_points</tt>.</font></DD><P>
+     
+  <DT><tt>void FillPoly(int nbr_points, float *poly_points, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Remplissage dans la couleur <tt>couleur</tt> d'un polygone dont les coordonn&eacute;es sont stock&eacute;es dans le tableau de r&eacute;els <tt>poly_points</tt>. Le nombre de points du polygone est sp&eacute;cifi&eacute; dans la variable <tt>nbr_points</tt>.</font></DD><P>
+
+  <DT><tt>void DrawTriangle(float *poly_points, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; avec la couleur num&eacute;ro <tt>couleur</tt> d'un triangle dont les coordonn&eacute;es sont stock&eacute;es dans le tableau de r&eacute;els <tt>poly_points</tt>.</font></DD><P>
+
+  <DT><tt>void FillTriangle(float *poly_points, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Remplissage dans la couleur <tt>couleur</tt> d'un triangle dont les coordonn&eacute;es sont stock&eacute;es dans le tableau de r&eacute;els <tt>poly_points</tt>.</font></DD><P>
+
+  <DT><tt>void DrawRectangle(float x1, float y1, float x2, float y2, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Trac&eacute; avec la couleur num&eacute;ro <tt>couleur</tt> d'un rectangle d&eacute;termin&eacute; par les points de coordonn&eacute;es (x1,y1) et (x2,y2).</font></DD><P>
+
+  <DT><tt>void FillRectangle(float x1, float y1, float x2, float y2, int couleur);</tt></DT><BR>
+  <DD><font size=-1>Remplissage avec la couleur num&eacute;ro <tt>couleur</tt> d'un rectangle d&eacute;termin&eacute; par les points de coordonn&eacute;es (x1,y1) et (x2,y2).</font></DD>
+</DL>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif"  border=>
+<A NAME="COULEURSDEBASE"></A>
+<h3>Couleurs disponibles  par d&eacute;faut pour les traits et contours</h3>
+<table width=100%>
+  <TR>
+    <TD>0 = Black<BR>1 = Blue<BR>2 = Green<BR>3 = Cyan</TD>
+    <TD>4 = Red<BR>5 = Magenta<BR>6 = Brown<BR>7 = LightGray</TD>
+    <TD>8 = DarkGray<BR>9 = LightBlue<BR>10 = LightGreen<BR>11 = LightCyan</TD>
+    <TD>12 = LightRed<BR>13 = LightMagenta<BR>14 = Yellow<BR>15 = White</TD>
+  </TR>
+</TABLE>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif"  border=0>
+<A NAME="COULEUR"></A>
+<h3>Cr&eacute;ation de couleurs</h3>
+<DL>
+  <DT><tt>void CreateColorRGB(int numero,int R,int G,int B);</tt></DT>
+  <DD><font size=-1>Changement de d&eacute;finition de la couleur num&eacute;ro <tt>numero</tt> en lui donnant les composantes (<tt>R,G,B</tt>)<BR>
+Le num&eacute;ro de la couleur varie entre 0 et 255.<BR>
+Les valeurs des composantes sont des entiers compris entre 0 et 255.
+</font></DD>
+</DL>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif"  border=0>
+<A NAME="TEXTE"></A>
+<h3>Manipulation de texte</h3>
+<DL>
+  <DT><tt>void Hauteur_Texte(float hauteur);</tt><BR></DT>
+  <DD><font size=-1>Change la hauteur d'&eacute;criture de texte &agrave; l'&eacute;cran.</font></DD><p>
+
+  <DT><tt>void itoa (int n, char s[]);</tt><BR></DT>
+  <DD><font size=-1>Convertit l'entier <tt>n</tt> dans la cha&icirc;ne de caract&egrave;res <tt>s</tt>.</font></DD>
+</DL>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif"  border=0>
+<A NAME="INTERFACE"></A>
+<h3>Interface avec l'utilisateur</h3>
+<DL>
+  <DT><tt>void Deplace (float x1, float y1);</tt><BR></DT>
+  <DD><font size=-1>On se positiojnne au point  de coordonn&eacute;es (x,y).</font></DD><p>
+
+  <DT><tt>void Ecrit (char *chaine,int  couleur);</tt></DT><BR>
+  <DD><font size=-1>Ecrit la cha&icirc;ne de caract&egrave;res <tt>chaine</tt> avec la couleur num&eacute;ro <tt>couleur</tt>, &agrave; partir de la position courante.</font></DD><p>
+
+  <DT><tt>void EcritXY (float x, float y, char *chaine,int couleur);</tt></DT><BR>
+  <DD><font size=-1>Ecrit la cha&icirc;ne de caract&egrave;res <tt>chaine</tt> avec la couleur num&eacute;ro <tt>couleur</tt>, &agrave; la position <tt>(x,y)</tt>.</font></DD><p>
+
+  <DT><tt>int Lit(void);</tt></DT><BR>
+  <DD><font size=-1>Ouverture d'une fen&ecirc;tre de dialoque permettant l'acquisition de valeurs enti&egrave;res.<BR>
+Retourne l'entier rentr&eacute; au clavier.</font></DD><p>
+
+  <DT><tt>void Attente(void);</tt></DT><BR>
+  <DD><font size=-1>Attente d'un laps de temps.</font></DD>
+</DL>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+<A NAME="EXEMPLE"></A>
+<h1>Un exemple utilisant graphiqu.h</h1>
+L'exemple suivant a &eacute;t&eacute; cr&eacute;&eacute; pour &ecirc;tre utilis&eacute; et test&eacute; sur les ordinateurs PC de l'ENST et utilisant la biblioth&egrave;que mise &agrave; la disposition des &eacute;l&egrave;ves.
+<BR>
+A condition d'&eacute;crire correctement le <tt>Makefile</tt> destin&eacute; &agrave; cr&eacute;er le programme ex&eacute;cutable, il peut &ecirc;tre utilis&eacute; sur les stations de travail de la m&ecirc;me fa&ccedil;on que sur les PC.<p>
+<IMG SRC="../../images/ind1.gif"><TT>demo.c</TT> : <A HREF="demo.c" TARGET="_top">Exemple de programme utilisant graphiqu.h</A></b>
+
+<p>
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+<A NAME="MAKEFILE"></A>
+<h1>Un mod&egrave;le de Makefile</h1>
+Les programmes compil&eacute;s ne peuvent pas tourner indiff&eacute;remment sur syst&egrave;me solaris ou sunos. Il est donc indispensable d'effectuer la compilation ad&eacute;quate pour lancer toute ex&eacute;cution de vos programmes.<P>
+Pour organiser correctement votre travail nous vous conseillons de cr&eacute;er
+3 fichiers diff&eacute;rents:<BR>
+	-	Makefile<BR>
+	-	Makefile.solaris<BR>
+	-	Makefile.sunos<BR>
+<p>
+similaires &agrave; ceux que vous trouverez ci-apr&egrave;s. Il suffira ensuite de lancer la commande make solaris ou make sunos selon votre environnement.<p>
+<p>
+<IMG SRC="../../images/ind1.gif"><TT>Makefile</TT> : <A HREF="Makefile" TARGET="_top">Fichier Makefile </A><BR>
+<IMG SRC="../../images/ind1.gif"><TT>Makefile.solaris</TT> : <A HREF="Makefile.solaris" TARGET="_top">Pour cr&eacute;er un ex&eacute;cutable sous solaris</A><BR>
+<IMG SRC="../../images/ind1.gif"><TT>Makefile.sunos</TT> : <A HREF="Makefile.sunos" TARGET="_top">Pour cr&eacute;er un ex&eacute;cutable sous sunos</A></b>
+
+<p>
+
+<IMG SRC="../../images/rainbolg.gif" border=1 ><p>
+<CENTER>
+
+<A HREF="http://www-inf.enst.fr/index.html" TARGET="_top"><IMG SRC="../../images/inf.gif" width=40 border=0></A><br>
+<font size=-1><A HREF="http://www-inf.enst.fr/index.html" TARGET="_top">Informatique</font></A><BR>
+<A HREF="http://www.enst.fr/" TARGET ="_top"><IMG SRC="../../images/homepage.gif" TARGET="_top" border=0 align=middle></A>
+
+<A HREF="mailto:danzart@inf.enst.fr"><IMG SRC="../../images/mail.gif" width=50 align=middle></A>
+<BR>
+</CENTER>
+
+
+</CENTER>
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+<CENTER>
+
+
+<ADDRESS>Avril 1996 - Page maintenue par
+<A HREF="HTTP://www-inf.enst.fr/~danzart" TARGET="_top">Annie Danzart </A> 
+</ADDRESS>
+<IMG SRC="../../images/rainbolg.gif" border=1 >
+
+</HTML>

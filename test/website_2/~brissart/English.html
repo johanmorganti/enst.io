@@ -1,0 +1,57 @@
+<TITLE> Charles' Page  </TITLE>
+
+
+<BODY>
+<A HREF="french.html"> French</A><BR>
+
+<P> This page deals with my program for <B>image synthesis</B>. </P>
+<P> I wrote a <A HREF="raytracing.html">raytracing</A>  program in C++. It provides a small language that allows the user to describe a scene and then to render it  with proper lightning.
+
+<TABLE CELLSPACING=20><TR>
+<TD><A HREF="Images/temple.jpg"><IMG SRC="Images/mini_temple.jpg"></A></TD> 
+<TD><P>This image was made using my own <A HREF="raytracing.html">raytracing</A>
+program. You can notice shadows, reflections, antialiasing, procedural texturing</TD>
+</TR></TABLE>
+
+<P> a few exemples of what it can do : <P>  
+
+<OL> 
+<LI> <A HREF="Images/ellipsoids.jpg"> ellipsoides</A><BR> 	
+<LI> <A HREF="Images/fractal3.jpg"> anneau</A><BR>
+<LI> <A HREF="Images/marbre.jpg"> marbre</A><BR>
+<LI> <A HREF="Images/ocean.jpg"> ocean</A><BR>
+</OL>
+
+<P> I'm currently working on a version of this program which will be much faster and will use Zbuffer algorithm to speed up raytracing. A small demonstration of the current version, showing the fonction of smoothing<P>
+
+<UL> 
+<LI> <A HREF="Images/lissage1.jpg"> before smoothing</A><BR>
+<LI> <A HREF="Images/lissage2.jpg"> after smoothing</A><BR>
+</UL>
+
+In this new version I do not use CSG anymore. Thus I have been able to use Zbuffer to improve the speed. I also rewrote the octree for secondary rays that allows to compute intersection only with objects that are near the ray. The speed improved a lot and it now only take 1 or 2 minutes to compute a scene with more that 20 000 facets.
+
+<P>Here are a few pictures rendered with my new program : </P>
+<UL> 
+<LI> <A HREF="Images/sucrier.jpg"> sugar pot and glass</A> (1mn20s on a P166+)<BR>
+<LI> <A HREF="Images/verre.jpg"> transparent glass </A> (6 mn on a P166+)<BR>
+<LI> <A HREF="Images/trans2.jpg">  shadow and transparency</A> (2500 facets 9 mn on a P166+)
+<LI> <A HREF="Images/stone.jpg"> textures mapping</A> (2000 facets 30s on a P166+)
+</UL>
+
+<P>Here are a few pictures dealing with chess : </P>
+
+<UL>
+<LI> <A HREF="Images/pion1.jpg">a paw</A>
+<LI> <A HREF="Images/roi1.jpg">a king</A> ( 3900 facets 1mn30s on a P166+)
+<LI> <A HREF="Images/roi3.jpg">a king and paws</A> ( 6900 facets 5 minutes on a P166+ )
+</UL>
+
+<HR>
+
+<A HREF="http://www-stud.enst.fr/french"> back to ENST</A>
+<HR>
+
+<ADDRESS> 	last update   : 30.04.97 <BR> 	
+
+email me at :<A HREF="mailto:brissart@email.enst.fr">brissart@email.enst.fr</A> </ADDRESS>

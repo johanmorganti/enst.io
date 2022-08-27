@@ -1,0 +1,12 @@
+#!/bin/csh
+onintr out
+
+loop:
+foreach i (*.im24)
+	screenload $i
+end
+goto loop
+
+out:
+	../../fun_software/redisplay_screen
+	exit 0

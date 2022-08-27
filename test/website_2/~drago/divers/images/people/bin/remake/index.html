@@ -1,0 +1,76 @@
+#!/usr/local/bin/perl
+#
+# Samuel Tardieu Novembre 1992
+#
+# Reforme la base de donnees originale CONTENTS a partir de .CONTENTS.OLD
+#
+
+sub usage
+{
+ print "Usage: $0 repertoire\n";
+ print "ou repertoire est le repertoire ou se trouve le fichier CONTENTS\n";
+ print "et qui doit etre le repertoire racine de l'arborescence des photos\n";
+ print "(au besoin .)\n";
+ exit(1);
+}
+
+sub explore
+{
+ local($dir,$posdir)=($_[0],0);
+ opendir(dir,$dir.'/');
+ while ($_=readdir(dir)) {
+       if (($_ eq '.')||($_ eq '..')) {next;}
+       $_=$dir.'/'.$_;
+       if (-d $_) {
+	  $posdir=telldir(dir);
+	  closedir(dir);
+	  &explore($_);
+	  opendir(dir,$dir);
+	  seekdir(dir,$posdir);
+	  next;
+	  }
+       if (!/\.gif$/) {next;}
+       if (/$rep\/(.*)/) {$nomcomplet=$1;}
+       if (!$nom{$nomcomplet}) {
+	  if (/\/([^\/]*)$/) {$_=$1;} else {$_=$nom;}
+	  ($nom,$prenom)=split('_');
+	  $nom=~y/\-/ /;
+	  $nom{$nomcomplet}=$nom;
+	  $prenom=~s/\.gif$//;
+	  $prenom{$nomcomplet}=$prenom;
+	  $acc{$nomcomplet}='?';
+	  print newusers "$nom:$prenom\n";
+          }
+       print contents "$nom{$nomcomplet}:$prenom{$nomcomplet}:$surnom{$nomcomplet}:$nomcomplet:$acc{$nomcomplet}\n";
+       if ($acc{$nomcomplet} eq 'y') {
+          chmod(0444,"$rep/$nomcomplet");
+          }
+       else {chmod(0440,"$rep/$nomcomplet");}
+       }
+ closedir(dir);
+}
+
+$_=$rep=$ARGV[0] || &usage;
+if (/^(.*)\/$/) {$rep.=$1;}
+
+chmod(0700,"$rep/CONTENTS","$rep/files/CONTENTS.old");
+system("/usr/bin/cp $rep/CONTENTS $rep/files/CONTENTS.old");
+open(contents,"CONTENTS");
+while (<contents>) {
+      chop;
+      ($nom,$prenom,$surnom,$image,$acc)=split(':');
+      $nom{$image}=$nom;
+      $prenom{$image}=$prenom;
+      $surnom{$image}=$surnom;
+      $acc{$image}=$acc;
+      }
+close(contents);
+chmod(0440,"$rep/files/CONTENTS.old");
+open(contents,">$rep/"."CONTENTS");
+chmod(0700,"$rep/files/newusers");
+open(newusers,">>$rep/files/newusers");
+&explore($rep);
+close(newusers);
+close(contents);
+chmod(0444,"$rep/CONTENTS");
+chmod(0440,"$rep/files/newusers");

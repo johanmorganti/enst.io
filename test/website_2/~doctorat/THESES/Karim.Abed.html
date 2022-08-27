@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>
+Identification et égalisation autodidacte au second ordre : algorithmes et performances - Karim Abed
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Karim Abed ">
+<meta name="Titre" content=" Identification et égalisation autodidacte au second ordre : algorithmes et performances ">
+<meta name="Title" content=" Second order Blind Identification and Equalization: Algorithms and performance ">
+<meta name="Departement" content=" Signal ">
+
+<meta name="Directeur" content=" Eric Moulines ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content="  
+Ce travail de thèse se situe dans le cadre du problème général de l'identification autodidacte d'un mélange convolutif plusieurs entrées / plusieurs sorties. Les applications potentielles de ce thème de recherche sont nombreuses: en particulier, ces méthodes semblent bien adaptées à l'égalisation autodidacte de canaux de communication numériques, application qui connaît actuellement un regain considérable d'intérêt (regain justifié par le développement rapide des communications avec les mobiles sur le canal hertzien et plus généralement, des méthodes de diffusion numérique des signaux et des images).
+	Nous n'entrerons pas ici dans les détails de l'application pour nous intéresser de façon exclusive au problème de traitement du signal. De façon générale, nous supposons que nous disposons d'une antenne à plusieurs capteurs et que celle-ci reçoit des signaux émis par p sources. Après un certain nombre de traitements dépendants de l'application considérée (par exemple, filtrage, démodulation, échantillonnage ...), les signaux observés à la sortie de l'antenne sont donnés par un mélange convolutif des signaux sources plus un bruit additif d'observation.
+	Le problème de l'identification autodidacte du mélange convolutif est celui de l'identification de la matrice de transfert du système en fonction de l'observation et des connaissances a priori sur les statistiques des signaux émis. C'est un problème très large dont on ne traitera ici que 2 cas particuliers mais néanmoins  d'une grande importance pratique: (i) Le cas où le mélange est instantané, cas que l'on rencontre typiquement en traitement d'antenne bande étroite et (ii) son extension naturelle au cas où le système est à réponse impulsionnelle finie. Autrement dit, le cas où la matrice de transfert est une matrice de transfert est une matrice polynomiale. Ce cas sera traité principalement dans la situation où le nombre de source est égal à 1, i.e. p=1, avec quelques incursions brèves dans le cas général d'un nombre de sources quelconque. 
+	Dans la première partie, nous commençons par étudier le cas où le mélange est instantané, i.e. la matrice de transfert est une matrice constante q x p. Nous présentons une méthode d'identification au second ordre basée sur une technique de diagonalisation conjointe.
+	En une deuxième partie, nous abordons le cas d'une fonction de transfert polynomiale q x 1. Nous présentons successivement:
+
+	1- Une méthode d'identification basée sur la technique sous-espace. Nous présentons également une ré-interprétation, très utile à l'étude du cas p > 1, en terme d'identification de sous espaces rationnels, ainsi qu'une extension de l'approche au cas où le bruit additif est spatialement coloré.
+
+	2- Un méthode d'identification basée sur la technique de prédiction linéaire. Nous montrons que celle-ci, contrairement à l'approche sous espace, est "robuste" à une surdétermination de l'ordre du modèle.
+
+	3- Une méthode d'identification basée sur la technique du maximum de vraisemblance pour les sources à distributions discrètes.
+
+Enfin pour toutes les méthodes proposées, nous avons réalisé l'analyse de performances théoriques dans les conditions asymptotiques.
+ ">
+<meta name="Abstract" content="  The presented doctoral dissertation considers the general problem of blind identification of multi-input, multi-output convolutive mixtures. One can notice the numerous applications of this study such as the blind equalization of digital communication channels. This latter is of particular interest due to a rapid development of mobile radio communications as well as the other branches of digital signal and image transmission.
+
+	We do not specify here the application details being mainly interested in the pure signal processing problem. Without loss of generality, suppose that there are q sensors receiving the signals emitted by p sources satisfying p < q.
+
+	After some preliminary processing depending upon the application (for exemple, filtering, demodulation, sampling at symbol baud rate...) the output signals are given as a convolutive mixture of the emitted signals corrupted by additive noise.
+
+	The problem of blind identification of the convolutive mixtures consists in the system transfer function identification on the basis of output observations and an a priori knowlege of statistical properties of the emitted signals.
+
+	We focus here on two particular cases of the global problem being however of certain pratical importance: (i) the instantaneous mixture case typically posed in the narrow-band processing context and (ii) its  extension for the finite channel impule response. In other words, we conder only polynomial transfer functions.This type of systems is mainly studied in the single-source case i.e. p=1 including also certain notes concerning the arbitrary number of sources.
+
+	In the first part we examine the instantaneous mixture case assuming some constant q x p mixing matrix. In this context we propose a second order identification of mixing factor exploiting the joint diagonalization technique.
+
+	The second part is dedicated to the polynomial q x 1 transfer functions study. We present in the sequel: 
+
+	1- A subspace based identification technique. We also discuss its generalization to the case p > 1 in the context of rational subspace identification as well as an extension for the spatially colored additive noise.
+
+	2- A linear prediction identification technique. We show that this latter is robust to the model order overestimation on the contrary to the subspace based approach.
+
+	3- A maximum likelihood identification technique assuming the known discret distribution of the emitted signals.
+
+Finally we perform the asymptotic performance analysis of all proposed identification techniques.
+ ">
+<meta name="Motcle" content="  ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http:// ">
+<meta name="Statut" content=" Soutenue ">
+<meta name="Date" content="  3 juillet 95 ">
+<meta name="Lieu" content="  ">
+<meta name="Login" content=" doctorat ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#7070ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Identification et égalisation autodidacte au second ordre : algorithmes et performances  </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Karim Abed<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Signal<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3> 
+Ce travail de thèse se situe dans le cadre du problème général de l'identification autodidacte d'un mélange convolutif plusieurs entrées / plusieurs sorties. Les applications potentielles de ce thème de recherche sont nombreuses: en particulier, ces méthodes semblent bien adaptées à l'égalisation autodidacte de canaux de communication numériques, application qui connaît actuellement un regain considérable d'intérêt (regain justifié par le développement rapide des communications avec les mobiles sur le canal hertzien et plus généralement, des méthodes de diffusion numérique des signaux et des images).
+	Nous n'entrerons pas ici dans les détails de l'application pour nous intéresser de façon exclusive au problème de traitement du signal. De façon générale, nous supposons que nous disposons d'une antenne à plusieurs capteurs et que celle-ci reçoit des signaux émis par p sources. Après un certain nombre de traitements dépendants de l'application considérée (par exemple, filtrage, démodulation, échantillonnage ...), les signaux observés à la sortie de l'antenne sont donnés par un mélange convolutif des signaux sources plus un bruit additif d'observation.
+	Le problème de l'identification autodidacte du mélange convolutif est celui de l'identification de la matrice de transfert du système en fonction de l'observation et des connaissances a priori sur les statistiques des signaux émis. C'est un problème très large dont on ne traitera ici que 2 cas particuliers mais néanmoins  d'une grande importance pratique: (i) Le cas où le mélange est instantané, cas que l'on rencontre typiquement en traitement d'antenne bande étroite et (ii) son extension naturelle au cas où le système est à réponse impulsionnelle finie. Autrement dit, le cas où la matrice de transfert est une matrice de transfert est une matrice polynomiale. Ce cas sera traité principalement dans la situation où le nombre de source est égal à 1, i.e. p=1, avec quelques incursions brèves dans le cas général d'un nombre de sources quelconque. 
+	Dans la première partie, nous commençons par étudier le cas où le mélange est instantané, i.e. la matrice de transfert est une matrice constante q x p. Nous présentons une méthode d'identification au second ordre basée sur une technique de diagonalisation conjointe.
+	En une deuxième partie, nous abordons le cas d'une fonction de transfert polynomiale q x 1. Nous présentons successivement:
+
+	1- Une méthode d'identification basée sur la technique sous-espace. Nous présentons également une ré-interprétation, très utile à l'étude du cas p > 1, en terme d'identification de sous espaces rationnels, ainsi qu'une extension de l'approche au cas où le bruit additif est spatialement coloré.
+
+	2- Un méthode d'identification basée sur la technique de prédiction linéaire. Nous montrons que celle-ci, contrairement à l'approche sous espace, est "robuste" à une surdétermination de l'ordre du modèle.
+
+	3- Une méthode d'identification basée sur la technique du maximum de vraisemblance pour les sources à distributions discrètes.
+
+Enfin pour toutes les méthodes proposées, nous avons réalisé l'analyse de performances théoriques dans les conditions asymptotiques.
+
+              <H3> Mot-Cl&eacute;s :</H3> 
+               <h3> <br> Directeur de la th&egrave;se : Eric Moulines </h3>
+               <hr> <h3> Th&egrave;se Soutenue  
+                    <br><i>Date de soutenance :   3 juillet 95</i></h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : Second order Blind Identification and Equalization: Algorithms and performance</H2> <H3> Abstract :</H3>  The presented doctoral dissertation considers the general problem of blind identification of multi-input, multi-output convolutive mixtures. One can notice the numerous applications of this study such as the blind equalization of digital communication channels. This latter is of particular interest due to a rapid development of mobile radio communications as well as the other branches of digital signal and image transmission.
+
+	We do not specify here the application details being mainly interested in the pure signal processing problem. Without loss of generality, suppose that there are q sensors receiving the signals emitted by p sources satisfying p < q.
+
+	After some preliminary processing depending upon the application (for exemple, filtering, demodulation, sampling at symbol baud rate...) the output signals are given as a convolutive mixture of the emitted signals corrupted by additive noise.
+
+	The problem of blind identification of the convolutive mixtures consists in the system transfer function identification on the basis of output observations and an a priori knowlege of statistical properties of the emitted signals.
+
+	We focus here on two particular cases of the global problem being however of certain pratical importance: (i) the instantaneous mixture case typically posed in the narrow-band processing context and (ii) its  extension for the finite channel impule response. In other words, we conder only polynomial transfer functions.This type of systems is mainly studied in the single-source case i.e. p=1 including also certain notes concerning the arbitrary number of sources.
+
+	In the first part we examine the instantaneous mixture case assuming some constant q x p mixing matrix. In this context we propose a second order identification of mixing factor exploiting the joint diagonalization technique.
+
+	The second part is dedicated to the polynomial q x 1 transfer functions study. We present in the sequel: 
+
+	1- A subspace based identification technique. We also discuss its generalization to the case p > 1 in the context of rational subspace identification as well as an extension for the spatially colored additive noise.
+
+	2- A linear prediction identification technique. We show that this latter is robust to the model order overestimation on the contrary to the subspace based approach.
+
+	3- A maximum likelihood identification technique assuming the known discret distribution of the emitted signals.
+
+Finally we perform the asymptotic performance analysis of all proposed identification techniques.
+ <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4> </h4>
+                </body>
+                </html>

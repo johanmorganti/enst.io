@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>
+Modelisation VHDL des dispositifs analogiques. Integration des modeles ecrits en VHDL Analogiques dans Spice.  - Oussama Alali
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Oussama Alali ">
+<meta name="Titre" content=" Modelisation VHDL des dispositifs analogiques. Integration des modeles ecrits en VHDL Analogiques dans Spice.  ">
+<meta name="Title" content=" VHDL modeling of Analog devices. Integration of Analog VHDL models in Spice.  ">
+<meta name="Departement" content=" Electronique ">
+
+<meta name="Directeur" content=" Professeur Jean-Jacques CHARLOT  ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content="  Sachant que Spice est un standard de la simulation electrique, il convient de trouver un moyen de rendre ce simulateur comportemental. 
+ On presente ici une solution utilisant un traducteur de notre fabrication (BVHDLA) permettant de passer d'un modele ecrit en langage VHDL Analogigue
+ en modele reconnu par SPICE. La version Spice retenue dans le cadre de cette etude est la version SPICE3F5, la derniere nee de l'universite de Berkeley.
+ <dl>
+ <dt>1) Introduction et objectifs:
+ <dd>La modelisation classique de Spice montre rapidement ses limites quand on cherche a simuler le comportement de composants, de circuits 
+ et de systemes soumis a l'influence d'un environnement hostile tel que l'effet des radiations. Ceci est du au fait qu'un modele dans Spice3 represente 
+ un repertoire d'une vingtaine de fichiers, ayant chacun une importance inegale certes, dont on doit savoir maitriser l'organisation pour pouvoir 
+ apporter les modifications destinees a modeliser les effets escomptes. Une solution consiste a rendre compatible le simulateur Spice avec des modeles
+ comportementaux ecrits dans un langage VHDL Analogique.
+ <dt>
+ 2) Modelisation comportementale:
+ <dd>Un langage de type VHDL Analogique permet d'ecrire des modeles comportementaux. Les modeles VHDL Analogiques compotent comme ceux de VHDL
+ deux parties: la partie ENTITY qui fait le lien avec l'environnement ( a travers les noeuds specifiques aux domaines technologiques consideres, la 
+ valeur donnee aux parametres des equations ecrites dans la partie qui suit, ...) et la partie ARCHITECTURE ou est decrit le comportement du dispositif,
+ du circuit ou du systeme a l'aide d'equation suivant l'influence de l'environnement.
+ <dt>
+ 3) De VHDL Analogique a SPICE3F5:
+ <dd>Apres avoir etudie la faisabilite a l'aide du simulateur SmartSpice de Silvaco, nous avons mis au point un traducteur (BVHDLA) de modele VHDL
+ Analogique en modele reconnu par SPICE3F5. SPICE3F5 est utilise ici comme un solveur d'equation, explicites ou implicites. Dans notre cas, il n'est pas 
+ necessaire d'ecrire les derivees premieres (par rapport aux differentes tensions) que requiert la methode de resolution SPICE, l'operation de derivation
+ se faisant automatiquement par BVHDLA.
+ </dl>
+ Notre solution a l'avantage:
+ <ol> 
+ <li> d'utiliser un simulateur du domaine public. Nos developpements sont faits indifferement en UNIX ou en DOS, les sources C du programme BVHDLA 
+ etant totalement compatibles.
+ <li> de garder la structure des fichiers du repertoire modele et d'introduire automatiquement aux endoits adequats des fichiers les particularites
+ crees par BVHDLA. </ol>  ">
+<meta name="Abstract" content="   ">
+<meta name="Motcle" content=" VHDL Analogique Analog ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http://www-elec.enst.fr/~alali/index.html ">
+<meta name="Statut" content=" non Soutenue ">
+<meta name="Date" content="  1998  ">
+<meta name="Lieu" content=" ENST Paris  ">
+<meta name="Login" content=" alali ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Modelisation VHDL des dispositifs analogiques. Integration des modeles ecrits en VHDL Analogiques dans Spice.   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Oussama Alali<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Electronique<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3> Sachant que Spice est un standard de la simulation electrique, il convient de trouver un moyen de rendre ce simulateur comportemental. 
+ On presente ici une solution utilisant un traducteur de notre fabrication (BVHDLA) permettant de passer d'un modele ecrit en langage VHDL Analogigue
+ en modele reconnu par SPICE. La version Spice retenue dans le cadre de cette etude est la version SPICE3F5, la derniere nee de l'universite de Berkeley.
+ <dl>
+ <dt>1) Introduction et objectifs:
+ <dd>La modelisation classique de Spice montre rapidement ses limites quand on cherche a simuler le comportement de composants, de circuits 
+ et de systemes soumis a l'influence d'un environnement hostile tel que l'effet des radiations. Ceci est du au fait qu'un modele dans Spice3 represente 
+ un repertoire d'une vingtaine de fichiers, ayant chacun une importance inegale certes, dont on doit savoir maitriser l'organisation pour pouvoir 
+ apporter les modifications destinees a modeliser les effets escomptes. Une solution consiste a rendre compatible le simulateur Spice avec des modeles
+ comportementaux ecrits dans un langage VHDL Analogique.
+ <dt>
+ 2) Modelisation comportementale:
+ <dd>Un langage de type VHDL Analogique permet d'ecrire des modeles comportementaux. Les modeles VHDL Analogiques compotent comme ceux de VHDL
+ deux parties: la partie ENTITY qui fait le lien avec l'environnement ( a travers les noeuds specifiques aux domaines technologiques consideres, la 
+ valeur donnee aux parametres des equations ecrites dans la partie qui suit, ...) et la partie ARCHITECTURE ou est decrit le comportement du dispositif,
+ du circuit ou du systeme a l'aide d'equation suivant l'influence de l'environnement.
+ <dt>
+ 3) De VHDL Analogique a SPICE3F5:
+ <dd>Apres avoir etudie la faisabilite a l'aide du simulateur SmartSpice de Silvaco, nous avons mis au point un traducteur (BVHDLA) de modele VHDL
+ Analogique en modele reconnu par SPICE3F5. SPICE3F5 est utilise ici comme un solveur d'equation, explicites ou implicites. Dans notre cas, il n'est pas 
+ necessaire d'ecrire les derivees premieres (par rapport aux differentes tensions) que requiert la methode de resolution SPICE, l'operation de derivation
+ se faisant automatiquement par BVHDLA.
+ </dl>
+ Notre solution a l'avantage:
+ <ol> 
+ <li> d'utiliser un simulateur du domaine public. Nos developpements sont faits indifferement en UNIX ou en DOS, les sources C du programme BVHDLA 
+ etant totalement compatibles.
+ <li> de garder la structure des fichiers du repertoire modele et d'introduire automatiquement aux endoits adequats des fichiers les particularites
+ crees par BVHDLA. </ol> 
+              <H3> Mot-Cl&eacute;s :</H3> VHDL Analogique Analog
+               <h3> <br> Directeur de la th&egrave;se : Professeur Jean-Jacques CHARLOT  </h3>
+               <hr> <h3> Th&egrave;se non Soutenue  <br><i>
+            Date de soutenance pr&eacute;vue:    1998 <br>
+            Lieu de la soutenance:    ENST Paris </i>
+           </h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : VHDL modeling of Analog devices. Integration of Analog VHDL models in Spice. </H2> <H3> Abstract :</H3>   <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:alali@enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www-elec.enst.fr/~alali/index.html">ma page</A>
+                     </h4>
+                </body>
+                </html>
