@@ -1,0 +1,231 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version2.7.5 -->
+
+<title>LEONART - Low Earth Orbit Numerical Analysis & Research Tools </title>
+
+</head>
+
+
+<body BGCOLOR="#ffffff" text="#000000" LINK="#000fff" VLINK="#7070ff">
+
+<center>
+
+<a href="leonart.html">
+<IMG SRC="../images/leonartlogo.icon2.gif" ALT="[logo]" ALIGN="bottom">
+</a>
+<br>
+Sommaire
+<br>
+
+<h3>
+Low Earth Orbit Numerical Analysis & Research Tools
+</h3>
+
+
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+<br>
+</center>
+
+<body>
+
+
+
+<left><b> <h2> LEONART-CAT (Coverage Analysis Tools) </h2></b></left>
+
+
+
+<p> 
+Ce module permet la configuration de constellations de satellites, 
+de stations terriennes, et de zones d'utilisateurs mobiles. Il simule les 
+ephemerides des satellites, genere des donnees de visibilite entre les 
+satellites de la constellation et les utilisateurs ou des stations. Il permet
+de calculer des statistiques sur les visibilites et de les exhiber sous forme 
+de rapports statistiques, de courbes, d'images et de cartes en niveaux de 
+couleur.
+</p>
+
+ 
+<left><p><b><h3> Le configurateur (CAT-Configurator) </h3></b></p></left>
+
+<p> 
+Le configurateur offre une interface permettant de configurer des constellations
+de satellites, des stations terriennes et des zones d'utilisateurs mobiles.
+</p>
+
+<p> 
+Configurer une <i>constellation</i> consiste a donner l'ensemble des six
+elements orbitaux des satellites a une date de reference. Ceci peut etre 
+effectue satellite par satellite, ou bien en utilisant le generateur 
+de constellation. Celui-ci permet d'entrer les parametres pour des 
+constellations a orbites inclinees du type Walker ou des constellatons polaires 
+optimisees du type de Beste. Les elements orbitaux de chaque satellite 
+sont alors generes automatiquement. tous les types d'orbites peuvent etre 
+configures: LEO, MEO, HEO et bien sur GEO.
+</p>
+
+<p> 
+La configuration des <i>stations terriennes</i> consiste a definir son nom, sa 
+position geographique et son angle d'elevation minimum au dessous duquel 
+les liaisons radio ne seront plus possibles.
+</p>
+
+<p> 
+La configuration des <i>zones d'utilisateurs mobiles</i> consiste a definir
+ pour chaque utilisateur sa position geographique et son angle d'elevation 
+ minimum. Un generateur de maillage d'utilisateurs est fourni pour generer 
+ automatiquement de larges zones avec un grand nombre d'utilisateurs.
+
+
+
+</p>
+
+<left><p><b><h3> Ler Simulateur (CAT-Simulator) </h3></b></p></left>
+
+
+
+
+<p> 
+Le simulateur de CAT offre une interface conviviale pour initialiser les 
+parametres de simulation et pour lancer les simulations qui sont executees 
+totalement independemment de l'interface. Les principales simulations que
+l'on peut executer sont les suivantes:
+</p>
+
+<ul>
+
+<p> 
+<li> <b> Simulations Orbitales</b></li>
+</p>
+
+<p>
+Apres avoir selectionne un fichier constellation, on calcule l'evolution
+de la position des satellites dans lke temps (les ephemerides).
+</p>
+
+<p> 
+<li> <b> Simulations de Visibilite</b></li>
+</p>
+
+<p>
+Les simulations de visibilite sont faites a pertir de la selection d'un fichier
+ephemeride, d'un fichier station, et d'un fichier zone de service utilisateurs.
+On calcule alors les donnees de visibilite entre les stations ou les utilisateurs
+et les satellites. On peut aussi calculer la visibilite mutuelle entre une station 
+et des utilisateurs, ce qui signifie que le satellite doit etre en visibilite
+simultanee de la station et des utilisateurs.
+</p>
+
+
+<p> 
+<li> <b> Simulations d'Angles d'Elevation</b></li>
+</p>
+
+<p> 
+Les angles d'elevation avec lesquels un satellite est vu par une station ou 
+un utilisateur de la zone de service sont calcules a chaque pas de simulation.
+Ils sont ensuite utilises par l'analyseur de CAT ou par <a href="FAT.html"> 
+FAT  </a> pour calculer lesa marges de fading necessaires.
+</p>
+
+</ul>
+
+<left><p><b><h3> L'Analyseur (CAT-Analyzer) </h3></b></p></left>
+
+<p> 
+L'analyseur offre des outils puissants pour traiter les donnees de simulation
+de CAT de facon statistique et pour les exhiber sous forme graphique.
+</p>
+
+<ul>
+
+<p> 
+<li> <b> Analyse des donnees de simulation de visibilite </b></li>
+</p>
+
+
+<p>
+La premiere etape pour analyser des donnees de simulation de visibilite est
+de generer un rapport statistique. Pour chaque station ou utilisateur mobile,
+on calcule une quinzaine de parametres statistiques qui sont stockes dans 
+des fichiers.
+Des parametres statistiqes typiques sont le <i>temps moyen de visibilite d'au
+moins 1 satellite</i>, le <i>temps minimum, maximum, moyen de non-visibilite</i>
+, etc...
+</p>
+
+<p> 
+Ce rapport statistique peut etre edite sous format texte pour une station 
+ou un utilisateur selectionne. Apres avoir choisi un parametre statistique,
+on peut tracer des cartes en niveaux de couleurs pour decrire l'evolution
+geographique de ce parametre, ou tracer des courbes d'evolution du parametre
+en fonction de la longitude ou de la latitude.
+</p>
+
+
+<p> 
+On peut aussi tracer des courbes de visibilite, exposant l'evolution temporelle
+du nombre de satellites en visibilite pour une station ou un utilisateur de la 
+zone de service.
+</p>
+
+<p> 
+<li> <b> Analyse des donnees de simulation d'elevations </b></li>
+</p>
+
+
+<p> 
+Les simulations d'elevation fournissent les angles d'elevations avec lesquels
+les satellites de la constellation sont vus par chaque utilisateur ou station en 
+fonction du temps. L'analyseur permet de generer un rapport statistique sur
+ces elevations. Il peut etre edite sous forme textuelle pour un utilisateur
+ou une station selectionnes. Pour une zone de service, un parametre statistique
+donne peut etre represente sur une carte en niveaux de couleur ou une courbe
+en fonction de la longitude ou de la latitude.  
+</p>
+
+<p>
+On peut aussi calculer des distributions d'elevation pour les stations terriennes.
+On peut aussi tracer la courbe montrant l'elevation du meilleur satellite en 
+visibilite en fonction du temps pour une station ou un utilisateur donnes.
+</p>
+
+<p> 
+Les distributions d'elevation peuvent ensuite etre utilisees comme parametres
+d'entree par <a href="FAT.html"> FAT  </a> afin de calculer les marges de fading
+ou des disponibilites de liaison.
+</p>
+
+</ul>
+
+<left><p><b><h3> Utilitaires </h3></b></p></left>
+
+<p> 
+Des utilitaires de visualisation des donnees supplementaires sont aussi 
+fournis par LEONART :
+</p>
+
+<ul>
+
+<p> 
+<li> Trace des satellites au sol sur une carte.</li>
+<li> Empreintes des satellites sur une carte.</li>
+<li>  Cercles de visibilite des stations sur une carte.</li>
+</p>
+
+</ul>
+
+
+
+<center>
+<br>
+<IMG SRC="../images/barre.bleu.bleu.gif" ALT="[separator]">
+</center>
+
+
+<I>Modifie le 28/06/96</I><br>
+Pour plus d'information contacter:
+<ADDRESS><A HREF="mailto:deridder@tlse.enst.fr">deridder@tlse.enst.fr</A></ADDRESS>
+
+</body>
+</html>

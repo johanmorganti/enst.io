@@ -1,0 +1,55 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+/* quitbox.uil -- demonstrate use of manage() callback. */
+
+module quitbox
+
+procedure
+  quit();
+  manage (widget);
+  unmanage (widget);
+
+object quit_dialog : XmQuestionDialog {
+  controls {
+    Xm_Help {
+      ! Disable the help button for now.
+      arguments {
+        XmNsensitive = false; 
+      };
+    };
+  };
+  callbacks {
+    XmNokCallback = procedure quit();
+  };
+  arguments {
+    XmNmessageString = "Really Quit?";
+    XmNdialogTitle = "Confirm Quit";
+    XmNdialogStyle = XmDIALOG_FULL_APPLICATION_MODAL;
+  };
+};
+
+object quitb : XmPushButton {
+  arguments {
+    XmNlabelString = "Quit";
+  };
+  callbacks {
+    XmNactivateCallback = procedure manage (quit_dialog);
+  };
+};
+
+object root : XmMainWindow {
+  controls {
+    XmPushButton quitb;
+    unmanaged XmQuestionDialog quit_dialog;
+  };
+};
+
+end module;

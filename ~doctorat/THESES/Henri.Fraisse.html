@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>
+Manipulations de fonctions booléennes basées sur les graphes de décision binaires.  - Henri Fraisse
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Henri Fraisse ">
+<meta name="Titre" content=" Manipulations de fonctions booléennes basées sur les graphes de décision binaires.  ">
+<meta name="Title" content=" Manipulations of boolean functions based on Binary Decision Diagrams. ">
+<meta name="Departement" content=" Informatique ">
+
+<meta name="Directeur" content=" François Anceau et Jean-Eric Pin  ">
+<meta name="Laboratoire" content=" centre de recherche de Bull des Clayes-sous-bois  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content=" Cette thèse est une contribution à l'étude des graphes
+de décision binaires (BDD en abrégé), qui constituent,
+d'un point de vue algorithmique, une structure de données
+particulièrement efficace pour repésenter et manipuler
+les fonctions booléennes. Cette technique a d'abord été
+appliquée avec succès à la vérification formelle de
+circuits combinatoires et séquentiels, puis à d'autres
+domaines comme la synthèse de circuits, la démonstration
+automatique et l'analyse de fiabilité de systèmes complexes.
+
+Les graphes de décision binaires sont ici utilisés dans
+le calcul d'implicants premiers et dans la minimisation
+dite à deux niveaux. Les implicants premiers jouent un
+rôle fondamental dans l'analyse de fiabilité de systèmes
+industriels tels que les centrales nucléaires, les avions,
+ou encore les véhicules spatiaux. La minimisation à deux
+niveaux, qui consiste à calculer une forme normale disjonctive
+de taille minimale pour une fonction booléenne donnée,
+a des applications dans la synthèse et l'optimisation
+de cicuits VLSI. L'utilisation des graphes de décision
+binaires dans le calcul d'implicants premiers et dans la
+minimisation à deux niveaux permet d'accélérer notablement
+les calculs. ">
+<meta name="Abstract" content=" This thesis is a contribution to the Binary Decision Diagrams
+study (BDD in short), which constitues, from an algorithmic
+point of view, a data structure particularly efficient to
+represent and manipulate boolean functions. This technic
+was first applied to the formal verification and then to
+other domains such as logic syntesis, automated reasoning
+and complex system reliability analysis.
+
+Here, binary decision diagrams are used in the prime
+implicant calculus and in the two level logic minimization.
+The prime implicates' role is in fact determinant in the
+reliability analysis of industrial systems like nuclear plants,
+planes or space craft. The two level minimization of a
+given boolean function consists in computing a representation
+in a disjunctive normal form of minimun size. One of the
+main applications of the two level minimization is logic
+synthesis and VLSI circuit optimisation in particular.
+The use of binary decision diagrams in the prime implicates
+calculus and in the two level minimization allows an
+important acceleration of the computation. ">
+<meta name="Motcle" content=" bdd, fonctions booléennes, implicants premiers, couverture minimale, arbre de défaillances  ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http:// ">
+<meta name="Statut" content=" Soutenue ">
+<meta name="Date" content="  16 Décembre 1996  ">
+<meta name="Lieu" content=" ENST  ">
+<meta name="Login" content=" potier ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Manipulations de fonctions booléennes basées sur les graphes de décision binaires.   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Henri Fraisse<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Informatique<br>
+             </h3><h3 align="right"> Laboratoire d'accueil : centre de recherche de Bull des Clayes-sous-bois <br></h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3>Cette thèse est une contribution à l'étude des graphes
+de décision binaires (BDD en abrégé), qui constituent,
+d'un point de vue algorithmique, une structure de données
+particulièrement efficace pour repésenter et manipuler
+les fonctions booléennes. Cette technique a d'abord été
+appliquée avec succès à la vérification formelle de
+circuits combinatoires et séquentiels, puis à d'autres
+domaines comme la synthèse de circuits, la démonstration
+automatique et l'analyse de fiabilité de systèmes complexes.
+
+Les graphes de décision binaires sont ici utilisés dans
+le calcul d'implicants premiers et dans la minimisation
+dite à deux niveaux. Les implicants premiers jouent un
+rôle fondamental dans l'analyse de fiabilité de systèmes
+industriels tels que les centrales nucléaires, les avions,
+ou encore les véhicules spatiaux. La minimisation à deux
+niveaux, qui consiste à calculer une forme normale disjonctive
+de taille minimale pour une fonction booléenne donnée,
+a des applications dans la synthèse et l'optimisation
+de cicuits VLSI. L'utilisation des graphes de décision
+binaires dans le calcul d'implicants premiers et dans la
+minimisation à deux niveaux permet d'accélérer notablement
+les calculs.
+              <H3> Mot-Cl&eacute;s :</H3> bdd, fonctions booléennes, implicants premiers, couverture minimale, arbre de défaillances 
+               <h3> <br> Directeur de la th&egrave;se : François Anceau et Jean-Eric Pin  </h3>
+               <hr> <h3> Th&egrave;se Soutenue  
+                    <br><i>Date de soutenance :   16 Décembre 1996 </i></h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : Manipulations of boolean functions based on Binary Decision Diagrams.</H2> <H3> Abstract :</H3> This thesis is a contribution to the Binary Decision Diagrams
+study (BDD in short), which constitues, from an algorithmic
+point of view, a data structure particularly efficient to
+represent and manipulate boolean functions. This technic
+was first applied to the formal verification and then to
+other domains such as logic syntesis, automated reasoning
+and complex system reliability analysis.
+
+Here, binary decision diagrams are used in the prime
+implicant calculus and in the two level logic minimization.
+The prime implicates' role is in fact determinant in the
+reliability analysis of industrial systems like nuclear plants,
+planes or space craft. The two level minimization of a
+given boolean function consists in computing a representation
+in a disjunctive normal form of minimun size. One of the
+main applications of the two level minimization is logic
+synthesis and VLSI circuit optimisation in particular.
+The use of binary decision diagrams in the prime implicates
+calculus and in the two level minimization allows an
+important acceleration of the computation. <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:potier@enst.fr">mail</A> <br>
+                  </h4>
+                </body>
+                </html>

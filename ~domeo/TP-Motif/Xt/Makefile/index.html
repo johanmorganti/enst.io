@@ -1,0 +1,24 @@
+#
+# clean excutables and objects
+#
+all:
+	-make -f Makefile-Xt1
+	-make -f Makefile-Xt2
+	-make -f Makefile-Xt3
+	-make -f Makefile-Xt4
+	-make -f Makefile-Ol1
+	-make -f Makefile-Ol2
+	-make -f Makefile-Ol4
+	-make -f Makefile-Xm
+	-make -f Makefile-troisD
+
+clean:
+	-make -f Makefile-Xt1 clean
+	-make -f Makefile-Xt2 clean
+	-make -f Makefile-Xt3 clean
+	-make -f Makefile-Xt4 clean
+	-make -f Makefile-Ol1 clean
+	-make -f Makefile-Ol2 clean
+	-make -f Makefile-Ol4 clean
+	-make -f Makefile-Xm clean
+	-make -f Makefile-troisD clean

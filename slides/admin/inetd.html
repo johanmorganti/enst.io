@@ -1,0 +1,44 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version2.6 -->
+<title>Services</title>
+</head>
+
+<body bgcolor="#dddddd">
+
+<a name="Inetd"><h2><b><i>Inetd</i></b></h2>
+
+<ul>
+<li>	Principe<p>
+<ul>
+<li>	 sous-traiter l'&eacute;coute des demandes de services r&eacute;seaux
+<li>	 soulager l'occupation de l'espace swap
+<li>	 pr&eacute;traiter l'&eacute;tablissement de la communication
+<li>	 le service sollicit&eacute; voit l'entr&eacute;e stdin et la sortie stdout
+</ul>
+<li>	Fichiers<p>
+<ul>
+<li>	 <tt>/etc/inetd.conf</tt><p>
+<pre>
+<tt>
+service type proto flags owner path args
+<p>
+telnet  stream tcp nowait root /usr/etc/in.telnetd in.telnetd 
+talk    dgram  udp wait   root /usr/etc/in.talkd in.talkd
+</tt>
+</pre>
+</ul>
+<li>	Commandes<p>
+<ul>
+<li>	 daemon inetd<p>
+<li>	 kill -HUP inetd pour prise en compte de <tt>/etc/inetd.conf</tt>
+</ul><p>
+</ul>
+
+<img src="gif/vertjaune.gif">
+<a href="index.html"><img src="gif/balle_verte.gif" valign=top> Retour au Plan</a>
+<img src="gif/vertjaune.gif">
+<address>Philippe Dax / dax@inf.enst.fr</address>
+
+</body>
+</html>

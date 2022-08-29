@@ -1,0 +1,12 @@
+PROGRAMS=showuid showuid2 tree tree.uid i18n_dialog.uid quitbox.uid quitmain.uid dialog.uid strings.uid quitdialog.uid
+
+CFLAGS=
+LIBS= -lMrm -lXm -lXaw -lXt -lXmu -lXext -lX11
+
+.SUFFIXES : .uil .uid
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@
+
+.uil.uid: ; uil -o $@ $<

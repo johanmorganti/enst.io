@@ -1,0 +1,68 @@
+<HTML>
+
+<HEAD>
+   <TITLE>Soumettre un document</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="gif/green.gif">
+   <H1>send_report:<P> <IMG SRC="http://www.enst.fr/~bioscaj/gif/smallbar.gif"> </H1> <P>
+
+<H2>Syntaxe:</H2><P>
+
+   <H2> <I> send_report [ fichier | fichier.ps fichier.txt ] </I> </H2> <P>
+
+<H2>Introduction:</H2><P>
+
+   <I>send_report</I> est un utilitaire permettant d'envoyer un document et son abstract
+   pour qui soit accessible &agrave; travers la base de donn&eacute;es enst-rapports
+   moyennant un client WAIS. Il est possible aussi d'y acc&eacute;der &agrave; partir 
+   de la page Mosaic ant&eacute;rieure, en cliquant sur Questionner.<P>
+
+<H2>Pour envoyer:</H2><P>
+
+   Pour envoyer un document il faut ex&eacute;cuter le script send_report qui se trouve dans
+   le r&eacute;pertoire /usr/local/bin ou ~wais/scripts ou bien /inf/archive/wais/scripts si on travaille sur 
+   une machine Solaris. <P>
+
+   Pour indiquer le nom du document &agrave; envoyer on a deux possibilit&eacute;s:
+   <DL>
+     <DD> <IMG SRC="http://www.enst.fr/~bioscaj/gif/Balls/greenball.gif"> Si le fichier contenant le 
+          document et le fichier contenant l'abstract ont
+          le m&ecirc;me nom sauf l'extension, on peut ex&eacute;cuter <I>send_report</I>
+          en indiquant le nom du fichier sans extension. <P>
+          e.g. si le nom du fichier contenant le document est <I>document.ps</I> et le nom 
+          du fichier contenant l'abstract est <I>document.txt</I> on peut ex&eacute;cuter 
+          <I>send_report document</I><P>
+     <DD> <IMG SRC="http://www.enst.fr/~bioscaj/gif/Balls/greenball.gif"> Si, par contre, le nom du fichier contenant le document et le nom du fichier
+        contenant l'abstract sont differents, alors il faut ex&eacute;cuter 
+        <I>send_report</I> en indiquant le nom du fichier PostScript suivi du nom
+        contenant l'abstract (dans l'ordre indiqu&eacute;). <P>
+        e.g. si le nom du fichier contenant le document est <I>document.ps</I> et le nom
+        du fichier contenant l'abstract est <I>document.txt</I> on doit
+        ex&eacute;cuter <I>send_report document.ps document.txt</I> <P>
+   </DL> 
+
+<H2>Observations:</H2>
+
+  <DL>
+    <DD> <IMG SRC="http://www.enst.fr/~bioscaj/gif/Balls/greenball.gif"> Dans tous les cas le document doit &ecirc;tre en format PostScript et le nom 
+         du fichier qui le contient doit finir par <I>.ps</I>;  de m&ecirc;me
+         l'abstract doit &ecirc;tre &eacute;crit en format texte et le nom du fichier qui le contient doit finir par <I>.txt</I> <P>
+  </DL> <P>
+
+<BR>
+
+<P>
+   <A HREF="http://www.enst.fr/~bioscaj/mail.html">
+   <IMG SRC="http://www.enst.fr/~bioscaj/gif/mail.gif"></A>
+   <A HREF="http://www.enst.fr/~bioscaj/index.html">
+   <IMG SRC="http://www.enst.fr/~bioscaj/gif/home.gif"></A>
+   <ADDRESS>
+     <IMG SRC="http://www.enst.fr/~bioscaj/gif/smallbar.gif"><BR> 
+      Octobre 1994, Joan Biosca - E-Mail: bioscaj@inf.enst.fr
+   </ADDRESS>
+</BODY>
+
+
+
+</HTML>

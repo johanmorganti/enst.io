@@ -1,0 +1,46 @@
+<HTML>
+
+<BODY BGCOLOR="FFFFFF">
+
+<H4>Principe du codage convolutif</H4>
+<P>
+Le codage utilis&eacute; dans GSM est principalement du type convolutionnel. Les codes convolutifs constituent une seconde famille de codes correcteurs d'erreurs au moins aussi importante que les codes en blocs cycliques. Pour les codes convolutifs, chaque bloc de n &eacute;l&eacute;ments binaires en sortie du codeur d&eacute;pend non seulement des k &eacute;l&eacute;ments binaires pr&eacute;sents &agrave; son entr&eacute;e mais &eacute;galement des m blocs pr&eacute;c&eacute;dents. Les codes convolutifs introduisent donc un effet de m&eacute;moire d'ordre m. La quantit&eacute; m+1 s'appelle la longueur de contrainte du code. Le principe du codage convolutif est illustr&eacute; par le sch&eacute;ma ci-dessous.
+<P>
+<IMG ALIGN=CENTER SRC="PrincipeConvo.GIF">
+<P>
+
+Un codeur est constitu&eacute; d'un registre &agrave; (m+1)k &eacute;tages qui m&eacute;morise les (m+1) blocs de k &eacute;l&eacute;ments binaires d'information, d'une logique combinatoire qui calcule les blocs de n &eacute;l&eacute;ments binaires et d'un convertisseur parall&egrave;le s&eacute;rie. La quantit&eacute; R=k/n est appel&eacute;e rendement du code.
+<P>
+<H4>L'encodage convolutionnel dans la norme GSM</H4>
+<P>
+Le sch&eacute;ma du codeur utilis&eacute; dans la plupart des cas est donn&eacute; ci-dessous. Il comprend essentiellement un registre &agrave; d&eacute;calage (rythm&eacute; par une horloge) et des portes ou exclusif repr&eacute;sent&eacute;es par des + (ou additionneur modulo 2). Les bits d'information &agrave; coder sont pr&eacute;sent&eacute;s s&eacute;quentiellement &agrave; l'entr&eacute;e du registre. A chaque impulsion de l'horloge, un d&eacute;calage &agrave; droite est effectu&eacute; alors qu'un nouveau bit appara&icirc;t en entr&eacute;e. Pour chaque bit ui en entr&eacute;e, un vecteur de longueur n=2 form&eacute; des bits cod&eacute;s est calcul&eacute; et pr&eacute;sent&eacute; en sortie: ci=(ci',ci'').<P>
+L'entr&eacute;e peut &ecirc;tre repr&eacute;sent&eacute;e par une s&eacute;rie formelle <IMG ALIGN=CENTER SRC="ConvoEq1.GIF"> , l'indice i repr&eacute;sentant le temps ou un d&eacute;compte de tops d'horloge.
+Chaque sortie s'exprime alors comme le r&eacute;sultat de la multiplication de la s&eacute;quence d'entr&eacute;e par un des polyn&ocirc;mes caract&eacute;risant le code:<BR>
+
+<IMG ALIGN=CENTER SRC="ConvoEq2.GIF">
+<P>
+<IMG ALIGN=CENTER SRC="ConvoEq3.GIF">,<P> les calculs &eacute;tant effectu&eacute; modulo 2.<P>
+
+<IMG ALIGN=CENTER SRC="ConvoGSM.GIF"><P>
+
+Dans le cas particulier du GSM, le rendement est 1/2. Chaque bit cod&eacute; correspond donc &agrave; une combinaison lin&eacute;aire (modulo 2) des bits du registre. Les rebouclage sont sp&eacute;cifi&eacute;s gr&acirc;ce &agrave; deux polyn&ocirc;mes binaires:<P>
+<IMG ALIGN=CENTER SRC="ConvoEq4.GIF"><BR><IMG ALIGN=CENTER SRC="ConvoEq5.GIF"><P>
+
+qui sont repr&eacute;sent&eacute; dans la norme par G0 et G1.
+<P>
+La capacit&eacute; de correction d'un code convolutif est estim&eacute;e &agrave; partir d'un param&egrave;tre de distance de Hamming minimale dmin.
+Pour le code de rendement 1/2, on peut montrer que dmin=7, c'est-&agrave;-dire que deux s&eacute;quences cod&eacute;es diff&egrave;rent au moins de 7 positions.
+Ceci permet de garantir dans tous les cas la correction de 3 erreurs ou de 6 effacements.
+<P>
+Les codeurs convolutionnels sont a priori sp&eacute;cifi&eacute;s pour une suite infinie de symboles d'information. Si l'information est format&eacute;e par blocs, il faut pr&eacute;voir une terminaison convenable du processus de codage. Pour que les derniers bits &agrave; coder soient aussi bien prot&eacute;g&eacute;s que les premiers, on rajoute &agrave; un bloc d'information des symboles connus qui purgent le registre en fin de codage et permettent de mettre le codeur dans un &eacute;tat connu (l'&eacute;tat tout &agrave; 0). Ces symboles (0000) sont appel&eacute;s des bits de train&eacute;e (trail bits), leur nombre est &eacute;gal &agrave; la longueur L du registre &agrave; d&eacute;calage. La quantit&eacute; L+1 est appel&eacute;e la longueur de contrainte de codage. Elle est d&eacute;sign&eacute;e par K dans la norme (ici K=5).
+<P>
+Dans la norme GSM, les polyn&ocirc;me G0 et G1 sont utilis&eacute;s pour la parole ple
+in d&eacute;bit, la transmission de donn&eacute;es &agrave; 9600 bit/s et la signalisation et le contr&ocirc;le. Dans le cas de la transmission de donn&eacute;es &agrave; des d&eacute;bits inf&eacute;rieurs ou &eacute;gaux &agrave; 4800 bit/s, d'autres polyn&ocirc;mes sont consid&eacute;r&eacute;s dans la norme, en particulier pour renforcer le codage dans le cas des transmissions de donn&eacute;es. Les codes r&eacute;sultants sont de taux 1/3 ou 1/6. Ils ont la m&ecirc;me longueur de contrainte, et leur d&eacute;codage s'appuie donc sur la m&ecirc;me structure de treillis que pour G0 et G1.
+Pour la parole plein d&eacute;bit, aux 378 bits cod&eacute;s sont ajout&eacute;s 78 bits non prot&eacute;g&eacute;s pour former un bloc de 456 bits. Dans tous les cas, mis &agrave; part pour l'acc&egrave;s et la synchronisation, les blocs obtenus apr&egrave;s encodage d'erreurs sont de longueur 456 bits.
+</BODY>
+</HTML>
+
+
+
+
+

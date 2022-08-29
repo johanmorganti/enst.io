@@ -1,0 +1,25 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.5.2.2 $ $Date: 1992/05/01 18:12:48 $
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+       DEPLIBS1 = XmClientDepLibs
+       DEPLIBS2 = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+
+SRCS1 =	motifgif.c
+SRCS2 =	pict.c xgifload.c image.c
+
+OBJS1 = motifgif.o
+OBJS2 = pict.o xgifload.o image.o
+
+PROGRAMS = motifgif pict
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(motifgif,$(LOCAL_LIBRARIES),NullParameter)
+MComplexProgramTarget_2(pict,$(LOCAL_LIBRARIES),NullParameter)

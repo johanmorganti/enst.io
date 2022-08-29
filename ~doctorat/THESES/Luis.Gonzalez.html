@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>
+Architecture VLSI pour le codage conjoint canal-source  - Luis Gonzalez
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Luis Gonzalez ">
+<meta name="Titre" content=" Architecture VLSI pour le codage conjoint canal-source  ">
+<meta name="Title" content=" VLSI architecture for combined source-channel coding  ">
+<meta name="Departement" content=" Electronique ">
+
+<meta name="Directeur" content=" Emmanuel Boutillon  ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content="  <P ALIGN=LEFT> On s'intéresse à la conversion des signaux analogiques tels que l'image, le son ou la parole en une représentation numérique; à la compression de cette dernière en un minimum de bits, et à la transmission de ces bits. Toutes ces opérations doivent donner lieu à une reconstruction du signal analogique la plus fidèle possible à la soource de départ, tout en gardant une complexité compatible avec les contraintes d'implantation matérielle. 
+<P ALIGN=LEFT> Depuis le début des années 80's, une technique permettant de réaliser le processus décrit ci-dessus a atteint la maturité, il s'agit de la Quantification Vectorielle. C'est la technique qui permet de transformer une source analogique en une source numérique avec un certain critère de fidélité. Cette technique permet d'atteindre les bornes théoriques trouvées par Shannon à la fin des années 40's et pendant les années 50's. 
+<P ALIGN=LEFT> Dans un système qui transmet une source analogique avec des techniques numériques, la Quantification Vectorielle ne suffit pas. Il faut aussi parler du système de transmission lui-même. Ici, le problème est assez différent de celui du codage de source. Lorsque les sources à transmettre sont consommatrices de "débit" (exemple: l'image), et que le canal est un canal à bande limitée, on utilise, depuis le début des années 80's, les Modulations Codées. Ces Modulations Codées permettent de transmettre, avec des probabilités d'erreur que l'on peut rendre aussi petites que l'on veut, des bits dont le débit binaire peut être bien plus grand que la largeur de bande occupée par le canal. Par exemple, dans certains projets de diffusion de la TVHD numérique, on envisage de transmettre à un débit binaire de 4 à 5 fois l'occupation spectrale du signal.
+< ">
+<meta name="Abstract" content="  <P ALIGN=LEFT> We are interested in the theory and practice of signal compression; i.e., data compression applied to signals such as speech, audio, images and video signals. The emphasis is on the conversion of analog waveforms into efficient digital representation and on the compression of digital information into the fewest possible bits. Both operations should yield the highest possible reconstruction fidelity subject to constraints on the bit rate and implementation complexity. <P ALIGN=LEFT> The conversion of signals into such efficient digital representation has several goals: <UL> <LI> to minimize the communication capacity required for transmission of high quality signals such as speech and image or, equivalentely, to obtain the best possible fidelity over an available communication channel. <LI> to provide the simplest possible accurate description of a signal so as to minimize the subsequent complexity of signal processing algorithms. </UL> <P ALIGN=LEFT> Since the 80's, the technique that achieves this process has reached maturity; it is the Vector Quantization. Vector Quantization is a technique that permits the transformation of analog waveforms into digital representation with some fidelity criterion. This technique allows to reach the Shannons's theoretical limits stated in the 40's and 50's. <P ALIGN=LEFT> In a system transmitting an analog source with digital techniques, the Vector Quantization is not enough. We have to consider the transmission system as a whole. Here, the problem is very different from that of the source coding. When the rate of the source that we want to transmit is very high (image transmission) and the channel is a band limited channel, we use, since the 80's, the Coded Modulation. <P ALIGN=LEFT> The Coded Modulation allows us to transmit, with an error probability as low as we want, information where the binary rate could be bigger than the channel bandwidth. As an example, projects in digital HDTV are willing to transmit at a binary rate of 4 to 5 times the channel bandwidth. <P ALIGN=LEFT> Thanks to this two techniques (Vector Quantization + Coded Modulation) we can now transmit moving images through narrow band channels. However, these techniques are processed must of the time independently arising to a lot of problems. The purpose of this doctorate is to study the combined source-channel coding, to elaborate a simultaneous desing of a source coder and a coded modulation together with its material design (integrated circuit). The aspects that we will point out are the coding and the decoding algorithms, we will make an evaluation of the algorithms' architecture and propose algorithms simplifications if the designed architecture is too big.  ">
+<meta name="Motcle" content=" Vector Quantization; Coded Modulation; Combined Source-Channel Coding  ">
+<meta name="Photo" content=" http:// ">
+<meta name="Page" content=" http:// ">
+<meta name="Statut" content="  ">
+<meta name="Date" content="   ">
+<meta name="Lieu" content="  ">
+<meta name="Login" content=" lgonzal ">
+<meta name="Adresse" content=" lgonzal@enst.fr ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Architecture VLSI pour le codage conjoint canal-source   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br><h2 align="right"> Auteur :   Luis Gonzalez<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Electronique<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3> <P ALIGN=LEFT> On s'intéresse à la conversion des signaux analogiques tels que l'image, le son ou la parole en une représentation numérique; à la compression de cette dernière en un minimum de bits, et à la transmission de ces bits. Toutes ces opérations doivent donner lieu à une reconstruction du signal analogique la plus fidèle possible à la soource de départ, tout en gardant une complexité compatible avec les contraintes d'implantation matérielle. 
+<P ALIGN=LEFT> Depuis le début des années 80's, une technique permettant de réaliser le processus décrit ci-dessus a atteint la maturité, il s'agit de la Quantification Vectorielle. C'est la technique qui permet de transformer une source analogique en une source numérique avec un certain critère de fidélité. Cette technique permet d'atteindre les bornes théoriques trouvées par Shannon à la fin des années 40's et pendant les années 50's. 
+<P ALIGN=LEFT> Dans un système qui transmet une source analogique avec des techniques numériques, la Quantification Vectorielle ne suffit pas. Il faut aussi parler du système de transmission lui-même. Ici, le problème est assez différent de celui du codage de source. Lorsque les sources à transmettre sont consommatrices de "débit" (exemple: l'image), et que le canal est un canal à bande limitée, on utilise, depuis le début des années 80's, les Modulations Codées. Ces Modulations Codées permettent de transmettre, avec des probabilités d'erreur que l'on peut rendre aussi petites que l'on veut, des bits dont le débit binaire peut être bien plus grand que la largeur de bande occupée par le canal. Par exemple, dans certains projets de diffusion de la TVHD numérique, on envisage de transmettre à un débit binaire de 4 à 5 fois l'occupation spectrale du signal.
+<
+              <H3> Mot-Cl&eacute;s :</H3> Vector Quantization; Coded Modulation; Combined Source-Channel Coding 
+               <h3> <br> Directeur de la th&egrave;se : Emmanuel Boutillon  </h3>
+               <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : VLSI architecture for combined source-channel coding </H2> <H3> Abstract :</H3>  <P ALIGN=LEFT> We are interested in the theory and practice of signal compression; i.e., data compression applied to signals such as speech, audio, images and video signals. The emphasis is on the conversion of analog waveforms into efficient digital representation and on the compression of digital information into the fewest possible bits. Both operations should yield the highest possible reconstruction fidelity subject to constraints on the bit rate and implementation complexity. <P ALIGN=LEFT> The conversion of signals into such efficient digital representation has several goals: <UL> <LI> to minimize the communication capacity required for transmission of high quality signals such as speech and image or, equivalentely, to obtain the best possible fidelity over an available communication channel. <LI> to provide the simplest possible accurate description of a signal so as to minimize the subsequent complexity of signal processing algorithms. </UL> <P ALIGN=LEFT> Since the 80's, the technique that achieves this process has reached maturity; it is the Vector Quantization. Vector Quantization is a technique that permits the transformation of analog waveforms into digital representation with some fidelity criterion. This technique allows to reach the Shannons's theoretical limits stated in the 40's and 50's. <P ALIGN=LEFT> In a system transmitting an analog source with digital techniques, the Vector Quantization is not enough. We have to consider the transmission system as a whole. Here, the problem is very different from that of the source coding. When the rate of the source that we want to transmit is very high (image transmission) and the channel is a band limited channel, we use, since the 80's, the Coded Modulation. <P ALIGN=LEFT> The Coded Modulation allows us to transmit, with an error probability as low as we want, information where the binary rate could be bigger than the channel bandwidth. As an example, projects in digital HDTV are willing to transmit at a binary rate of 4 to 5 times the channel bandwidth. <P ALIGN=LEFT> Thanks to this two techniques (Vector Quantization + Coded Modulation) we can now transmit moving images through narrow band channels. However, these techniques are processed must of the time independently arising to a lot of problems. The purpose of this doctorate is to study the combined source-channel coding, to elaborate a simultaneous desing of a source coder and a coded modulation together with its material design (integrated circuit). The aspects that we will point out are the coding and the decoding algorithms, we will make an evaluation of the algorithms' architecture and propose algorithms simplifications if the designed architecture is too big.  <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:lgonzal@enst.fr">mail</A> <br>
+                  </h4>
+                </body>
+                </html>

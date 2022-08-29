@@ -1,0 +1,122 @@
+<html><head><title>Request to Marks DB</title></head>
+
+<body bgcolor="#ffffc0">
+<!--
+text=#00ffde
+link=#ffff59
+alink=#79fbff
+vlink=#79fbff
+-->
+
+<H1>Please select the results you want to see:</H1>
+<UL>
+<LI>	<STRONG>All results in Marks DataBase (Synthesis)</STRONG>
+	<form method="post" 
+	 action="http://www-inf.enst.fr/~saglio/cgi-bin/sqlplus.cgi">
+	<input name="champ1" size="50" 
+	 value="sigbench/alacarte@t:liszt:cours" type=hidden>
+	<input name="champ2" size="256" 
+	 value="
+col elapsed format 0999999.9
+select jeu, vol, op, avg(sol)/vol selectivity, algo, avg(elapsed) elapsed
+from jeux,runs where jeux.ref=runs.jeu group by jeu, vol, op, algo
+order by vol, selectivity
+" type=hidden>
+	<TABLE>
+<!--
+	<TR>
+	<TD width=100>	Output type
+	<TD>	<SELECT NAME="champ4"  SIZE=1>
+		<OPTION VALUE="table" SELECTED> Table
+		<OPTION VALUE="chart"> 		Chart
+		</SELECT>
+-->
+	<TR>
+	<TD> 	Output format</TD>
+	<TD>	<SELECT NAME="champ3"  SIZE=1>
+		<OPTION VALUE="html" SELECTED> 	to be printed
+		<OPTION VALUE="excel"> 		to be saved as file
+		</SELECT>
+	</TD>
+	</TR></TABLE>
+	<br>
+	<input type="reset" value="RESET">
+	<input type="submit" value="SUBMIT !"><br><br>
+	</form>
+
+<!--
+<LI><STRONG>Yours results</STRONG>
+
+<br><br>SCHEMA for accessing database views<br>
+ -->
+<LI><STRONG>Schema of Marks DataBase (Oracle RDBMS)</STRONG>
+(<a HREF="DBschema.html">future schema</a> to be implemented next)
+
+	<form method="post" 
+	 action="http://www-inf.enst.fr/~saglio/cgi-bin/sqlplus.cgi">
+	<input name="champ1" size="40" 
+	 value="sigbench/alacarte@t:liszt:cours" type=hidden>
+	<input name="champ2" size="512" 
+	 value="
+column T_Name format A32
+column C_Name format A32
+column Type format A16
+select TABLE_NAME T_Name, COLUMN_NAME C_Name,
+       DATA_TYPE || '(' || DATA_PRECISION || ')' Type
+from COLS
+where TABLE_NAME in ('JEUX','RUNS') order by 1
+" type=hidden>
+	<TABLE>
+<!--
+	<TR>
+	<TD width=100>	Your email address
+	<TD>	<input name="champ2_1" size="40" 
+	 	value="">
+ -->
+	<TR>
+	<TD> 	Output format</TD>
+	<TD>	<SELECT NAME="champ3"  SIZE=1>
+		<OPTION VALUE="html" SELECTED> 	to be printed
+		<OPTION VALUE="excel"> 		to be saved as file
+		</SELECT>
+	</TD>
+	</TR></TABLE>
+	<br>
+	<input type="reset" value="RESET">
+	<input type="submit" value="SUBMIT !"><br><br>
+	</form>
+
+<LI><STRONG>Results you would like to select</STRONG>
+
+	<form method="post" 
+	 action="http://www-inf.enst.fr/~saglio/cgi-bin/sqlplus.cgi">
+	<input name="champ1" size="40" 
+	 value="sigbench/alacarte@t:liszt:cours" type=hidden>
+
+	<TABLE>
+	<TR>
+	<TD width=105>	Your SQL*PLUS command </TD>
+	<TD>	<TEXTAREA NAME="champ2" ROWS=10 COLS = 52>
+col elapsed format 999999.9
+col cpu format 999999.9
+col blocs format 99999999
+select jeu, vol, op, avg(sol)/vol selectivity, algo,
+avg(elapsed) elapsed, avg(cpu) cpu, avg(r+w) blocs
+from jeux,runs where jeux.ref=runs.jeu
+group by jeu, vol, op, algo
+order by vol, selectivity
+	 	</TEXTAREA>
+	<TR>
+	<TD width=105> 	Output format</TD>
+	<TD>	<SELECT NAME="champ3"  SIZE=1>
+		<OPTION VALUE="html" SELECTED> 	to be printed
+		<OPTION VALUE="excel"> 		to be saved as file
+		</SELECT>
+	</TD>
+	</TR></TABLE>
+	<br>
+	<input type="reset" value="RESET">
+	<input type="submit" value="SUBMIT !"><br><br>
+	</form>
+</UL>
+</body> </html>

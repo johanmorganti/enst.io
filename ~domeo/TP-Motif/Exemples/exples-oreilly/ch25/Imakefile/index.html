@@ -1,0 +1,12 @@
+SYS_LIBRARIES = -lMrm -lXm -lXt -lX11
+UIL = uil
+DEPUIL = 
+
+
+AllTarget(editor_uil editor.uid menubar.uid dialogs.uid)
+
+NormalProgramTarget(editor_uil,editor_uil.o,,,)
+
+MSimpleUidTarget(editor)
+MSimpleUidTarget(menubar)
+MSimpleUidTarget(dialogs)

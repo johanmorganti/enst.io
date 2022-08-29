@@ -1,0 +1,50 @@
+<HTML>
+
+
+<BODY BGCOLOR="FFFFFF">
+
+<H4>1. L'&eacute;chantillonnage "brut".</H2>
+
+La voix humaine occupe une bande fr&eacute;quentielle allant d'environ 300 &agrave; 4000 Hz. 
+Le th&eacute;or&egrave;me d'&eacute;chantillonage de Nyquist, sur lequel nous ne reviendrons pas, impose donc 
+une fr&eacute;quence d'&eacute;chantillonage double, soit 8000 Hz. 
+<P>Sur les r&eacute;seaux t&eacute;l&eacute;phoniques num&eacute;riques 
+"classiques" (RNIS), chaque &eacute;chantillon est cod&eacute; sur 8 bits, soit un d&eacute;bit binaire total de 64 kbps.
+Pour le syst&egrave;me GSM, chaque &eacute;chantillon est cod&eacute; sur 13 bits (soit un d&eacute;bit de 104 kbps),mais
+ceci est fait avec la ferme intention de compresser ces donn&eacute;es pour arriver &agrave; un d&eacute;bit final
+beaucoup plus faible:
+<P>En effet, il y a beaucoup d'information redondante dans un message vocal, il est donc clair qu'avec des 
+algorithmes de compression judicieusement choisis, on pourra faire des &eacute;conomies en terme de d&eacute;bit.
+<H4>2. Codeur LPC-RPE </H4>
+La norme GSM utilise un codeur dit LPC-RPE (Linear predictive coding and regular pulse excitation).
+Son principe est le suivant:
+<BR> Les &eacute;chantillons sont stock&eacute;s en m&eacute;moire par blocs de 160 &eacute;chantillons (20 ms de parole).
+A partir de l'analyse de ces &eacute;chantillons, le codeur g&eacute;n&egrave;re 8 coefficients de filtrage et un signal d'excitation, 
+qui seront effectivement transmis, &agrave; la place des &eacute;chantillons d'origine. Ces coefficients sont calcul&eacute;s 
+en s'appuyant sur les propri&eacute;t&eacute;s de la voix humaine, et le filtre cr&eacute;&eacute; &agrave; partir des ces coefficients reproduira les 
+caract&eacute;ristiques de la voix. Pour l'instant, nous avons cod&eacute; l'information diff&eacute;remment pas mais r&eacute;duit le d&eacute;bit.
+<P> L'op&eacute;ration suivante consiste &agrave; fabriquer 4 blocs de 40 &eacute;chantillons &agrave; partir des 160 de d&eacute;part, en les entrelaçant:
+<BR> Le premier bloc contient les &eacute;chantillons 1,5,9,13..., le deuxi&egrave;me les &eacute;chantillons 2,6,10.. et ainsi de suite.
+Le bloc <EM>ayant le plus d'&eacute;nergie</EM> est le seul &agrave; &ecirc;tre conserv&eacute; par le codeur. C'est la premi&egrave;re compression effective.
+Nous avons divis&eacute; le d&eacute;bit par quatre.. 
+
+<H4>3. Pr&eacute;diction &agrave; long-terme </H4>
+Ce bloc qui vient d'&ecirc;tre choisi est ensuite compar&eacute; aux trois pr&eacute;c&eacute;demment choisis et qui
+ont &eacute;t&eacute; conserv&eacute;s en m&eacute;moire depuis 15 ms. On cherche  alors la s&eacute;quence ant&eacute;rieure la plus corr&eacute;l&eacute;e avec la 
+s&eacute;lection actuelle. Et ce n'est donc   en fait que la <EM>diff&eacute;rence</EM> entre ces deux blocs qui sera transmise 
+ainsi
+qu'un pointeur indiquant laquelle des 3 s&eacute;quences ant&eacute;rieures est la plus proche de celle du moment. 
+<P> Finalement il n'est &eacute;mis que 260 bits par 20 ms, soit un <STRONG>d&eacute;bit binaire de 13 kbps</STRONG>, huit fois moindre qu'au d&eacute;but.Notons enfin que la norme GSM telle qu'elle est sp&eacute;cifi&eacute;e envisage la mise au point de syst&egrave;mes de codage de la parole &agrave; 7 kbps, soit moiti&eacute; moindre que le d&eacute;bit actuel.
+<A NAME="classes"></A>
+<H4> 4. Les classes de bits </H4>
+
+Les 260 bits obtenus vont &ecirc;tre class&eacute;s en fonction de leur importance, chacune des classes subissant un codage de canal
+diff&eacute;rent.<BR>
+Il y a 50 bits de classe Ia. Ils correspondent aux coefficients du filtre,et aux param&egrave;tres de la pr&eacute;diction &agrave; long terme.
+Si ces bits arrivent endommag&eacute;s, il est plus prudent d'abandonner toute la s&eacute;quence et d'extrapoler &agrave; partir d'une ancienne s&eacute;quence,
+que de reconstituer du son &agrave; partir de cette s&eacute;quence, le r&eacute;sultat est g&eacute;n&eacute;ralement meilleur. On comprend alors pourquoi ces bits sont tr&egrave;s
+prot&eacute;g&eacute;s des erreurs..
+<BR> Les bits de classe Ib sont au nombre de 132 et et correspondent aux pointeurs et aux impulsions RPE.
+<BR> Les bits de classe II, contiennent d'autres param&egrave;tres de moindre importance.
+</BODY>
+</HTML>

@@ -1,0 +1,180 @@
+Table des matieres 
+==================
+ 
+Introduction : appliquer les regles de la conversation a 
+l'apprentissage								3 
+=================
+1.	Comprendre les aspects superieurs du langage			3 
+2.	Etudier la communication spontanee				4 
+3.	Apprendre les connaissances qui peuvent etre communiquees	4 
+4.	Enseigner les concepts par une conversation avec un 
+	ordinateur							5 
+
+Introduction a la partie I						9 
+=================
+Modele de la communication spontanee					9 
+
+I.1. Les contraintes logiques des conversations spontanees		11 
+=================
+1.	Introduction							11 
+2.	L'usage naturel du langage naturel				11 
+3.	Objectif de l'etude des conversations : decouvrir des 
+	contraintes							13 
+4.	Contraintes et conversation spontanee				14 
+5.	Les conversations spontanees sont-elles logiques  ?		15 
+6.	Decrire les conversations au moyen de la logique		18 
+7.	Introduire un nouveau sujet dans la conversation		23 
+8.	La deuxieme intervention					31 
+9.	Le deroulement des conversations				47 
+10.	Implications cognitives						52 
+11.	Conclusion							54 
+Annexe : quelques regles de reecriture logiques				55 
+
+I.2. Aspects de la pragmatique conversationnelle			57 
+=================
+1.	Introduction							57 
+2.	Le probleme de la communication en situation			57 
+3.	Grice : la communication vue comme une cooperation		59 
+4.	Sperber et Wilson : le principe de pertinence optimale		61 
+5.	Comparaison et critique des theories de Grice et de Sperber et 
+	Wilson								62 
+6.	Vers une pragmatique conversationnelle				64 
+7.	Conclusion							65 
+
+I.3. Un modele computationnel de l'argumentation			67 
+=================
+1.	Introduction							67 
+2.	Analyse et synthese des arguments conversationnels		67 
+3.	Le probleme de la reconstruction d'une conversation		68 
+4.	De la connaissance statique a l'argumentation			70 
+5.	Fonctionnement de la reconstruction				74 
+6.	Les strategies de paradise					78 
+7.	Limitations actuelles de paradise				84 
+8.	paradise en tant que modele cognitif				85 
+9.	Perspectives							85 
+Annexe : exemples de reconstruction de dialogues par paradise		87 
+
+Introduction a la partie II						85 
+=================
+Apprendre pour converser						85 
+
+II.1. Modeles de l'apprentissage					87 
+=================
+1.	Introduction							87 
+2.	Empirisme ou Instruction					87 
+3.	Apprentissage par optimisation					88 
+4.	Apprentissage par extraction de regularites			89 
+5.	Inneisme et maturation						94 
+6.	Apprentissage par appariement					95 
+7.	Constructivisme de Jean Piaget					98 
+8.	Analogie, instanciation, generalisation				99 
+9.	Classification des modes d'apprentissage			99 
+10.	Conclusion							102 
+
+II.2. Limites de l'apprentissage indifferent				105 
+=================
+1.	Introduction							105 
+2.	Indifference d'un mecanisme d'apprentissage			106 
+3.	Difficulte de l'apprentissage indifferent			110 
+4.	Convergence, indifference et theories de l'apprentissage	119 
+5.	Indifference et apprentissage de relations logiques		123 
+6.	Conclusion							128 
+Annexe 1 : Les isometries de l'hypercube				131 
+Annexe 2 : taille minimum d'un jeu d'exemples non ordonne		133 
+Annexe 3 : Apprentissage statistique					135 
+
+II.3. L'apprentissage des connaissances conceptuelles dirige 
+	par l'experience						137 
+=================
+1.	Introduction : de la conversation a la cognition		137 
+2.	La nature des connaissances conversationnelles			138 
+3.	Les concepts sont-ils des perceptions integrees ?		141 
+4.	Representation cognitive des concepts logiques			143 
+5.	La necessite d'ancrer les concepts logiques			148 
+6.	La formation de concepts ancres					151 
+7.	Exemples d'appariement guide pour la formation des concepts	158 
+8.	Apprentissage de concepts pertinents				164 
+9.	Conclusion							165 
+
+II.4. Plausibilite cognitive d'un appareil conceptuel autonome		167 
+=================
+1.	Introduction							167 
+2.	Traitement symbolique vs. traitement connexionniste		167 
+3.	Implementation neuronale de la detection			168 
+4.	Modelisation neuronale de la detection d'incoherence		171 
+5.	Points forts du modele						174 
+6.	Limites du modele						179 
+7.	Conclusion : "ramener la logique au neurone"			180 
+
+Introduction a la partie III						183 
+=================
+Expliquer par l'incoherence						183 
+
+III.1. Les systemes d'aide a l'apprentissage des connaissances		185 
+=================
+1.	Introduction							185 
+2.	La problematique de l'EAO					185 
+3.	Les approches "classiques" de l'EAO				186 
+4.	Connaissances conceptuelles et connaissances procedurales	190 
+5.	Des systemes qui enseignent des concepts			193 
+6.	Des systemes qui enseignent des savoir-faire proceduraux 
+	simples								195 
+7.	Des systemes qui enseignent des savoir-faire proceduraux 
+	complexes							197 
+8.	Conclusion							197 
+
+III.2. SAVANT 3 : enseigner par la conversation				199 
+=================
+1.	Introduction							199 
+2.	L'importance pedagogique d'un contexte argumentatif		199 
+3.	Principe de fonctionnement de savant3				203 
+4.	L'acceptabilite d'une conversation avec savant3			207 
+5.	Conclusion							208 
+Annexe 1 : Exemples d'interaction avec savant3				209 
+Annexe 2 : Le moteur de clauses paradoxales				213 
+
+III.3. Un systeme auteur conversationnel pour SAVANT3			217 
+=================
+1.	Introduction							217 
+2.	Un cours base sur savant3					217 
+3.	L'environnement auteur de savant3				220 
+4.	Un systeme conversationnel pour l'auteur			220 
+5.	Conclusion							224 
+
+III.4. Explication et critique argumentatives dans les systemes 
+	a base de connaissances						225 
+=================
+1.	Introduction							225 
+2.	La problematique de l'explication dans les SBC			226 
+3.	Anatomie de l'explication conversationnelle			228 
+4.	L'importance de la pertinence des explications pour les SBC	231 
+5.	L'explication comme une critique argumentee			235 
+6.	Conclusion : le respect des contraintes cognitives de 
+	l'utilisateur							238 
+
+Introduction a la partie IV						243 
+=================
+Une nouvelle approche du traitement du langage et de la 
+modelisation cognitive							243 
+
+IV.1. Des perspectives nouvelles					245 
+=================
+1.	Introduction							245 
+2.	Contraintes conversationnelles et contraintes cognitives : un 
+	lien etroit							245 
+3.	Analyse et traitement des aspects superieurs du langage		249 
+4.	Comportement conversationnel et comportement scientifique	252 
+5.	Le jeu conversationnel						255 
+
+IV.2. Conclusion							257 
+=================
+1.	Une etude cognitive de la detection d'incoherence		257 
+2.	Histoire d'un modele						257 
+3.	L'avenir d'un modele						259 
+
+References bibliographiques						263 
+=================
+Index									271 
+=================
+Table des matieres							273
+=================

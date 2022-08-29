@@ -1,0 +1,57 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version 2.6 -->
+<title>Cron</title>
+</head>
+
+<body bgcolor="#dddddd">
+
+<h2><b><i>Crontab</i></b></h2>
+
+<ul>
+<li><H3>Principe</H3>
+<ul>
+<li>d&eacute;clenchement d'actions &agrave; des dates 
+pr&eacute;-programm&eacute;es
+</ul>
+<p>
+
+<li><H3>Fichiers</H3>
+<ul>
+<li>r&eacute;pertoire /var/spool/cron/crontabs/
+<li>minutes heures jours mois jour/semaine commande
+<li>"*" = toutes les occurrences, "," = liste, "-" = intervalle
+<tt><p>
+0,15,30,45 * * * * /usr/local/adm/check-nis 1&gt;/dev/null 2&gt;&amp;1<br>
+00 01 * * * nice -10 find /inf -name core -exec rm -f {} \;<br>
+10 03 * * 1-6 nice -10 /usr/local/adm/sauvegarde-daily<br>
+30 05 * * 0 /usr/local/adm/savelog-weekly<br>
+30 06 1 * * /usr/local/adm/savelog-monthly<br>
+00 00 1 1 * /usr/local/bin/happy-new-year</tt><br>
+<p>
+<li>pipe nomm&eacute; /var/spool/cron/FIFO
+</ul>
+<p>
+
+<li><H3>Commandes</H3>
+<ul>
+<li>cron : analyse des fichiers crontabs et ex&eacute;cute les actions
+<li>crontab -l loginname (lister), crontab -e loginname (&eacute;diter)
+<li>at et batch
+<tt><p>
+echo "commande args" | at 08.00      (date ult&eacute;rieure)</tt><br>
+<tt><p>
+batch &lt;&lt;!          (imm&eacute;diatement)<br>
+commande args<br>
+!</tt>
+</ul>
+</ul>
+
+<img src="gif/vertjaune.gif">
+<a href="index.html"><img src="gif/balle_verte.gif" valign=top> Retour au Plan</
+a>
+<img src="gif/vertjaune.gif">
+<address>Philippe Dax / dax@inf.enst.fr</address>
+
+</body>
+</html>

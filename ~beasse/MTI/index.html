@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Rapport MTI</title>
+  </head>
+
+  <body bgcolor="FFFFFF">
+      <h4> Rapport de mini-projet MTI : </h4> <P>
+	<center>
+      <h1> Principe et int&eacute;r&ecirc;t du seuillage al&eacute;atoire </h1>
+      <h3> Luc B&eacute;asse - Sophie S&eacute;gal </h3>
+        </center>
+
+      <br>
+      <br>
+      <br>
+      
+      <ul>
+	<lh><big> Table des Mati&egrave;res </big> </lh>
+	<li><a href="#part1"><strong> Pr&eacute;sentation de la m&eacute;thode </strong></a>
+	  </li>
+	  <ul>
+	<li><a href="#intro1"> Introduction </a></li>
+	<li><a href="#methex"> Pr&eacute;sentation des m&eacute;thodes existantes </a></li>
+	<li><a href="#RSTA"> L'algorithme de RSTA </a></li>
+	<ul>
+	<li><a href="#princ"><small> Principe </small></a></li>
+	<li><a href="#derou"><small> D&eacute;roulement de l'algorithme 
+	    </small></a></li>
+	</ul>
+	<li><a href="#prop"> Propri&eacute;t&eacute;s </a></li>
+	<ul>
+	<li><a href="#init"><small> Initialisation </small></a></li>
+	<li><a href="#nbre"><small> Nombre Nt de seuils </small></a></li>
+	<li><a href="#Na"><small> Nombre Na d'&eacute;chantillons n&eacute;cessaires 
+	      pour ajustement </small></a></li>
+	<li><a href="#tirage"><small> Tirage des &eacute;chantillons </small></a></li>
+	</ul>
+	<li><a href="#resu"> R&eacute;sultats exp&eacute;rimentaux et comparaison de 
+	    performances </a></li>
+	    </ul>
+	<li><a href="#part2"><strong> Implementation et commentaire sur la 
+	      m&eacute;thode </strong></a></li>
+	<ul>
+	<li><a href="#inter"> Int&eacute;r&ecirc;t a priori</a> </li>
+	<li><a href="#Pbs"> Quelques probl&egrave;mes a priori </a></li>
+	<li><a href="#imple"> Impl&eacute;mentation </a></li>
+	<li><a href="#res"> R&eacute;sultats obtenus et tentative de justification 
+	</a></li>
+	</ul>
+      </ul>
+
+
+      <h3><a name="part1"> Pr&eacute;sentation de la m&eacute;thode </a></h3>
+
+      <p>
+      Cette section est bas&eacute;e sur l'article qui d&eacute;crit l'algorithme
+de seuillage al&eacute;atoire : <i>"Random-sampling Thresholding: A New 
+Approach to Multilevel Thresholding"</i> par PY Ying et LH Chen, 
+Signal Processing, no. 34 p. 311-322, 1993.
+</p>
+      <p>
+      Nous ne ferons dans cette partie que r&eacute;sumer l'article. Les r&eacute;sultats 
+exprim&eacute;s ici
+sont donc ceux des auteurs, notament &agrave; propos de la qualit&eacute; de l'algorithme. 
+Notre discussion sera faite dans la section suivante. Par ailleurs, nous 
+vous renvoyons &agrave; cet article pour une description pr&eacute;cise de l'algorithme 
+ainsi que pour des formulations claires, car HTML ne poss&egrave;de pas encore 
+de mode math&eacute;matique.
+      </p>
+      <hr>
+
+      <h4><a name="intro1"> Introduction </a></h4>
+
+      <p>
+	Le seuillage d'image est tr&egrave;s utilis&eacute; pour la segmentation 
+des images. Intuitivement on comprend bien que diff&eacute;rents objets d'une 
+image sont souvent caract&eacute;ris&eacute;s par une plage de niveaux de gris 
+particuli&egrave;re. On distingue deux types de seuillage : le seuillage 
+&agrave; deux niveaux, qui r&eacute;partit les pixels de l'image en deux groupes selon 
+que leur niveau de gris est au-dessus ou au-dessus d'un certain seuil, et 
+le seuillage multi-niveaux qui s&eacute;pare les pixels en plusieurs groupes. 
+Nous nous int&eacute;ressons ici &agrave; ce deuxieme type qui est beaucoup plus difficile
+&agrave; mettre en oeuvre &agrave; cause du grand nombre de degr&egrave;s de libert&eacute;.
+      </p>
+      <hr>
+
+      <h4><a name="methex"> Pr&eacute;sentation des m&eacute;thodes existantes </a></h4>
+      <p>
+	De nombreuses techniques de seuillage ont &eacute;t&eacute; mises au point ; 
+la plupart d'entre elles n&eacute;cessitent l'optimisation d'une certaine 
+fonction crit&egrave;re (par exemple maximisation a posteriori de l'entropie 
+pour mesurer l'homog&eacute;n&eacute;it&eacute; des classes [Pun] ou minimisation du taux 
+d'erreur de classification [Kittler], ...). Toutes ces m&eacute;thodes se 
+heurtent au m&ecirc;me probl&egrave;me : la complexit&eacute; de calcul cro&icirc;t de mani&egrave;re 
+exponentielle avec le nombre de seuils. D'autres m&eacute;thodes de seuillage 
+tentent de pr&eacute;server certaines propri&eacute;t&eacute;s de l'image &agrave; traiter (par 
+exemple le moment [Tsai]). Mais avec ces techniques, il n'existe pas 
+de solution analytique d&egrave;s que le nombre de seuils est sup&eacute;rieur &agrave; 3. 
+Enfin, dans toutes ces m&eacute;thodes, le nombre de classes doit &ecirc;tre sp&eacute;cifi&eacute; 
+au d&eacute;part, alors que dans la plupart des applications, ce nombre est 
+inconnu. 
+      </p>
+      <p>
+	La m&eacute;thode de Lim et Lee r&eacute;sout ces probl&egrave;mes : on lisse 
+l'histogramme de l'image par convolution avec une gaussienne puis 
+on d&eacute;rive deux fois pour localiser les vall&eacute;es et donc les seuils. 
+Mais alors, c'est le choix d'une bonne gaussienne (c'est &agrave; dire d'une 
+gaussienne de d&eacute;viation adapt&eacute;e ) qui pose probl&egrave;me.
+      </p>
+      <p>
+	La m&eacute;thode de seuillage al&eacute;atoire (<i>Random Sampling Thesholding 
+Algorithm</i>, ou RSTA) &eacute;vite, comme la m&eacute;thode de 
+Lim, les probl&egrave;mes classiques et n'en ajoute pas d'autres. En outre, 
+elle donne des r&eacute;sultats comparables &agrave; ceux de Lim. 
+      </p>
+      <hr>
+
+      <h4><a name="RSTA"> L'algorithme de RSTA </a></h4>
+
+      <h5><a name="princ"> Principe </a></h5>
+
+      <p>
+	La notion de base est celle du RSH (<i>Random sampling
+histogram</i>), c'est &agrave; dire l'histogramme d'un certain nombre de
+pixels tir&eacute;s al&eacute;atoirement et uniform&eacute;ment sur l'image originale.
+      </p>
+      <p>
+	On se base sur la constatation suivante : le RSH et l'histogramme
+de l'image compl&egrave;te ont a la m&ecirc;me allure, &agrave; une homoth&eacute;tie pr&egrave;s (voir
+la figure). Et cette homoth&eacute;tie fait dispara&icirc;tre un certain nombre de
+d&eacute;tails, <i>certain</i> &eacute;tant ici fonction du facteur de l'homoth&eacute;tie, donc
+du nombre de pixels tir&eacute;s pour calculer le RSH.
+      </p>
+      <p>L'id&eacute;e va donc &ecirc;tre ici de partir avec des seuils grossiers
+(<i>Coarse Threshold</i>, ou CT), de faire "pousser" le RSH sous ces seuils
+en tirant de nouveaux &eacute;chantillons, et de mettre &agrave; jour les CT au fur et &agrave; 
+mesure en fonction de ce RSH. Cela peut para&icirc;tre simple, mais ce n'est
+pas trivial &agrave; mettre en oeuvre.
+      </p>
+
+      <table border="border" align="center">
+	<tr>
+	  <td align="center"><img src="fig.gif"></td>      
+	</tr>
+	<tr>  
+	  <td align="center">	L'histogramme d'une image et ses 
+	    diff&eacute;rents RSH</td>	
+	</tr>
+   
+    </table>
+
+      <h5><a name="derou"> D&eacute;roulement de l'algorithme </a></h5>
+
+      <ul>
+	<li><spot id="1"> On prend initialement Nt seuils grossiers 
+uniform&eacute;ment r&eacute;partis sur les niveaux de gris de l'image. Nt est calcul&eacute; 
+automatiquement (voir les propri&eacute;t&eacute;s)</li>
+	<li><spot id="1">On les ajuste selon la distribution des points 
+voisins des seuils dans le RSH (Random Sampling Histogram : histogramme 
+form&eacute; &agrave; partir d'un certain nombre de pixels de l'image choisis au hasard) 
+.</li>
+	<li><spot id="1"> On recommence l'ajustement jusqu'&agrave; ce qu'un 
+certain crit&egrave;re soit atteint.</li>
+      </ul>
+
+      <p>
+	Il s'agit donc d'une m&eacute;thode it&eacute;rative. Il ne nous semble pas 
+judicieux d'entrer dans les d&eacute;tails de l'algorithme ici. Nous allons 
+nous contenter de d&eacute;tailler le points qui nous semblent essentiels. Pour 
+le reste, vous pouvez consulter notre impl&eacute;mentation comment&eacute;e de cet 
+algorithme en annexe.
+      </p>
+
+      <ul plain>
+	<li>R&egrave;gle d'ajustement : On tire un pixel au hasard. S'il est 
+assez proche d'un seuil, 
+on le garde et on consid&egrave;re que ce seuil a gagn&eacute;. On ajoute 1 &agrave; son delta
+(initialement nul) si le pixel se situe &agrave; gauche du seuil dans le RSH, 
+et -1 s'il est &agrave; droite.
+  	<li>Crit&egrave;res d'arr&ecirc;t : Une fois qu'un seuil a gagn&eacute; Na fois 
+(nous discuterons le choix 
+de Na plus loin), on l'ajuste en lui ajoutant Na*sigma, sigma &eacute;tant le taux 
+d'ajustement calcul&eacute; &agrave; partir de Na et des niveaux de gris de l'image.
+ 	<li>Terminaison : L'algorithme est termin&eacute; lorsque tous 
+les seuils qui ont gagn&eacute; 
+au moins une fois sont arr&ecirc;t&eacute;s. Un seuil qui n'a jamais gagn&eacute; est 
+fusionn&eacute;s avec ses seuils voisins ayant d&eacute;j&agrave; gagn&eacute;.
+      </ul>
+
+      <p>
+	Par cette m&eacute;thode en fait, un seuil est arr&ecirc;t&eacute; lorsque les 
+densit&eacute;s des deux c&ocirc;t&eacute;s des seuils sont presque les m&ecirc;mes.
+      </p>
+      <hr>
+
+      <h4><a name="prop"> Propri&eacute;t&eacute;s </a></h4>
+
+      <h5><a name="init"> Initialisation </a></h5>
+
+      <p>
+	On peut &ecirc;tre tent&eacute; d'initialiser le processus avec un histogramme 
+non vide. On peut par exemple tirer 500, 1000 ou 3000 &eacute;chantillons au 
+hasard et construire un RSH initial.
+      </p> 
+      <p>
+	L'exp&eacute;rience montre que cela n'est pas n&eacute;cessaire : on aboutit 
+en effet aux m&ecirc;mes r&eacute;sultats avec et sans initialisation de l'histogramme 
+et &agrave; une vitesse comparable de surcro&icirc;t.
+      </p>
+
+      <h5><a name="nbre"> Nombre Nt de seuils </a></h5>
+
+      <p>
+	Le nombre de seuils initial peut &ecirc;tre donn&eacute; par la formule 
+Nt= (b-a)/AV, o&ugrave; a et b sont les niveaux de gris extr&eacute;maux de l'image et 
+AV est la moyenne du gradient morphologique sur l'image. Le nombre final 
+de seuils est inf&eacute;rieur ou &eacute;gal &agrave; Nt.
+      </p>
+      <p>
+	Si l'on veut essayer d'obtenir un plus grand nombre de seuils 
+par le m&ecirc;me algorithme, il suffit de r&eacute;appliquer l'algorithme dans la 
+r&eacute;gion de niveaux de gris o&ugrave; l'on veut trouver plus de seuils avec AV=AV/2.
+      </p>
+      <p>
+	On peut aussi choisir Nt et imposer AV.
+      </p>
+
+      <h5><a name="Na"> Nombre Na d'&eacute;chantillons n&eacute;cessaires pour ajustement
+	</a></h5>
+
+      <p>
+	Plus Na est choisi petit, moins on trouvera de seuils, puisque 
+si Na est petit, on perd plus d'information entre le GLH et le RSH. La 
+valeur conseill&eacute;e dans l'article est Na= 0.002*N/Nt, o&ugrave; N est le nombre 
+de pixels dans l'image.
+      </p>
+
+      <h5><a name="tirage"> Tirage des &eacute;chantillons </a></h5>
+
+      <p>
+	On a choisi de tirer les &eacute;chantillons au hasard. On pourrait 
+aussi utiliser la m&eacute;thode de Cook selon laquelle deux &eacute;chantillons ne 
+doivent pas &ecirc;tre trop pr&egrave;s l'un de l'autre. On &eacute;vite ainsi le risque 
+de voir certaines r&eacute;gions "oubli&eacute;es" et d'autres tr&egrave;s souvent choisies. 
+      </p>
+      <p>
+      Dans tous les cas examin&eacute;s, on tire &agrave; peu pr&egrave;s la moiti&eacute; des pixels
+de l'image avant d'arriver &agrave; l'arr&ecirc;t de l'algorithme.
+      </p>
+      <hr>
+
+      <h4><a name="resu"0> R&eacute;sultats exp&eacute;rimentaux et comparaison de 
+	  performances </a></h4>
+
+      <p>
+	L'exp&eacute;rience montre que la m&eacute;thode de Cook ne donne pas de 
+meilleurs r&eacute;sultats et m&ecirc;me qu'elle ne peut pas &ecirc;tre utilis&eacute;e lorsqu'on 
+cherche plus de seuils dans une zone de niveaux de gris restreinte, 
+car elle limite la r&eacute;solution de l'image &eacute;chantillonn&eacute;e.
+      </p>
+      <p>
+	Trois images (LENA, PEPPER et MILKDROP) ont &eacute;t&eacute; test&eacute;es par les 
+deux m&eacute;thodes : Lim et seuillage al&eacute;atoire. L'observation de ces r&eacute;sultats 
+am&egrave;ne les r&eacute;flexions suivantes :
+      </p>
+      <p>
+	Pour Lena on trouve les m&ecirc;mes r&eacute;sultats avec les 2 m&eacute;thodes si 
+on fixe la variance de Lim &agrave; 7. On garde donc cette valeur pour les
+autres tests.Si on r&eacute;applique l'algorithme de RSTA dans les zones de grande
+variance, le r&eacute;sultat qu'on trouve sur pepper et milkdrop est plus pr&eacute;cis.
+La diff&eacute;rence pixel &agrave; pixel avec l'image originale est meilleure pour
+le RSTA dans le cas des 2 premi&egrave;res images, et moins bonnes dans le cas de
+milkdrop, tout en restant d'ordre comparable.
+      </p>
+      <p>
+      L'algorithme de RSTA semble donc globalement meilleur que celui
+de Lim, &agrave; en croire ses auteurs. Nous avons tout de m&ecirc;me voulu v&eacute;rifier
+en l'impl&eacute;mentant nous m&ecirc;me.
+      </p>
+      <hr>
+
+      <h3><a name="part2"> Commentaire sur la m&eacute;thode et impl&eacute;mentation
+	</a></h3>
+
+      <h4><a name="inter"> Int&eacute;r&ecirc;t a priori </a></h4>
+      
+      <p>
+	Avec la plupart des m&eacute;thodes de seuillage, on doit pr&eacute;d&eacute;finir 
+le nombre de seuils, les calculs sont souvent lourds et on n'obtient
+pas toujours de solution. Avec la m&eacute;thode de Lim, le nombre de seuils 
+est d&eacute;termin&eacute; automatiquement et la complexit&eacute; des calculs reste raisonnable.
+Mais le choix de la d&eacute;viation de la 
+gaussienne reste un probl&egrave;me : il est difficile de d&eacute;terminer sa valeur
+en fonction de l'image.
+      </p>
+      <p>
+	La m&eacute;thode de seuillage al&eacute;atoire &eacute;vite ces deux &eacute;cueils. Elle donne
+un nombre non connu a priori de seuils, sa complexit&eacute; reste apparement
+raisonnable et tous ses param&egrave;tres sont calcul&eacute;s directement sur l'image.
+Serait-ce trop beau pour &ecirc;tre vrai ?
+	</p>
+
+      <hr>
+
+      <h4><a name="Pbs"> Quelques probl&egrave;mes a priori </a></h4>
+
+      <p>
+      Premier probl&egrave;me : l'article n'est pas tr&egrave;s clair sur la supression
+des CT qui n'ont jamais gagn&eacute; &agrave; la fin de l'algorithme. Et de toute facon,
+les seuils minimaux et maximaux trouv&eacute;s seront parfois assez peu significatifs.
+Ce n'est pas un probl&egrave;me tr&egrave;s grave, mais il faut pr&eacute;voir un post-traitement
+pour l'&eacute;liminer.
+      </p>
+      <p>
+      Il y a un probl&egrave;me plus grave : dans le cas o&ugrave; l'un des CT est au
+d&eacute;part dans une zone o&ugrave; il y a tr&egrave;s tr&egrave;s peu de pixels, il ne gagnera
+presque jamais. Donc son crit&egrave;re d'arr&ecirc;t peut n'&ecirc;tre atteint qu'apr&egrave;s un 
+tr&egrave;s grand nombre de tirages, du fait qu'il est fonction du nombre de victoires.
+C'est d'autant plus dommageable que ce seuil ne sera jamais significatif.
+C'est pourquoi il nous parait important d'ajouter un crit&egrave;re d'arr&ecirc;t 
+suppl&eacute;mentaire : &agrave; la fin de chaque it&eacute;ration, chaque noeud qui n'a gagn&eacute;
+qu'un nombre petit de fois par rapport au nombre d'it&eacute;rations effectu&eacute;es
+est arr&ecirc;t&eacute;, voir &eacute;limin&eacute; ("petit" &eacute;tant bien sur &agrave; d&eacute;finir).
+      </p>
+      <p>
+      Mais le principal probl&egrave;me avec cet algorithme est qu'il est
+non d&eacute;terministe. Cela rend impossible l'&eacute;valuation de sa complexit&eacute; et
+laisse la porte ouverte &agrave; beaucoup de cas pathologiques. Mais surtout
+cela suppose que l'on dispose d'un g&eacute;n&eacute;rateur al&eacute;atoire uniforme, ce
+qui n'est pas &eacute;vident.
+      </p>
+
+      <hr>
+
+      <h4><a name="imple"> Impl&eacute;mentation </a></h4>
+
+      <p>
+      Vous pouvez t&eacute;l&eacute;charger un version "tar&eacute;e" et "gzip&eacute;e" de nos
+codes sources <a href="mti.tar.gz">ici</a>. Lisez le READ_ME pour plus 
+de pr&eacute;cisions.
+      </p>
+      <p>
+      Notre impl&eacute;mentation est assez simple : nous avons d&eacute;cid&eacute; de 
+repr&eacute;senter les CT par une liste chain&eacute;e, chaque noeud contenant des
+informations sur son &eacute;tat (<i>winning time, AA</i>, ...). A partir de l&agrave;,
+l'algorithme est assez s&eacute;quentiel. Le r&eacute;sultat est donn&eacute; sous forme
+de tableau de <i>short</i>, la fin du tableau &eacute;tant donn&eacute; par une constante
+non-significative. Notre soucis &agrave; &eacute;t&eacute; d&egrave;s le d&eacute;part de concevoir un
+module le plus transparent possible qui puisse &ecirc;tre ensuite r&eacute;utilis&eacute;
+facilement dans un cadre plus large.
+      </p>
+      <p>
+	Malheureusement, malgr&eacute;s nos efforts et notre semaine de retard,
+nous ne sommes pas arriv&eacute;s &agrave; obtenir des r&eacute;sultats corrects.
+      </p>
+
+      <h4><a name="res"> R&eacute;sultats obtenus et tentative de justification 
+	</a></h4>
+
+      <p>
+	Voici ce que nous obtenons :
+      </p>
+
+      <table border="border">
+	<tr>
+	  <td><img src="vlsi.gif"></td>
+	  <td align="center"><img src="result.gif"></td>
+	</tr>
+	<tr>
+	  <td align="center">Image initiale (vlsi.ima)</td>
+	  <td align="center">Image obtenue (les classes sont mises &agrave;
+	    leur borne inf.)</td>
+	</tr>
+      </table>
+
+      <p>
+      En fait les seuils finaux sont quasiment &eacute;gaux &agrave; leur
+valeur d'initialisation. Le probl&egrave;me peut venir de plusieurs sources :
+      </p>
+
+      <ul>
+	<li>Nous avons peut-&ecirc;tre fait une faute dans l'impl&eacute;mentation.
+C'est tr&egrave;s possible, mais ce serait rageant vu le temps que nous avons
+d&eacute;j&agrave; pass&eacute; &agrave; debugger. Les formules que nous appliquons &agrave; chaque &eacute;tape
+sont les bonnes mais une erreur stupide (donc ind&eacute;tectable) s'est peut-&ecirc;tre
+gliss&eacute;e dans l'enchainement.
+	</li>
+	<li>
+	  L'algorithme est peut-&ecirc;tre faux &agrave; la base. Ce n'est surement pas 
+le cas et ce n'est qu'au beau milieu de nos d&eacute;primes core-dumpiennes
+que nous envisagions cette possibilit&eacute;.
+	</li>
+	<li>
+	L'hypoth&egrave;se qui nous parait la plus probable est la suivante :
+dans notre code, nous utilisons le g&eacute;n&eacute;rateur al&eacute;atoire de l'ANSI C. 
+Or ce g&eacute;n&eacute;rateur a en fait une loi qui est tout sauf uniforme ... De l&agrave;
+viennent peut-&ecirc;tre nos probl&egrave;mes. Pour le v&eacute;rifier il faudrait utiliser
+un g&eacute;n&eacute;rateur plus fiable, qu'on pourrait trouver dans des biblioth&egrave;ques
+math&eacute;matiques non-standards. Vu que nous avons d&eacute;j&agrave; une semaine
+de retard, nous ne l'avons pas fait. 
+	</li>
+      </ul>
+
+      <p>
+      Nous vous rendons donc un rapport incomplet car manquant 
+d'illustrations, mais nous esp&eacute;rons avoir satisfait aux exigeance de
+l'exercice par notre compr&eacute;hension de l'algorithme et de son utilit&eacute;.
+      </p>
+
+
+      <hr>
+      <address> <a href="mailto:beasse@email.enst.fr">Luc B&eacute;asse     </a> 
+	        <a href="mailto:segal@email.enst.fr">Sophie S&eacute;gal</a>
+      </address>
+
+<!-- Created: Wed Apr  2 11:00:26 MET DST 1997 -->
+<!-- hhmts start -->
+Last modified: Mon Apr  7 08:39:43 MET DST 
+<!-- hhmts end -->
+  </body>
+</html>

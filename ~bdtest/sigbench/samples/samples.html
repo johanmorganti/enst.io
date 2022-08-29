@@ -1,0 +1,85 @@
+<HTML>
+ <HEAD> <TITLE>"A la carte" Rectangle Generator</TITLE> </HEAD> 
+<body bgcolor="#ffffc0">
+<FORM METHOD=POST
+      ACTION="cgi-bin/sample0.cgi">
+
+<STRONG>1st Step: Generic Model choice</STRONG>
+<P><I> The parameters to be specified first are:</I>
+<OL>
+<LI>Coverage = Sum(area(MBR)) / area(map)
+<LI>Pr(x) = probability distribution of <b>x</b> coordinate of MBRs
+lowest left corner
+<LI>Pr(y) = probability distribution of <b>y</b> coordinate of MBRs
+lowest left corner
+<LI>Pr(t) = probability distribution of <b>t</b> slope (between 0 and 90
+degrees) of 1st diagonal of MBRs
+<LI>Pr(a) = probability distribution of <b>a</b> area of MBRs
+</OL><BR>
+Please make your generic choices with the buttons bellow.
+You'll be prompted for secondary parameters to be more specific. 
+<BR>
+<TABLE BORDER=0>
+<DL> <DD> <TR><TD><IMG SRC="../gif/or_ball.gif" ATRGN=top">
+<STRONG> Coverage <TD><SELECT NAME="Cov"  SIZE=1>
+<OPTION VALUE="5" SELECTED> .O5
+<OPTION VALUE="20"> .20
+<OPTION VALUE="50"> .50
+<OPTION VALUE="100"> 1.0
+<OPTION VALUE="200"> 2.0
+</SELECT> </STRONG>
+</DD> </DL>
+<DL> <DD> <TR><TD><IMG SRC="../gif/rd_ball.gif" ATRGN=top">
+<STRONG> Pr(x) <TD><SELECT NAME="PrX"  SIZE=1>
+<OPTION VALUE="0" SELECTED> Uniform
+<OPTION VALUE="1"> Gaussian
+<OPTION VALUE="2"> Exponential
+</SELECT> </STRONG>
+</DD> </DL>
+<DL> <DD> <TR><TD><IMG SRC="../gif/rd_ball.gif" ATRGN=top">
+<STRONG> Pr(y) <TD><SELECT NAME="PrY"  SIZE=1>
+<OPTION VALUE="0" SELECTED> Uniform
+<OPTION VALUE="1"> Gaussian
+<OPTION VALUE="2"> Exponential
+</SELECT> </STRONG>
+</DD> </DL>
+<DL> <DD> <TR><TD><IMG SRC="../gif/bl_ball.gif" ATRGN=top">
+<STRONG> Pr(t) <TD><SELECT NAME="PrT"  SIZE=1>
+<OPTION VALUE="0"> Uniform
+<OPTION VALUE="1" SELECTED> Gaussian
+<OPTION VALUE="2"> Exponential
+</SELECT> </STRONG>
+</DD> </DL>
+<DL> <DD> <TR><TD><IMG SRC="../gif/gr_ball.gif" ATRGN=top">
+<STRONG> Pr(a) <TD><SELECT NAME="PrA"  SIZE=1>
+<OPTION VALUE="0"> Uniform
+<OPTION VALUE="1"> Gaussian
+<OPTION VALUE="2" SELECTED> Exponential
+</SELECT> </STRONG> (Coverage and Number of MBR dependent)
+</DD> </DL>
+</TR></TABLE>
+<BR></P>
+<STRONG>2nd Step: Specific Model choice</I></STRONG>
+<P><I> The parameters to be specified now are:</I><BR>
+<TABLE BORDER=0>
+<TR><TD>x <TD>= min X coordinate (Western closure of the map)
+<TD><input name="xmin" size="20" value="-180000000">
+<TR><TD>X <TD>= max X coordinate (Eastern closure of the map)
+<TD><input name="xmax" size="20" value="+180000000">
+<TR><TD>y <TD>= min Y coordinate (Southern closure of the map)
+<TD><input name="ymin" size="20" value="-90000000">
+<TR><TD>Y <TD>= max Y coordinate (Northern closure of the map)
+<TD><input name="ymax" size="20" value="+90000000">
+</TABLE>
+(all coordinates in the same INTEGER unit which is up to you to decide)<BR><BR>
+<TABLE BORDER=0>
+<TR><TD>N <TD>= <B>Number of MBR</B>
+<TD><input name="N" size="20" value="100">
+</TABLE><BR>
+
+<input type="reset" value="RESET">
+<input type="submit" value="CONTINUE">
+</P>
+</FORM>
+</body>
+</HTML>

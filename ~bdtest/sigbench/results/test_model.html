@@ -1,0 +1,47 @@
+<HTML><HEAD>
+<TITLE>Marks DB Schema</TITLE></HEAD>
+<BODY bgcolor="#ffffc0" TEXT=#1809BB>
+<H1>Test Model</H1>
+<b>Test model suite	(INPUT)</b><p>
+<b></b><p>
+A test model suite is a set of test models obtained by varying the two input
+Data models with (different distributions and sample sizes), the spatial
+operations and the grid shifting between the two universes (underlying map
+definitions).<p>
+The goal is to create a rich  set of scenarios (from the point of view of
+diversity and representativeness of real life data), by changing each one of
+these parameters, and analyse their impact in the performance of the
+algorithms.<p>
+<p>
+MIN SET Vs EXTENDED SET<p>
+<p>
+<table>
+<TR>
+<TD>    <b>Test model suite</TD>		<TD>=
+<TD colspan=3>    <b>{</b>Data model 1, Data model 2, Spatial operation, Grid shift<i>, Grid overlapping</i><b>}</b>
+<TR>
+<TD>    where
+<TR>
+<TD>	Spatial operation 	<TD>is	
+<TD colspan=2>	(Operation Identification, <i>{Parameters}</i>)
+<TR>
+<TD><TD><TD colspan=3>	- Intersects(), Contains(), Within(), Adjacent(), Northwest()
+<TR>
+<TD><TD><TD colspan=3>	- Distance(Boolean operator (=, &lt;=, &gt;=, &lt;, &gt;), value)
+<TR>
+<TD>	Grid	 	<TD>is		
+<TD>[(X', Y') | (Distance, Angle)]
+<TR>
+<TD><TD><TD>	- (shift) relatively to lower left corner or 
+<TR>
+<TD><TD><TD>	- (Delta) relatively to lower left corner
+<TR>
+<TD>	Grid overlapping	<TD>is	
+<TD colspan=3>	Overlapping area of the two Underlying map definitions / Area of the smallest Underlying map definition
+</TR></TABLE>
+<p>
+<DL>
+<DT>Remarks:<p>
+<DD>Grid overlapping can be meanful for operators like the intersection, but for others ones, like the Northwest operator its meaning is not relevant; so this parameter is optional.<p>
+</body></html>
+<!- Jose Moreira and Jean-Marc Saglio ->

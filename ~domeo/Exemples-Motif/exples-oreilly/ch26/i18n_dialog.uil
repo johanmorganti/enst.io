@@ -1,0 +1,28 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+! i18n_dialog.uil - Dialog used to prompt the user for a filename
+
+module savebox
+
+include file 'strings.uih';
+
+object root : XmPromptDialog {
+  arguments {
+    XmNokLabelString = ok_text;
+    XmNcancelLabelString = cancel_text;
+    XmNhelpLabelString = help_text;
+    XmNselectionLabelString = save_prompt_text;
+    XmNdialogTitle = save_title_text;
+  };
+};
+
+end module;
+

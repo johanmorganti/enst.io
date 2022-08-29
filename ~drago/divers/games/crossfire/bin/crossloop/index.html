@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# This is a replacement for the crosserv.pl perl script.,
+# No point in using perl for such a simple task.
+
+CMDNAME="/usr/local/games/crossfire/bin/crossfire"
+maxrestart=100
+logdir="/tmp/crosservlog"
+
+logcount=0
+
+rm -rf $logdir
+mkdir $logdir
+
+while [ ! "$logcount"x = "$maxrestart"x ]; do
+  echo "Starting Crossfire `date` for the $logcount time..." 1>2 2>>$logdir/$logcount
+  $CMDNAME -d -f -server 1>2 2>>$logdir/$logcount
+  logcount=`expr $logcount + 1`
+  sleep 5
+done

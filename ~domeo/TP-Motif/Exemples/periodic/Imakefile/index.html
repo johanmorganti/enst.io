@@ -1,0 +1,24 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.4.2.2 $ $Date: 1992/05/06 21:18:56 $
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS = periodic.c
+
+OBJS = periodic.o
+
+NormalLibraryObjectRule()
+
+MSimpleUilTarget(periodic)
+
+InstallAppDefaults(Periodic)
+
+DependTarget()

@@ -1,0 +1,83 @@
+
+                                XRESSOURCES
+                                -----------
+
+    modification conviviale de ressources du gestionnaire de fenetres Motif
+    et d'applications 
+
+    (projet de BIG, Herve Poupon & Thomas Rohmer, 3eme trim. 95)
+
+I ) DESCRIPTION
+
+    Xressources est un programme permettant de modifier les ressources du
+Window Manager Motif et de certaines applications standards, et ce a l'aide
+d'une interface graphique programmee avec le Toolkit Motif.
+    Les ressources sont regroupees dans plusieurs pages, chacune correspondant
+a une application ou a des objets du window manager.
+
+    La fenetre de xressources contient:
+- un bouton de type 'Option Menu' qui permet de selectionner une des pages
+de ressources;
+- une liste (page) de ressources. Pour chaque ressource on affiche le nom de
+la ressource ainsi qu'un champ donnant acces a la saisie d'une valeur;
+- un bouton "Appliquer" qui a pour effet d'enregistrer dans le fichier
+.Xdefaults les modifications apportees et de rendre ces modifications actives.
+Cependant, pour que les modifications soient visibles, il faut soit relancer
+le Window Manager soit l'application correspondante.
+- un bouton "Quitter" qui quitte.
+
+II ) NATURE DES CHAMPS DE SAISIE
+
+    L'application distingue plusieurs types de ressources, qui se manipulent
+de facons differentes:
+- pour les ressources n'acceptant qu'un ensemble connu et limite de valeurs
+(ce type est appele 'enumere' dans le code du programme), on peut selectionner
+l'une de ces valeurs dans une liste (Option Menu).
+- pour les ressources de 'couleur', un champ texte permet la saisie du 
+nom complet d'une couleur qui doit etre une couleur existante (les couleurs
+valables peuvent etre visualisees avec le programme 'xcolors'). Le fond du
+champ de texte permet de voir la couleur choisie.
+- pour la definition d'une police de caracteres (type 'police'), Un bouton 
+permet de selectionner une fonte par l'intermediaire du programme 'xfontsel'.
+Le texte du bouton possede les attributs de la fonte qui est actuellement
+definie et permet donc de la visualiser.
+- pour les autres types de ressources (type 'texte') un simple champ de saisie
+de texte est utilise.
+
+III ) MODIFICATIONS APPORTEES AU FICHIER .Xdefaults
+
+    Xressources travaille par defaut sur le fichier .Xdefaults qui se trouve
+dans le repertoire courant. Si un nom de fichier (et son chemin d'acces) est
+specifie en argument a l'appel de xressource, il est utilise comme le fichier
+de ressource a modifier.
+    Le fichier .Xdefaults n'est reelement modifie que lorsque le bouton
+"Appliquer" est appuye. Une copie de l'ancienne version dans l'etat ou elle se
+trouvait au lancement de xressources est conservee sous le nom ".Xdefaults~".
+    Xressources ne mofifie pas la structure du fichier .Xdefaults : seules les
+ressources qui ont ete modifiees sont ajoutees au fichier. De plus, le 
+programme recherche dans le fichier .Xdefaults les resources deja definies de
+facon a modifier une ressource a l'endroit ou elle se trouve deja.
+    Donc un fichier .Xdefaults qui contient deja les definitions de ressources
+que l'on modifie n'est pas modifie dans sa structure (il n'y a ni ajout, ni
+suppresion, ni inversion des lignes du fichier). Dans le cas contraire une
+nouvelle definition de ressource est ajoutee a la fin du fichier.
+
+IV ) AJOUT DE NOUVELLES PAGES A L'INTERIEUR DU CODE
+
+    On peut ajouter de nouvelles ressources dans le programme et de nouvelles
+pages (pour d'autres applications par exemple). Il faut creer les structures
+necessaires en suivant l'exemple des pages existantes et recompiler.
+    L'ensemble des ressources d'une page est defini dans un tableau de 
+structures de type une_ligne. Chaque ligne contient: un texte descriptif de
+la ressource, le nom exacte de la ressource, le type de la ressource et un
+eventuel tableau de valeur possible dans le cas d'un type 'enumere'.
+    Une page est definie par la structure une_page qui contient: un texte
+descriptif pour la page, le nombre de ressources dans la page, et un pointeur
+vers le tableau defini ci-dessus.
+    Enfin, un pointeur vers chaque page a ajouter doit etre place dans le 
+tableau 'tableau_de_pages'.
+
+
+
+
+

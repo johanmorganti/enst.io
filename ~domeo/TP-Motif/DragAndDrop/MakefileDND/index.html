@@ -1,0 +1,62 @@
+#
+# @(#)customer-svr4.mk	1.6 93/01/26 SMI
+# User Makefile for the OSF Motif Demo sample sources
+# Requires SunOS 5.x (or later) Make(1).
+#
+
+#
+# Environment set up
+#
+
+MOTIFHOME =  /usr/X11
+
+# Logging compilation messages to file instead of console
+#LOGGING = 2> $@.errlog > $@.errlog
+
+#
+# Source package description
+#
+
+CC = acc
+# compilateur C = CC = acc ou gcc (C ANSI)
+
+COMMAND =       DNDDemo
+
+OBJ	=	DNDDraw.o DNDDemo.o
+
+DEFINES		= -Dsun
+		# -DDEBUG	if debugging output is desired
+
+#LIBRARIES	= -lXm -lXt -lgen -lX11
+LIBRARIES	= -lXm -lXt -lX11
+
+#
+# Derived macros
+#
+
+INCLUDES	= -I${MOTIFHOME}/include
+CPPFLAGS       += ${DEFINES} ${INCLUDES}
+
+CFLAGS	       += -g
+		# -g	for debugging
+
+LIBDIRS		= -L$(MOTIFHOME)/lib
+LDFLAGS		= $(LIBDIRS) $(LIBRARIES)
+
+#
+# Rule sets
+#
+
+.c.o:
+	$(COMPILE.c) $(OUTPUT_OPTION) $< $(LOGGING)
+
+all: ${COMMAND}
+
+${COMMAND}: $(OBJ)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) $(LDFLAGS) -o $@
+
+clean:
+	rm -f $(OBJ) ${COMMAND} *.errlog
+
+# end of Makefile.customer
+#

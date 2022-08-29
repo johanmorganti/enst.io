@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Demande de pret d'ouvrage du reseau Dobitel</title>
+</head>
+<body bgcolor="#ffffe8">
+
+<base="http://www.enst.fr/">
+
+<h1><a href="http://www.enst.fr/doc/"><img src="/icone/doc.gif"></a>
+Demande de pr&ecirc;t d'ouvrage dans le r&eacute;seau Dobitel</h1>
+
+<img src="icone/barre_bl.gif">
+
+<ul>
+<li>Ce service ne peut &ecirc;tre rendu qu'aux seules personnes de l'ENST Paris.
+<li>Avant de remplir une demande de pr&ecirc;t inter-r&eacute;seau,
+v&eacute;rifier l'existence de l'ouvrage et sa disponibilit&eacute;
+dans le <a href=http://www.enst.fr/doc/dobitel_dir/acces_catalogue.html>catalogue Dobitel</a>.
+<li>Si le livre est &agrave; l'ENST, la demande ne sera pas prise en compte, il suffit d'aller le chercher &agrave; la biblioth&egrave;que.
+</ul>
+<img src="/gif/barre.bleu.bleu.gif">
+<p>
+<form method="post" action="cgi-bin/pret-ouvrage.cgi">
+<h3>Votre identit&eacute; :</h3>
+<menu>
+<b>Nom</b> : <input name=nom size=32><br>
+<b>Prénom</b> : <input name=prenom size=30><br>
+<b>E-mail</b> : <input name=email size=16>
+<b>Pi&egrave;ce ou casier</b> : <input name=piece size=6><br>
+<b>
+<select name=statut size=1>
+<option value="" selected>Statut ->
+<option value=permanent>Permanent
+<option value=thesard>Th&eacute;sard
+<option value=stagiaire>Stagiaire
+<option value=eleve>El&egrave;ve
+</select>
+</b>
+<!--
+<input type=radio name="statut" value="permanent"> Permanent, 
+<input type=radio name="statut" value="thesard"> Thèsard, 
+<input type=radio name="statut" value="stagiaire"> Stagiaire, 
+<input type=radio name="statut" value="eleve"> Elève. 
+-->
+</menu>
+<h3>Choix de la Biblioth&egrave;que :</h3>
+S&eacute;lectionner le sigle de la succursale choisie (seuls les ouvrages
+pr&eacute;c&eacute;d&eacutes des sigles suivants sont pr&ecirc;tables)
+<menu>
+<b>
+<select name=biblio size=1>
+<option value="" selected>Biblioth&egrave;que ->
+<option value=doi>DOI (CNET Issy)
+<option value=bstb>BSTB (ENST Br Brest)
+<option value=bstr>BSTR (ENST Br Rennes)
+<option value=cns>CNS (CNET Grenoble)
+<option value=ccet>CCET (CNET Rennes)
+<option value=edb>EDB (CNET Lannion)
+<option value=telp>TELP (ENST Paris)
+<option value=sept>SEPT (CNET Caen)
+<option value=int>INT (INT Evry)
+</select>
+</b>
+</menu>
+<h3>Ouvrage demand&eacute; :<h3>
+<menu>
+<b>Nom de l'auteur</b> : <input name=auteur size=30><br>
+<b>Titre de l'ouvrage</b> : <input name=titre size=30><br>
+<b>Cote de l'ouvrage</b> : <input name=cote size=30><br>
+<b>Num&eacute;ro de l'exemplaire (code-barre)</b> : <input name=numero size=8><br>
+</menu>
+<img src="/gif/barre.bleu.bleu.gif">
+<br>
+Cliquez sur <font color=blue><input type="submit" value="Valider"></font> pour soumettre votre requ&ecirc;te,
+ sinon <font color=red><input type="reset" value="Annuler"></font>
+</form>
+<img src="/gif/barre.bleu.bleu.gif">
+<br>
+<address><a href="mailto:biblio@sg.enst.fr">Documentation Technique &lt;biblio@sg.enst.fr&gt;</a></address>
+<br>
+<font size=-1>Page maintenue par Philippe Dax, last update 29/1/97</font>
+
+</body>
+</html>

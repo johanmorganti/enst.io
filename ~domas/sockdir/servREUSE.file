@@ -1,0 +1,138 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <stdio.h>
+
+/***********************  code des serveurs utilisant le meme port ***/
+
+void fils (Sock_Serv)
+{
+    int Sock_Com;
+    
+    while (1)
+      {
+	  printf (" Ici serveur %d fils de %d : accept\n",getpid(), getppid());
+	  if((Sock_Com=accept(...,...,...)) == -1)
+	    {
+		perror (" Serveur : erreur sur Accept") ;
+		continue ;
+	    }
+	  if (fork () == 0){
+	      Gerant_Comm(Sock_Serv, Sock_Com);
+	      exit (4);
+	  }
+	  close (Sock_Com) ;
+      }
+}
+
+/**************** Fonction de gestion des communications ************/
+
+Gerant_Comm(..., ...)
+{
+char MESSAGE [] = "Reponse de pid                            \n";
+int pid;
+int Ret_Read;
+char Buf[1024];
+
+close (Sock_Serv ) ;
+if (write (Sock_Com,"Debut de comm.\n",15) < 0 )
+    perror ("Erreur ecriture Message") ;
+do
+    {
+    memset(Buf, 0, sizeof (Buf)) ;
+    if ((Ret_Read=read (Sock_Com,Buf,sizeof (Buf))) < 0)
+        {
+        perror ("Erreur lecture Message") ;
+        printf (" *************************************\n");
+        continue;
+        }
+    if (Ret_Read == 0 )
+        {
+        printf (" Ici, pid %d : Fin de connexion \n", getpid()) ;
+        printf (" *************************************\n");
+        }
+    else
+        {
+        printf("Ici %d, fils du serveur %d, lit :\n",getpid(),getppid());
+        printf("%s\n", Buf );
+        }
+    }
+ while (Ret_Read > 0) ;
+
+sprintf (MESSAGE+15, " %d fils de %d",getpid(), getppid());
+if (write (Sock_Com, MESSAGE, strlen(MESSAGE) ) < 0)
+    {
+    printf ("Ici pid %d : ", getpid()) ;
+    perror ("Erreur ecriture d'un message") ;
+    exit (2) ;
+    }
+}
+
+/********************* main : lancement des serveurs **********************/
+
+void main(int argc, char *argv[])
+{
+    struct sockaddr_in Serveur;
+    int sock;
+    int NServ, pid_fils, i_fils;
+
+ if (argc != 3) {
+    printf("Utilisation : %s nbre_serveurs port\n", argv[0]);
+    exit(1);
+  }
+
+	NServ = atoi(argv[1]);
+
+  if ((sock = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP)) == -1) {
+     perror("socket");
+     exit(1);
+ }
+  
+  
+  if((setsockopt(sock, ...,SO_REUSEADDR, ...,... )))
+     == -1) {
+      perror("setsockopt reuse");
+	      exit(1);
+	  }
+  if((setsockopt(sock, ...,SO_KEEPALIVE, ...,... )))
+		   sizeof(ValKeep))) == -1) {
+	perror("setsockopt keepalive"); 
+        exit(1); 
+    }
+
+    memset((char *) &Serveur, 0, sizeof(Serveur));
+    Serveur.sin_family      = AF_INET;
+    Serveur.sin_addr.s_addr = INADDR_ANY ;
+    Serveur.sin_port = ...;
+    
+    if(bind(sock,(struct sockaddr *) &Serveur,sizeof(Serveur)) == -1) {
+	perror("  bind  ");
+		exit(1);
+	}
+
+    listen(sock, 10);
+  
+    printf (" Ici pere %d fils de %d\n",getpid(), getppid());
+	
+    /*  creation des  processus fils   */
+    for ( i_fils =1; i_fils <= NServ  ; i_fils++ ){
+		
+	switch (pid_fils=fork()) {
+	  case 0 :
+	printf (" Ici pere, creation serveur %d\n", i_fils);
+	    fils (sock);
+            exit (2);
+	  case -1 :
+            perror("Le fork n'a pas reussi ");
+            exit(3);
+	}
+    }
+    printf (" Ici pere %d : attente \n", getpid());
+
+    while(1);
+
+
+}
+
+

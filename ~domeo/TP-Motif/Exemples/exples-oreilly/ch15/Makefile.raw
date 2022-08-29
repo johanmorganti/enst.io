@@ -1,0 +1,8 @@
+PROGRAMS=build_option build_menu file_menu file_menu2 popups simple_option simple_popup simple_pullright
+
+CFLAGS=
+LIBS= -lXm -lXt -lX11
+
+all: $(PROGRAMS)
+
+.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

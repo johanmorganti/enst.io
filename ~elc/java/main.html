@@ -1,0 +1,136 @@
+<!-----------------------------------------------------------------------
+-									-
+-			    JAVA ET JAVASCRIPT
+-									-
+-			     Andrej Sobkowski				-
+-									-
+-									-
+-									-
+-			    Java et JavaScript				-
+-									-
+-									-
+------------------------------------------------------------------------>
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE = "JavaScript">
+<!-- Begin Script
+/* Copyright (C)1996 Web Integration Systems, Inc. DBA Websys, Inc.
+   All Rights Reserved. */
+
+function scrollit(seed)
+{
+        var m1  = "Java et JavaScript ...          ";
+        var m2  = "                                ";
+        var m3  = "....by Andrej Sobkowski (c) 1996";
+        var m4  = "                                ";
+	        
+        var msg = m1 + m2 + m3 + m4;
+        var out = " ";
+        var c   = 1;
+
+        if (seed > 100) {
+                seed--;
+                var cmd="scrollit(" + seed + ")";
+                timerTwo=window.setTimeout(cmd,80);
+        }
+        else if (seed <= 100 && seed > 0) {
+                for (c=0 ; c < seed ; c++) {
+                        out+=" ";
+                }
+                out+=msg;
+                seed--;
+                var cmd="scrollit(" + seed + ")";
+                    window.status=out;
+                timerTwo=window.setTimeout(cmd,80);
+        }
+        else if (seed <= 0) {
+                if (-seed < msg.length) {
+                        out+=msg.substring(-seed,msg.length);
+                        seed--;
+                        var cmd="scrollit(" + seed + ")";
+                        window.status=out;
+                        timerTwo=window.setTimeout(cmd,80);
+                }
+                else {
+                        window.status=" ";
+                        timerTwo=window.setTimeout("scrollit(80)",75);
+                }
+        }
+}
+
+
+function setDate () {
+	today = new Date();
+
+	document.dateForm.day.value = today.getDate();
+	document.dateForm.month.value = today.getMonth();
+	document.dateForm.year.value = today.getYear();
+
+}
+// -- End Script -->
+</SCRIPT>
+</HEAD>
+
+<BODY ONLOAD = "timerONE=window.setTimeout('scrollit(20)', 100); setDate()">
+
+<BR>
+<CENTER><FONT COLOR = "red"><H1>Java et JavaScript</H1>
+by Andrej Sobkowski
+</FONT>
+</CENTER>
+
+<HR>
+
+<CENTER>
+<BR>
+
+<FORM NAME = "dateForm">
+<TABLE>
+<TR>
+<TD>Jour
+<TD><INPUT TYPE = "text" NAME = "day" SIZE = 2>
+<TD>Mois
+<TD><INPUT TYPE = "text" NAME = "month" SIZE = 2>
+<TD>Annee
+<TD><INPUT TYPE = "text" NAME = "year" SIZE = 2>
+</TABLE>
+</FORM>
+<APPLET CODE = "Clock.class" CODEBASE = "CLASSES" WIDTH = 60 HEIGHT = 30>
+</APPLET>
+
+<BR>
+<BR>
+<BR>
+<A HREF = "applications.html"><BIG>Applications Java</BIG></A><BR>
+<A HREF = "applets.html"><BIG>Applets Java</BIG></A><BR>
+<A HREF = "interfaces.html"><BIG>Interfaces Graphiques</BIG></A><BR>
+<A HREF = "javascript.html"><BIG>JavaScript</BIG></A><BR>
+
+<BR>
+<BR>
+
+<APPLET CODE = "ExAnimation.class" CODEBASE = "CLASSES" WIDTH = 60 HEIGHT = 80>
+</APPLET>
+
+<BR>
+<BR>
+<BR>
+<FONT COLOR = "green">Pointeurs (tr&egrave;s) utiles</FONT><BR>
+
+<A HREF = "http://java.sun.com/" TARGET = _blank>Java - Programming for the Internet</A><BR>
+<A HREF = "http://java.sun.com/java.sun.com/tutorial/index.html" TARGET = _blank>The Java Tutorial</A><BR>
+<A HREF = "http://java.sun.com/java.sun.com/products/JDK/1.0.2/api/javabooa.htm" TARGET = _blank>R&eacute;f&eacute;rences des classes</A><BR>
+<A HREF = "http://home.netscape.com/eng/mozilla/Gold/handbook/javascript/index.html" TARGET = _blank>JavaScript Authoring Guide</A><BR>
+<A HREF = "http://java.sun.com/java.sun.com/applets/applets.html" TARGET = _blank>Applets int&eacute;ressantes</A><BR>
+
+<BR>
+
+<HR>
+
+<BR>
+ - ENST T&eacute;l&eacute;com Paris -<BR>
+M&eacute;moire de fin d'&eacute;tudes - Andrej Sobkowski
+</CENTER>
+</BODY>
+
+</HTML>

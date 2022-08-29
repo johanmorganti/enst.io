@@ -1,0 +1,299 @@
+<html>
+<head>
+<html>
+<head>
+<title>TP XWindow/Motif 2</title>
+<base href="http://www.enst.fr/~domeo/TP-Motif2/TP-Motif2.html">
+</head>
+
+<body bgcolor="#ffffff">
+
+<center>
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<h1>TP XWindow / Motif 2</h1>
+<h3>
+<a href="http://www.enst.fr">ENST</a>
+ - 
+<a href="http://www.enst.fr/~pautet/dominante.html">Dominante Informatique</a>
+ -
+<a href="http://www.enst.fr/~domeo">Module EO</a>
+</h3>
+<h3><i><a href="http://www.enst.fr/~elc">Eric Lecolinet</a></i></h3>
+</h1>
+<p>
+</center>
+
+<br>
+<strong>
+<img src=//www.enst.fr/gif/blueball.gif>
+<a href="http://www.enst.fr/~domeo/TP-Motif1.html">TP1</a>
+TP2
+<a href="http://www.enst.fr/~domeo/TP-Motif3.html">TP3</a>
+<a href="http://www.enst.fr/~domeo/Exemples-Motif">Exemples</a>
+<a href="http://www.enst.fr/~domeo">EO</a>
+<a href="http://www.enst.fr/~elc">ELC</a>
+</strong>
+
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Menus et Barres de Menus</h2>
+
+Un <b>MenuBar</b> (barre de menu) est un Geometry Manager qui contient
+une liste horizontale de boutons qui permettent d'ouvrir des menus d&eacute;roulants.
+Les barres de menus constituent le moyen de plus classique pour
+pr&eacute;senter l'ensemble des fonctionnalit&eacute;s d'un syst&egrave;me &agrave; un "utilisateur"
+dont le degr&eacute; de connaissance du syst&egrave;me peut fortement varier:
+<ul>
+<li>
+un utilisateur "novice" pourra retrouver les principales fonctions
+du syst&egrave;me sans avoir &agrave; recourir &agrave; une "&eacute;ventuelle" documentation papier,
+<p><li>
+un utilisateur "exp&eacute;riment&eacute;" aura plut&ocirc;t tendance &agrave; se servir 
+des <b>raccourcis clavier</b> (voir section suivante) qu'il aura appris
+progressivement en manipulant le syst&egrave;me de menus (les raccourcis clavier
+&eacute;tant indiqu&eacute;s en regard des fonctions correspondantes).
+</ul>
+<p>
+Commencer tout d'abord par compiler et ex&eacute;cuter le programme 
+<a href="menu.c">menu.c</a>. 
+Ce programme manipule trois types d'objets graphiques:
+<ul>
+<li>
+le <b>MenuBar</b> qui est en fait une "variante" du manager <b>RowColumn</b>
+<li>
+des <b>CascadeButtons</b>: des boutons qui servent &agrave; ouvrir des menus
+<li>
+des <b>PulldownMenus</b> : les menus d&eacute;roulants attach&eacute;s &agrave; ces boutons.
+</ul>
+A leur tour, les PulldownMenus peuvent contenir des Labels, des PushButtons, 
+des ToggleButtons, ou m&ecirc;me d'autres CascadeButtons en cas de menus 
+cascad&eacute;s (d'o&ugrave; leur nom).
+<p>
+<b>Noter </b> que les <tt>PulldowMenus</tt> doivent &ecirc;tre fils du 
+<tt>MenuBar</tt> (ou d'un autre <tt>PulldownMenu</tt> 
+lorsqu'ils sont cascad&eacute;s). 
+Le lien entre <tt>CascadeButtons</tt> et <tt>PulldownMenus</tt> se fait
+via la ressource <b>XmNsubMenuId</b> des <tt>CascadeButtons</tt>.
+<p>
+<b>Remarques:</b> 
+<ul>
+<li>
+les boutons contenus dans les menus sont cr&eacute;&eacute;s au moyen d'une boucle
+afin d'obtenir une &eacute;criture plus compacte (on aurait &eacute;galement pu d&eacute;finir
+une fonction g&eacute;n&eacute;rique pour cr&eacute;&eacute;r les trois menus)
+<p><li>
+Motif impl&eacute;mente un ensemble d'<b>&eacute;quivalents clavier</b> qui permettent 
+de se passer de la souris gr&acirc;ce aux touches F10, fleches, SPACE, ESC, etc...
+A vous de jouer !
+</ul>
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Acc&eacute;l&eacute;rateurs et Mn&eacute;moniques</h2>
+
+Mettre le fichier de ressources <a href="XMenuDemo">XMenuDemo</a>
+dans le r&eacute;pertoire appropri&eacute; (voir le TP Motif1) et relancer
+le programme <a href="menu.c">menu.c</a>. 
+<p>
+Regarder et modifier ce fichier afin de changer les <b>acc&eacute;l&eacute;rateurs</b>
+(raccourcis clavier) et les <b>mn&eacute;moniques</b> des menus d&eacute;roulants.
+<p>
+<b>Remarques: </b>
+<p>
+Il suffit de taper le mn&eacute;monique pour activer le bouton correspondant
+lorsqu'un menu d&eacute;roulant est ouvert.
+De m&ecirc;me, il est possible d'ouvrir les menus d&eacute;roulants en tapant
+<b>Alt</b> mn&eacute;monique (du CascadeButton correspondant dans la barre de menu).
+Enfin la touche <b>F10</b> permet d'ouvrir le premier menu d&eacute;roulant
+de la barre de menu.
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Menus cascad&eacute;s</h2>
+le programme <a href="menucascade.c">menucascade.c</a>
+int&egrave;gre plusieurs fonctionnalit&eacute;s d&eacute;j&agrave; vues dans les exemples pr&eacute;c&eacute;dents
+(voir le TP Motif1) et montre comment cr&eacute;er des menus cascad&eacute;s.
+Il permet entre-autres de changer dynamiquement la g&eacute;om&eacute;trie des widgets
+et leurs couleurs.
+<p>
+<b>Remarques:</b>
+<ul>
+<li>
+La ressource <b>XmNallowShellResize</b> sert &agrave; indiquer si le <b>programme</b>
+peut modifier la taille de la fen&ecirc;tre principale (c'est-&agrave;-dire
+le <b>TopLevel Shell</b> de l'application rendu par la fonction 
+<tt>XtAppInitialize</tt>). Par d&eacute;faut cette taille ne peut pas varier
+(on avait d'ailleurs d&eacute;j&agrave; du modifier <tt>XmNallowShellResize</tt>
+dans l'exemple <i>orientation.c</i> du TP Motif1).
+<p><li>
+Attention, cette sp&eacute;cification est ind&eacute;pendante du fait que
+l'<b>utilisateur</b> puisse ou non retailler la fen&ecirc;tre principale.
+</ul>
+
+<p>
+<b>Exercices: </b>
+<ul>
+<li>
+rajouter une bo&icirc;te de dialogue qui demande confirmation avant
+de sortir du programme.
+<p><li>
+(optionnel) m&ecirc;me chose pour demander interactivement la couleur 
+(que l'on tapera en toutes lettres dans un PromptDialog). 
+On pourra r&eacute;utiliser le code de l'exercice
+sur le PromptDialog (en v&eacute;rifiant que la couleur demand&eacute;e existe bien).
+</ul>
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Sp&eacute;cification de contraintes spatiales: utilisation du Form Manager</h2>
+<p>
+Les programmes suivants montrent les diff&eacute;rents modes d'utilisation
+du <b>Form Manager</b>. Ce Geometry Manager permet de specifier des
+contraintes spatiales entre ses enfants de mani&egrave;re &agrave; calculer automatiquement
+leur taille et leur position &agrave; l'&eacute;cran.
+<p>
+Noter que ces contraintes sont r&eacute;&eacute;valu&eacute;es <b>dynamiquement</b> lorsque
+l'utilisateur retaille la fen&ecirc;tre principale ou lorsque le programme
+modifie la taille des widgets.
+Les <tt>Form Managers</tt> sont donc particuli&egrave;rement utiles pour
+contr&ocirc;ler la disposition spatiale des objets graphiques de l'interface
+au cours de l'ex&eacute;cution des programmes (tout en tenant compte des
+interactions de l'utilisateur).
+<p>
+Regarder, comprendre et ex&eacute;cuter les programmes suivants.
+Retailler la fen&ecirc;tre principale pour &eacute;tudier le comportement du
+Form Manager dans les diff&eacute;rents cas de figure.
+<ul>
+<li>
+<b>form_attach.c</b> : utilisation "classique" des attachements 
+avec le <tt>FORM</tt> ou avec les autres <tt>WIDGETSs</tt>
+<p><li>
+<b>form_attach_all.c</b> : idem, mais les widgets sont attach&eacute;s 
+aux 4 cot&eacute;s du FORM. Que constatez-vous lorsque l'on retaille la fen&ecirc;tre ?
+<p><li>
+<b>form_attach_big.c</b> : voila ce qui se passe lorsqu'il y a 
+un "big button" ...
+<p><li>
+<b>form_attach_big2.c</b> : premi&egrave;re fa&ccedil;on de r&eacute;soudre le probl&egrave;me pr&eacute;c&eacute;dent
+<p><li>
+<b>form_corner.c</b> : les enfants sont attach&eacute;s aux 4 coins du <tt>FORM</tt> 
+mais pas entre-eux
+<p><li>
+<b>form_offset.c</b> : utilisation des <tt>OFFSETs</tt>
+<p><li>
+<b>form_align.c</b> : utilisation des <tt>OPPOSITE_ATTACHMENTs</tt>
+<p><li>
+<b>form_align_all.c</b> : tout est align&eacute;
+<p><li>
+<b>form_align_bad.c</b> : comme le nom l'indique, il y a un probl&egrave;me ....
+<p><li>
+<b>form_pos.c</b> et <b>form_pos_big.c</b> : 
+ce probl&egrave;me est r&eacute;solu gr&acirc;ce &agrave; l'utilisation des <tt>POSITIONs</tt>
+</ul>
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Formulaires</h2>
+<p>
+Les exemples <a href="formulaire1.c">formulaire1.c</a> 
+et <a href="formulaire2.c">formulaire2.c</a> montrent deux fa&ccedil;ons de cr&eacute;er
+des <b>formulaires</b>. Ces formulaires consistent en une
+suite de lignes qui sont compos&eacute;es d'une &eacute;tiquette (un <b>Label</b>) 
+suivie d'un champ d'entr&eacute;e (un <b>TextField</b>) que l'utilisateur
+doit remplir.
+<p>
+Pour commencer, mettre le fichier de ressources <b>XFormulaire</b> dans le
+r&eacute;pertoire appropri&eacute;, puis lancer les deux programmes. Que constatez-vous ?
+<p>
+Le premier formulaire est bas&eacute; sur l'utilisation d'un Form Manager unique
+avec des attachements de type <tt>FORM</tt> et <tt>POSITION</tt>.
+Le second formulaire utilise
+une <b>imbrication</b> de Form Managers. Cette fa&ccedil;on de faire
+permet de r&eacute;soudre efficacement la plupart des probl&egrave;mes pouvant
+&ecirc;tre dus &agrave; la variabilit&eacute; des tailles des widgets.
+<p>
+<b>Remarque:</b>
+<p>
+La ressource <b>XmNfractionBase</b> du Form Manager permet de modifier
+l'echelle de la grille elastique qui sert &agrave; d&eacute;terminer les <tt>POSITIONs</tt>
+des enfants. La valeur par defaut est 100 (i.e. les widgets sont alors contenus
+dans une grille qui va de 0 a 100 horizontalement et verticalement).
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Navigation: Gestion explicite du Focus Clavier</h2>
+<p>
+Le programme <a href="formulaire3.c">formulaire3.c</a> est similaire
+a <tt>formulaire2</tt> sauf qu'il g&egrave;re explicitement le <b>focus clavier</b>.
+Ceci signifie que le curseur passera automatiquement au champ suivant
+chaque fois que l'on tapera <tt>Return</tt> ou <tt>Enter</tt> sur un
+champ de saisie non vide. Ce programme montre comment associer une
+fonction de callback &agrave; un <tt>TextField</tt> et comment changer le focus
+a l'aide de la fonction <b>XmProcessTraversal</b>.
+<p>
+<b>Remarque</b>:
+<p>
+La touche <b>TAB</b> permet egalement de "naviguer"
+entre les champs de saisie. Cependant ce comportement est implicite
+et ne permet aucun contr&ocirc;le quant &agrave; la validit&eacute; des donn&eacute;es entr&eacute;es
+(ainsi dans notre exemple, on v&eacute;rifie qu'on a bien entr&eacute; quelque chose 
+dans le TextField avant de passer au champ suivant. On pourrait &eacute;videmment
+faire des v&eacute;rifications plus pouss&eacute;es).
+<p>
+Le programme <a href="formulaire4.c">formulaire4.c</a>
+est identique au pr&eacute;c&eacute;dent sauf qu'il ouvre une bo&icirc;te de dialogue d'erreur
+si l'on fait <tt>Enter</tt> dans un champ vide. On peut de plus fermer
+cette bo&icirc;te de dialogue en tapant n'importe quel caract&egrave;re sur un des 
+<tt>TextField</tt>s. Cet exemple montre comment contr&ocirc;ler le texte 
+tap&eacute; &agrave; la vol&eacute;e en appelant une fonction de callback chaque fois 
+qu'un caract&egrave;re est entr&eacute; (en attachant une fonction de callback
+&agrave; la ressource <b>XmNmodifyVerifyCallback</b>).
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Listes</h2>
+
+Copiez le fichier <a href="XListDemo">XListDemo</a> dans le repertoire
+appropri&eacute; et testez les programmes <a href="list1.c">list1.c</a> 
+et <a href="list2.c">list2.c</a>.
+Le premier programme montre comment cr&eacute;er et initialiser 
+une liste dans un programme C. Le deuxieme programme montre comment
+initialiser la liste a l'aide d'un fichier de ressources et comment
+interagir avec cette liste en y attachant des fonctions de callback.
+<p>
+Afin d'essayer les differents modes de fonctionnement de la liste
+(selection simple, multiple, etc ...) modifier le fichier XListDemo
+(les differentes options sont deja ecrites, mais en commentaires)
+
+<p><img src="//www.enst.fr/gif/lignes/rouj.gif">
+
+<h2>Texte et MainWindow</h2>
+<p>
+Le programme <a href="mainwindow.c">mainwindow.c</a> montre deux fa&ccedil;ons 
+de cr&eacute;er une <b>MainWindow</b> contenant un Text widget.
+<p> 
+Noter que le texte est directement cr&eacute;&eacute; sous forme d'un ScrolledText 
+et qu'il faut donc utiliser la fonction <tt>XtParent()</tt>
+pour recuperer la <tt>ScrolledWindow</tt> contenant le Text widget.
+<p>
+
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<br>
+<strong>
+<img src=//www.enst.fr/gif/blueball.gif>
+<a href="http://www.enst.fr/~domeo/TP-Motif1.html">TP1</a>
+<a href="http://www.enst.fr/~domeo/TP-Motif2.html">TP2</a>
+<a href="http://www.enst.fr/~domeo/TP-Motif3.html">TP3</a>
+<a href="http://www.enst.fr/~domeo/Exemples-Motif">Exemples</a>
+<a href="http://www.enst.fr/~domeo">EO</a>
+<a href="http://www.enst.fr/~elc">ELC</a>
+</strong>
+<p>
+<address>
+<img align=top src="/cgi-bin/Count.cgi?ft=2|md=5|dd=C|sh=1|df=domeo_TP-Motif2.cnt">
+Page maintenue par <a href="http://www.enst.fr/~elc">Eric Lecolinet</a>
+ <i><a href="mailto:elc@enst.fr">(elc@enst.fr)</a></i>. Sept 95 / Fev 97. 
+
+</body>
+</html>

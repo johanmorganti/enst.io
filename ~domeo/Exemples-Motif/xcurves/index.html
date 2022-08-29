@@ -1,0 +1,132 @@
+<HTML><HEAD>
+<TITLE>Index of /~domeo/Exemples-Motif/xcurves</TITLE>
+</HEAD><BODY>
+<H1>Index of /~domeo/Exemples-Motif/xcurves</H1>
+<PRE><IMG SRC="/icons/blank.gif" ALT="     "> Name                   Last modified     Size  Description
+<HR>
+<IMG SRC="/icons/back.gif" ALT="[DIR]"> <A HREF="/~domeo/Exemples-Motif/">Parent Directory</A>       19-Jan-97 18:46      -  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="BreakLine.graph">BreakLine.graph</A>        18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Carre.graph">Carre.graph</A>            18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Dadja.graph">Dadja.graph</A>            18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Interference.graph">Interference.graph</A>     18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Makefile">Makefile</A>               18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Makefile.ex">Makefile.ex</A>            18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Mountain.graph">Mountain.graph</A>         18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Sinus.graph">Sinus.graph</A>            18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="SinusCardinal.graph">SinusCardinal.graph</A>    18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="XCurves">XCurves</A>                18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Xcube.graph">Xcube.graph</A>            18-Jan-97 23:46     1k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="axes.init">axes.init</A>              18-Jan-97 23:46     2k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="circle.graph">circle.graph</A>           18-Jan-97 23:46    10k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="elipse.graph">elipse.graph</A>           18-Jan-97 23:46    13k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="lissajou1.graph">lissajou1.graph</A>        18-Jan-97 23:46    14k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="lissajou2.graph">lissajou2.graph</A>        18-Jan-97 23:46    14k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="xcurves">xcurves</A>                18-Jan-97 23:50    23k  
+<IMG SRC="/icons/c.gif" ALT="[   ]"> <A HREF="xcurves.c">xcurves.c</A>              18-Jan-97 23:46    19k  
+<IMG SRC="/icons/c.gif" ALT="[   ]"> <A HREF="xmutil.c">xmutil.c</A>               18-Jan-97 23:46     5k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="xmutil.h">xmutil.h</A>               18-Jan-97 23:46     1k  
+<IMG SRC="/icons/c.gif" ALT="[   ]"> <A HREF="xplus.c">xplus.c</A>                18-Jan-97 23:46    15k  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="xplus.h">xplus.h</A>                18-Jan-97 23:46     1k  
+</PRE><HR>
+<PRE>
+* ############################# *
+*  READ-ME                      *
+*  Thu Feb 23 16:00:00          *
+* ############################# *
+
+
+
+
+
+ * ********************************************************************* *
+ *  Petit manuel d'utilisation de xcurve
+ *
+ *  Nicolas Romanetti, 1995
+ * ********************************************************************* *
+
+
+Xcurves permet d'AFFICHER simultanement plusieurs courbes.
+=&gt; aller dans 'File' puis selectionner 'Read'
+
+Notez que le format du fichier graphique doit etre
+imperativement de la forme: x1 y1 x2 y2 x3 y3 ...
+xcurves lit ce fichier et stocke les coordonnees en 'double'
+
+
+              # ----------- #
+
+Chaque courbe lue est stockee en memoire et identifiee par
+un numero. La sixieme courbe lue remplacera la premiere courbe
+lue en memoire et a l'ecran etc ...
+
+
+On peut modifier l'ECHELLE de chaque courbe
+de facon independante.
+
+   =&gt; choisir 'Scale' puis 'Custom'
+      puis saisir le numero de la courbe,
+      l'echelle suivant l'axe des x,
+      l'echelle suivant l'axe des y.
+    par exemple:  2 0.5 3
+
+  remarque:
+  -------- Si la courbe n'est pas a l'ecran
+           ou si aucune courbe n'est associee 
+           au numero choisi, l'echelle
+           ou la couleur choisie sera stockee 
+           en memoire. On peut ainsi
+           anticiper...
+
+              # ----------- #
+
+Le ZOOM permet d'agrandir un partie de la zone graphique.
+
+   =&gt; choisir 'Scale' puis 'Zoom'
+      puis saisir le coefficient du zoom,
+      l'abscisse du centre de la zone a zoomer,
+      l'ordonnee du centre de la zone a zoomer.
+   par exemple: 3.2 100 50
+ 
+Pour retrouver le zoom d'origine il suffit de selectionner
+'Undo Zoom' qui en fait revient a faire un Zoom avec pour 
+arguments 1 0 0
+
+              # ----------- #
+ 
+On peut modifier la COULEUR de chaque courbe de 
+facon indepedante.
+
+   =&gt; choisir 'Colors' puis selectionner soit directement
+       a la souris soit choisir 'Custom' et dans ce cas
+       rentrer le numero de la courbe et le nom de la 
+       couleur
+   par exemple: 4 navyblue
+
+ 
+              # ----------- #
+
+Pour savoir ou on en est, il est toujours possible
+de faire le bilan detaille des parametres de chaque courbe.
+Il suffit de choisir 'File' puis 'Check List', le bilan est alors
+disponible sur la fenetre d'ou a ete lance xcurves.
+
+
+              # ----------- #
+
+On peut effacer l'ecran sans effacer le contenu de la memoire.
+   =&gt; choisir 'Graph' puis 'Clear Screen'
+
+On peut ensuite rappeler un courbe a l'ecran.
+   =&gt; choisir 'Graph' et 'Call back'
+      entrer alors le numero de la courbe a afficher.
+
+On peut Effacer l'ensemble des courbes en memoire.
+   =&gt; choisir 'Graph' et 'Delete Memory'
+   L'ecran s'efface et les parametres sont tous re-initialises
+   sauf les couleurs.
+
+
+
+
+</PRE>
+</BODY></HTML>
