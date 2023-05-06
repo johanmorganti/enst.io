@@ -1,8 +1,0 @@
-PROGRAMS=editor_dnd editor_help file_manager file_manager2
-
-CFLAGS=
-LIBS= -lXm -lXt -lX11
-
-all: $(PROGRAMS)
-
-.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

@@ -1,8 +1,0 @@
-PROGRAMS=app_box
-
-CFLAGS=
-LIBS= -lXm -lXt -lX11
-
-all: $(PROGRAMS)
-
-.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

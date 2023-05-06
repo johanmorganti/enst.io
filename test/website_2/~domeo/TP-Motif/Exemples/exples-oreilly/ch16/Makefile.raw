@@ -1,8 +1,0 @@
-PROGRAMS=icon_pixmap icon_window resize_shell set_minimum wm_delete wm_protocol
-
-CFLAGS=
-LIBS= -lXm -lXt -lX11
-
-all: $(PROGRAMS)
-
-.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@

@@ -1,8 +1,0 @@
-PROGRAMS=color_slide simple_scale tick_marks
-
-CFLAGS=
-LIBS= -lXm -lXt -lX11
-
-all: $(PROGRAMS)
-
-.c: ; $(CC) $(CFLAGS) $@.c $(LIBS) -o $@
