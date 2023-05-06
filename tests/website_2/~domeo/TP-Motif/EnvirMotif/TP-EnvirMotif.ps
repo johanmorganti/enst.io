@@ -1,0 +1,5033 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 595.3 841.9 0 1 13 FMDOCUMENT
+0 0 /Times-Roman FMFONTDEFINE
+1 0 /Times-Italic FMFONTDEFINE
+2 0 /Times-Bold FMFONTDEFINE
+3 0 /Courier-Bold FMFONTDEFINE
+4 0 /Times-BoldItalic FMFONTDEFINE
+5 0 /Courier FMFONTDEFINE
+6 0 /Courier-BoldOblique FMFONTDEFINE
+7 0 /Courier-Oblique FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: A4
+%%EndPaperSize
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(1) 518.65 57.92 T
+0 24 Q
+(TP Syst\217me de Multifen\220trage) 160.33 728.95 T
+1 16 Q
+(E. Lecolinet) 267.98 658.95 T
+2 F
+(1.0  Lancement de Motif) 81.65 584.29 T
+2 14 Q
+(1.1  Initialisation) 81.65 549.62 T
+0 12 Q
+(T) 81.65 522.95 T
+(apez la commande :) 88.14 522.95 T
+3 F
+( ~domeo/TP-Motif/install-motif) 186.78 522.95 T
+0 F
+-0.04 (Cette commande copie de  nouveaux \336chiers de con\336guration dans votre r\216pertoire principal.) 81.65 496.95 P
+(Les anciens \336chiers sont automatiquement sauvegard\216s et suf) 81.65 482.95 T
+(\336x\216s par) 376.38 482.95 T
+3 F
+(\322.old.1\323.) 420.37 482.95 T
+0 F
+(Sortez de l\325environnement graphique,) 81.65 456.95 T
+1 F
+(deloguez-vous) 265.94 456.95 T
+0 F
+( et reloguez-vous de nouveau.) 334.6 456.95 T
+2 F
+(Remar) 81.65 430.95 T
+(que:) 116.75 430.95 T
+0 F
+( il n\325est n\216cessaire de proc\216der \210 cette initialisation) 139.42 430.95 T
+1 F
+(qu\325une seule fois) 387.02 430.95 T
+0 F
+(.) 468.35 430.95 T
+2 14 Q
+(1.2  Lancement) 81.65 369.62 T
+0 12 Q
+(En g\216n\216ral, l\325environnement de multifen\220trage est automatiquement lanc\216 lorsque l\325on se) 81.65 342.95 T
+(logue sur une machine.) 81.65 328.95 T
+4 F
+(Dans le cas contraire) 81.65 302.95 T
+0 F
+(, le lancer manuellement en tapant la commande :) 186.65 302.95 T
+3 F
+(startx) 439.93 302.95 T
+0 F
+(Apr\217s quelques instants vous verrez appara\224tre:) 81.65 276.95 T
+3 F
+(\245) 81.65 256.95 T
+0 F
+(deux fen\220tres shell de type) 95.39 256.95 T
+3 F
+(xterm) 226.36 256.95 T
+0 F
+(,) 262.36 256.95 T
+3 F
+(\245) 81.65 236.95 T
+0 F
+(un \216diteur de texte \050) 95.39 236.95 T
+3 F
+(textedit) 191.37 236.95 T
+0 F
+( ou) 248.97 236.95 T
+3 F
+(emacs) 269.97 236.95 T
+0 F
+(\051,) 305.97 236.95 T
+3 F
+(\245) 81.65 216.95 T
+0 F
+(une fen\220tre) 95.39 216.95 T
+3 F
+(Console) 152.03 216.95 T
+0 F
+( qui est \336nalement  iconi\336\216e,) 202.43 216.95 T
+3 F
+(\245) 81.65 196.95 T
+0 F
+(ainsi que divers utilitaires.) 95.39 196.95 T
+(Les) 81.65 170.95 T
+3 F
+(xterms) 101.98 170.95 T
+0 F
+( sont des fen\220tres shell qui permettent de lancer des commandes Unix) 145.18 170.95 T
+(La fen\220tre) 81.65 144.95 T
+3 F
+(Console) 133.62 144.95 T
+0 F
+( est fen\220tre  particuliere qui sert \210 af) 184.02 144.95 T
+(\336cher les messages syst\217mes.) 356.41 144.95 T
+(Normalement on ne peut pas lancer de commandes depuis cette fen\220tre.) 81.65 130.95 T
+(Cet environnement est enti\217rement param\216trable via plusieurs \336chiers de con\336gurations qui) 81.65 104.95 T
+(sont d\216crits \210 la section 4 de ce document.) 81.65 90.95 T
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(2) 518.65 57.92 T
+2 16 Q
+(2.0  Appar) 81.65 743.29 T
+(ence et utilisation des fen\220tr) 153.81 743.29 T
+(es Motif) 343.71 743.29 T
+0 12 Q
+(Par d\216faut l\325encadrement entourant chaque fen\220tre comprend les \216l\216ments suivants:) 81.65 701.95 T
+2 14 Q
+(2.1  Actions des boutons de la souris sur le cadr) 81.65 292.62 T
+(e d\325une fen\220tr) 363.36 292.62 T
+(e) 446.31 292.62 T
+0 12 Q
+(Cliquer avec le) 81.65 265.95 T
+3 F
+(bouton 1) 157.3 265.95 T
+0 F
+( \050celui de gauche\051 pour:) 214.9 265.95 T
+3 F
+(\245) 81.65 245.95 T
+0 F
+(d\216placer et agrandir une fen\220tre,) 95.39 245.95 T
+3 F
+(\245) 81.65 225.95 T
+0 F
+(af) 95.39 225.95 T
+(\336cher le menu Motif associ\216 \210 une fen\220tre et activer ses commandes,) 104.5 225.95 T
+3 F
+(\245) 81.65 205.95 T
+0 F
+(iconi\336er et ouvrir une fen\220tre.) 95.39 205.95 T
+-0.06 (Le) 81.65 179.95 P
+3 F
+-0.15 (bouton 3) 97.25 179.95 P
+0 F
+-0.06 (\050\210 droite\051 sert \210 af) 161.75 179.95 P
+-0.06 (\336cher le menu ind\216pendamment de l\325endroit ou l\325on clique) 246.58 179.95 P
+(la souris sur le cadre.) 81.65 165.95 T
+(Le) 81.65 139.95 T
+3 F
+(bouton 2) 97.31 139.95 T
+0 F
+( \050au milieu\051 permet de faire passer la fen\220tre d\216sign\216e devant ou derri\217re les) 154.91 139.95 T
+(autres fen\220tres pr\216sentes \210 l\325\216cran.) 81.65 125.95 T
+(On peut aussi utiliser les touches du clavier) 81.65 99.95 T
+3 F
+(Front) 292.96 99.95 T
+0 F
+( et) 328.96 99.95 T
+3 F
+(Open) 343.62 99.95 T
+0 F
+(.) 372.42 99.95 T
+81.65 78.95 531.65 753.95 C
+83.73 339.95 529.57 671.95 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+0 0 0 1 0 0 0 K
+%%BeginBinary:  7105     
+431 274 431 280 0 88.41 345.95
+/red <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+FFFF000025A000007000BE4600C487F5617F4C3EC472B9325FA974D3FF8600FF
+> store
+/green <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+FF00FFFF34DF00007000BE8200B27ADE877F4C57D79FD5549EA974D300D600FF
+> store
+/blue <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00FFFF0054FFD970FFFFBEB4808F62B3D97F4C8CFFFFD655A0A974D300D600FF
+> store
+ BEGINBITMAPCOLORc
+z
+W1FD
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bz
+VEF6J"J"J"
+CF7UBF77F7Dz8z8z"
+5F8UAF85F8F7
+
+Gz8z8z
+2F7UAF72F7Jz
+EV'F6Iz#z#z#z"
+0F8F6F6U/F8F7F60F8F7F60F8F7
+
+J#9#Ju
+R&FEFEFEFER0F6J"Js"
+R(FER5F8F7J%8#9&9#
+R/FEFEFEFEFEFEFEFEF8FEFEFEFEJuJ#:'J%
+6F6Q6F8FEFEFEF8F8FEFEQHF6F6F6F6Js"J#;0J$
+7F8F7Q<F8F8F8FEFEF8FEFEF8F8F8FEFEF8FEFEF8Q9F8F8F7J#:$
+R)F8FEFEFEFEJsJ%:&9&J#
+7F7Q=FEFEF8F8F8FEFEFEF8F8FEFEFEF8Q:F7F7JuJ"J%
+6F8Q8F8R#F8F8F8F8J(8$;"
+R.F8FEFEFEF8FEFEF8FEF8F8J#9#8'9">"Js
+R&F8F8F8F8F8F8F8F8F8F8F8F8QJF7J"Ju
+R?FEQKF8J$
+R>FEFEF8Iz8z8z8z
+0F6U/F70F70F7C%8zJ"G"H$
+F7F7F7F72F7U0F7F7F7F7F7C'zZ'
+F6F6F6F6F6F7P7F4T F6F6F6F6F6F6D%J"J%
+F8F8F8F7P7F3T"F8F8F8F7Jz"
+5P3F5F3
+
+J"
+PJEC
+J#
+PJFFECJ#;&>#B#J#:'
+:FEFEFEFEF5FEFEFEFEFEFEO'FEFEFEFEFEFEFEFEJ#>#B#J%
+DF5F5F5F5F5F5O-F5F5F5F5J"9"9)8-8)8%J$=#
+<FEFEFEFEF5FEFEF5FEFEFEFEF5FEF5FEFEFEF5FEFEFEFEFEF5FEFEFEFEFEFEFEFEFEO$FEFEF5ECFFJ%;*:$9'
+IFEF5FEFEFEF5F5FEFEF5F5FEFEF5F5F5FEFEF5F5FEFEJ$?"J$J$>"
+=FEF5FEF57FEFEF5O)FEFEF5FFJ"9"J":#
+<F5F5AF5FEFEJ"J"<%
+>FEAFEF5F5F5F5J$J$=#J$
+=F5FEF5?FEFEF5FEFEO!FEFEF5J+J%
+O3FEFEFEF5F5FEFEFEFEF5JFEFEFEFEJ#8"8s8s8#8v8%Jt
+:F5F5F5F5F5F5F5F5F5F5F5F5IF5J"
+PJEC
+JsJ#
+GFEOIFFECJs
+GF5
+J#
+PJECFF
+J"
+PJFF
+
+
+
+J'?#G&J#;&
+:FEFEFEFEFEFEFEFEFEFEF5FEFEO$FEFEFEFEFEFEFEJ&>#J$="
+<F5F5F5FEFEF5F5OCF5F5F5ECJ%8#8%9%;">%8#8#8#8%8&J$
+CFEFEFEFEFEFEFEFEFEFEFEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEF5FEFE6FEFEF5J':.8"?'B'9"J$>#
+BFEFEF5F5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEFEFEFEF5F5FEFEFEFEF5F5FEFEFE:FEFEFEFFECJ)@%J$:$A#J'
+<FEFEFEFEF5F5F5F5FEF5F5F5:F5FEFEFEFEF5F5F56F5F5F5F5FEFEJ#;$<&:#;"J#;"
+<F5F5FEFEFEF5F5FEFEFEFEFEF5<FEFEF5J)>"8"9%J%J#A#
+>F5FEFEF5FEFEF5F5F5FEF5F5F5F5@F5F5F5F5<FEFEECFFJ%=%H)<#
+LFEFEF5F5FEFEF5FEF5FEFEF5F5FEFEF5FEFEJ(9.>+B'J+="
+BF5FEFEFEF5FEFEF5FEFEFEFEF5F5F5FEFEFEFEF5FEFEFEFEF5FEFEFEFEF5F5FEFEFEFEF58FEFEFEFEF5FEFEFEFEF5FFJ#9#8s8%9%8#9v:#8#:%8#Iv
+:F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+Js
+O0FEJs
+O0F5J"
+PJEC
+J#
+PJFFEC
+
+J#
+PJECFF
+J"
+PJFFJ#;#
+:FEFEFEFE
+J"9":%8#9#8%J'
+<FEFEFEFEFEFEFEFEFEFEFEFEFEFEOJFCFCFCFCFCFCJ'?'J%
+DFEFEF5F5FEFEFEFEF5F5FEFEOJFFFFFFFFJ$A(
+=FEF5FEF5FEFEF5FEFEF5J"9"J#J"
+<F5F54FEFEOAECJ"C&:%
+>FEF5FEFEFEF5F5F5F5F5J$J#J#
+=F5FEF57FEFEO?FFECJ'9$9'
+DF5FEFEFEFEF5F5FEF5F5FEFEFEFEF5J#8"8#8%;";%
+:F5F5F5F5F5F5F5F5F5F5F5F5F5F5J#
+PJECFF
+JwJ"
+9FEP%FFJw
+9F5J%
+Q'FCFCFCFCJQ
+Q&
+
+
+
+
+
+J&8#
+;FEFEFEFEFEFEFEJ+
+:FEFEF5F5F5FEFEF5F5F5J)8%
+BFEFEF5FEFEFEFEFEFEFEFEFEJ(:$9'
+:F5FEFEFEF5F5F5F5F5F5FEFEF5F5FEFEJ&=$
+;F5F5FEFEFEFEFEF5J"8"=":#
+=F5FEF5FEFEJ#8"="<%
+:FEFEF5FEF5F5F5F5J$=#
+EFEFEF5FEFEJ(<+
+:F5FEFEFEFEFEF5FEFEFEF5F5FEFEFEFEF5J&8s8%
+;F5F5F5F5F5F5F5F5F5F5
+
+Ju
+9FEJu
+9F5
+
+
+
+
+
+
+
+J#;#E#B#
+:FEFEFEFEFEFEFEFEJ#B#
+O$F5F5F5F5J"9":%8#808)8%
+<FEFEFEFEFEFEFEFEFEFEF5FEFEF5FEF5FEFEFEF5FEFEFEFEFEF5FEFEFEFEFEFEFEFEFEJ'B*:$9'
+DFEFEF5F5FEFEFEF5F5FEFEF5F5FEFEF5F5F5FEFEF5F5FEFEJ$:#;'J$
+=FEF5FEF5F5F5FEFEFEFEF54FEFEF5J"9":$:"8"J":#
+<F5F5FEFEFEF5F56F5FEFEJ";%:"8"J"<%
+>FEFEFEF5F5FEFE4FEF5F5F5F5J$A'H$=#
+=F5FEF5FEFEF5F5FEFEFEFEF5FEFEJ(J+
+DF5FEFEFEF5FEFE:FEFEFEF5F5FEFEFEFEF5J#8"8#8s8s8#8v8%
+:F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+Js
+KFEJs
+KF5
+
+
+
+
+
+
+
+J&G"
+;FEF5FEF5FEFEJ(F#
+:FEF5F5F5F5F5FEF5FEJ#9#8$;$9$9$9$9$
+:F5FEFEF5FEF5FEFEF5FEFEF5FEFEF5FEFEF5FEFEF5FEJ#9)9&8$82
+:FEF5F5FEF5FEF5F5F5FEFEF5F5F5FEF5FEF5FEF5F5F5FEF5FEF5FEF5FEF5FEF5F5F5FEJ+8'8"8#8#8+8#
+:F5FEF5FEF5FEF5F5F5FEF5FEF5FEF5FEF5FEF5FEF5FEF5F5F5FEF5F5F5FEF5FEF5J'8,:#8#8&9'
+:FEF5F5F5FEF5FEF5FEF5FEF5F5F5F5F5FEF5FEF5FEF5FEF5FEF5F5FEF5FEF5FEJ#8#8&;#9#8#8&9'
+:F5FEF5FEF5FEF5F5F5F5FEFEF5FEF5FEF5F5F5FEFEF5F5F5F5F5J#9&8"9"8#8'8&9#9"
+:FEF5F5FEF5FEF5FEFEF5FEF5FEF5FEF5FEF5FEF5FEF5F5FEFEJ#9)9&9-:&
+:F5FEFEF5F5F5FEF5FEF5F5FEF5FEF5F5FEF5F5F5FEF5FEF5F5F5FEF5FEF5FEF5J"9"9$;$;"9$9";$
+;F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+J*
+9FEF5FEF5FEF5FEF5FEJt
+9F5
+
+
+
+
+
+
+
+J'A$I#
+:FEFEFEFEFEFEFEFEFEFEFEJ&?%
+<F5F5F5FEFEFEFEF5F5J%8"8-9%;#
+CFEFEFEFEFEFEF5FEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEJ)8"9"8.9%
+BFEFEF5F5FEFEF5F5F5FEFEFEF5F5FEFEF5FEFEF5F5FEFEFEF5FEFEJ&F#?%9"
+<FEFEFEFEF5F5F5FEF5F5F5F5J#<#@":#9&
+<F5F5FEFEF5FEFEF5F5FEFEFEJ$9%C%9"8"
+>F5FEFEF5F5F5F5F5F5F5F5F5FEJ#E(
+FFEFEFEFEF5FEFEF5F5J'A.
+BF5FEFEFEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5J#9#8%9#8#:%9%8#8#
+:F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+J'
+IFEFEFEFEFEFEJ'
+IF5F5F5F5F5F5
+
+Jz
+5P3F3Jz
+5P3F4Jz
+5P3F5
+
+
+
+
+J(
+<FEFEFEFEF5FEFEJ'
+;FEFEF5F5FEFEJ$8#:%9%9%
+:FEFEF5F5F5FEFEFEFEFEFEFEFEFEFEFEFEJ5
+D4FEFEF5F5FEFEF5FEFEF5F5FEFEF5FEFEF5F5FEFEJ%
+MFEF5F5F5J&:#
+KF5F5FEFEFEFEFEJ"8"9%
+MF5FEF5F5F5F5J$8#@%=#
+:F5FEFEFEFEFEFEF5F5FEFEJ'95
+;F5FEFEFEFEF54F5FEFEFEFEF5F5F5FEFEFEFEF5F5F5FEFEFEFEF5Jr8%9%9%
+<F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+Jt
+9FEJt
+9F5
+
+Jz
+5P3F3J"
+4F3I0Z
+FFECFFECFFECFFECFFECFFECFFFFFEP(J-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECC%9-J$
+F7F7F7F7ECFFECFFECFFECFFECFFECFFV,F7F7F7C&8-J%
+F6F6F6F6F6FFECFFECFFECFFECFFECFFECV,F6F6F6F6D%8-J%
+F8F8F8F7ECFFECFFECFFECFFECFFECFFV,F8F8F8F7J-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECJ-
+4ECFFECFFECFFECFFECFFECFFJ-
+4FFECFFECFFECFFECFFECFFECIz
+V7F6H"
+F6Gz#z#z
+2F8F7F6UAF8F7F62F8
+
+Dz8z8z
+5F7UAF75F7C"J"J"
+F76F7UBF7Bz
+VEFD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENDBITMAP
+%%EndBinary
+3 12 Q
+(Menu) 91.41 653.95 T
+(Move) 191.73 653.95 T
+(reSize) 299.73 653.95 T
+(Minimize) 398.73 653.95 T
+(Maximize) 470.73 653.95 T
+116.51 620.14 110.73 599.95 104.94 620.14 110.73 620.14 4 Y
+V
+110.73 644.95 110.73 620.14 2 L
+3 H
+2 Z
+N
+215.51 612.14 209.73 591.95 203.94 612.14 209.73 612.14 4 Y
+V
+209.73 644.95 209.73 612.14 2 L
+N
+332.51 625.14 326.73 604.95 320.94 625.14 326.73 625.14 4 Y
+V
+326.73 644.95 326.73 625.14 2 L
+N
+469.31 619.82 471.64 598.95 458.61 615.42 463.96 617.62 4 Y
+V
+452.73 644.95 463.97 617.62 2 L
+N
+494.51 620.14 488.73 599.95 482.94 620.14 488.73 620.14 4 Y
+V
+488.73 644.95 488.73 620.14 2 L
+N
+81.65 78.95 531.65 753.95 C
+0 -158.1 1000 841.9 C
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(3) 518.65 57.92 T
+2 14 Q
+(2.2  Actions des boutons de la souris \210 l\325int\216rieur d\325une fen\220tr) 81.65 735.62 T
+(e) 448.5 735.62 T
+0 12 Q
+(En appuyant simultan\216ment sur la touche) 81.65 708.95 T
+3 F
+(META) 282.96 708.95 T
+0 F
+( \050losange\051 et les boutons de la souris on peut:) 311.76 708.95 T
+3 F
+(\245) 81.65 688.95 T
+0 F
+(d\216placer la fen\220tre \050bouton 1\051) 95.39 688.95 T
+3 F
+(\245) 81.65 668.95 T
+0 F
+(faire passer la fen\220tre devant ou derri\217re les autres fen\220tres \050bouton 2\051) 95.39 668.95 T
+3 F
+(\245) 81.65 648.95 T
+0 F
+(af) 95.39 648.95 T
+(\336cher le menu de la fen\220tre \050bouton 3\051) 104.5 648.95 T
+(Les autres actions des boutons de la souris d\216pendent du type de fen\220tre consid\216r\216e.) 81.65 622.95 T
+(Il existe en ef) 81.65 608.95 T
+(fet dif) 146.41 608.95 T
+(f\216rents types d\325utilitaires graphiques, et ceux-ci ne ne fonctionnent pas) 175.19 608.95 T
+(tous de la m\220me mani\217re.) 81.65 594.95 T
+2 F
+(2.2.1  Actions des boutons de la souris sur un utilitair) 81.65 562.95 T
+(e Openlook) 352.8 562.95 T
+0 F
+(Les utilitaires Openlook \050textedit, \336le manager ...\051 sont reconnaissables \210 la forme ovale de) 81.65 536.95 T
+(leurs boutons. Ils fonctionnent de la mani\217re suivante :) 81.65 522.95 T
+3 F
+(Copy and Paste) 81.65 496.95 T
+0 F
+( \050copier et coller\051:) 182.45 496.95 T
+3 F
+(\245) 81.65 476.95 T
+0 F
+(au moyen des touches) 95.39 476.95 T
+5 F
+(Cut) 204.04 476.95 T
+0 F
+(,) 225.64 476.95 T
+5 F
+(Copy) 231.64 476.95 T
+0 F
+( et) 260.44 476.95 T
+5 F
+(Paste) 275.11 476.95 T
+0 F
+( du clavier) 311.11 476.95 T
+3 F
+(\245) 81.65 456.95 T
+0 F
+(ou en utilisant les menus \050appuyer sur le bouton 3 pour les faire appara\224tre\051) 95.39 456.95 T
+(Exemple: copier /coller une portion de texte dans l\325\216diteur) 81.65 430.95 T
+3 F
+(textedit) 367.6 430.95 T
+0 F
+(.) 425.2 430.95 T
+3 F
+(Drag and Drop:) 81.65 390.95 T
+0 F
+( s\216lectionner du texte au moyen du bouton 1, et bouger la souris sans) 182.45 390.95 T
+(relacher le bouton jusqu\325\210 la fen\220tre \050ou position\051 destinataire.) 81.65 376.95 T
+2 F
+(2.2.2  Actions des boutons de la souris avec les autr) 81.65 330.95 T
+(es utilitair) 341.44 330.95 T
+(es \050Motif,  Athena ...\051) 393.55 330.95 T
+3 F
+(Copy and Paste) 81.65 304.95 T
+0 F
+( \050copier et coller\051:) 182.45 304.95 T
+3 F
+(\245) 81.65 284.95 T
+0 F
+(les boutons 1 et 3 permettent de selectionner du texte et de le \322copier\323) 95.39 284.95 T
+3 F
+(\245) 81.65 264.95 T
+0 F
+(le bouton 2 sert \210 \322coller\323 le texte pr\216c\216demment copi\216.) 95.39 264.95 T
+(Ne pas utiliser les touches) 81.65 238.95 T
+5 F
+(Cut) 209.96 238.95 T
+0 F
+(,) 231.56 238.95 T
+5 F
+(Copy) 237.56 238.95 T
+0 F
+( et) 266.36 238.95 T
+5 F
+(Paste) 281.03 238.95 T
+0 F
+( qui sont alors inef) 317.03 238.95 T
+(fectives.) 406.14 238.95 T
+(Exemple: copier du texte entre deux fen\220tres) 81.65 212.95 T
+3 F
+(xterm) 299.26 212.95 T
+0 F
+(.) 335.26 212.95 T
+3 F
+(Drag and Drop:) 81.65 172.95 T
+0 F
+( certaines applications Motif autorisent le \322Drag and Drop\323.) 182.45 172.95 T
+(On peut alors d\216placer du texte entre deux fen\220tres de la mani\217re suivante:) 81.65 158.95 T
+3 F
+(\245) 81.65 138.95 T
+0 F
+(copier le texte au moyen du bouton 1) 95.39 138.95 T
+3 F
+(\245) 81.65 118.95 T
+0 F
+(le \322d\216placer\323 depuis sa position d\325origine jusqu\325\210 la fen\220tre destinataire en gardant le bou-) 95.39 118.95 T
+(ton 2 enfonc\216.) 95.39 104.95 T
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(4) 518.65 57.92 T
+2 14 Q
+(2.3  Actions des boutons de la souris sur la \322r) 81.65 735.62 T
+(oot window\323) 350.14 735.62 T
+0 12 Q
+-0.2 (La \322) 81.65 708.95 P
+3 F
+-0.49 (root) 102.43 708.95 P
+-0.49 (window) 134.03 708.95 P
+0 F
+-0.2 (\323 est la \322fen\220tre racine\323 qui contient toutes les autres fen\220tres, c\325est-\210-dire) 177.23 708.95 P
+(le \322fond\323 de l\325\216cran.) 81.65 694.95 T
+-0.22 (En cliquant sur la root window avec les boutons de la souris on fait appara\224tre  les trois menus) 81.65 668.95 P
+(suivants:) 81.65 654.95 T
+3 F
+(\245) 81.65 634.95 T
+(bouton) 95.39 634.95 T
+(3) 141.59 634.95 T
+0 F
+( \050\210 droite\051 : menu g\216n\216ral des utilitaires disponibles) 148.79 634.95 T
+3 F
+(\245) 81.65 614.95 T
+(bouton) 95.39 614.95 T
+(2) 141.59 614.95 T
+0 F
+( \050au milieu\051 : une liste de fen\220tres Shell \050xterms\051 sur diverses machines) 148.79 614.95 T
+3 F
+(\245) 81.65 594.95 T
+(bouton) 95.39 594.95 T
+(1) 141.59 594.95 T
+0 F
+( \050\210 gauche\051 : une liste de commandes usuelles.) 148.79 594.95 T
+(Le contenu de ces menus est d\216\336ni dans le \336chier) 81.65 175.95 T
+3 F
+(.mwmrc) 322.27 175.95 T
+0 F
+( et peut ais\216ment \220tre modi\336\216.) 365.47 175.95 T
+(Af) 81.65 149.95 T
+(\336cher les dif) 94.09 149.95 T
+(f\216rents menus et ex\216cuter quelques commandes.) 153.86 149.95 T
+3 F
+(Attention) 81.65 109.95 T
+0 F
+(: le bouton) 146.45 109.95 T
+3 F
+(Quit Motif) 200.78 109.95 T
+0 F
+( du menu g\216n\216ral \050bouton 3\051 termine la session.) 272.78 109.95 T
+81.65 87.95 531.65 744.95 C
+174.21 249.95 439.08 590.95 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+0 0 0 1 0 0 0 K
+%%BeginBinary:  10416    
+217 339 217 315 0 191.21 239.95
+/red <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000CC
+FFFF000025A000007000BE4600C487F5617F4C3EC472B9325FA974D3FF8600FF
+> store
+/green <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000CC
+FF00FFFF34DF00007000BE8200B27ADE877F4C57D79FD5549EA974D300D600FF
+> store
+/blue <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000CC
+00FFFF0054FFD970FFFFBEB4808F62B3D97F4C8CFFFFD655A0A974D300D600FF
+> store
+ BEGINBITMAPCOLORc
+z
+RAFD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dz
+OLF4J"
+P+F3Fz"
+OHF5F3
+
+
+J&J#<#;#
+5FEFEFEFEFECFEFEFEFEFEFEJ(
+4FEFEF5F5F5FEFEI$9#8%8&9%8+B"9":%8&8#8#
+FEFEF5F5F5FEFEFEFEFEFEF5FEFEFEFEFEFEFEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEFEFEF5FEFEFEFEFEFEJ'9,9"8'I'9%
+<FEFEF5F5FEFEFEF5FEFEF5FEFEF5F5FEFEFEFEFEF5F5FEFEFEFEF5F5FEFEFEF5FEFEJ%@"D%F$C"
+7FEFEFEFEF5F5F5F5F5FEF5FEF5J#;#B#;"9$C"9";#
+7F5F5FEFEFEFEF5FEFEFEF5F5FEFEJ%@%<%E"=%
+>F5F5F5F5F5F5F5F5FEFEF5F5FEF5F5F5F5I$@#B#J$>#A"
+F5FEFEFEFEFEFE8F5FEF5FEFEFEJ'8'>'<(H'>%
+4F5FEFEFEFEF5F5FEFEFEFEF5F5FEFEFEFEF5F5FEFEFEF5FEFEF5FEFEFEFEF5F5FEFEF5J'8%8#8#8%8#:s<#8"8#8%8#8#8&
+5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+
+
+Fz
+OHFEFz
+OHF5Fz
+OHFEFz
+OHF5Fz
+OHF3Fz
+OHF4
+J"
+P)F3Hz"
+ODF5F3
+Jz
+P&P#F4J"
+R(F3J&JsD#F#Az"
+6FEFEFEFEFE4FEFEFEF3F3OMF5F3J(I$8$J#
+5FEFEF5F5F5FEFEF5F5F5F5F5F5BF3F3J#8)E%9%<%D#
+=FEFEFEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFEF3F3J(@%C.:'A#8#
+5F5FEFEFEF5F5F5FEF5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEFEFEF5F5FEFEF5F5F3F3J&A"J%C&J&JsD#
+6F5F5FEFEFEF5CFEF5F5F5F5F5F4F4F46FEFEFEFEFE4FEFEFEJ"8"J&D#8"J(I$8$
+8F5FELF5F5FEFEFEF4F4F55FEFEF5F5F5FEFEF5F5F5F5F5F5J#8"J"8"A#8#J#8)E%9%<%
+5FEFEF5O"F5FEF4F4F5F5>FEFEFEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFEJ"J%B"8#J(@%C.:'
+@FEGFEFEF5F5F4F5F58F5FEFEFEF5F5F5FEF5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEFEFEF5F5FEFEJ-J.:'A#J&A"J%
+5F5FEFEFEFEFEF5F5F5FEFEF56F5FEFEFEFEF5F5F5FEFEFEFEF5F5FEFEFEFEF5F5F5;F5F5FEFEFEF5CFEF5F5F5J&9s8#>#:%9%8#8%@#J"8"J&
+6F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5?F5FELF5F5FEFEFEJ#8"J"8"
+P9FEFEF5O"F5FEJ"J%
+PDFEGFEFEF5F5JuJ-J.:'
+4FEOIF5FEFEFEFEFEF5F5F5FEFEF56F5FEFEFEFEF5F5F5FEFEFEFEF5F5FEFEFEFEF5JuJ&9s8#>#:%9%8#8%
+4F5OJF5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5Hz
+OBF3G"
+F3Fz
+ODF5
+
+Jz
+P(OMFEJz
+P(OMF5Jz
+P(OMFEJ#:#:sD#J#Az
+4FEFEFEFEFEFEFE?F4F4OMF5J$8$J#?z
+@F5F5F5F5F5F5O#F4F4OMF3J$8$C%9%<%J#=z
+4F5FEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFE=F4F4OMF4J'C.:'J#8#;z
+5F5FEFEFEFEF5FEFEF5F5FEFEF5FEFEF5F5FEFEFEFEF5F5FEFE:F5F5F4F4OMF5J"8"J%J&
+6F5F5AFEF5F5F5<F5F5F3F3F3J"8"J&J#8"
+6FEFE?F5F5FEFEFE=F3F3F5J'J"8"J#8#
+5FEFEF5F5FEFE@F5FE:F3F3F5F5J$8$J%J"8#
+4FEFEF5F5FEFE=FEFEF5F5;F3F5F5J.:'J#
+HF5FEFEFEFEF5F5F5FEFEFEFEF5F5FEFEFEFEF5:F5F5J#:#=#:%9%8#8%J#EsE#9';&8#
+4F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F59F5F5FEFEFEFEFEFEFEFEFEFEFEF5FEFEFEFEJ$8$J%>#
+P,F5F5F5F5F5F56F5F5F5F5F5F5J%8#8%8"@#:%8"
+P5FEFEFEFEFEFEFEFEF5FEFEFEFEFEFEF5FEFEJtJ'>"8"?%<"8"
+4FEOEFEFEF5F5FEFEF5F5FEFEF5FEF5F5JtJ'?%:"
+4F5OLF5FEFEFEFEF5FEFEFEFEF5J#:"8"@%
+P6FEFEF5F5F5F5F5F5J%8"8"
+P6F5F5F5F5FEFEJ*;"A"@"
+P8FEFEF5FEFEF5F5FEFEFEFEFEJ'?%9*=%
+P4F5FEFEFEFEF5F5FEFEF5FEFEFEFEF5F5FEFEF5F5FEFEF5J#:%8#8#9#8'8s9#
+P/F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+Jt
+P,FEJ#:#:sJ#Et
+4FEFEFEFEFEO!F4F4F5J$8$J#
+@F5F5F5F5F5F5O#F4F4J$8$C%8/9%J#
+4F5FEFEFEFEF5FEFEFEFEFEFEF5FEFEFEF5FEFEFEF5FEFEFEFEFEFEFE7F4F4J'C'9"91J#8#
+5F5FEFEFEFEF5FEFEF5F5FEFEFEFEF5F5FEFEF5F5FEFEF5FEFEF5F5FEFE4F5F5F4F4J"8"J#C%J&
+6F5F58F5F5FEF5F5F56F5F5F3F3F3J"8"F#;"C&J#8"
+6FEFEFEFEF5F5F5FEFEFE7F3F3F5J'E%I"8"J#8#
+5FEFEF5F5FEFEF5F5F5F5F5FE4F3F3F5F5J$8$F#G%J"8#
+4FEFEF5F5FEFEFEFEFEFEF5F55F3F5F5J'G'J#
+HF5FEFEFEFEF5F5FEFEFEFEF54F5F5J#:#=#:%8#9#8#8#8%I#F#;#>'sD#
+4F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5FEFEFEFEFEFEF5FEFEF5FEFEFEJ#:$8$
+P>F5F5F5F5F5F5F5F5J"9":%8#C%9%
+P/FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEJtJ'E.
+@FEO<FEFEF5F5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEJtJ$:#
+@F5O5FEF5FEF5F5J"9":$
+P/F5F5FEFEFEJ";%
+P1FEFEFEF5F5J$
+P0F5FEF5J(D.
+P7F5FEFEFEF5FEFEF5FEFEFEFEF5F5F5FEFEFEFEF5J#8"8#8v:#:%9%8#
+P-F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+J#:#;#9#F#J#
+4FEFEFEFEFEFEFEFEFEFE=F4F4J#
+OKF4F4J$8$D%9%8"8"8%J#
+4F5FEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFE:F4F4J'D08)J#8#
+5F5FEFEFEFEF5FEFEF5F5FEFEF5FEFEF5F5FEFEF5F5F5F5FEFEF5F5FEFE7F5F5F4F4J"8"?$B%>%J&
+6F5F5FEFEFEFEF5F5F5FEF5F5F59F5F5F3F3F3J"8"?$@&=&J#8"
+6FEFEF5F5F5F5F5FEFEFEF5F5FEFEFE:F3F3F5J'J"8">"8"J#8#
+5FEFEF5F5FEFE7F5FEF5FE7F3F3F5F5J$8$J%=&J"8#
+4FEFEF5F5FEFE4FEFEF5F5FEFEFEF5F58F3F5F5J.8+J#
+IF5FEFEFEFEF5F5F5FEFEFEFEF5F5FEFEF5F5FEFEFEFEF57F5F5J#:#;#9#8%9%:#8%J#H%>#>sD#
+4F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F56F5F5FEFEFEFEFEFEFEFEFEJ'G$8$
+P.FEFEF5F5FEFEF5F5F5F5F5F5J$8(<%A%9%
+P-FEFEF5F5F5F5FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEJuJ':'?.
+@FEO8FEFEF5F5FEFEFEFEF5F5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEJuJ#B#
+@F5O8F5F5F5F5J$
+P5FEFEFEJ%
+P4FEFEF5F5J$8#D#
+P-F5FEFEFEFEFEFEJ.9'?.
+P.F5FEFEFEFEF5F5FEFEFEF5FEFEF5FEFEFEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5J%8s8%;#:%9%8#
+P/F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+J#;#?#8#9$J#
+5FEFEFEFEFEFEFEFEFEFEFEDF4F4J#8%J#
+KF5F5FEFEF5F5FF4F4J"9":%8"8'8"J#
+7FEFEFEFEFEFEFEFEF5FEFEF5FEFEIF4F4J)8":"8"J#8#
+?FEFEF5F5FEFEF5F5F5F5F5GF5F5F4F4J$J&
+8FEF5FEO2F5F5F3F3F3J"9"J#8"
+7F5F5O1F3F3F5J"J#8#
+9FEO1F3F3F5F5J$E"J"8#
+8F5FEF5FEMF3F5F5J'8%J#
+?F5FEFEFEFEF5F5FEFEF5O F5F5J#8"8#8%:&8#J#G&8#B'sD#
+5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5FF5F5FEFEFEFEFEFEFEFEFEF5FEFEF5FEFEFEJ(J$8$
+P-FEFEF5F5F5FEFE5F5F5F5F5F5F5J#9%G%9%
+P8FEFEFEFEFEFEFEFEFEFEFEFEFEFEJwJ(9,E.
+4FEO;F5FEFEFEF5F5F5FEF5FEFEF5FEFEF5F5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEJwJ&:"
+4F5O<F5F5FEFEFEF5J"8"@#
+P0F5FEFEFEJ#8"B%
+P-FEFEF5F5F5F5F5FzJ#
+ODF3:FEFEFz=(>'E.
+ODF4F5FEFEFEFEFEF5F5FEFEFEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5Fz>&8#8#8%8&:#:%9%8#
+ODF5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+
+
+J%@#8#=#;#?#8#9$
+7FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEJ'?#J#8%
+6FEFEF5F5FEFEF5F5AF5F5FEFEF5F5J$8'8(8">"9":%8"8'8"
+5FEFEF5F5FEFEF5FEFEFEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEF5FEFEF5FEFEJ"8"F)8":"8"
+HF5F5FEFEF5F5FEFEF5F5F5F5F5J$
+O'FEF5FEJ"J"9"
+9FE:F5F5J"J"
+:FE;FEJ&8":"@">$E"J%J$sD#
+5F5FEFEF5F5F5FEFEF5FEF5FECFEFEFEFEO"FEFEF5FEFEFEJ%8'=%E'8%J'J$8$
+6F5FEFEFEFEF5F5FEFEF5F5FEFEF5F5FEFEFEFEF5F5FEFEF5BFEFEF5F5FEFEO$F5F5F5F5F5F5J'8s9#<#8"8#8%:&8#J$8(8*8*9%8&9#C%9%
+7F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5;FEFEF5F5F5F5FEFEFEFEFEF5FEFEFEF5FEFEFEFEF5FEFEFEF5FEFEFEFEFEFEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFEJ'8*819*A.
+P4FEFEF5F5FEFEFEF5F5FEFEF5F5FEFEFEF5F5FEFEF5F5FEFEF5FEFEF5F5FEFEFEF5FEFEF5FEFEF5FEFEFEF5F5FEFEF5FEFEF5F5FEFEJ#="="
+Q#F5F5F5F5JvJ$
+4FEP3FEFEFEJvJ%
+4F5P2FEFEF5F5J$8#J"
+P-F5FEFEFEFEO FEJ-J(=%A.
+P.F5FEFEFEFEF5F5FEFEFEFEF57F5FEFEFEF5FEFEF5FEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5Fz?%8%8#8#8&8#8#8s8#8&:#:%9%8#
+ODF3F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5E"
+F3Dz
+OFFD
+
+
+
+Jz
+P(OMF3Jz
+P(OMF4Jz
+P(OMF5
+
+
+
+
+J&J#C#
+P.FEFEFEFEFE>FEFEFEFEJ(
+P-FEFEF5F5F5FEFEJ&9%8&9%;#9%8"8"
+P5FEFEF5FEFEFEFEFEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFEJ(9,9,9.8"
+P-F5FEFEFEF5F5F5FEF5FEFEF5FEFEF5F5FEFEFEF5FEFEF5FEFEF5F5FEFEFEF5FEFEF5FEFEF5F5FEFEF5F5F5J&:":#="<%9"
+P.F5F5FEFEFEF5F5F5F5FEF5F5F5F5J"8"?$@&
+P0F5FEFEFEFEF5F5FEFEFEJ#8"@%B"8"
+P-FEFEF5FEFEF5F5F5FEJ":%J"
+PEFEFEFEF5F55FEJ(>(8,>'8%
+P-F5FEFEFEFEFEF5F5FEFEFEF5FEFEF5FEFEF5F5F5FEFEFEFEF5F5FEFEFEFEF5F5FEFEF5J&8#8#8'9#9%8#8#8%:#
+P.F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+J#
+PCF5F5
+
+
+
+
+
+
+
+
+Js$?#;#
+P-FEF5FEFEFEFEFEFEJ'
+P/F5F5F5F5F5F5J#;%;"9":%8&9%9&8%8&
+P3FEFEFEFEFEFEFEFEFEFEFEFEFEFEF5FEFEFEFEFEFEFEFEF5FEFEFEFEFEFEFEFEF5FEFEJ'B'919'9"
+P9FEFEF5F5FEFEFEFEF5F5FEFEFEF5FEFEF5FEFEF5F5FEFEF5FEFEF5FEFEFEF5F5FEFEFEJ$H$:#=":#>"C#
+P/FEFEFEFEF5FEF5F5F5F5F5F5F5F5J$?#<"9":$A$B#;"
+P/F5F5F5FEFEF5F5FEFEFEFEFEFEFEFEF5J%<";%@%B%
+P;F5F5F5F5FEFEFEF5F5FEFEF5F5F5F5F5F5J#;$J"=#
+P=FEFEF5FEF5<FEFEFEJ'B(=,9'
+P9F5FEFEFEFEF5F5FEFEFEF5FEFEF5FEFEFEF5FEFEF5FEFEF5F5FEFEFEFEF5J#:&8%9#8"8#8s8#8t;%8#
+P-F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5J#
+Q2FEFEJ'
+Q2F5FEFEFEFEF5J%
+Q3F5F5F5F5
+
+
+
+
+
+
+
+
+J'J#:%
+P-FEFEFEFEFEFE6FEFEFEFEFEFEJ&J#
+P/F5F5F5FEFE=F5F5J%9&8%8$8&8%8#8#8#
+P5FEFEFEFEFEFEF5FEFEFEFEFEFEF5FEFEFEFEF5FEFEFEFEFEFEFEFEFEFEFEFEJ,9'B'
+P4FEFEF5F5FEFEF5FEFEF5FEFEFEF5F5FEFEFEFEF5F5FEFEJ(>"J$:$
+P/FEFEFEFEF5F5F5F5<F5FEFEFEFEF5J%8$B#:":"<#
+P/F5F5F5F5FEFEFEFEFEF5F5FEFEJ%B%:#>%
+P4FEFEF5F5F5F5F5F5FEFEF5F5F5F5J"=#9"8"?#8)
+P>FEFEFEF5F5FEFEF5FEFEF5F5FEFEF5J,9'B'
+P4F5FEFEFEF5FEFEF5FEFEF5F5FEFEFEFEF5F5FEFEFEFEF5J#<t;%;#9#8%:#8#
+P-F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5J#
+P;FEFEJ'
+P;F5FEFEFEFEF5J%
+P<F5F5F5F5
+
+
+
+
+
+
+
+
+J&9'
+P.FEFEFEFEFEFEFEFEFEFEFEJ(:&
+P-FEFEF5F5F5FEFEF5F5F5FEFEJ+8#8#8#8%9%8&
+P>FEFEF5FEFEF5FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEF5FEFEJ(B"8'B.9"
+P-F5FEFEFEF5F5F5FEFEFEF5F5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEFEJ&;&:#=$:$9%A#
+P.F5F5FEFEFEFEFEFEFEF5F5F5F5FEFEFEFEF5FEF5F5F5F5F5J"8":&9"J&:#;"
+P0F5FEF5F5F5FEFEF54F5F5FEFEFEFEFEF5J#8"J"8"9%
+P-FEFEF5EF5FEF5F5F5F5J)8%=#
+PKF5FEFEF5F5FEFEF5FEFEF5F5FEFEJ(:&<'B.
+P-F5FEFEFEFEFEF5FEFEFEFEF5F5FEFEFEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5J&9'8#:%:#8#:%9%8#
+P.F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+
+
+
+
+
+
+
+
+
+J&9#BsD#
+P-FEFEFEFEFEFEFEFEFEFEJ%F$8$
+P/F5F5FEFEF5F5F5F5F5F5J$:#8#8#@%9%
+P1F5FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEJ%F.
+P7FEF5FEFEFEFEF5F5FEFEF5FEFEF5F5FEFEJ":'
+P7F5F5FEFEFEFEF5J"8"
+P=F5F5J"8"
+P=FEFEJ$9":'
+P1FEFEF5FEFEFEF5F5FEFEJ%:%F.
+P/FEFEFEF5F5FEFEF5F5FEFEFEFEF5F5F5FEFEFEFEF5J&9&8#8#:#:%9%8#
+P-F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5
+
+
+
+
+
+Jz
+P(OMF3J"
+P'F3Jz
+P&P#FD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENDBITMAP
+%%EndBinary
+81.65 87.95 531.65 744.95 C
+-8.35 24.95 603.65 816.95 C
+6 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Menu G\216n\216ral \050bouton) 229.34 226.03 T
+(3\051) 373.33 226.03 T
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(5) 518.65 57.92 T
+2 16 Q
+(3.0  Utilisation des utilitair) 81.65 734.29 T
+(es Motif, Athena et Openwin) 263.15 734.29 T
+0 12 Q
+(Pour lancer ces utilitaires on peut:) 81.65 706.95 T
+3 F
+(\245) 81.65 686.95 T
+0 F
+-0.43 (soit taper leur nom en toutes lettres dans une fen\220tre xterm suivi du symbole \322&\323 a\336n de les) 95.39 686.95 P
+(lancer en \322background\323 \050pour que l\325utilisateur garde la main\051.) 95.39 672.95 T
+(Exemple:) 95.39 644.95 T
+3 F
+( textedit) 159.39 644.95 T
+6 F
+(toto.f) 238.59 644.95 T
+(ile) 281.79 644.95 T
+3 F
+( &) 303.39 644.95 T
+(\245) 81.65 610.95 T
+0 F
+(soit cliquer directement leur nom dans le sous-menu \322Sun T) 95.39 610.95 T
+(ools\323  de la \322root window\323) 382.85 610.95 T
+(\050ce menu apparait en cliquant sur le bouton 3 dans la \322root window\051.) 95.39 596.95 T
+2 14 Q
+(3.1  Utilisation de la fen\220tr) 81.65 549.62 T
+(e Shell \322xterm\323) 239.27 549.62 T
+0 12 Q
+-0.36 (L) 81.65 522.95 P
+-0.36 (\325ascenseur peut \220tre d\216plac\216 au moyen des 3 boutons \050respectivement vers le bas, de mani\217re) 87.88 522.95 P
+(proportionnelle ou vers le haut\051.) 81.65 508.95 T
+-0.46 (Le Copier / Coller \050Copy and Paste\051 se fait au moyen des boutons 1 \050selectionner\051, 2 \050coller\051 et) 81.65 482.95 P
+(3 \050ajuster la s\216lection\051 comme vu pr\216c\216demment.) 81.65 468.95 T
+(T) 81.65 442.95 T
+(rois menus permettent de modi\336er l\325aspect et le comportement des xterm. On les appelle en) 88.56 442.95 T
+(cliquant simultan\216ment sur la touche CONTROL et sur les boutons 1, 2 ou 3 de la souris.) 81.65 428.95 T
+(Faire appara\224tre ces menus.) 81.65 402.95 T
+(Passer en vid\216o inverse et changer la taille des caract\217res.) 81.65 376.95 T
+2 14 Q
+(3.2  Manuel interactif) 81.65 329.62 T
+0 12 Q
+(Pour obtenir des informations sur une commande, on peut utiliser:) 81.65 302.95 T
+3 F
+(\245) 81.65 282.95 T
+0 F
+(soit la commande standard:) 95.39 282.95 T
+3 F
+( man) 233.04 282.95 T
+0 F
+(par exemple faire:) 95.39 268.95 T
+3 F
+( man xterm) 236.69 268.95 T
+(\245) 81.65 248.95 T
+0 F
+(soit le manuel on-line de X-window en tapant la commande:) 95.39 248.95 T
+3 F
+( xman) 388.68 248.95 T
+0 F
+(  &) 424.68 248.95 T
+(Lancer la commande:  \322) 81.65 222.95 T
+3 F
+(xman &) 196.94 222.95 T
+0 F
+(\323,  \050on rappelle de le \322&\323 sert \210 ex\216cuter une t\211che en \322back-) 240.14 222.95 T
+(ground\323\051,) 81.65 208.95 T
+(Cliquer successivement sur \322Manual Page\323, puis \322Options\323, puis \322Search\323 et taper le nom de) 81.65 182.95 T
+(la commande recherch\216e \050fonction C ou commande Unix\051.) 81.65 168.95 T
+(Pour aller plus vite, on peut aussi appeler directement la fen\220tre de recherche en appuyant) 81.65 142.95 T
+(simutan\216ment sur les touches) 81.65 128.95 T
+3 F
+(CONTROL) 225.64 128.95 T
+0 F
+( et) 276.04 128.95 T
+3 F
+(S) 290.7 128.95 T
+0 F
+( \050pour \322Search\323\051.) 297.9 128.95 T
+-0.04 (Exemple : faire appara\224tre le manuel de la commande Unix \322) 81.65 100.95 P
+5 F
+-0.11 ( ls) 373.13 100.95 P
+0 F
+-0.04 (\322 et de la fonction \322) 401.72 100.95 P
+5 F
+-0.11 (cos) 498.76 100.95 P
+0 F
+-0.04 ( \322.) 520.36 100.95 P
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(6) 518.65 57.92 T
+2 14 Q
+(3.3  Edition de texte et Gestion de \336chiers) 81.65 735.62 T
+0 12 Q
+(Les utilitaires) 81.65 708.95 T
+3 F
+(textedit) 150.31 708.95 T
+0 F
+( \050\216diteur de textes\051 et) 207.91 708.95 T
+3 F
+(f) 312.22 708.95 T
+(ilemgr) 319.42 708.95 T
+0 F
+( \050FileManager) 362.62 708.95 T
+(, le gestionnaire de) 430.45 708.95 T
+(\336chiers\051 permettent une gestion ais\216e des textes et des \336chiers.) 81.65 694.95 T
+(Noter que ce sont des utilitaires) 81.65 668.95 T
+2 F
+(OpenLook) 236.29 668.95 T
+0 F
+( \050=> boutons ovales et Couper  /  Coller \210 l\325aide) 290.98 668.95 T
+(des boutons) 81.65 654.95 T
+5 F
+(Cut) 141.65 654.95 T
+0 F
+(,) 163.25 654.95 T
+5 F
+(Copy) 169.25 654.95 T
+0 F
+( et) 198.05 654.95 T
+5 F
+(Paste) 212.71 654.95 T
+0 F
+( ou des menus\051. Le bouton 3 permet d\325ouvrir un menu.) 248.71 654.95 T
+(Le File Manager permet de manipuler les \336chiers \322\210 la Macintosh\323. Les \336chiers sont visual-) 81.65 628.95 T
+-0.26 (is\216s sous forme d\325ic\231nes, de listes ou d\325arborescences suivant les options choisies \050voir  menu) 81.65 614.95 P
+5 F
+-0.61 (View) 81.65 600.95 P
+0 F
+-0.25 (\051. Lorsque l\325on double clique sur un \336chier) 110.45 600.95 P
+-0.25 (, celui-ci est automatiquement trait\216 de fa\215on) 314.15 600.95 P
+(\322ad\216quate\323 \050ie. un \336chier ex\216cutable sera ex\216cut\216, un \336chier \216ditable sera \216dit\216, etc...\051) 81.65 586.95 T
+81.65 69.95 531.65 744.95 C
+81.65 82.95 531.65 556.95 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+0 0 0 1 0 0 0 K
+%%BeginBinary:  23004    
+440 474 440 474 0 86.65 82.95
+/red <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000B726262DDCBFB7E38C61
+3EC472FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F
+7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F3F3F3F3F3F3F3F3F3F
+3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F00000000000000000000000000000000
+0000000000000000F466B7CCC487F5437F4C8F0000B22A4FBE46FF00FF1800FF
+> store
+/green <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000E5BFBFE5E598E5E58C87
+57D79F00000000000000000000000000FFFFFFBFBFBFBFBF7F7F7F7F7F3F3F3F
+3F3F00000000FFFFFFFFFFBFBFBFBFBF7F7F7F7F7F3F3F3F3F3F0000000000FF
+FFFFFFFFBFBFBFBFBF7F7F7F7F3F3F3F3F3F0000000000FFFFFFFFFFBFBFBFBF
+BF7F7F7F7F7F3F3F3F3F3F0000000000FFFFFFFFFFBFBFBFBFBF7F7F7F7F7F3F
+3F3F3F3F00000000F466B7CCB27ADE7E7F4CE96DCDD04E94BE82FF00007400FF
+> store
+/blue <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000C2BF4C5B2DB6E5B78CD9
+8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBF7F3FFFBF7F3F00FFBF7F3F00FFBF7F
+3F00FFBF7F3FFFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FF
+BF7F3F00FFBF7F3F00FFBF3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F
+00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FF
+BF7F3F00FFBF7F3FF466B7CC8F62B3AE7F4CE96DCDE96DCDBEB4008000CD00FF
+> store
+ BEGINBITMAPCOLORc
+
+
+
+
+
+
+
+?z
+W'F5J"J"J"
+AF6V"F68F6Az8z8z"
+6F7V!F76F7F6
+
+
+Ez8z8z
+2F6V!F62F6Fz
+VHF5Gz#z#z#z"
+0F7F6F5U=F7F6F50F7F6F50F7F6
+
+JS$C#;#J#:(A$J#J$I#Ju
+P?F7FFFFFFFFFFFFMFFFFFFFFF7FFFFFFFFFFFFFF6FFFF6FFFFFFFFFFP3F5J'J'B"J"Js"
+PAF7F7F7F7F7F7O@FFFFF7F7FFFFF7O F7PKF7F6J#;%?"9":%8&9%9&8%8&:$8&H%8#9#8%<%8&9%E#>"
+PEFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFF7FFFFF7FFFFFFFFF7F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFF7JuJ'F'919'9"F%C'?':'9,J"J%
+4F5P-FFFFF7F7FFFFFFFFF7F7FFFFFFF7FFFFF7FFFFF7F7FFFFF7FFFFF7FFFFFFF7F7FFFFFFFFFFFFF7FFFFF7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFFFF7FFFFF7FFFFF7F7FFFF6FFP&F5F5F5F5Js"J$J$:#=":#>"C#D%G+;#C"J#J$
+5F7F6P#FFFFFF6FFF7FFF7F7F7F7F7F7F7F7F7F7FFFFF7F7F7F7FFFFF7FFFFF7F7F7F78F7F7P.F7F7F6J$?#@"9":$A$B#;"=":"J#J"
+PAF7F7F7FFFFF7F7FFFFFFFFFFFFFFFFF7F7F7O/FFFF9F7JsJ%@";%@%B%C#J&J%J#
+5F6P0F7F7F7F7FFFFFFF7F7FFFFF7F7F7F7F7F7FFFF>F7FFFFFFF7<F7F7F7F7P>F6F6JuJ#?$J"=#B"8"8#J#C#C">#D#;"J%
+4F7P1FFFFF7FFF7<FFFFFFF7F7FFFF5FFFFFFFFFFFFFFFFFFFFP'F7F7F7F7J'F(=,9'H'C'9";':'9,
+PKF7FFFFFFFFF7F7FFFFFFF7FFFFF7FFFFFFF7FFFFF7FFFFF7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFFFFFF7F7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFF7F7F7FFFFFFFFF7J#:&8%=#8"8#8s8#8t;%8#@#:%E%<":%8#8%;#9%E#;#Js
+P?F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7P6F6J#J"Ju
+QHFFFFO+FFQAF7J'J">$J"
+QHF7FFFFFFFFF7KFFFFFFF7CFFGz8z8z8z
+0F6U=F60F60F6@rG"J"G"H%
+F6F6U>F6F6F6F6F6F6@(zr
+F5F5F5F5F5F5F6VEFEF5A'z8&
+F7F7F7F7F6F6VEEBF7F7F7F7F6
+
+JzHzHzHzHz
+;IE8O#E8KE8O'E8O$E8J#z#D#z#D#z#D#z#D#z#
+9E8E8IEBE8E8E8E8O#EBE8E8E8E8KEBE8E8E8E8O'EBE8E8E8E8O$EBE8E8J$J$B$J$B$J$B$J$B$J$
+8E8EBEBIEBEBE8E8EBEBO#EBEBE8E8EBEBKEBEBE8E8EBEBO'EBEBE8E8EBEBO$EBEBE8J#D"9"J#@#E"J#@#H"9"J#@#J#@#J#
+7E8EBFEFE:EBE9E8EBFEEEBE9E8EBFEFE8EBE9E8EBO+EBE9E8EBO(EBE9J#>%J#>#=":"J#>#=&E"J#>#>%J#>#?%A"J#
+6E8EBFEFEFEFECEBE9E8EBFEFEJEBE9E8EBFEFEFEFEFEFE5EBE9E8EBFEFEFEFEO!EBE9E8EBFEFEFEFEFE?EBE9J$9"J"J%A"J%J'
+AEBEBEBEBO-EBO,EBEBEBEBEBO EBEBEBFEO4FEEBEBEBEBFEJ#F"=$?r<#<#G"9$9"=">r<#<#G$:"8%=r<#<#F%9#:%:$>r<#<#>#:":#9%9#9">r<#
+5E8EBFEFEFEFEE9EBE9E8EBFEFEFEFEFEFEE9EBE9E8EBFEFEFEFEFEFEFEFEE9EBE9E8EBFEEBFEFEFEFEFEEBFEFEFEFEFEE9EBE9E8EBFEEBEBFEFEFEFEFEFEFEFEFEE9EBE9J&?'J&<"C'J%=%>'J$8%:%8%?'J%8%8%B'
+O FEEBEBEBFEEAEAEAEAEAE8DFEEBEBEBFEFEEAEAEAEAEAE8@FEEBEBEBEBFEEBEBEAEAEAEAEAE8AFEEBEBFEEBEBFEFEEBEBFEFEEBEBEBEAEAEAEAEAE8BFEEBEBFEEBFEEBEBFEEBEBFEEAEAEAEAEAE8J$J#9#J#8#C#;#>#9#J$J#9#J"9#8#9"G#9#J#8#<#8%>#9#
+AFEFEFE7EBE9E8EB8EBFEFEEBEBFEFEEBEBE9E8EB9FEFEFE:EBE9E8EBAEBFEEBEBFEEBEBE9E8EBAFEEBEBFEFEEBEBFEEBEBEBE9E8EBJ$A$J$<$J$J%J$J"
+AEBEBEBFEFEFEO'FEFEFEFEEBFEKEBEBEBO-FEFEFEEB6EBFEFEO FEJ%?&J%J&J&J$J$?&J&
+O!EBEBEBEBEBE9EAE8EBFEBEBEBEB4EBE9EAE8EBO*EBE9EAE8EB;EBEBEB8EBEBFEEBE9EAE8EBO1EBE9EAE8EBJ"J%A"9(J"J#8#J#=#8#<#8%
+O$FEHEBFEFEEBFEEBFEEBEBEBFEEBO%FEO0EBFEFEEBO&EBFEEBFEFEEBEBFEFEEBEBFEJ&@$J&J$J%9%>$?$J%:%8%@$J&:%9$8%C$
+O EBFEFEFEEBEBE8EBFEBFEFEFEEB5EBE8EB;FEFEFEFEEBFEFEEBEBFEFEEBE8EBHEBFEFEEBFEFEFEEBFEFEFEEBEBE8EB;EBFEFEFEFEEBFEFEEBEBFEFEEBFEFEEBEBE8EBJ#?"<"9"9$B"?#<#@#;"9$;"9"C"?#<#>&:%9":#@"?#<#?"<"<#;$9$B"?#<#@&:#;#9#9"A"?#<z"
+5EBE8EBEBEBEBEBEBEBE9EBEBE8EBEBEBEBEBEBEBEBEBE9EBEBE8EBEBEBEBEBEBEBEBEBEBEBEBEBE9EBEBE8EBEBEBEBEBEBEBEBEBEBEBE9EBEBE8EBEBEBEBEBEBEBEBEBEBEBEBEBE9EBO1E8E9Jz
+U:O0E9J#J#>#J#>#J#>#J"J#>#J#=z
+6EBE8O!E9EBEBE8O)E9EBEBE8O#E9EBEBE8<EB>E9EBEBE8O*E9EBO2EBJ#J#@#J#@#J#@#J#@#J#
+7EBE9ME9EBEBE9O'E9EBEBE9O!E9EBEBE9O+E9EBEBE9O(E9EBJ$J$B$J$B$J$B$J$B$J$
+8EBE9E9IE9E9EBEBE9E9O#E9E9EBEBE9E9KE9E9EBEBE9E9O'E9E9EBEBE9E9O$E9E9EBJ#z#D#z#D#z#D#z#D#z#
+9EBEBIE9EBEBEBEBO#E9EBEBEBEBKE9EBEBEBEBO'E9EBEBEBEBO$E9EBEBJzHzHzHzHz
+;IEBO#EBKEBO'EBO$EB
+Gz8x"
+V2FEE8E9HZ:w
+V0EB
+
+J&
+R;FEFEFEFEFEJ(Jw
+R:FE5D5D5D5D5DFER%E9J#;#Jy
+R9FE5D5DFER#EBJz"=#
+R%4FE5D5DFEJz@"Jx
+R&35DFER"E8J"w"
+VEE8EBE9J"
+R+FE
+J#
+R*FE5DJ#
+VKE9E9J#J"8"
+R)FE5DR?E9E9J#J":"
+R(FE5DR?E9E9J"<"
+VHE9E9J#
+R'FE5DJs
+VHEBJ"
+R'5D
+
+
+Jw
+VFE8Jw
+VFEB
+
+
+
+Jz8&
+R*8FEFEFEFEFEFEJ"z9"
+R)FE;5DFFJ#J"8"
+R(FE5D:FEFFJ#J"8"
+R'FE5D:FEFFJz8"
+R&=FEFFJ"
+RDFFJZ:V
+R%0J(8%
+R0FEFEFEFEFEFEFFFEFEFEFEJ&9-
+R,FEFEFEFEFFFFFFFEFFFFFFFEFFFFFEFEFEJ.<+Jw
+R'FEFEFEFEFEFFFFFFFEFEFFFFFFFFFEFEFFFFFFFEFEFEFER"E9J&P&:#:$8)Jw
+R"FEFEFEFEFEFEFEFEFFFFFEFFFFFFFEFFFFFFFFFEFEFEFEQLEBJ%P9&D$:(
+QLFEFEFEFEFEFEFFFFFFFFFEFEFFFFFFFFFEFEFEJ*;&>#>%<(
+QGFEFEFEFEFEFFFFFFFFFEFEFEFFFFFEFFFFFFFEFEFFFFFFFEFEFEFEJ&P=&J$>(
+QBFEFEFEFEFEFEFEFFFFFF6FFFFFEFFFFFFFFFEFEFEJ&P?&B#C$@(
+Q=FEFEFEFEFEFEFEFEFFFFFEFFFFFEFEFFFFFFFEFEFEFEJ%PB&J$B)Js
+Q9FEFEFEFEFEFEFFFFFF>FFFFFEFFFFFFFFFEFEFEFEQ<E9J*D&F#G$D(
+Q4FEFEFEFEFEFFFFFFFFFEFEFEFFFFFEFFFFFEFEFFFFFFFFFEFEFEJ&PF&J$G(J"<"
+Q/FEFEFEFEFEFEFEFFFFFFFFFFFFEFFFFFFFEFEFEFEQ5EBEBJ%PH&J#J$H(J":"
+Q+FEFEFEFEFEFEFEFFFF4FEFF5FFFEFEFFFFFFFFFEFEFEQ3EBEBJ*J&J$J(J"8"
+Q&FEFEFEFEFEFFFFFFFF5FEFEFFFFFFO FFFFFE5FFFFFFFEFEFEFEQ0EBEBJ&PJ&J#J$J(J#
+Q!FEFEFEFEFE6FEFEFEFFFF8FEFF9FFFEFE6FFFFFFFFFEFEFEQ.EBEBJ%PJ&J$J(
+PKFEFEFEFE9FEFEFFFFFFO(FFFFFE9FFFFFFFEFEFEFEJ*J&J#J$J)
+PFFEFEFEFEFEFFFFFFFF;FEFEFEFFFF<FEFF=FFFEFE:FFFFFFFFFEFEFEFEJ&PJ'J%J(
+PAFEFEFEFEFE<FEFEFEFFFFFFO0FFFFFEFE<FFFFFFFFFEFEFEJ&PJ&J#J$J(Jw
+P<FEFEFEFEFE?FEFEFFFFFF@FEFFAFFFFFE?FFFFFFFEFEFEFEPHE9J%PJ&J$J(Jy
+P8FEFEFEFEAFEFEFEFFFFO:FFFEFE@FFFFFFFFFEFEFEPDEBJ*J&J#J$J(J$
+P3FEFEFEFEFEFFFFFFFFDFEFEFFFFFFDFEFFEFFFFFECFFFFFFFEFEFEFEPFE9E9E9J&PJ&J$J(
+P.FEFEFEFEFEEFEFEFEFFFFOBFFFEFEDFFFFFFFFFEFEFEJ%PJ&J#J$J(
+P*FEFEFEFEHFEFEFFFFFFHFEFFIFFFFFEGFFFFFFFEFEFEFEJ*J&J$J)
+P%FEFEFEFEFEFFFFFFFFJFEFEFEFFFFOJFFFEFEHFFFFFFFFFEFEFEFEJ&PJ&J#J$J(
+P FEFEFEFEFELFEFEFFFFFFLFEFFMFFFFFEKFFFFFFFFFEFEFEJ&PJ&J$J(
+OIFEFEFEFEFEO FEFEFEFFFFP$FFFEFEMFFFFFFFEFEFEFEJ%PJ&J#J%J(
+OEFEFEFEFEO#FEFEFFFFFFO"FEFFO#FFFFFEFEO FFFFFFFFFEFEFEJ*J&J$J(
+O@FEFEFEFEFEFFFFFFFFO%FEFEFEFFFFP,FFFFFEO#FFFFFFFEFEFEFEJ&PJ&J#J$J)
+O;FEFEFEFEFEO'FEFEFFFFFFO&FEFFO(FFFEFEO$FFFFFFFFFEFEFEFEJ%PJ&J$J(
+O7FEFEFEFEO)FEFEFEFFFFP4FFFFFEO'FFFFFFFFFEFEFEJ*J&J#J$J(
+O2FEFEFEFEFEFFFFFFFFO,FEFEFFFFFFO*FEFFO,FFFEFEO)FFFFFFFEFEFEFEJ$;&J$uJuJ$8uJ'8u
+O/FEFEFEFEFEFEFEFEO)FEFEFFFEO'FEO"FFFFFEFEMFFFFFFFFFEFEFEJ#u"J#u"J"u"J"u"J"8"u"
+O0FFFE5DFEO)FFFE5DFEO%FE5DFEO%FE5DFEO"FFFE5DFEJ#@#J#@#J#@#J#@#J#@#
+O0FE5D5DFEO(FE5D5DFEO#FE5D5DFEO#FE5D5DFEO#FE5D5DFEJz"B$Jz8zJz8zJz8zJz8z
+K3FE5D5DFEFEA2FE/FE<2FE/FE<2FE/FE<2FE/FEJzD$Jz#Jz#Jz#Jz#
+L25D5DFEFEAA5DFEFE<A5DFEFE<A5DFEFE<A5DFEFE
+J";"J"J"8"8"
+P6FEFEO0FEO*FEFEFEJ"J"J"
+O,FEO/5DP>5DJ#9"8'8#J"9"8$J#=#:$J":"J#8"8"9#
+O!FEFEFEFE5DFEFEFEFEFEFEO%FEFEFE5DFEO&FEFEFEFEFEFEFEO!FEFEO)FEFEFEFEFEFEJ$=*J$<$J%;%8%J$J$>$
+O!5D5DFE5DFE5D5D5DFE5D5DFEO#FE5DFEFE5DFEO$FE5D5DFEFE5D5DFEFE5D5D5DO%FE5DFEO'FE5D5DFE5D5DJ#J">"J#=#J"J"@"
+O!FEFEO45D5DO'FEFEFEFEO,5DO*FEFEJ$J$<$J$>$
+O FE5D5DPE5D5D5D5D5D5DP55DFEFE5DFEFEJ"J"9%9"
+O(FES35D5DFEFE5D5DJ*9)J$J%;%8%J$J$>$J"
+O 5DFEFE5DFE5D5DFE5D5DFEFE5D5DFEFE5DO#FEFE5DO-5DFEFEFE5DFEFEFE5DFEFEFEO%FEFE5DO'FEFE5DFEFE5DP#EBJ%8$9#8#J$9"8"8"J$8"9$9$J"8"8$J#;"9#J$
+O!5D5D5D5D5D5D5D5D5D5D5DO#5D5D5D5D5D5DO%5D5D5D5D5D5D5D5D5D5DL5D5D5D5D5DO(5D5D5D5D5DP#EBE9EBJ"J$
+T@FEP*E9EBE9J#J$
+T@5D5DP)EBE9EBJ$
+VKE9EBE9J%8%J%8%J%8%J%8%J$
+Q#FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO9EBE9EBJ"u"J"u"J"u"J"u"J$
+Q"FE5DFEO%FE5DFEO%FE5DFEO%FE5DFEO8E9EBE9J#@#J#@#J#@#J#@#J$
+Q!FE5D5DFEO#FE5D5DFEO#FE5D5DFEO#FE5D5DFEO7EBE9EBJzJzJzJzJ$
+P<CFE<CFE<CFE<CFEO5E9EBE9Jz#Jz#Jz#Jz#J$
+P=A5DFEFE<A5DFEFE<A5DFEFE<A5DFEFEO4EBE9EBJ$
+VKE9EBE9J"A";"J"J#J$
+P?FEFEFEP/FE8FEFEPKEBE9EBJ"J"?$J"J$
+R3FEO-FEFE5D5DDFEP&E9EBE9J"9"8":"=#:#J#9$:(J#:(9"8%J)8"9$J$
+PAFEFEFEFEFEFEFEFEBFEFEFE5DFEFEFE5DFEFEFEFEO!FEFEFEFE5DFEFEFEFEFEFEFEFEFECFEFEFEFE5DFE5DFEFEFE5DFEOEEBE9EBJ$?$;%8$J%9$8)J%8)<%J%8'9$J$
+P@FE5DFEFE5DFEFE5D5DFEFE5D5DAFE5D5DFEFE5DFEFE5D5D5D5DFE5D5DO FE5D5DFEFE5D5D5D5DFE5D5D5DFE5D5DC5DFE5D5DFE5DFEFE5DFEFE5DFEODE9EBE9J"A"D"J#:";"J"=&J"8";"J$
+P@5D5DFECFEFE5DFEO-FEFEFEFEFEFEM5D5D5DOFEBE9EBJzJsJ$Js:$>$JsB$<&JsJ$
+LAFECFE>5DFEFE6FE5D5D5D5DFEFEEFE5DFEFE5D5DFE5D5D=FEP*E9EBE9J"J"G%H"J"J"J"J"J"J$
+KFFO5FF5DFEFE5D5D6FF85DEFF55DHFFP2EBE9EBJZ"ZJS:$?$;%8$JS9%>$8$JS<%8$8$9"JS9$A$J$
+L1FE1AFEFE5DFEFE5D5DFEFE5DFEFE5D65DFEFEFEFEFE5D5DFEFE@5DFEFE5DFEFE5D5DFEFE5D?5DFEFEFEFE5DODE9EBE9J$J$;"9$9"9#9#J$8"8"8#:#J"9#9#:#="J%8"8"9#J$
+O.FEFFFEO.5D5D5D5D5D5D5D5D5D5D5D5DC5D5D5D5D5D5D5D5D5DK5D5D5D5D5D5D5D5DG5D5D5D5D5D5D5D5DOEEBE9EBJ"J$
+PEFET%E9EBE9J&J#J"J$
+O-FEFFFFFFFEO35D5DR*5DOGEBE9EBJ#9#J$
+O,FEFFFFFEU8E9EBE9J#;#J%8%J%8%J%8%J%8%J$
+O+FEFFFFFEOFFEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO0EBE9EBJ"u"J"u"J"u"J"u"J$
+Q+FE5DFEO%FE5DFEO%FE5DFEO%FE5DFEO/E9EBE9J#=#J#@#J#@#J#@#J#@#J$
+O*FEFFFFFEOCFE5D5DFEO#FE5D5DFEO#FE5D5DFEO#FE5D5DFEO.EBE9EBJ#?#JzJzJzJzJ$
+O)FEFFFFFEO/CFE<CFE<CFE<CFEO,E9EBE9J#Jz#Jz#Jz#Jz#J$
+O5FFFEO/A5DFEFE<A5DFEFE<A5DFEFE<A5DFEFEO+EBE9EBJ#J$
+O(FEFFUAE9EBE9J#C#J"J$
+O'FEFFFFFEO<FESDEBE9EBJ#E#J"J"J$
+O&FEFFFFFEPFFEO6FEQ"E9EBE9J#J$9#J#8%8$J$:#8%J"8"9#9#9$9#J$
+O8FFFEO/FEFEFEFEFEO)FEFEFEFEFEFEFEFEFEO#FE5DFEFEFEFEFEFEFEO"FEFEFEFEFEFEFE5DFEFEFEO3EBE9EBJ#J%9$J/J$8*J$8%9"9$J$
+O%FEFFOAFE5D5D5D5D5DFEO'FE5D5DFE5D5DFE5D5D5DFE5D5D5DO$FE5DFEFE5D5DFE5D5DFE5D5DO(FE5D5DFE5D5DFEFEFE5D5DO3E9EBE9J#I#J#J#J";#J":#:#9"J$
+O$FEFFFFFEO4FEFEO)FEFEO/5DFEFEO/FEFEFE5D5DFEO4EBE9EBJ#Js?$Js:$Js@$Js?$9$=$J$
+O:FFFEO!FEFE5D5DKFE5D5D5DO"FE5D5D5DJFE5DFEFE5D5D5D5DFEFEO3E9EBE9J#J#J"J"J"J"C":"E"J$
+O#FEFF6FFFEMFFO0FFO0FFO0FFFE5D5DO4EBE9EBJ#JS9%8&JS9%8)JS?%8$JS9$9$8%=$J$
+O"FEFFO95DFEFEFE5DFEFE5DFEI5DFEFEFE5DFEFE5D5DFEFEFEF5DFEFEFE5DFEFEE5DFE5DFEFE5D5DFEFEFEFEFE5DO3E9EBE9J#J$9'J$9#8$J"8"9$9#J$8#:$8":#J$
+O<FFFEO+5D5D5D5D5D5D5D5D5DO%5D5D5D5D5D5D5D5DO#5D5D5D5D5D5D5DO#5D5D5D5D5D5D5D5D5D5D5DO4EBE9EBJ#J#J$
+O!FEFF:FFFEU,E9EBE9J#J#J$
+O FEFF<FFFEU+EBE9EBJ#J$
+MFEFFUJE9EBE9J#J%8%J%8%J%8%J%8%J$
+O?FFFEOBFEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'EBE9EBJ#J#J"u"J"u"J"u"J"u"J$
+LFEFF@FFFEO@FE5DFEO%FE5DFEO%FE5DFEO%FE5DFEO&E9EBE9J#J#J#@#J#@#J#@#J#@#J$
+KFEFFBFFFEO>FE5D5DFEO#FE5D5DFEO#FE5D5DFEO#FE5D5DFEO%EBE9EBJzJzJzJzJ$
+Q CFE<CFE<CFE<CFEO#E9EBE9J#J#Jz#Jz#Jz#Jz#J$
+JFEFFDFFFEO+A5DFEFE<A5DFEFE<A5DFEFE<A5DFEFEO"EBE9EBJ#J#J$
+IFEFFFFFFEU&E9EBE9J#J#J$
+HFEFFHFFFEU%EBE9EBJ"J$
+T#FEPGE9EBE9J$uJ#8uJ$9#9$8"J#9"8"8$:#9$J#9$8%J"8"9#8$J$
+GFEFFFFFE?FFFEFEMFEFEFEFEFEFE5DFEFEO FEFEFEFEFE5DFEFEFEFE5DFEEFEFEFE5DFEFEFEFEFEO"FEFEFEFEFE5DFEO5EBE9EBJ"u"J"u"J%8%9'J%?$8%9"J%9)J$9"J$
+IFE5DFEAFE5DFEKFE5D5D5DFE5D5DFEFE5DFEFE5DFELFE5D5DFEFE5DFEFE5D5DFEFEEFE5D5DFEFE5DFE5D5DFE5D5DO(FE5D5DFEO6E9EBE9J#@#J#@#J"8"J#9%9"A#J"J":#J$
+HFE5D5DFE?FE5D5DFEO)5D5DO!FEFE5DFEFE5D5D5D5DK5DO0FE5D5DO5EBE9EBJz8z@z8zJsJs:$JsJs?$J$
+52FE/FE2FE/FE=FEO)FE5D5D5DO"FEO)FE5DFEFEO:E9EBE9Jz#@z#J"J"G%J"J"C":"J$
+6A5DFEFEA5DFEFE;FFO0FFFE5D5DFEIFFO0FFFE5DO;EBE9EBJS9%8%JS9%?$8%JS9%9$8$JS9$9$J$
+PF5DFEFEFE5DFEFE5DJ5DFEFEFEFEFE5D5DFEFE5D>5DFEFE5DFEFE5D5DFEFEE5DFE5DFEFE5DO:E9EBE9J"?#J"J$9#9"8"8"J$8"8"9#:#9"J#:#:#J$8#9"J$
+8FEFEFEMFEO.5D5D5D5D5D5D5D5DM5D5D5D5D5D5D5D5D5D5DG5D5D5D5D5D5DO#5D5D5D5D5D5DO7EBE9EBJ">$J$
+85DFE5D5DV'E9EBE9J"8$8%J$9#J"J"J$
+8FEFE5DFEFEFEFEFEBFEFEFEFEFEQ 5DO*5DPMEBE9EBJ)J%9$J$
+<FE5DFE5D5DFE5D5DAFE5D5D5D5D5DFEU*E9EBE9J"J#J%8%J%8%J%8%J%8%J$
+<5DO!FEFEOLFEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFELEBE9EBJ$J"u"J"u"J"u"J"u"J$
+O=FE5D5DOKFE5DFEO%FE5DFEO%FE5DFEO%FE5DFEKE9EBE9J#@#J#@#J#@#J#@#J$
+Q<FE5D5DFEO#FE5D5DFEO#FE5D5DFEO#FE5D5DFEJEBE9EBJ%8&JzJzJzJzJ$
+O75DFEFEFE5DFEFE5DFEO5CFE<CFE<CFE<CFEHE9EBE9J"8"8"8"J$9'Jz#Jz#Jz#Jz#J$
+85D5D5D5DD5D5D5D5D5D5D5D5D5DO4A5DFEFE<A5DFEFE<A5DFEFE<A5DFEFEGEBE9EBJ$
+VKE9EBE9J"J$
+R=FER-EBE9EBJ$
+VKE9EBE9J$9#9$9#J":#9$8":#J$9#:#J"8"9#9$J$
+Q-FEFEFEFEFEFE5DFEFEFEMFEFEFEFE5DFEFEFEFEGFE5DFEFEFEFEFEO#FEFEFEFEFE5DFEO+EBE9EBJ%8%9"9%J$8%9'8%J"9%8$J$9"J$
+Q,FE5D5D5DFE5D5DFEFEFE5D5DFEKFE5DFEFE5D5DFEFE5DFEFE5DFEFE5D5DFEGFEFE5D5DFEFE5D5DO*5D5DFEFEO,E9EBE9J#9#J"A"8";#J#9#:"J#:#J$
+Q95D5DFEFEL5D5D5DFEFEH5D5DFEFEFEO+FEFE5D5DO+EBE9EBJsJ$JsJ$Js?$8$Js?$J$
+Q!FE55D5D5D?FE95D5D5D;FE5D5D5D5DFEFEFFEFE5D5DO1E9EBE9J"J"J"J"J"A%J$
+Q FFO0FFO0FF75DFFF5DFEFE5DO6EBE9EBJS9%8%=%JS?%A%JS>%8$JS?&J$
+Q!5DFEFEFE5DFEFE5D5DFEFEFE?5DFEFE5D5DFEFEFE;5DFEFEFEFEFE5DF5DFEFE5DFEO/E9EBE9J$9#9";$J"8"9#9"8"8"9$J";$8#J#:'J$
+Q-5D5D5D5D5D5D5D5D5DJ5D5D5D5D5D5D5D5D5D5DF5D5D5D5D5D5DO%5D5D5D5D5D5D5D5DO-EBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J%8%J%8%J%8%J$
+QGFEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEP&EBE9EBJzBzJ"u"J"u"J"u"J$
+6AFEAFEO>FE5DFEO%FE5DFEO%FE5DFEP%E9EBE9J"J"J#@#J#@#J#@#J$
+5FFLFFP0FE5D5DFEO#FE5D5DFEO#FE5D5DFEP$EBE9EBJZ"Z@Z"ZJzJzJzJ$
+61FE11FE1O(CFE<CFE<CFEP"E9EBE9Jz#Jz#Jz#J$
+Q3A5DFEFE<A5DFEFE<A5DFEFEP!EBE9EBJ$
+VKE9EBE9J"J"J$
+QGFELFER$EBE9EBJ"J$
+RF5DR$E9EBE9J$8"8"9$<#J"8$8":#J#9#9"8"9#J$
+Q6FEFEFEFEFEFEFEFEFEFEGFEFE5DFEFEFEFEO#FEFEFEFEFEFEFEFEP.EBE9EBJ%>%;%J'9$J$9$>%J$
+Q5FE5D5D5DFE5D5D5DFE5D5DFEJFE5DFEFE5DFE5D5DFEO!FE5D5D5D5DFEFE5D5DFEP-E9EBE9J"8";#J":#@#J$
+RJ5D5DFEFEO#FEFEFEFEFEP.EBE9EBJsJsE$Js9$8$@$JzJ$
+Q*FEO)FEFE5D5DEFE5DFEFEFE5D5D5D5D5D?AFEIE9EBE9J"G%J"J"B"?%J"J$
+Q)FF5DFEFE5DIFFO0FF5D5DFEFE5DDFFO<EBE9EBJS9%>%;%JSE&JS9$8&=%JZJ$
+Q*5DFEFEFE5DFEFEFE5DFEFE5D;5DFEFE5DFECFEFE5D5DFEFE5DFE5DFEFEFE?CGE9EBE9J$:":$8"9#J"8"8"8"9%J#:%8#:$J$
+Q65D5D5D5D5D5D5D5D5D5DG5D5D5D5D5D5D5D5DO 5D5D5D5D5D5D5D5D5D5D5DP-EBE9EBJ"J$
+Q;FES/E9EBE9J#J$
+Q;5D5DS.EBE9EBJ$
+VKE9EBE9J%8%J%8%J%8%J$
+R"FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEO'FEFEFEFEFEFEFEFEOKEBE9EBJ"u"J"u"J"u"J$
+R!FE5DFEO%FE5DFEO%FE5DFEOJE9EBE9J#@#J#@#J#@#J$
+R FE5D5DFEO#FE5D5DFEO#FE5D5DFEOIEBE9EBJzJzJzJ$
+Q;CFE<CFE<CFEOGE9EBE9Jz#Jz#Jz#J$
+Q<A5DFEFE<A5DFEFE<A5DFEFEOFEBE9EBJ$
+VKE9EBE9J"J"?#J";"J$
+QAFEO-FEFEFEO*FEFEP-EBE9EBJ">$J"J"
+S!5DFE5D5DO05DP.EBJ#:#9"8"J"8$8%J#:"9"8$
+Q?FEFEFEFEFEFEO!FEFE5DFEFEFEFEFEO&FEFEFEFEFE5DFEJ$9%J)J$9$<$Jx"
+Q>FE5D5DFE5D5DFEO+FE5DFE5D5DFE5D5DO%FE5D5DFE5DFEFE5DFEP!E8E9J#J"J":">"Jw
+QEFEFEO,5DO-FE5D5DP$EBJs@$JsJs9$
+Q3FE5D5D5DJFEO)FE5DFEFEJ"C"?%J"J"B"
+Q2FFFE5DFEFE5DCFFO0FF5DJS9$9%JSJS9$9$
+Q35DFE5D5DFEFEFEJO)FEFE5DFEFE5DHz9$8z8z8z8$9z8z:w
+Q3FEFEFEFE0FEO/FE>FEFEFEFE7FEO=FEE9Gz8y
+V2EBEB
+G'85J'
+E8E8E8E8E8E9ME8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8EBE8U%E8E8E8E8E8E9H%9z"z"J%
+EBEBEBEB/EBE8=EBE9U%EBEBEBEBJ"D"D"D"
+9E8EBE9EBJ">";"D"<"="
+9EBE9E8EBE9E9J"=#;"D";$<"
+9E8E9EBEBE9E9EBE9EBJ"<$;"D";%;"
+9EBE9EBE9E8EBEBE9EBE9E9J";%;"D";&:"8z
+9E8E9EBE9EBEBE9E9EBE9EBE9EBU E9J":&;"D";&:$
+9EBE9EBE9EBE9E8EBEBE9EBE9EBE9EBE9J":&;"D";%;$
+9E8EBE9EBE9EBEBE9E9EBE9EBEBEBEBJ";%;"D";$<"8z
+9EBEBE9EBE9E8EBEBE9EBE9U EBJ"<$;"D";#="
+9E8EBE9EBEBE9E9EBEBJ"="<"D";">"
+9EBEBE8EBEBE9J"D"D"D"
+9E8EBE9EBH%95J%
+E9E9E9E9O EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9EBE9U%E9E9E9E9G'9zJ'
+EBEBEBEBEBEBMEBU$EBEBEBEBEBEB
+
+Gz8x"
+V2FEE8E9HZ:w
+V0EB
+
+
+Jw
+VFE9Jy
+VEEB
+Jx
+VFE8J"w"
+VEE8EBE9
+JzJz
+R-2FEP:?FEJz#Jz#
+R.05BFEFEP:=5DFEFEJ#J#
+R?5BFER*E9E9J#J"8"
+R@5BFER(E9E9JvJvJ#JvJ":"
+O1FEO-FEO;5BFEO(FEPAE9E9J"v"J"v"J#J"v"J"<"
+O0FE5DFEO+FE5DFEO;5BFEO&FE5DFEP?E9E9Jr"A"rJr"A"rJ#Jr"A"r
+O)FE5D5DFEKFE5D5DFEO55BFELFE5D5DFEJ"rCr"J"rCr"JrJ"rCr"Js
+O(FE5D5DFEIFE5D5DFEO0FEJFE5D5DFEP7EBJ#sAs#J#sAs#J'J#sAs#
+O'FE5DFEFE5DFEGFE5DFEFE5DFEO.5B5B5B5B5B5BKFE5DFEFE5DFEJ"s"?"s"J"s"?"s"J"s"?"s"
+O(FE5DFEFE5DFEIFE5DFEFE5DFEP3FE5DFEFE5DFEJ">"t">$J">"t">$J">"t">$
+O(5D5DFE5D5DFEFEG5D5DFE5D5DFEFEP15D5DFE5D5DFEFEJtJtJtJ&;$9$;&
+O25DO/5DPG5DO%FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEJ"9"?"9"Jw
+U1FEFEFEFEO"E8J.9.Jw
+U,5D5D5D5D5DFEFEFEFEFE5D5D5D5D5D5DFEFEFEFEFE5D5D5D5D5DKEBJ"9"?"9"
+U15D5D5D5DJ&?&
+U1FEFE5DFEFEFEFE5DFEFEJ&?&
+U15DFEFEFE5D5DFEFEFE5DJ"9"?"9"
+U1FEFEFEFEJ.9.
+U,FEFEFEFEFEFE5D5D5DFEFEFEFEFEFEFEFE5D5D5DFEFEFEFEFEFEJ"9"?"9"
+U15D5D5D5DJ&;$9$;&
+U,5D5D5D5D5D5D5D5D5D5D5D5D5D5D5D5D
+
+
+
+
+
+JzJzJzJw
+O(=FEI=FEP3=FEP5E9J"J"J"Jw
+O'FFO7FFQ!FFQ$EBJZJZJZ
+O(?G?P1?JzJz
+R.6FEP6=FEJ"J"
+R-FFPKFFJZJZ
+R.8P4?Js
+VHE9
+J"="J"J"D"="J"J"<"
+PGFEFEO,FEO0FEFEFEO5FEO)EBEBJ"J"J"J":"
+O;FEQ(FEQ$FEMEBEBJ"J"8"
+Q!FFSHEBEBJ$:"9"8%9#J#:"9%J#;#;#9%J#9"9";#?#:$J$8$:$;$:$9%8$J#
+O,FEFEFEFEFEFEFEFEFEFEFEO&FEFEFEFEFFFEFEO'FEFEFEFEFEFEFEFEFEFEHFEFEFEFEFEFEFEFEFEFEFE?FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEHEBEBJ&@%8%J%>%J%9%9%8%J%A%=%8%J+8&9%9&8+
+O+FEFFFFFFFEFFFEFFFFFEFFFFFEO$FEFFFFFEFEFFFFFEO%FEFFFFFEFEFFFFFEFEFFFFFEFFFEFFFFGFEFFFFFEFEFFFFFEFEFFFFFEFEFFFFFF>FEFFFFFFFFFEFFFFFFFEFEFFFFFFFEFEFFFFFFFEFFFFFFFEFFFEFFFFFFFEFFFFFFFEJ"I#8#J"A"J";#8&8#J"D"?#8#J#:"J"A"
+O+FFFEFFFFFEO#FFFFO(FFFEFFFFFEFFFEFFFFFELFFFFFEFFFFFEBFEFFFF5FFFFJ$J&J$J$:$B$?$
+O,FEFEFER7FFFEFFFEFF5FFFEFEEFEFEFEFEFEFEFEFEFEFEFEFEJ%J$J%:%@%>%Jw
+O+FEFFFFFFS$FFFFFECFEFFFFFFFFFFFFFFFEFFFFFFFEFFFFFFCE9J">#8#J#8&8#J$E#8#J#E"<"Jy
+O6FEFFFEFEFFP>FFFEFEFFFFFFFEFEFFO%FFFEFFFFFEFEFFBFFFEFEFEO'EBJ'8%:$8%J%J%9%9%9$J%A%=%8%J29%9'8+J$
+O+FFFEFEFEFFFEFFFEFEFFFFFEFEFFFEFEFFO$FEFEFEFFO1FEFEFEFFFFFEFEFFFFFEFEFFFFFEFEGFEFEFEFFFEFEFEFFFFFEFEFFFEFEFEFF>FFFEFEFEFFFFFEFEFEFFFEFFFFFEFEFEFFFFFEFEFFFFFEFEFEFFFEFFFEFEFFFFFEFEFEFFFEFE9E9E9JP9%:#9#J%:"9"9"J%;#;#;#J%:#;%:":#9$J$8P8$;%9P9#8P
+O,FFFFFFFFFFFFFFFFO$FFFFFFFFFFFFFFO$FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFF@FFFFFFFFFFFFFFFFFFFFFFFFJ"
+SFFEJ#
+SFFFFF
+
+
+
+
+
+
+
+Jz
+O'?FEJz#
+O(=5DFEFE
+
+JvJvJvJv
+PIFEO-FEO-FEO-FEJ"v"J"v"J"v"J"v"
+PHFE5DFEO+FE5DFEO+FE5DFEO+FE5DFEJr"A"rJr"A"rJr"A"rJr"A"r
+PAFE5D5DFEKFE5D5DFEKFE5D5DFEKFE5D5DFEJ"rCr"J"rCr"J"rCr"J"rCr"
+P@FE5D5DFEIFE5D5DFEIFE5D5DFEIFE5D5DFEJ#sAs#J#sAs#J#sAs#J#sAs#
+P?FE5DFEFE5DFEGFE5DFEFE5DFEGFE5DFEFE5DFEGFE5DFEFE5DFEJ"s"?"s"J"s"?"s"J"s"?"s"J"s"?"s"
+P@FE5DFEFE5DFEIFE5DFEFE5DFEIFE5DFEFE5DFEIFE5DFEFE5DFEJ">"t">$J">"t">$J">"t">$J">"t">$J"
+P@5D5DFE5D5DFEFEG5D5DFE5D5DFEFEG5D5DFE5D5DFEFEG5D5DFE5D5DFEFEO!EBJ&;$9$;&JtJtJtJtJ$
+O(FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEO%5DO/5DO/5DO/5DO,EBE9EBJ"9"?"9"J$
+O-FEFEFEFEU+E9EBE9J.9.J$
+O(5D5D5D5D5DFEFEFEFEFE5D5D5D5D5D5DFEFEFEFEFE5D5D5D5D5DU&EBE9EBJ"9"?"9"J$
+O-5D5D5D5DU+E9EBE9J&?&J$
+O-FEFE5DFEFEFEFE5DFEFEU+EBE9EBJ&?&J$
+O-5DFEFEFE5D5DFEFEFE5DU+E9EBE9J"9"?"9"J$
+O-FEFEFEFEU+EBE9EBJ.9.J$
+O(FEFEFEFEFEFE5D5D5DFEFEFEFEFEFEFEFE5D5D5DFEFEFEFEFEFEU&E9EBE9J"9"?"9"J$
+O-5D5D5D5DU+EBE9EBJ&;$9$;&J$
+O(5D5D5D5D5D5D5D5D5D5D5D5D5D5D5D5DU&E9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9JzJzJzJzJ$
+P@=FEI=FEI=FEI=FEO"EBE9EBJ"J"J"J"J$
+P?FFO7FFO7FFO7FFO?E9EBE9JZJZJZJZJ$
+P@?G?G?G?O EBE9EBJzJ$
+O(=FEU&E9EBE9J"J$
+O'FFUCEBE9EBJZJ$
+O(?U$E9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J"J"J$
+Q(FER1FEO0EBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$8$:$:$8"9"9$J$8$J$9#:%8#J$9#9%8$J&9":$=#:%:$J$
+O'FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEO FEFEFEFEFEFEO,FEFEFEFEFEFEFFFEFEFEFEO$FEFEFEFEFEFEFFFEFEFEFEFEHFEFEFEFFFEFEFEFEFEFEFEFEFFFEFEFEFEFEIE9EBE9J+8&8%?%J+J%8%:)J%8%9*J%?%<%:%8&J$
+O&FEFFFFFFFFFEFFFFFFFEFEFFFFFFFEFEFFFFFFFEFFFFFFMFEFFFFFFFFFEFFFFFFFEO*FEFFFFFFFEFFFFFEFEFFFFFEFEFFFFFEO"FEFFFFFFFEFFFFFEFEFFFFFFFEFFFFFFFEFFEFFFFFFFEFFFFFFFEFFFFFEFEFFFFFEFEFFFFFFFEHEBE9EBJ#:"J#:"J#:#8#9"9"J#:#8#8"J#A#>#8#9"J$
+O%FEFFFFO<FEFFFFO-FEFFFEFFFFFEFFFFO$FEFFFEFFFFFEFFMFEFFFEFFFEFFFFFEFFO$E9EBE9J$:$9$9&8$J$J$J&J$J$
+O,FEFEFEFEFEFEFFFEFEFFFEFFFEFFFFFEFEO&FEFEFEQ'FEFEFELFFFEFFFEFF<FEFEFEIEBE9EBJ%:%9$@$J%J%J%J$
+O+FEFFFFFFFFFFFFFFFFFFFEFFFFFEO$FEFFFFFFQ'FFFFFFFFO>FFFFFFFFHE9EBE9J#E"?$J#J#:#8#J#:#8#@"J#;$9#>#8#C"J$
+O%FFFEFEFFFEFFO%FFFEO2FFFEFFFEFEFFO,FFFEFFFEFEFFFEEFFFEFFFEFFFFFEFFFEFEFFFEHEBE9EBJ28%?%J,J%8%J%8%=&J%?%<%:%8&J$
+O&FFFEFEFEFFFFFEFEFEFFFEFFFFFEFEFEFFFEFEFEFFFEFEFEFFMFFFEFEFEFFFFFEFEFEFFFEO)FFFEFEFEFFFEFEFFO.FFFEFEFEFFFEFEFFFFFEFEFEFFFFFFEFEFEFFFEFEFEFFFEFEFFFEFEFEFFFFFEFEFEFFHE9EBE9J$8P8$9$:#:$J$8P8"J$9#:"9"9"J$9#9";$J$8#<$8":#;$:$J$
+O'FFFFFFFFFFFFFFFFFFFEFFFFFFFFO!FFFFFFFFO'FFFFFFFFFFFFFFFFO#FFFFFFFFFFFFFFFFFFHFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFIEBE9EBJ"J"J$
+O?FES:FEO>E9EBE9J#J#J"J$
+O?FFFFS9FFFF7FFO%EBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJvJvJvJvJvJ$
+O1FEO-FEO-FEO-FEO-FEO+E9EBE9J"v"J"v"J"v"J"v"J"v"J$
+O0FE5DFEO+FE5DFEO+FE5DFEO+FE5DFEO+FE5DFEO*EBE9EBJr"A"rJr"A"rJr"A"rJr"A"rJr"A"rJ$
+O)FE5D5DFEKFE5D5DFEKFE5D5DFEKFE5D5DFEKFE5D5DFEO#E9EBE9J"rCr"J"rCr"J"rCr"J"rCr"J"rCr"J$
+O(FE5D5DFEIFE5D5DFEIFE5D5DFEIFE5D5DFEIFE5D5DFEO"EBE9EBJ#sAs#J#sAs#J#sAs#J#sAs#J#sAs#J$
+O'FE5DFEFE5DFEGFE5DFEFE5DFEGFE5DFEFE5DFEGFE5DFEFE5DFEGFE5DFEFE5DFEO!E9EBE9J"s"?"s"J"s"?"s"J"s"?"s"J"s"?"s"J"s"?"s"J$
+O(FE5DFEFE5DFEIFE5DFEFE5DFEIFE5DFEFE5DFEIFE5DFEFE5DFEIFE5DFEFE5DFEO"EBE9EBJ">"t">$J">"t">$J">"t">$J">"t">$J">"t">$J$
+O(5D5DFE5D5DFEFEG5D5DFE5D5DFEFEG5D5DFE5D5DFEFEG5D5DFE5D5DFEFEG5D5DFE5D5DFEFEO E9EBE9JtJtJtJtJtJ$
+O25DO/5DO/5DO/5DO/5DO,EBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9JzJzJzJzJzJ$
+O(=FEI=FEI=FEI=FEI=FEO"EBE9EBJ"J"J"J"J"J$
+O'FFO7FFO7FFO7FFO7FFO?E9EBE9JZJZJZJZJZJ$
+O(?G?G?G?G?O EBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J$
+VKEBE9EBJ$
+VKE9EBE9J"J"J$
+O2FEO9FESLEBE9EBJ"J"J"J$
+RCFEO-FEOHFELE9EBE9J$
+VKEBE9EBJ$:$9"9"J$>$;$J$:%:$8%J$9%9$J$9"9"9%;#9*J$
+O/FEFEFEFEFEFEFEFEO$FEFEFEFEFEFEFEFEFEO!FEFEFEFEFFFEFEFEFEFEFEFEFEFEO$FEFEFEFEFEFEFEFEFEFELFEFEFEFEFEFEFFFEFEFEFEFEFFFEFEFFFEFEFEFEJE9EBE9J%9&J&<&9%J&:%8%8%J&8%8%J&A%9%9)J$
+O.FEFFFFFFFEFFFFFFFEO*FEFFFFFFFEFEFFFFFFFEFEFFFFFFO FEFFFFFFFEFEFFFFFEFEFFFFFFFFFEFFFFO#FEFFFFFFFEFFFEFFFFFEFFFFFFKFEFFFFFFFEFEFFFFFEFEFFFFFEFEFFFFFFFFFEFFFFJEBE9EBJ#J"J#J&:";#8#8"J$
+Q(FEFFO,FFO>FEFFO'FFFEFFFEFFFFFEFFFFFEFFO#E9EBE9J$9&J$>$J$A$J$J$:$J$
+O6FEFEFEFFFEFFFEFFO$FEFEFEFEFEFEO)FEFEFEFFFEFEO+FEFEFEO+FEFEFEFFFEFFO7EBE9EBJ%J%=%J%A$J%J%9$J$
+O6FFFFFFFFO+FFFFFFFFFFFFFFFFO(FFFFFFFFFFFFFEO*FFFFFFFFO*FFFFFFFFFEFFFEO7E9EBE9J"="9$J"@"8#J"J"=#J"8&@#8#J$
+O1FEFEFFFEFFO(FEFEFFFEO'FEO;FEFFFEO$FEFEFFFFFFFEFFFEFEFFO&EBEBEBJ%9&J&<&9%J&@%9$J&9$8%J&A%9%>$
+O.FFFEFEFFFFFEFEFEFFO*FFFEFEFEFFFFFEFEFEFFFFFEFEFEO FFFEFEFEFFFEFEFEFFFFFEFEO#FFFEFEFEFFFFFEFEFFFEFEFEKFFFEFEFEFFFEFEFEFFFFFEFEFFFFFEFEJ%9$;"J$:"9$;$J$:"9"8$;#J$;#9$J$9"9":$;#9"<#Jx"
+O/FFFFFFFFFFFFFFFFO&FFFFFFFFFFFFFFFFFFFFO!FFFFFFFFFFFFFFFFFFFFO$FFFFFFFFFFFFFFFFLFFFFFFFFFFFFFFFFFFFFFFFFFFDE8E9Jw
+VFEBJ"
+U8FF
+
+Hz:w
+V0FEE9Gz8y
+V2EBEB@&J%
+F6F6F6F6F6VIF6F6F6F6@'J&
+F5F5F5F5F5F5VHF5F5F5F5F5A&J&
+F7F7F7F7F6VHF7F7F7F7F6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gz
+VEF5F"
+F5Ez#z#z
+2F7F6F5V!F7F6F52F7
+
+
+Az8z8z
+6F6V!F66F6@"J"J"
+F67F6V"F6?Z
+W'
+
+
+
+
+
+
+
+ENDBITMAP
+%%EndBinary
+81.65 69.95 531.65 744.95 C
+-8.35 24.95 603.65 816.95 C
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(7) 518.65 57.92 T
+0 12 Q
+(Pour utiliser le File Manager:) 81.65 736.95 T
+(         le lancer au moyen de la commande) 81.65 722.95 T
+3 F
+(f) 326.27 722.95 T
+(ilemgr &) 333.47 722.95 T
+0 F
+(         ou depuis le menu \322Sun T) 81.65 708.95 T
+(ools\323 de la root window) 232.8 708.95 T
+(On peut \216galement faire du) 81.65 682.95 T
+1 F
+(\322drag and dr) 215.28 682.95 T
+(op\323) 278.84 682.95 T
+0 F
+( de \336chiers entre le File Manager et l\325\216diteur de) 297.52 682.95 T
+(textes) 81.65 668.95 T
+5 F
+(textedit.) 112.64 668.95 T
+0 F
+(Pour ce faire, s\216lectionner un \336chier dans le File Manager et le \322d\216pla-) 177.44 668.95 T
+(cer\323 jusqu\325\210 la fen\220tre de) 81.65 654.95 T
+5 F
+(textedit) 205.26 654.95 T
+0 F
+( en cliquant sur le bouton 1 de la souris et en le mainte-) 262.86 654.95 T
+(nant enfonc\216 jusqu\325\210 la zone de r\216ception) 81.65 640.95 T
+-0.27 (L) 81.65 614.95 P
+-0.27 (\325\216diteur de textes) 87.88 614.95 P
+3 F
+-0.64 (Emacs) 172.72 614.95 P
+0 F
+-0.27 ( est \216galement disponible sous X window) 208.72 614.95 P
+-0.27 (. Cet \216diteur est beaucoup) 405.67 614.95 P
+(plus puissant que) 81.65 600.95 T
+5 F
+(textedit) 167.32 600.95 T
+0 F
+(, mais son utilisation est  un peu moins conviviale.) 224.92 600.95 T
+5 F
+(Emacs) 470.26 600.95 T
+0 F
+( per-) 506.26 600.95 T
+(met en particulier de g\216rer simultan\216ment plusieurs fen\220tres, de lancer la compilation et de) 81.65 586.95 T
+(deboguer les programmes. Les principales commandes d\325) 81.65 572.95 T
+5 F
+(Emacs) 357.92 572.95 T
+0 F
+( sont donn\216es en annexe.) 393.92 572.95 T
+(Pour utiliser Emacs:) 81.65 546.95 T
+(         le lancer au moyen de la commande:) 81.65 532.95 T
+3 F
+(emacs) 326.6 532.95 T
+6 F
+(f) 369.8 532.95 T
+(ilename) 377 532.95 T
+3 F
+( &) 427.4 532.95 T
+0 F
+(         ou depuis le menu \322X T) 81.65 518.95 T
+(ools\323 de la root window) 222.79 518.95 T
+81.65 51.95 531.65 744.95 C
+81.65 82.95 531.65 514.95 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+0 0 0 1 0 0 0 K
+%%BeginBinary:  35660    
+440 420 440 420 0 86.65 78.95
+/red <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000026B7AF0000B4B4AF998C61
+3EC472FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F
+7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F3F3F3F3F3F3F3F3F3F
+3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F00000000000000000000000000000000
+0000000000000000F466B7CCC487F5437F4C8F0000B22A4FBE46FF00FF1800FF
+> store
+/green <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000004CE5EE0000EEEEEE998C87
+57D79F00000000000000000000000000FFFFFFBFBFBFBFBF7F7F7F7F7F3F3F3F
+3F3F00000000FFFFFFFFFFBFBFBFBFBF7F7F7F7F7F3F3F3F3F3F0000000000FF
+FFFFFFFFBFBFBFBFBF7F7F7F7F3F3F3F3F3F0000000000FFFFFFFFFFBFBFBFBF
+BF7F7F7F7F7F3F3F3F3F3F0000000000FFFFFFFFFFBFBFBFBFBF7F7F7F7F7F3F
+3F3F3F3F00000000F466B7CCB27ADE7E7F4CE96DCDD04E94BE82FF00007400FF
+> store
+/blue <
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000BFC2EE4D9AB4B4EE998CD9
+8CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBF7F3FFFBF7F3F00FFBF7F3F00FFBF7F
+3F00FFBF7F3FFFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FF
+BF7F3F00FFBF7F3F00FFBF3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F
+00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FFBF7F3F00FF
+BF7F3F00FFBF7F3FF466B7CC8F62B3AE7F4CE96DCDE96DCDBEB4008000CD00FF
+> store
+ BEGINBITMAPCOLORc
+
+
+
+
+
+8z
+W4F5J"J"J"
+:F6V/F68F6:z8z8z"
+6F7V.F76F7F6
+
+
+>z8z8z
+2F6V.F62F6?z
+W'F5@z#z#z#z"
+0F7F6F5UJF7F6F50F7F6F50F7F6
+
+JPJ#J#>$Ju
+QM9FFFFO"FFFFFFFFFFQ!F5J)J%Js"
+QKFFFFF7F7F7F7F7FFOEFFFFF7F7Q"F7F6J%8*9%9%9%;";#8%8#9#8%<%8&9%=%8&9%8"8";"8(
+Q#FFFFFFFFFFF7FFFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFFFF7FFFFF7FFFFCuJ'858#8%9'?':'9,;'9.8";"8"9"J%
+F5P9FFFFF7F7FFFF>FFF7F7FFFFF7F7FFFFF7FFFFF7F7FFFFF7FFFFF7F7FFFFF7FFFFF7F7FFFFFFF7FFFFF7FFFFFFF7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFFFF7FFFFF7FFFFF7F7FFFFFFFFF7F7FFFFFFF7FFFFF7FFFFF7F7FFFFF7F7F7F7F7FFP=F5F5F5F5Ds"J#?#9%;&=+;#C"J"<%H#J$
+F7F6PKF7F7F7F7FFF7F7F7FFF7F7FFF7F7F7F7F7FFFFF7FFFFF7F7F7F78F7FFF7F7F7F7F7P<F7F7F6J#E$@&;#J#?#@&H"
+Q$FFFFFFFFFFF7F7FFFFFFFFF7O"FFFFFFFFF7F7FFFFFFF7DsJ%B%B"8"="8#?&J%=%@"8"J#
+F6P<F7F7F7F7FFFFF7F7F7FFFFFFF7F7FFFFFFF7<F7F7F7F7F7F7F7F7F7FFQ"F6F6CuJ#J(<(<#C#C">#8#;#>%=%J%
+F7P=FFFF7FFFFF7FFFFF7F7F7FFFFF7FFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFF7F7FFF7FFFFPFF7F7F7F7J'B58)9'9";':'9,;'>'8%
+Q"F7FFFFFFFFF74F7FFFFFFF7FFFFF7FFFFFFFFF7F7F7FFFFFFFFF7F7FFF7F7F7F7F7F7F7FFFFFFFFF7F7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFF7F7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFFFFFF7F7FFFFF7J%8#8#8#8v9%:"P;%<":%8#8%;#9%9#8%8#8#8%:#8#8#8#Js
+Q#F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7F7Q F6J&C"Ju
+QLF7F7F7F7F7FFR>F7J$
+R/FFFFF7@z8z8z8z
+0F6UJF60F60F69rG"J"G"H%
+F6F6UKF6F6F6F6F6F695r
+W+F5F5F5F5F5F5F6FEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFF5:58&
+W*F7F7F7F7F6F6FFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFFFEFF5DF7F7F7F7F6@"Z"
+FEW!5D@#
+FFFE@#
+FEFF@#
+FFFE@#
+FEFF@#;'B$8$Jr(Hr:$8#F*>$
+FFFEFEFEFEFEFEFEFEFEFEFEFEFE=FEFFFEFEFFFEFEFEFEFEFEFEFEFEFEFEFEFEFFFEFEFEFEFEFEFE@#;"8%@$8$J"8$;"J"8$;"J"8$8">"
+FEFFFFFFFFFEFEFEFEFFFEFEFF>FFFFFFFFFF4FFFFFFFFFF6FFFFFFFFFFFF@#J":"J%J"?#8#
+FFFE9FFFFCFFFFFFFF<FFFFFFFEFE@#A,8$8"8%8&8%F&<%G"8%9&8"J%<r
+FEFFFFFFFEFEFEFFFEFEFEFFFEFEFFFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFFFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFFFEFE6FEFEFEFEFE@#>#9"9"9"8$8+8";#D#8"='D#8&9"9"8"D$:';"8&
+FFFEFEFEFFFFFFFFFFFFFFFFFEFEFFFFFEFEFFFFFFFFFFFEFEFFFEFEFFFFFEFEFEFEFEFEFFFFFFFFFFFFFEFEFEFEFEFFFFFEFEFFFFFFFFFEFE@#>%J":#D#J#J$
+FEFFFFFFFEFE>FFFEFEFFFF>FFFF@FFFFFF@#J#@"9"E"A#H"J#
+FFFEAFEFEFFFEFFFEFEFFHFEFE@#J%>$J%G"J%
+FEFFAFFFFFFFFFEFFFF=FFFFFFFFFEGFFFFFFFF@#;"8%:#8#8$8+8":%@"8"9"8#8(A"8*8#8'@"8$8+8"9&
+FFFEFEFEFEFEFFFEFEFEFEFEFFFEFEFFFFFEFEFEFEFEFFFEFEFEFEFEFFFEFEFEFEFEFEFFFEFEFEFEFEFEFEFEFEFEFFFEFEFEFEFEFEFEFFFFFEFEFEFEFEFFFEFEFFFFFEFEFEFEFEFFFEFEFEFEFEFEFF@#;Q9Z8U9%A%9YAZ8$@T8U9%
+FEFF0FFFFFFFFFFFFFFFF3FFFFFFFFFFFFFF@#J#
+FFFEQ*FFFF@#
+FEFF@#
+FFFE@#z
+FEFFW 5D@#
+FF5D@z
+W$FE@Z
+W$
+Jw
+W E4JU
+W!B"9"I"G"J(J%?#J%9$9$8"93
+E4E4E4E4;E4FFE4E4E4E4E49E4E4E4E4E4E4AE4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4J"J%J%>"<"J+8$9":&8%8%
+@E4O&FFFFFFFF:FFFFFFE4FFE4<FFFFFFE4FFE4FFFFFFE4FFE4FFE4FFFFE4FFFFFFFFFFFFFFFFFFE4C$D"9"J"G"
+E4FFE4E4E4P'FFE4C$8"9'9$;"9$8"9"8$9$9$8%9$?$9$8"9"8$?$?#:$8"9"8$J#
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4;FFE4J'9"9#8&>+8%8*9$8,=&8+>":&>$?%J$9%
+9FFE4FFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4E4E4E4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4E4E4E4FFFFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4E4E4FF:E4E4E4E4E4E4FFD";"?"9"8#:$J$9"8">$B"=&8$J"?"@$F#?$9$
+FFE4E4E4E4FFE4E4E45E4E4E4FFFFFFFFFFFFFFE4E4FFFFFFFFFF8FFFFFFFFFFFFE4FFFFFFFFE4FFJ$9#:%:"D%J$J"J#
+?FFE4FFFFE4FFFFFFFFE4E4FFFFFFGFFFFE4CE4O&FFE4J"9"9#<'J":"8"8#J':"J"G#
+>FFFFFFE4E4FFFFE4E4FFO"E4E4E4FFE4=E4FFFFE4E4FFE4>FFFFE4H&9";"<)8#:0>%>18&=&8$9$8&8#:$D&8$E%Js
+FFE4FFE4FFFFFFFFE4FFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4FFFFE4E4E4FFFFE4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4E4E4E4E4RCE4B"9"8$8"9"="9"8$8";%9$9Q<Q<$9$9%8$8"<$9$9$9$8"<$>"<$9$8"9"9"9R9"
+FFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFE4FFFFFFFFFFFFFFFFFFFFFFFFJ&J&9"
+O"FFE4E4E4FFOMFFE4E4E4FFFFJ$J$
+O#FFFFFFP!FFFFFF
+B"9"J%9#J&>#
+E4E4OGE4E4E4E4E4E4O+E4E4E4E4E4E4E4J";"@"J"<"F%8"J"G%>"
+@E4E4E4=E4E4FFFFFFE4FFIE4FFFFFFFFFFC$D"9"9"J"J"
+E4FFE4E4E4FFO!FFO9E4C$8"9'9$9#9%8%9$8%9$9$8%9#9"9"8$E$9$9$8%9$8%8%9$E$?$9$
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9"8";*8&8%809"@&8%>18+8*9$?$9%=,
+9FFE4FFE4FFFFFFFFE4FFFFE4FFFFE4FFFFE4FFFFFFE4E4FFFFE4FFFFFFE4FFE4FFFFFFE4FFFFE4FFFFFFE4FFFFFFE4E4E4E4FFFFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFFFFE4FFE4E4E4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4D";"?"9">"A$9"8"8$<"J$9$?$<"8$?$9"B"@$9$>&8$
+FFE4E4E4FFE4E4E4FFFFE4E4E4FF4E4E4E4FFFFFFE4E4E4FFE4E4E4E4E4E4FFFFFFFFFFE4E4E4FFE4E4FFFFE4E4E4J$J%=%J&8%C%?%>%J%?$9%
+?FFE4FF5FFFFFFFFE4FFFFFF4FFE4FFE4FFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFF?E4FFFFFFFFFFE4FFFFFFFFJ"9"G";"G";"G"J";"A"A"9"J"8#;"
+>FFFFE4E4E4E4E47E4E4E4E4E4;E4FFE4E4H&9";":$?+=%8&8%8$9$8&>$8%8,9"9&>%8$D%9$8,
+FFE4FFE4FFFFFFE4E4E4FFE4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4E4FFFFE4E4FFE4E4E4FFE4FFFFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFE4E4FFE4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFB"9"8$8"9">$8"9"9#9$8"<%8$:#9$:":$8"<$9%8$9$8"9"8$8"9"9#9$>"<%8$9$9$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ"
+Q4FF
+
+B"9"J"J%9#J&
+E4E4ME45E4E4E4E4E4E4AE4E4E4E4E4J";"J$?"A%8"J&
+@E4E46E4FFE4E4FFFFFFE4FFBFFFFE4FFFFC$D"9"9"J&J"JS
+E4FFE4E4E4FF5E4FFFFFFE4O%E4T7C$8"9'9$9#:$9$8%>"9'9$E$9$9$9$D%8"9"8$
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4J'9"8":,8%C%8&8%>18$E%=&
+9FFE4FFE4FFFFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4FFE4FFFFE4FFFFFFE4E4E4E4FFFFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4FFFFE4E4FFFFFFE4D";"?"9"A">";$J$?$<"8$:"F"8">$
+FFE4E4E4FFFFE4E4E45FFFFFFE4E4E4FFE4E4E4FFFFFFE4E4E4J$J$J%?%J%
+?FFE4FF;FFFFFF@E4FFFFFFFFFFFFFF@FFFFFFFFJ"9"A"J"<"J";"9"J"<"
+>FFFFE46E4E4=E4E4E48E4E4H&9";":$8,C%9+>$8%8,8$J%8&
+FFE4FFE4FFFFFFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFE4E4FFFFE4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E44FFE4E4FFFFE4E4E4FFB"9"8$8"9">$9$9$8"9$9"8%9#9$8"<$9%8$9$9$@"9"<%8$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFJ"
+P8FF
+
+B"9"J%9#J"
+E4E4KE4E4E4E4E4E4O=E4J";"J%8"J"J"F"A"
+@E4E46FFFFFFE4FFIE48E4E4E4C$D"9"9"J"G"
+E4FFE4E4E4FFO?E4FFC$8"9'9$9#:$9$8%E$9$9$8%9$8%8%9$>%9#:$:#8%>%9$8%
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9"8":,8%8%>18+8*9$?%8":&8*>%8&8%
+9FFE4FFE4FFFFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4E4E4E4FFFFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFFFFE4FFE4FFFFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFFFFE4FFFFE4FFFFFFE4FFFFFFE4D";"?"9"A">";$?$<"8$?$9"B"@"8"D"
+FFE4E4E4FFFFFFFFFFE4E4E4FFE4E4E4E4E4E4FFFFFFFFFFJ$J%?%>%
+?FFE4FFFE4FFFFFFFFFFFFFFFFFFFFFFJ"9"A"J";"A"A"9"J%B"A">%
+>FFFFE4CE4E4E4E4E45FFE4E4E4E4E4E4E4E4FFH&9";":$8,D$8%8,9"9&>%8$E$9$?%>+8$
+FFE4FFE4FFFFFFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFE4E4FFE4E4E4E4E4E4FFFFFFFFE4E4FFFFE4E4FFFFFFE4E4E4FFFFFFFFB"9"8$8"9">$9$9$8"9$<$9%8$9$8"9"8$8"9"9#9$>"<$8";"9"9#@#9$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFE4FFFFFFFFFFFFFFFFFFJ"J&
+P8FF5FFE4E4E4FFJ$J"
+Q!FFFFFF@FF
+B"9"J$J%J&>#
+E4E4FE4E4E44E4E4E4E4:E4E4E4E4E4E4E4J"J$J&J%>"
+@E46FFE4FF4FFE4FFFFE4:FFFFFFFFFFC$D"9"J"
+E4FFE4E4E4O1E4C$8"9'9$8"9"8$9$?$9$8%?$8"9"8$E$?$9$
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9"=,=,8%908$?$9%=,
+9FFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4E4FFFFE4E4E4FFFFE4FFFFFFE4FFFFE4FFE4FFFFE4FFE4E4E4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4D";"?"9"=&8$B">"<$>$:"@$9$>&8$
+FFE4E4E4FFE4E4FFFFE4E4E4FFFFFFFFE4FFE4FFFFFFFFFFE4E4E4FFE4E4FFFFE4E4E4J$?$9%J%?$9%
+?FFE4FFFFFFE4FFFFFFFFO/E4FFFFFFFFFFE4FFFFFFFFJ"9":"8"8#;"A"J$:"J"8#;"
+>FFFFE4E4FFE4E4E4:E4FFE4E4;E4FFE4E4H&9";"9%8,8$8,=28$D%9$8,
+FFE4FFE4FFFFFFFFE4E4FFFFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4E4FFFFFFE4E4E4FFFFE4FFFFFFE4E4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFB"9"8$8"9">%8$9$9$9$9$8"9Q9$8"9"8$>"<%8$9$9$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ"
+P&FF
+
+B"9"J#J"J%J&>#
+E4E45E4E4<E45E4E4E4E4FE4E4E4E4E4E4E4J":%J$?"A%?"J%>"
+@E4E4FFFFE4:E4FFE4E4FFFFFFE4E4<FFFFFFFFFFC$D"9";"J&J"G"
+E4FFE4E4E4FF9E4FFFFFFE4AFFE4C$8"9'9$?$9$8"9"8$>"9'9$?$9#:$9$9$E$?$9$
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9'8,=&C%8&8%8%8":,8$?$9%=,
+9FFE4FFE4FFFFFFFFE4E4E4E4E4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4FFE4FFFFE4FFFFFFE4E4E4E4FFFFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4E4E4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4D";"?"9'B"=&8$J$9$>&8$:"@$9$>&8$
+FFE4E4E4FFFFE4FFFFFFFFE4E4FFFFE4E4E45FFE4FFE4E4E4FFE4E4FFFFE4E4E4FFFFFFFFE4E4E4FFE4E4FFFFE4E4E4J$J$9$J#8%?$9%I%?$9%
+?FFE4FF;FFFFE4FFFFFF6FFE4E4FFFFFFFFFFE4FFFFFFFFE4FFFFFFFFFFE4FFFFFFFFJ"9"G":"8"8#@"<"@#C"8#;"9"J"8#;"
+>FFFFE4E4E4FFE4E4E4FFE4E4FFE4E4E4;E4FFE4E4H&9";"?18&=%9+=%9$8,8$D%9$8,
+FFE4FFE4FFFFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4FFFFE4E4E4FFFFE4E4FFFFE4E4FFFFFFE4E4E4FFFFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFB"9"8$8"9">";$9$9%8$8"9"8%9#9$8"9"8%8$9$9$9$>"<%8$9$9$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ"
+P>FF
+
+B"9"J$J&>#
+E4E4LE4E4E4LE4E4E4E4E4E4E4J"J&J%>"
+@E4;E4FFFFFFE4LFFFFFFFFFFC$D"9"J"
+E4FFE4E4E4O1E4C$8"9'9$8%9$8"9"8$>%9$9'9"8$9$E$?$9$
+FFE4FFE4E4FFE4E4FFE4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9"8+=&>%8*>&8$?$9%=,
+9FFE4FFE4FFFFFFFFE4FFE4FFE4FFFFFFE4E4FFFFFFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFE4E4E4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4D";"?"9"J$E$E$:"@$9$>&8$
+FFE4E4E44E4E4E4E4E4E4E4E4E4FFFFFFFFE4E4E4FFE4E4FFFFE4E4E4J$D&8%C%E%I%?$9%
+?FFE4FFFFE4FFE4FFFFFFFFFFE4FFFFFFFFFFFFFFE4FFFFFFFFFFE4FFFFFFFFJ"9"J">%=%;"<"9"J"8#;"
+>FFFF7E4E4E4E4FFFFE4E4E4E4E4E4;E4FFE4E4H&9";";"9&8$8,8$8%9$8%8&8$D%9$8,
+FFE4FFE4FFFFFFFFFFE4E4E4FFFFE4FFFFE4E4E4FFFFFFE4E4E4FFFFFFFFFFE4E4E4FFFFFFFFE4E4FFFFE4E4E4FFE4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4E4FFB"9"8$8"9"="9"8$:":$9$?%>%8$9$>"<%8$9$9$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ"
+P&FFJ"E"
+O4FFFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+D"@#J"I"J"J"E#J"E#F#J$
+E4E4E4O#E4E45E4CE4E4E4O'E4E4E4E4E4Q'E4FFE4J"J%J"J#E"G"J"J"<"J"
+9FFQ%E4FFFFE44E4>E4FFFFFFCE47E4E4HE4J"J"J#
+QBFFQ/FFOCFFE4J$8%9$9$8"9'?$9$9$?$9$8%9$8"9'9$9$?$9$E$8%9$8%8%9$9$?#:$9$?$8"9">$9$?$8"9'9$8%9$8%9#:'9"8$8%9$8%8%>%9$8%?$
+?E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4FFE4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4FFE4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4J%81>%=%8,>+8*?1=%8&=%8&8091C&8%=&C,>%=%8&8%8*9":%>&8+8*?%8%8%=%9#
+?FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4E4FFFFFFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4FFFFFFE4E4E4E4E4E4FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFFFE4FFFFE4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4FFFFFFE4E4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFE4FFFFFFE4FFE4FFE4FFFFFFE4FFFFE4FFFFFFE4FFFFFFE4FFFFFFE4FFE4FFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFFFFFFFFE4FFFFFFE4E4FFFFE4E4FFFFFFFFE4J$9"8">$?"8"D$8&J"8"D"8"8$8&D$>%9$9";$?"8"8$8&G"8$B"D$9$?$J$J$?$9"J$9"8"E#
+?E4E4E4FFFFE4E4E4FFFFE4E4E4FFE4E4FFFF4FFFFFFFFE4E4E4FFE4E4FFFFE4E4E4FFE4FFFFE4E4E4FFE4E4E4FFFFE4E4E4FFE4E4FFFFFFE4E4E4FFE4E4E4E4E4E4E4E4E4;E4E4E4;E4E4E4E4E4E4FF7E4E4E4FFFFFFE4J%E%J%8$J%8$E%D%>%D%8$?#?%J%8%=%J%J%>%J%
+>E4FFFFFFFFFFFFFF:FFFFFFFFFFFFE4MFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFE4E4FFFFFF;FFFFFFFFFFFFFFFFE4FFFFFF:E4FFFFFF;FFFFFFFFFFFFFFFF9E4FFFFFFD"J%<":"J$8#J"B$8#G"G"A";"A$8#G"G":"B";"F"<"J"=%;"<"A"A">%J#
+FF;FFE4E4E4E4E48E4FFE4FFE4BE4E4FFE4FFE4E4E4E4E4E4FFE4FFE4E4E4E4E4E4E4E47E4FFE4E4E4E4E4E4E4E4E4E4FF<FFE4D"@$8%?$8+D%8,>+=%8%>,=%8&C&=&8%=,?#8+9$8+9$8,=%8%9+9"9%9%8$9$8%8&9"9&>%>$8%D%
+E4E4E4E4FFE4E4E4FFFFFFFFE4E4E4FFFFFFE4E4FFFFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4FFFFE4E4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4E4FFFFE4E4E4FFFFE4E4E4FFFFE4E4FFFFE4E4E4FFFFFFE4E4E4FFFFE4FFE4E4E4FFFFFFE4E4E4E4E4E4FFE4E4E4FFFFFFE4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4FFFFE4E4FFFFFFE4E4E4FFFFFFE4E4E4FFE4E4FFE4E4E4FFFFFFFFE4E4FFFFE4E4E4FFFFFFE4E4E4FFFFE4E4FFFFFFFFFFE4E4E4FFE4E4E4D"@$9Q;"<$9QB%8$9$>%9$8"<%8Q<$9$?%8$?";$8"9"8$:#8"<$9$A"9$9%8$9$9%8$9$9$?%8%9#9$8"9"8%9#9$?%8$8"9"8$8"9"9#EQB%;"
+FFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ&
+JFFE4E4E4FFJ$J"J"
+KFFFFFFT,FFKFF
+J#J"
+4E4E45E4I%D";#
+E4FFFFE4E4FFE4J"
+6FFC$?$8"9':#
+E4E4E4E4E4E4E4E4FFE4E4E4E4FFE4B+9%=%
+E4FFFFFFE4FFE4E4E4E4FFFFFFE4FFE4FFFFC$8%9$
+E4E4E4FFE4FFFFE4E4E4C%=%F#
+FFFFFFFFE4FFFFFFE4FFF"F"<"
+E4E4E4B&=%8%9%8#
+FFE4E4E4FFFFE4E4E4FFE4E4FFFFE4E4FFE4FFC$9";%8%9#9"
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+D"?"9"J%H"C"9"A"="G&
+E4E4E4O)E4E4E4E4E4E4E4E4E4E4E4E4E4E4J"J"E&J"@"J%
+LE47E4FFE4FFFFE4GE4E47FFFFFFFFJ$D"9"J"J"J"
+9E4FFE4E4E45FFO-FF7E4J$8"9'9$8%9$9$9#9&8$?$8%9$9$8%?#:$8%:#9$@#
+9FFE4FFE4E4FFE4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4J'9"818":,9*8*8&8%9":":%8%9%8$?%
+EFFE4FFE4FFFFFFE4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFFFFFFFE4FFFFE4FFFFFFE4E4E4FFFFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFFFFFE4E4FFFFE4E4FFE4FFFFFFFFE4FFFFE4FFFFE4FFE4FFE4FFFFE4J";"?"9"8"8"8$8&?#9$:$>"8">$9"8"J"<"?#
+:FFE4E4E4FFFFE4E4E4FFE4E4FFFFE4FFE4E4E4FFFFE4FFFFE4E4E4FFFF:FFFFFFFFJ$?%8$?#:%J%
+KFFE4FFFFFFFFFFFFFFE4E4FFFFFFFFFF:FFFFFFFFD"J"9"A$8#=#>"J">$H"?"?"
+FF;FFFFE4FFE4FFE4E4FFE4=E4E4FFE4E4E4E4D"E&9";"?,8$95=%8&>$9$8%9%>$>&
+E4FFE4FFE4FFFFFFFFE4E4E4FFFFFFE4E4E4FFE4E4E46E4E4E4E4FFFFE4E4E4FFFFE4E4E4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4E4FFFFFFFFE4E4E4FFE4E4E4FFE4E4FFE4E4E4FFE4E4E4FFD"?"9"8$8"9"="<$9$9$8P8$8%9$8"<%8$8";"9"8$9%9#8"9"8$?$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFJ"
+Q.FF
+
+
+
+
+
+
+
+
+
+
+
+Ju
+W!E4BzW
+VBE4
+JPJ"9";"?#E#J"9"A"=%J"<"A">P8$J"8PG"J#:"JP8"8"
+JKFFFFFFFFFFFFFFMFFFFFFFFFFFFFF6FFFFFFFFFFFFCFFFFFFFFFFF6FFFFJ";"@%J%D";"J&J"J%8&J#9%J"A";#J%8$
+:FFFFE4E4E4E4O0FFE4E4FFE4FFO2E4FFE4E4FF4FF<E4E4E4E4FFE4E4E4FFAFFE4E4E4E4E4LFFE4E4FF5E4E4E4E4FFE4FFJ"9$9"J"E&G"J#<"A";"<#J)
+8FFFFE4FFFFGFFE4FFE4FFE4E4P1FFE4FFFFFFFFE4PLFFE4E4E4FFE4FFE4J$9$D%9$9$9$9$J$9$?$8"9"=%9$J$9$E$9$>"<#@#:$:#8";%8%J#?"9'9$9$8%9$8%8%9$@#J"
+9FFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFF5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFGFFFFFFFFFFFFFFFFFFFFFFFFE4FFE4FFE4FFFFFFFFE4E4FFFFFFFFFFFFE4FF5FFE4FFFFE4FFE4FFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFE4FFFFFFFFFFFFFFFFFFE4FF;E4BP"P#9$9#P8$9%818$E$8%8+9%C%8&J"9+D,J$9$;#8%8%J$?*9%8+8*9%CP"P?#:#8P"P
+E4E4E4E4E4E4E4E4FFFFFFE4FFE4FFE4E4E4FFE4FFE4E4E4FFE4FFE4E4E4FFE4FFE4E4FFE4FFE4E4E4FFE4E4E4FFE4FFFFFFFFE4E4E4FFE4FFE4E4FFE4E4E4FFAFFFFE4E4E4FFE4FFE4E4E4FFE4E4E4FFE4FFE4E4E4FF@E4FFE4FFFFFFFFE4E4E4E4FFE4FFE4FF:FFFFFFFFE4E4FFE4FFE4E4E4E4E4E4FFE4FFE4FFE4FFE4E4E4FFFFE4E4FFE4E4FFE4E4E4E4E4FFE4FFE4FFE4E4Bw"9$9(8$?$<(9"F$?$8%9$J&J$J$<"C#@#<":%9#J$?"A$?$9"A$DvD#9v
+E4FFFFE4FFFFE4E4E4E4E4E4E4E4E4FFFFFFE4E4E4FFFFE4E4E4FFE4FFFFFFFFE4FFE4E4FFFFFF4E4FFFFE4E4FFFFFFF5FFFFFFE4FFE4FFE4E4E4E4E4FFFFE4GE4E4E4E4FFFFFFFFFFFFE4FFFFFFE4FFE4E4J$9$J%?$J%=%J$J%J%J%>%D#J#J%?%C%@#J#<"
+9E4FFE4E4FFE44FFE4E4E4E4E4FFAE4E4E4E4FFE4E4E45E4E4FFGE4E4E4E44E4E4E4E44FFFFFFFFFFFFFFFFFFE4BE4FF;FFE4E4E4E4E4E4E4FFE4E4E4FFE45FFE4FFJ"9$9"J$8#9"A"9&A"F"B$8#J$<"J";"C&=&9"9";#;%J"J"A"J&
+8E4E4E4E4E4=FFE4FFE4FFFFFFFFE4E4E4FFFFFFFFE4FFE4FF@FFE4FFFF7FFFFE4E4E4FFE4E4E4E4FFE4FFFFFFE4FFFFFFE4HFF>FFFFKFFE4FFE4FFJ";"@%9"9%8,8$?$>%8&=%8%9$9+J$8+>2=PJ$8&8%8$:"J#>%>%8%:"9&>*9$9#J$
+:E4E4FFFFFFFFE4E4FFFFFFE4FFFFFFE4E4E4FFFFFFE4FFFFFFFFFFFFE4FFFFFFE4FFFFFFE4E4FFFFFFE4FFFFE4FFFFFFE4FFFFE4E4E4FFFFFFE4@E4E4E4E4FFFFFFE4E4E4FFFFFFFFFFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE44FFFFFFE4FFFFFFE4FFFFFFFFE4E4E4E47E4FFE4FFFFE4E4FFFFFFE4FFFFFFE4E4FFFFFFE4E4FFFFE4E4E4FFFFFFFFFFFFFFE4=E4FFE4Jr9"8%8$9$9$?$8"9"8%8$9";%8%8$:#9$J"9"8$9%=%9$9$>&:"A"9$9$8&="9"J"8"<'9"8%8'9"8$8"9"9#9%8$9"J":"8"
+JE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4@E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E46E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E47E4E4E4J"A"J"
+O<E4E4Q7E4BZw
+VBE4JU
+W!J"=$J"="Js
+4E4E4FFE45E4E4UAE4C$J"
+E4FFE46E4J#?"B#
+;E4FFFFE4FFB&D$9#9%?$:#
+E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4B&?#9%8";%9#8&8%
+FFE4FFE4FFE4FFFFFFFFE4FFE4FFFFE4E4FFE4FFFFFFE4E4FFFFE4B&>#F";#9&8"
+E4E4E4E4E4E4FFFFE4FFFFE4E4FFFFFFB&J$
+FFE4FFE4FFFFFFFE4J"9#J#:"8#
+4FFE4FF6E4FFE4FFE4C$:"@%8$D&
+FFFFFFE4E4E4E4FFE4E4E4FFE4E4E4FFJ"9";%9$8"9$<$8"9"
+4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+J#J"J"J#J$J$J$J$
+OME4E4EE4O-E44E4E4O8E4FFE4GE4FFE4;E4FFE4ME4FFE4C$J"A":"J"<"@"J"J"G"J"JS
+E4FFE46E4E4E4CFFE4E4P)FFOEE4E4O@E47J"A"J"G"J"
+FFFFF=E4FFT1FFB&C"9"8#9%9#9%8%9$?$E#:$8%9$?$9$9$?$9$8%8%9$8%9$9$9$E$8%9$9$9$9$>%9$8%?$9$8%9$8%8%8"9"8$?$8"9">$9$8%9$8%8"9"8#9%9$
+E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4FFFFFFE4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4FFFFFFE4E4E4E4E4FFFFFFE4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4FFE4E4FFFFFFB&C&8";%8":%9+>$E":+8&=%8,=,8%8%8%8*8,D%85>%8%8%C+9%8*8&C&I&8+8%>";%
+FFE4FFE4FFFFE4FFE4FFFFE4FFFFE4FFFFE4FFFFE4FFFFE4FFE4FFFFFFE4FFE4FFFFE4FFFFFFE4FFFFE4FFFFE4FFFFFFE4E4FFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4FFE4FFE4FFE4FFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4<E4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFFFFFE4E4FFFFE4E4FFFFFFE4FFFFE4FFFFFFFFFFE4E4FFFFE4FFFFE4FFFFFFE4FFE4FFE4FFFFFFE4E4FFFFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4FFE4FFFFE4B&D$?"G"8";"?"J&>$E$8&A"J$9"A$8&D$9">"8$9$8&D$9"8"C&>$9"8">$J$9"<"@"
+E4E4E4E4E4FFE4FFFFFFFFFFFF5FFE4E4FFFFE4E4E4E4E4E4FFE4E4FFFFFF4E4E4E4FFE4E4E4FFE4E4FFFFE4E4E4FFFFE4E4E4E4E4E4FFE4E4FFFFE4E4E4FFFFFFE4E4FFFFE4E4E4FFFFFFE4FFO%E4E4E4FFE4FFB&J$?%D%8$J%E%8$D%E%8%8$D%J$>%J%
+FFE4FFE4FFOHFFFFE4FFFFFFFFFFFFFFFFFFFFE4@E4FFFFFFFFFFFFFFFFFFE4E4FFFFFFFFFFFFFFFFFFFFFFFFFFE4E4FFFFFF5FFFFE4E4FFFFFFO7FFFFFFFFJ":$J"A"?"J"8#;";"G$8#A"J$8#J";";$8#>%J"8#;"G"8$J"J%;"
+:E4E4FFE48E4E4E45E4FFE4E4E4E4FFE4FFE4E4IE4FFE4FFE4=E4E4E4FFE4FFE4E4E4E4FF9E4FFE4E4E4E4FFE47E45E4E4E4FFE4C$?$8&8$?$9%=&>$?$9$8&8+=%8,=,9";"9%>%8,>$8%>5>$8%J&8*?+C+D&8$8&=&8$
+FFFFFFE4E4E4E4FFFFFFE4E4E4E4E4E4E4FFE4E4FFFFE4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4FFFFE4E4FFFFFFE4E4E4FFFFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFE4E4E4FFFFFFE4E4E4FFFFFFFFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFE4E4E47FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFFFFFFFE4E4E44FFE4E4E4FFFFE4E4FFFFFFE4E4E4FFE4E4FFFFE4FFFFFFE4FFE4E4E4FFFFFFE4E4FFFFE4E4E4FFFFFFFFFFE4E4E4FFFFE4FFE4FFE4E4E4J$8"9"8$8"9"8$:#8"<$?$?$9$9$:#9$?%8$9$?$9$8"9$9"8Q9"8%8$9$?$9Q9"8$9$9$9$EQH$:#9Q=#8"9"D$9%D$?$8"9"8$9$8"9"
+9FFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ"J"
+:FFO'FFJ"J"
+S<FFP/FF
+J#F$>&>#J%J$J$;"
+EE4E4E4E4E4E4E4E4E4E4E4E4AE4E4E4E4ME4E4E4;E4E4E4E4C$J"F&=&>"J%E"J&D"@&
+E4FFE45FFE4FFFFFFE4FFFFE4FFFFFFCFFFFFFE4E4;E4FFFFFFE4E4E4FFFFFFE4J"J"J"
+PJFF?FFAE4B&D$?$A"E$?$9$9$8%E$8%9#:$J$8%8%E#
+E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4;E4E4E4E4E4E4E4E4E4E4E4E4FFB&C&=&?#D&=28%>%8%8%8":&=&=%8&8*>%
+FFE4FFE4FFE4FFFFFFE4E4FFFFFFE4E4FFE4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFE4E4E4E4FFFFFFFFE4E4FFFFE4FFE4FFFFFFE4E4E4E4E4E4FFE4E4E4E4FFFFFFE4FFFFFFE4FFFFE4FFFFFFE4E4E4B&D$B"J$?$<"J$9$9"8"=&=P>%8$J$8#
+E4E4E4E4E4E4E4E4FF:E4E4E4E4E4E4FF4FFFFFFE4E4E4FFFFFFE4E4FFFFFFFFFFE4E4E4E45FFFFFFE4FFB&D%J#D%>%J%E$J%J%
+FFE4FFE4FFFFFFFFFF6E4FFFFFFFFFFFFFFFFFF?E4FFFFFFFFFFE4;FFFFFFFF:E4E4E4E4J"A"?#H"A";"J"8#I"?"8%;"=";&9"
+BE4E4FFFFE4E4E4KE4FFE4E4E4E4E4E4FFE4E4FFFFFFE4FFE4C$D&8$8&=&C&8$829"E%?$8&I,8$9%=&>$
+FFFFFFFFE4E4E4FFE4E4E4FFE4E4E4FFFFE4E4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4E4E4E4FFE4E4E4FFFFE4E4E4FFFFFFE4E4E4FFFFFFFFFFE4E4FFFFE4E4E4FFE4E4E4J$9$9$?%?":$9$9$9$9$8"9"="<Q<$9$J$9$@#?$;"9$
+?FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5FFFFFFFFFFFFFFFFFFFFFFFFFFE4FFJ"
+R6FFJ"
+QDFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C$J":"
+E4FFE4HE4E4J"
+O*FFB&>$9$9$8"9'9#9%9$
+E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4FFE4E4E4E4E4E4E4E4E4E4E4B&=2>%8":%8&
+FFE4FFE4FFE4FFFFFFE4FFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFFE4FFFFFFE4B&=&8$<">"8"D$
+E4E4E4E4E4FFE4E4FFFFE4E4E4FFFFFFE4E4E4B&>$9%J%
+FFE4FFE4FFFFFFE4FFFFFFFF@FFFFFFFFJ"8#;";":"H";"
+8E4FFE4E4E4E4E4E4C$>5?$9+
+FFFFFF6FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE4E4FFE4E4E4FFE4E4FFFFFFE4E4E4FFJ$9$9$9Q<$:#9$
+9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+H"J"J"J"="9"9";"J$9"8$B"J"="9"="9"8$J$9"8$?$8"<"
+E45E4O'E47E4E4E4E4E4EE4FFE4E4E4E4E4E47E4E4E4E4E4E4E4E4DE4FFE4E4E4E4E4E4E4E4E4E4J"J";"J"J&D"J"F&J"F":&=):$
+P%E4CE4E48E45E4FFFFFFE4E4=E4E4FFFFFFE45E4E4E4FFFFFFE4E4FFFFFFE4FFFFE4E4FFE4J#J#=):#J"B)F#J#J"J"B#J#
+P!E4FF6E4FFFFE4FFE4FFFFE4FFE4FF8FFE4FFFFFFE4FFE4FFE4FF6E4FF=FF5FFE4FF:FFE4C$:#8%9$9$?$9$>%8"9$9"C%8%8%J";"A"9'9#9"9"C"G%8%8%E#:$J"9'9#9"9">#9"A"=#8$
+E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4FFE4E4E4E4E4E4E4E4FFE4E4E4E4E44FFFFE4E4FFE4FFE4E4E4E4E4E4FFE4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E44E4E4FFE4FFE4E4E4E4E4E4FFE4FFFFFFE4FFE4FFB&8%80>28%=&?#8%9%8%9#?$D&>%8":&9#9$;#?#8%9%8%9#D&9"9%8&>%8":&9#A#@#:'9&
+E4FFFFFFE4E4FFFFE4FFE4FFE4FFE4FFFFFFE4FFE4FFFFFFE4FFFFFFE4FFE4FFFFFFE4FFE4E4E4E4E4E4FFFFE4FFE4FFE4FFE4FFFFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4FFE4E4E4E4E4E4FFFFE4FFFFE4FFE4FFE4FFFFE4FFE4FFE4FFFFE4FFFFFFE4FFE4FFFFFFE4E4FFE4FFFFFFE4E4FFE4E4E4E4E4E4E4E4E4FFFFE4FFFFE4FFE4FFE4FFE4FFE4FFFFE4FFE4FFE4E4E4E4E4E4F"8"JP8"8"9":$?#J#@$DP>"A$9#:$:#?#J#A#9$?%Q>"A$9#;#:#@#;#9$Q
+FFFFHFFFFE4FFE4FFE4FF6E4FFE4FFE4FFFFE4FFE4FFE4FFE4E4FFE4FF6E4FFFFE4E4E4E4FFFFFFE4FFFFE4FFE4FFFFE4E4FFE4FFE4FFFFE4E4J%J#;#<"
+S+FFFFFFFFO6E4FFE4FFFFF"J%J$>#>">(<"9&J"E$8#:&9"?#>">(<"<"<"8$8"D"E$8#=":"?#;#9&
+E4EFFE4E4E45E4FFE4E4FFE4E4E4E4FFFFE4FFE4E4FFFFFFE46E4E4FFE4E4FFE4FFFFFFE4FFE4FFE4E4E4E4FFFFE4FFE4FFE4E4FFE4E4E4E4FFE4E4FFFFFFE4FFE4FFFFE4E4FFE4B&?"9+>&8$D,D%9":$?$>,=%?$8&E"F%9":$?$>&8$8&=%?$8&E"@(;%
+FFE4E4E4FFFFFFE4E4E4FFFFFFE4E4E4FFE4E4E4FFFFFFFFFFE4FFE4FFFFE4FFFFFFE4FFE4E4FFFFFFFFFFE4E4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4FFE4E4E4E4FFFFFFE4E4FFE4E4FFFFFFFFFFE4E4E4FFE4E4E4FFFFFFFFFFE4E4E4FFFFE4E4FFE4E4E4E4FFFFFFE4E4E4E4E4E4FFE4FFFFFFFFFFC$8"9$9"8$9%>$8"A"<$8"9"="=#8"9"="<$8"9X>Q9"8$8"9$;"9"9"?"=#8"9"="<$8"9"8$8"9"8$?Q9"8$8"9$;"9"9"?R
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ&J"J"
+O(FFE4E4E4FFO1FFP/FFJ$J"J"
+O)FFFFFFO$FFP/FF
+
+
+
+
+
+
+
+
+
+
+
+
+
+J#?$?$:"9%9$9$8%8"="9"9"8$J$9$?$J"J%9$9$8%8"="9"9"E"A"J%9$9$8%8"="9"9"E#
+4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE45E4FFE4E4FFE4E4E4E44E47E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4O+E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4D":%?#E+8$8&8%>$J#F"J&8$8&8%>$J$?$J"@&8$8&8%>$J%9"
+E4E4FFFFE4FFFFE4E4E4E4FFFFE4FFFFE4FFE4FFE4FFFFFFE4FFFFFFE4E4FFE4O%FFFFE4<FFE4FFFFE4FFE4FFE4FFFFFFE4FFFFFFE4E4FFE45E4FFE4E4FFE4ME4FFE4FFFFE4FFE4FFE4FFFFFFE4FFFFFFE4E4FFE45E4FFFFE4E4D"="J&G"C,J"J"C,?"9&=&9"J"C,9"C"9"
+FFFF9E4FFE4FFFFFFE4FFFFFFE4FFFFE4FFE4FFO%E4O)FFE4FFFFFFE4FFFFE4FFE4FFE4E4FFFFFFE4E4FFFFFFE4E4O5FFE4FFFFFFE4FFFFE4FFE4FFE4FFFFC#J$J$>&>$9$E$>%:#9$8%J&8$J$?$8"9'9$8%8%J$E#
+E4E4<FFFFFFO%FFFFFFE4E4E4E4E4FFFFFFFFFFFFE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4O$E4E4E4E4E4E4E4E45E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4FFE4E4E4E4E4E4O%E4E4E4E4E4C":%J%D%9%D$DPJ$>%9+8%I%9%D$8P8$J$>,8+8*J%9%D$9$>%9"
+FFE4E4E4E4:FFE4E4E4FFE4E4E4E4E4E4FFFFE4FF@FFE4FFFFE4FFFFE4FFFFE4FFE4FFFFFFE4E4FFFFE4FFE4E4E4E4E4E4FFFFE4FFFFE4FF5FFE4FFE4FFFFFFE4FFFFE4FFE4FFFFFFFFE4FFE4FFFFFFE4E4FFFFE4FFFFE4FFFF4FFE4E4E4E4E4E4FFFFE4FFFFE4FFE4E4E4E4FFH%J%D%8$?$J"F";$9"J%8$?$F"J"@$9$E"8"J%8$?$@"?%
+FFE4FFFF;FFE4FFE4FFFFFFE4FFFFFFE4E4E4O,FFFFE4E4E4FF7FFFFFFE4FFFFFFE4E4E4FF7FFE4E4E4FFE4FFFFFF:FFFFFFE4FFFFFFE4E4E4FFFFE4FFFFJ$J&J%J$>&J%J$
+OGFFFFFF4E4E4E4E4E4O*FFFFFFFFLFFFFFFE4E4E4E4E4FFFFFFFFFO6FFFFFFJ&C"JPJ#B"A"J"JP9"9&9"9&9#B"8$9%G"I"J#
+O"E4E4E4E4FFE4IAE4E4E4E49E4=E4FFE4FFE4FFE4FFE4FFE4FFE4E4E4E4FFE4E4E4E4FFE4E4?E4E4C$F#D%8&8$8&>%J#<"?%=&C&8$8&>%J$9$9$9$;">,8$8&>%=&8$8&>%F"E$
+E4E4E4E4E4FFFFE4FFE4E4E4E4FFE4E4E4FFE4E4E4FFE4E4E4E4O*E4E4FFFFE4E4FFFFE4E4E4FFE4E4E4E4FFE4E4E4FFE4E4E4FFE4E4E4E44E4E4E4FFE4FFE4E4E4FFE4FFFFFFE4E4E4FFFFE4FFFFFFE4FFFFFFFFE4E4E4FFFFE4E4FFE4E4E4E4FFE4E4E4FFE4E4E4FFE4E4E4E4FFE4E4E4C$9"A$F"9%9$9$8";R9"9"J$9#A#8"9"8$8"9"=%9$9$8";R9"9"@$:":$:":#@$8"9">$8"=#>%9$9$8";R9"9":#@";$
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFO FFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFE4FFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFJ"J"A"@"J"
+Q'FFOLFFFFFFP#FFJ"
+T&FF
+
+
+
+
+
+
+
+
+
+
+
+J'
+T FEFEFEFEFEFEJ%
+T!FFFFFFFFJ$8"J#G#D"J"9";"?#E#J#?#
+9E4E4E4E4JE4E4E4E4E4CE4E4E4E4E4E4E4CE4E4E4E4C$>&J"G%9"G"J%D";"J":":"J"@"
+E4FFE4E4FFFFFFE4LFFE4FFFFE4E4E4O E4FFFFE4FFE4?FFE4FF8E4E4J"J"9"G"J&G"J#;"J"
+<FFO3FFFFFF;FFE4FFE4FFFFO$E4FFFF=FFB&E#9$8%9$9$8%E$E#:$:#9#:$8%J$9$?$8"9"=%9$E$9";#F$8"9"8#:$8%9$
+E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E45E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4B&D%8%818%C&=%9":&8%8":&8%D$8%8+9%C%8&C&>"F,8":+8&
+FFE4FFE4FFE4FFFFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4FFE4FFFFFFE4E4FFFFE4E4FFFFFFE4E4E4E4E4FFE4FFFFFFE4E4FFFFE4FFE4FFFFFFE4E4FFFFE4FFE4FFE4FFFFFFE4FFFFFFE4FFE4E4E4E4FFFFFFE4FFE4FFFFE4FFFFFFE4E4FFFFFFE4FFE4FFFFFFE4FFFFE4FFE4FFFFE4FFFFFFE4FFFFE4FFFFE4FFFFFFE4B&D";$9"8">$9"8"D$>%B"8"A$9"8"D$?$8%9$J&C&J$9$>&>$
+E4E4E4E4E4FFE4E4E4FFFFE4E4E4FFFFE4E4E4FFE4FFFFFFFFE4E4E4FFFFE4FFE4E4E4E4FFE4FFFFE4E4E44FFE4E4FFFFFFE4E4FFFF:E4E4E4FFE4FFFFE4E4FFFFE4E4E4B&I%E%J%J%J%=%J$E$J%D$?%
+FFE4FFE4FFE4FFFFFFFFFFFFFF4FFFFFFFFFFFFFFFFF@FFFFFFFFE4FFFFFF5FFFFE4FFFFE4;FFFFFFFFFFFFE4FFFFFFFFJ"I%<"J"J"G"E"9&A"F"B$8#9#>"8#J"8$>"8#;";"
+<E4FFE4E4E4E47E47E4E4E4E4FFFFFFE4E4E4E4FFE4FFE4E4E4E4FFE4=E4E4FFE4E4FFE4E4E4C$>&=%?$8&D$8&D$8&>$8&D$>%8&=%8%9$9+:">&>$9$>,8$8&8+
+FFFFFFFFE4E4E4FFFFE4E4E4FFFFFFFFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFE4E4E4FFE4E4FFE4E4E4FFE4E4FFFFFFE4E4E4FFFFFFE4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFE4FFFFFFE4E4E4E4FFE4E4E4FFFFE4E4FFFFFFE4E4E4FFJ$8"9"8Q;"<$8"B$9$?";$9$8"9"8$9$8"B$8"9"8%8$9";%8%8$:#9$9#@$?$9$?$8"9"8$9$:#9$
+9FFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFJ&J"J"J%
+O"FFE4E4E4FFOIFFO,FFO?FEFEFEFEJ$JQ
+O#FFFFFFRH
+J#?$F#@"<%9"8$8"9+>"="9";"?#E#J$J"J$J#I"?"<%9"8$8"9+>"="9";"?#8"
+4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E46E4E4E44E4GE4FFE4O.E4E4E4E4E4E4FFE4E4E4E4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4D":%?#E%>%9$=&>R"J%D";"G#F"J"@"G"J%9$=&>R"J%
+E4E4FFFFE4FFFFE4FFFFE4E4E4E4E4E4FFFFE4FFFFFFE4E4BE4FFFFE4FFE4FFFFE4O@E4E4FF=E4E4E4E4E4FFFFE4FFFFFFE4E4BE4FFFFE4D"="J"=&J$G#=&G"J"J"J&J$G#=&G%
+FFFF=FFE4FFE4FFFF4E4FFE4E4FFFFE4FFE4FFFFME4OKFFO+E4FFE4FFFF4E4FFE4E4FFFFE4FFE4FFFFFFFFE4C#J$J$9$?$8"9"=%9$E$>%:#9$8%>"9'9$9$E'9"8#:$8%J$9$9$J$J$9$
+E4E4O8FFE4FFAE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4FFE4FFE4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E45E4E4E4E4E4E4E4E4E4AFFE4FFAE4E4E4E4E4E4C":%J+>%8$:$E$:$9#?$8%8+9%C%8&D$>%9+8%=&8*9%=+?":+>&=&8*>%8$:$E$:$9#?$8%8+9#
+FFE4E4E4E44E4E4E4E4E4FFE4E4E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFE4FFE4FFFFFFE4FFFFFFE4FFE4E4E4E4FFFFFFE4FFE4FFFFE4FFFFFFE4FFE4FFFFE4FFFFE4FFFFE4FFE4FFFFFFE4E4FFFFE4FFE4FFE4FFE4FFFFE4FFE4FFFFFFFFFFFFE4E4E4E4E4E4FFE4FFFFFFFFE4FFFFFFE4FFFFE4FFFFE4E4E4E4E4E4FFFFFFE4FFFFFFE4FFE4FFFFFFFFE4E4E4E4E4FFE4E4E4E4E4E4FFE4E4E4FFFFE4FFE4FFFFFFE4FFFFFFE4FFE4E4E4E4FFE4H%JR$?):$@":$:$8#@$?$8%9$J&E"F";$9"A$9"8"IPJ$DPD$E):$@":$:$8#@$?$8%:#
+FFE4FFFF4E4FFFFFFE4FFE4FFFFFFE4FFFFFFFFFFFFFFE4FFFFE4FFE4FFE4E4E4E4FFE4FFFFE4E4E44FFE4E4FFFFFFFFE4E4E4FFFFE4FFFFFF4E4E4E4E4E4E4FFE4FFE4FFFFFFE4FFFFFFFFFFFFFFE4FFFFE4FFE4FFE4E4E4E4FFE4FFFFFFE4J%=%J$J%J%J%J%
+PCFFFFFFFFE4FFFFFF5FFFFE4GFFFFFFFFO6FFFFFFFF?E4FFFFFFOCFFFFFFFFJ&J#<"9&A"F"B$8#E#B"A"D$J%;"B";"J&J#<"9&A"@#
+O.E4E4E4E4FFEE4FFE4E4FFFFFFE4E4E4E4FFE4FFE4E4E4E4E4E4FFE4@FFE4E4E4E4E4E4KE4E4E4E4FFEE4FFE4E4FFFFFFE4E4FFE4C$F#J%:$=&>)@$>%8&=%8%9$9+>#<"?%=&C&=%9%D$8%9$8&8%D$8+8%>%:$=&>)@$>%8&
+E4E4E4E4E4:FFFFE4FFFFE4E4FFE4E4E4FFE4E4E4E4FFE4E4FFE4E4E4FFE4E4E4FFE4E4E4FFFFE4E4E4FFE4E4FFE4E4E4FFE4E4FFFFFFE4E4E4FFE4E4FFFFE4E4FFFFE4E4E4FFE4FFFFFFE4FFE4E4E4E4E4E4FFFFFFFFFFE4E4FFE4E4E4FFE4E4E4FFFFE4E4FFE4E4E4FFE4E4E4FFFFFFE4E4E4FFE4E4E4FFFFE4FFFFE4E4FFE4E4E4FFE4E4E4E4FFE4E4FFE4E4E4FFE4E4E4FFE4E4E4FFC$9"A$E"B"<%9"8$8"9U:"<$8"9"8%8$9";%8%8$:#9$?$9#A#8"9"8$8"9"="9$<TJ%8$9$:#E$9$9%8%?"<%9"8$8"9U:"<$8"9"8%8$9">"
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFF5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFJ"J"J"Ju
+P2FFO8FFR.FFBE4BzW
+VBE4
+JPJ"9"A"=%J"<"A">P8$J"8PG"J#:"FP
+JPCFFFFFFFFFFFFFF6FFFFFFFFFFFFCFFFFFFFFFFFJ";"@%J"A":"J&J"J%8&J#9%J"A";#E&
+:FFFFE4E4E4E4O%FFFFFFODE4FFE4E4FF4FF<E4E4E4E4FFE4E4E4FFAFFE4E4E4E4E4LFFE4E4FFE4E4FFE4E4J"9$9"J"J"A"J#<"A";"<#
+8FFFFE4FFFFGFF7E4E4P3FFE4FFFFFFFFE4J$9$D%9$9$9$9$D"9"8#9%9#9%8%9$J$9$E$9$>"<#@#:$:#8";%8%J#?"9'9$9$8%9$8%8%9$@#J$8%
+9FFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFFFFFFFFFE4FFFFFFFFFFO%FFFFFFFFFFFFFFFFFFFFFFFFE4FFE4FFE4FFFFFFFFE4E4FFFFFFFFFFFFE4FF5FFE4FFFFE4FFE4FFFFFFFFFFFFFFFFFFFFE4FFFFFFFFFFE4FFFFFFFFFFFFFFFFFFE4FF5FFFFFFFFFFFFFFBP"P#9$9#P8$9%818$D&8";%8":%9+J"9+D,J$9$;#8%8%J$?*9%8+8*9%CP"P=&8&P"P
+E4E4E4E4E4E4E4E4FFFFFFE4FFE4FFE4E4E4FFE4FFE4E4E4FFE4FFE4E4E4FFE4FFE4E4FFE4FFE4E4FFE4E4FFE4E4FFE4E4FFE4E4FFE4FFE4E4E4FFMFFFFE4E4E4FFE4FFE4E4E4FFE4E4E4FFE4FFE4E4E4FF@E4FFE4FFFFFFFFE4E4E4E4FFE4FFE4FF:FFFFFFFFE4E4FFE4FFE4E4E4E4E4E4FFE4FFE4FFE4FFE4E4E4FFFFE4E4FFE4E4FFE4E4E4E4E4FFE4FFE4E4E4FFE4E4E4FFE4E4Bw"9$9(8$?$<(9"F$?"G"8";"J$J$<"C#@#<":%9#J$?"A$?$9"A$DvIv
+E4FFFFE4FFFFE4E4E4E4E4E4E4E4E4FFFFFFE4E4E4FFFFE4E4E4E4FFE4E4E4E4E4O$FFFFFF5FFFFFFE4FFE4FFE4E4E4E4E4FFFFE4GE4E4E4E4FFFFFFFFFFFFE4FFFFFFE4E4J$9$J%?$J%J%J%>%D#J#J%?%C%@#
+9E4FFE4E4FFE44FFE4E4E4E4E4FFP3E4E4E4E44E4E4E4E44FFFFFFFFFFFFFFFFFFE4BE4FF;FFE4E4E4E4E4E4E4FFE4E4E4FFE4J"9$9"J$8#9"A":$J"A"J$<"J";"C&=&9"9";#;%J"J"A"J%
+8E4E4E4E4E4=FFE4FFE4FFFFFFFFE4FF8FFFFLFFE4FFFF7FFFFE4E4E4FFE4E4E4E4FFE4FFFFFFE4FFFFFFE4HFF>FFFFLFFFFFFE49&H";"@%9"9%8,8$?$8&8$?$9%=&J$8+>2=PJ$8&8%8$:"J#>%>%8%:"9&>*9$9#J&8$J%
+F6F6F6F6F6E4E4FFFFFFFFE4E4FFFFFFE4FFFFFFE4E4E4FFFFFFE4FFFFFFFFFFFFFFE4E4E4FFFFFFFFFFFFFFE4FFFFE4E4FFFFFFE4LE4E4E4E4FFFFFFE4E4E4FFFFFFFFFFFFFFE4E4E4FFFFFFE4E4E4FFFFFFE44FFFFFFE4FFFFFFE4FFFFFFFFE4E4E4E47E4FFE4FFFFE4E4FFFFFFE4FFFFFFE4E4FFFFFFE4E4FFFFE4E4E4FFFFFFFFFFFFFFE45E4FFFFFFE4E4E4E4>F6F6F6F69'Jr9"8%8$9$9$?$8"9"8$8"9"8$:#8"<$J"9"8$9%=%9$9$>&:"A"9$9$8&="9"J"8"<'9"8%8'9"8$8"9"9#9%8$9"H":$J&
+F5F5F5F5F5F5AE4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4FFE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4LE4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E46E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4DF5F5F5F5F5:&J"A"J"J&
+F7F7F7F7F6O3E4E4Q7E4QKF7F7F7F7F6BZw
+VBE4JU
+W!J"J#?#Js
+JE49E4E4E4E4U-E4J%9":"G"
+O5E4FFFFE4E4FFE4J"9"
+O8FFFFB%9$8%8"9">$9$8%E#@$>%
+E4E4FFE4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4FFE4E4E4E4E4E4E4E4E4E4E4C+8%=&8%8%8%=%9"@&=%
+FFE4FFE4FFE4FFFFFFE4E4FFFFE4E4E4E4E4E4FFFFFFE4FFFFFFE4E4FFFFE4E4E4E4E4FFE4FFFFFFE4FFE4FFFFI$9"@P>$9"8"=%E$
+E4E4E4FFE4E4E4FFFFFFE4FFFFE4E4E4I%J%J%
+FFFFFFFF9E4FFFFFFAFFFFFFFFJ"@"J"A"
+6E4E4O(E4E4D"9&=%?*J$9$8&>%
+FFFFE4E4E4FFFFE4E4FFE4E4E4FFFFFFE4E4E45E4E4E4E4E4E4FFE4E4E4FFFFE4E4FFB"9"8$8"9"8%=%9QB";$9$9$@#JS
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFTHJu
+W!E4JW
+W 
+@z
+W$F5?"
+F5>z#z#z
+2F7F6F5V.F7F6F52F7
+
+
+:z8z8z
+6F6V.F66F69"J"J"
+F67F6V/F68Z
+W4
+
+
+
+ENDBITMAP
+%%EndBinary
+81.65 51.95 531.65 744.95 C
+-8.35 24.95 603.65 816.95 C
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(8) 518.65 57.92 T
+2 14 Q
+(3.4  Changement de Display) 81.65 735.62 T
+0 12 Q
+(X W) 81.65 708.95 T
+(indow permet d\325af) 104.16 708.95 T
+(\336cher sur n\325importe quel) 192.59 708.95 T
+2 F
+(display) 314.57 708.95 T
+0 F
+( \050ou \322serveur graphique\323\051 un pro-) 351.25 708.95 T
+(gramme qui \322tourne\323 sur une autre machine.) 81.65 694.95 T
+(On rappelle que le) 81.65 668.95 T
+1 F
+(display par d\216faut) 172.96 668.95 T
+0 F
+( est d\216termin\216 par la variable d\325environnement) 260.29 668.95 T
+3 F
+(DISPLAY) 81.65 654.95 T
+5 F
+(.) 132.05 654.95 T
+0 F
+(Initialement, le display par d\216faut est celui de la machine o\235 l\325on s\325est logu\216.) 139.25 654.95 T
+(Pour modi\336er cette variable, faire :) 81.65 626.95 T
+5 F
+(     DISPLAY=host:0) 81.65 600.95 T
+0 F
+( \050si l\325on utilise) 304.85 600.95 T
+5 F
+( sh) 374.52 600.95 T
+0 F
+(ou) 403.32 600.95 T
+5 F
+(zsh\051) 421.32 600.95 T
+(ou) 81.65 586.95 T
+(     setenv DISPLAY host:0     \050) 81.65 572.95 T
+0 F
+(si l\325on utilise) 312.05 572.95 T
+5 F
+( csh) 374.72 572.95 T
+0 F
+(ou) 410.72 572.95 T
+5 F
+( tcsh\051) 422.72 572.95 T
+(\322host\323) 81.65 546.95 T
+0 F
+(\216tant le nom de la machine) 132.05 546.95 T
+1 F
+(o\235 l\325on veut af\336cher) 264.02 546.95 T
+(.) 359.68 546.95 T
+2 F
+(Attention) 81.65 506.95 T
+0 F
+(: il faut p\216alablement autoriser) 130.31 506.95 T
+1 F
+(votr) 279.95 506.95 T
+(e) 298.84 506.95 T
+0 F
+( machine \210 af) 304.16 506.95 T
+(\336cher sur \322) 368.26 506.95 T
+5 F
+(host) 421.57 506.95 T
+0 F
+(\323.) 450.37 506.95 T
+(Pour se faire, on rappelle qu\325il faut ex\216cuter la commande :) 81.65 492.95 T
+3 F
+(xhost) 110.45 466.95 T
+6 F
+(+) 160.85 466.95 T
+7 F
+(machine-ou-tourne-le-programme) 168.05 466.95 T
+0 F
+(sur la machine) 81.65 440.95 T
+4 F
+(o\235 l\325on veut af) 154.63 440.95 T
+(\336cher) 226.75 440.95 T
+(,) 254.76 440.95 T
+0 F
+( c\325est-\210-dire) 257.76 440.95 T
+5 F
+(\322host\323) 318.4 440.95 T
+0 F
+( \050voir cours pour plus de d\216tails\051) 361.6 440.95 T
+(Exemples:) 81.65 400.95 T
+(1.) 81.65 380.95 T
+(faire appara\224tre un) 95.39 380.95 T
+5 F
+(xterm) 186.35 380.95 T
+0 F
+( sur l\325\216cran de votre voisin) 222.35 380.95 T
+(2.) 81.65 360.95 T
+(faire appara\224tre sur) 95.39 360.95 T
+1 F
+(votr) 189.02 360.95 T
+(e) 207.9 360.95 T
+0 F
+( \216cran un) 213.23 360.95 T
+5 F
+(xterm) 260.21 360.95 T
+0 F
+( qui) 296.21 360.95 T
+1 F
+(tourne) 317.55 360.95 T
+0 F
+( sur la machine de votre voisin) 348.88 360.95 T
+(\050utiliser la commande) 95.39 346.95 T
+5 F
+(rlogin) 206.04 346.95 T
+0 F
+(\051.) 249.24 346.95 T
+2 14 Q
+(3.5  Autr) 81.65 287.62 T
+(es commandes utiles) 134.67 287.62 T
+0 12 Q
+(Essayer en particulier les commandes:) 81.65 260.95 T
+3 F
+(\245) 81.65 240.95 T
+2 F
+(mailtool) 95.39 240.95 T
+0 F
+( ou) 137.39 240.95 T
+2 F
+(elm) 155.39 240.95 T
+0 F
+( : pour lire / \216crire du e-mail) 174.05 240.95 T
+3 F
+(\245) 81.65 220.95 T
+2 F
+(xrn) 95.39 220.95 T
+0 F
+( pour lire les news) 113.39 220.95 T
+3 F
+(\245) 81.65 200.95 T
+2 F
+(xcalc, calctool) 95.39 200.95 T
+0 F
+(\050calculatrice\051,) 169.71 200.95 T
+2 F
+(cm) 239.01 200.95 T
+0 F
+( \050calendrier\051,) 254.33 200.95 T
+2 F
+(xclock) 319.3 200.95 T
+0 F
+( \050horloge\051) 351.96 200.95 T
+3 F
+(\245) 81.65 180.95 T
+(xcolors, xcolor:) 95.39 180.95 T
+0 F
+(gestion des couleurs) 217.79 180.95 T
+3 F
+(\245) 81.65 160.95 T
+2 F
+(xfontsel) 95.39 160.95 T
+0 F
+( : fontes disponibles) 135.39 160.95 T
+3 F
+(\245) 81.65 140.95 T
+2 F
+(xon) 95.39 140.95 T
+0 F
+( : pour ex\216cuter un programme sur une autre machine) 114.07 140.95 T
+3 F
+(\245) 81.65 120.95 T
+(xmag) 95.39 120.95 T
+0 F
+(: le \322magni\336er\323 \050loupe\051) 124.19 120.95 T
+3 F
+(\245) 81.65 100.95 T
+(snapshot) 95.39 100.95 T
+0 F
+(: pour capturer une portion d\325\216cran) 152.99 100.95 T
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(9) 518.65 57.92 T
+3 12 Q
+(\245) 81.65 736.95 T
+2 F
+(xv) 95.39 736.95 T
+0 F
+( : pour visualiser / modi\336er des images) 107.39 736.95 T
+3 F
+(\245) 81.65 716.95 T
+2 F
+(ghostview) 95.39 716.95 T
+0 F
+( : visualisation ed \336chiers postscript) 146.06 716.95 T
+3 F
+(\245) 81.65 696.95 T
+2 F
+(xset, xload, ftptool, tapetool) 95.39 696.95 T
+0 F
+(,  etc ..) 236.72 696.95 T
+2 16 Q
+(4.0  Con\336guration d\325une session X / Motif) 81.65 642.29 T
+0 12 Q
+(Le comportement d\325une session X window sous Motif d\216pend des trois \336chiers suivants:) 81.65 614.95 T
+3 F
+(\245) 81.65 594.95 T
+(.xinitrc) 95.39 594.95 T
+0 F
+(: initialise la session Xwindow) 152.99 594.95 T
+3 F
+(\245) 81.65 574.95 T
+(.mwmrc) 95.39 574.95 T
+0 F
+(: contr\231le le comportement du window manager Motif) 138.59 574.95 T
+3 F
+(\245) 81.65 554.95 T
+(.Xdefaults) 95.39 554.95 T
+0 F
+(: \336chier de ressources pour les applications Xwindow) 167.39 554.95 T
+(.) 423.57 554.95 T
+(Ces trois \336chiers se trouvent dans votre r\216pertoire principal \050le \322Home Directory\323\051.) 81.65 528.95 T
+2 14 Q
+(4.1  Initialisation de la session) 81.65 481.62 T
+0 12 Q
+-0.01 (Editer le \336chier) 81.65 454.95 P
+3 F
+-0.03 (.xinitrc) 162.25 454.95 P
+0 F
+-0.01 ( . Ce \336chier contient les commandes qui sont ex\216cut\216es au lance-) 219.85 454.95 P
+(ment de la session Xwindow) 81.65 440.95 T
+(.) 218.86 440.95 T
+(Remarques:) 81.65 414.95 T
+3 F
+(\245) 81.65 394.95 T
+0 F
+(les lignes commen\215ant par) 95.39 394.95 T
+3 F
+( #) 223.04 394.95 T
+0 F
+(sont des commentaires) 244.64 394.95 T
+3 F
+(\245) 81.65 374.95 T
+0 F
+(ne rien \216crire apr\217s la derni\217re ligne de ce \336chier) 95.39 374.95 T
+(. Lorsque la derni\217re commande de ce) 328.97 374.95 T
+(\336chier se termine, on sort automatiquement de la session Xwindow) 95.39 360.95 T
+(. Cette derni\217re com-) 417.24 360.95 T
+-0.34 (mande d\216cide du choix du window manager qui peut \220tre) 95.39 346.95 P
+3 F
+-0.81 (mwm) 369.96 346.95 P
+0 F
+-0.34 ( \050Motif\051,) 391.56 346.95 P
+3 F
+-0.81 (olwm) 435.21 346.95 P
+0 F
+-0.34 ( \050OpenLook\051,) 464.01 346.95 P
+3 F
+(twm) 95.39 332.95 T
+0 F
+( \050Athena\051., etc ...) 116.99 332.95 T
+(Exemple:  modi\336er) 81.65 292.95 T
+3 F
+(.xinitrc) 177.31 292.95 T
+0 F
+(  de mani\217re \210 ne lancer automatiquement que les utilitaires) 234.91 292.95 T
+(que vous souhaitez voir appara\224tre..) 81.65 278.95 T
+(Sauvegarder) 81.65 252.95 T
+3 F
+(.xinitrc) 144.62 252.95 T
+0 F
+( , terminer la session Xwindow et en relancer une autre.) 202.22 252.95 T
+2 14 Q
+(4.2  W) 81.65 205.62 T
+(indow manager Motif) 119.9 205.62 T
+0 12 Q
+(Les menus de Motif ainsi que le comportement des boutons de la souris sont d\216\336nis dans le) 81.65 178.95 T
+(\336chier) 81.65 164.95 T
+3 F
+(.mwmrc) 115.31 164.95 T
+0 F
+(. On peut modi\336er ce \336chier pour rajouter des commandes aux menus, chan-) 158.51 164.95 T
+(ger le comportement des boutons, etc ...) 81.65 150.95 T
+(La syntaxe employ\216e est suf) 81.65 124.95 T
+(\336samment simple et self-explicite pour permettre d\325\216ventuelles) 217.4 124.95 T
+(modi\336cations \050\216diter ce \336chier pour s\325en convaincre\051.) 81.65 110.95 T
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(10) 514.65 57.92 T
+2 14 Q
+(4.3  Aspect des applications Xwindow) 81.65 735.62 T
+0 12 Q
+(Editer le \336chier) 81.65 708.95 T
+3 F
+(.Xdefaults) 159.3 708.95 T
+0 F
+(Ce \336chier d\216\336nit l\325aspect par defaut des applications X comme par exemple:) 81.65 682.95 T
+3 F
+(\245) 81.65 662.95 T
+0 F
+(leur couleur) 95.39 662.95 T
+(,) 152.56 662.95 T
+3 F
+(\245) 81.65 642.95 T
+0 F
+(leur taille, leur position,) 95.39 642.95 T
+3 F
+(\245) 81.65 622.95 T
+0 F
+(les polices \050fontes\051 utilis\216es,) 95.39 622.95 T
+3 F
+(\245) 81.65 602.95 T
+0 F
+(l\325icone correspondante, etc ....) 95.39 602.95 T
+(De plus il permet aussi de modi\336er le comportement du W) 81.65 576.95 T
+(indow Manager) 362.47 576.95 T
+(.) 437.46 576.95 T
+(Exemple :) 81.65 536.95 T
+3 F
+(\245) 81.65 516.95 T
+0 F
+(modi\336er les couleurs par defaut \050background et foreground\051 de) 95.39 516.95 T
+3 F
+(xterm) 400.31 516.95 T
+0 F
+( dans le \336chier) 436.31 516.95 T
+3 F
+(.Xdefaults) 95.39 502.95 T
+(\245) 81.65 482.95 T
+0 F
+(enregister ces modi\336cation par la commande:) 95.39 482.95 T
+3 F
+(xrdb -load ~/.Xdefaults) 325.68 482.95 T
+(\245) 81.65 462.95 T
+0 F
+(lancer une nouvelle fen\220tre) 95.39 462.95 T
+3 F
+(xterm) 228.68 462.95 T
+2 16 Q
+(5.0  Commandes usuelles d\325Emacs) 81.65 396.29 T
+2 14 Q
+(5.1  Notations:) 81.65 361.62 T
+3 12 Q
+(\245) 81.65 340.95 T
+(^X) 95.39 340.95 T
+0 F
+( signi\336e \322Control X\323 : tenir les touches Control et X enfonc\216es simultan\216ment) 109.79 340.95 T
+3 F
+(\245) 81.65 320.95 T
+(ESC X) 95.39 320.95 T
+0 F
+( signi\336e \322Escape X\323 :  appuyer sur la touche Escape) 131.39 320.95 T
+3 F
+(PUIS) 384.33 320.95 T
+0 F
+( sur la touche X) 413.13 320.95 T
+(\050on peut \216galement appuyer simultan\216ment sur  les touches \322Losange\323 et  X\051.) 95.39 306.95 T
+2 14 Q
+(5.2  Utilisation de la souris et du curseur) 81.65 259.62 T
+3 12 Q
+(\245) 81.65 238.95 T
+0 F
+(Souris : utilisation similaire aux \322 xterms \322 \050boutons 1 ou 3 pour s\216lectionner et copier) 95.39 238.95 T
+(,) 509.21 238.95 T
+(bouton 2 pour coller\051) 95.39 224.95 T
+3 F
+(\245) 81.65 204.95 T
+0 F
+-0.25 (Curseur : se servir des 4 touches \337\217ches \050ou faire ^P , ^N, ^B, ^F\051: pour d\216placer le curseur) 95.39 204.95 P
+(d\325un caract\217re \050haut, bas, gauche, droite\051) 95.39 190.95 T
+3 F
+(\245) 81.65 170.95 T
+0 F
+(d\216but / \336n de ligne : ^A  /  ^E \050pour End\051) 95.39 170.95 T
+3 F
+(\245) 81.65 150.95 T
+0 F
+(page suivante / page pr\216c\216dente : par ascenseur ou  ^V  / ESC V) 95.39 150.95 T
+3 F
+(\245) 81.65 130.95 T
+0 F
+(d\216but / \336n de buf) 95.39 130.95 T
+(fer : ESC <  /  ESC >) 177.17 130.95 T
+3 F
+(\245) 81.65 110.95 T
+0 F
+(aller \210 la ligne No untel :   ESC G \050pour Goto\051, puis pr\216ciser le num\216ro de ligne.) 95.39 110.95 T
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(1) 514.94 57.92 T
+(1) 518.65 57.92 T
+2 14 Q
+(5.3  Gestion des \336chiers et des buffers) 81.65 735.62 T
+0 12 Q
+(Emacs peut g\216rer simultan\216ment plusieurs \322buf) 81.65 708.95 T
+(fers\323 correspondant \210 des \336chiers dif) 309.06 708.95 T
+(f\216rents.) 485.12 708.95 T
+(Un buf) 81.65 694.95 T
+(fer peut \220tre af) 115.09 694.95 T
+(\336ch\216 sur une, plusieurs ou aucune fen\220tre.Emacs assure la coh\216rence et) 185.17 694.95 T
+(l\325af) 81.65 680.95 T
+(\336chage des divers buf) 98.09 680.95 T
+(fers sur les fen\220tres et v\216ri\336e que tous les \336chiers ont \216t\216s sauveg-) 202.85 680.95 T
+(ard\216s avant de sortir) 81.65 666.95 T
+(.) 177.96 666.95 T
+(Utiliser les menus ou bien les abbr\216viations suivantes :) 81.65 626.95 T
+3 F
+(\245) 81.65 606.95 T
+0 F
+(^X^F \050Find File\051:   lire un \336chier dans la fen\220tre courante) 95.39 606.95 T
+3 F
+(\245) 81.65 586.95 T
+0 F
+(^X^W \050Read File\051: \216crire le \336chier courant sur disque) 95.39 586.95 T
+3 F
+(\245) 81.65 566.95 T
+0 F
+(^X^S \050Save File\051:   sauver le \336chier courant sur disque \050m\220me nom que pr\216c\216demment\051) 95.39 566.95 T
+3 F
+(\245) 81.65 546.95 T
+0 F
+(^XS \050Save-Buf) 95.39 546.95 T
+(fers\051: sauver les buf) 168.46 546.95 T
+(fers qui ont \216t\216 modi\336\216s) 263.21 546.95 T
+3 F
+(\245) 81.65 526.95 T
+0 F
+(Control bouton 1 ou ^X^B \050List Buf) 95.39 526.95 T
+(fers\051: af) 269.78 526.95 T
+(\336che la liste des buf) 307.2 526.95 T
+(fers.) 402.98 526.95 T
+(On peut alors choisir un buf) 95.39 512.95 T
+(fer dans la liste en tapant sur \322f\323 \050pour Find\051) 229.49 512.95 T
+3 F
+(\245) 81.65 492.95 T
+0 F
+(^XB \050Switch-to-Buf) 95.39 492.95 T
+(fer\051: change de buf) 193.13 492.95 T
+(fer \050pr\216ciser le nom\051) 283.88 492.95 T
+2 14 Q
+(5.4  Gestion des fen\220tr) 81.65 445.62 T
+(es Emacs) 213.99 445.62 T
+3 12 Q
+(\245) 81.65 424.95 T
+0 F
+(^X2: ouvrir une nouvelle fen\220tre Emacs \050couper une fen\220tre en 2\051) 95.39 424.95 T
+3 F
+(\245) 81.65 404.95 T
+0 F
+(^X0: tuer la fen\220tre courante) 95.39 404.95 T
+3 F
+(\245) 81.65 384.95 T
+0 F
+(^X1: ne conserver que la fen\220tre courante \0501 seule fen\220tre\051) 95.39 384.95 T
+3 F
+(\245) 81.65 364.95 T
+0 F
+(^XO : Other W) 95.39 364.95 T
+(indow: changer de fen\220tre Emacs \050on peut aussi utiliser la souris\051) 168.86 364.95 T
+2 14 Q
+(5.5  Destruction et r) 81.65 317.62 T
+(estitution de texte) 199.98 317.62 T
+3 12 Q
+(\245) 81.65 296.95 T
+0 F
+(touche DELETE : d\216truit le caract\217re pr\216c\216dent) 95.39 296.95 T
+3 F
+(\245) 81.65 276.95 T
+0 F
+(^D \050Delete\051 d\216truit le caract\217re courant) 95.39 276.95 T
+3 F
+(\245) 81.65 256.95 T
+0 F
+(^K: \050Kill-Line\051 detruit \050la \336n de\051 la ligne) 95.39 256.95 T
+3 F
+(\245) 81.65 236.95 T
+0 F
+(^Y \050Y) 95.39 236.95 T
+(ank\051: restitue les derni\217res lignes tu\216es de mani\217re cons\216cutive) 124.14 236.95 T
+3 F
+(\245) 81.65 216.95 T
+0 F
+(^XU \050Undo\051: annule les derni\217res commandes d\325\216dition \050on peut faire \322Undo\323 plusieurs) 95.39 216.95 T
+(fois: Emacs m\216morise toutes les modi\336cation depuis la derni\217re sauvegarde du texte\051) 95.39 202.95 T
+2 14 Q
+(5.6  Recher) 81.65 155.62 T
+(che et Substitution de texte) 148.65 155.62 T
+3 12 Q
+(\245) 81.65 134.95 T
+0 F
+(^S \050Search\051: recherche \322incr\216mentalement\323 une chaine de caract\217re) 95.39 134.95 T
+3 F
+(\245) 81.65 114.95 T
+0 F
+(^R \050Reverse Search\051: recherche arri\217re \050vers le d\217but du buf) 95.39 114.95 T
+(fer\051) 383.69 114.95 T
+3 F
+(\245) 81.65 94.95 T
+0 F
+(Esc %: recherche et substitution interactives \050faire ^H pour help apr\217s Esc %\051) 95.39 94.95 T
+FMENDPAGE
+%%EndPage: "11" 11
+%%Page: "12" 12
+595.3 841.9 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+90.65 69.3 522.65 69.3 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 8 Q
+(E. Lecolinet) 90.65 57.92 T
+(Syst\217mes de Multifen\220trage) 261.99 57.92 T
+(12) 514.65 57.92 T
+2 14 Q
+(5.7  Compilation et debugging) 81.65 735.62 T
+3 12 Q
+(\245) 81.65 714.95 T
+0 F
+(^XC : compile un programme \050\210 condition d\325avoir un Make\336le\051) 95.39 714.95 T
+3 F
+(\245) 81.65 694.95 T
+0 F
+(ESC X) 95.39 694.95 T
+1 F
+(puis) 135.07 694.95 T
+0 F
+( gdb : lance le debugger sous emacs) 155.07 694.95 T
+2 14 Q
+(5.8  Remar) 81.65 647.62 T
+(ques) 147.1 647.62 T
+3 12 Q
+(\245) 81.65 626.95 T
+0 F
+(^G joue le role de ^C sous Unix \050annule la commande en cours\051) 95.39 626.95 T
+3 F
+(\245) 81.65 606.95 T
+0 F
+(lorsqu\325on tape un nom de \336chier) 95.39 606.95 T
+(, on peut utiliser les touches T) 251.23 606.95 T
+(AB et BLANC pour com-) 394.59 606.95 T
+(pl\216ter automatiquement le nom des \336chiers.) 95.39 592.95 T
+3 F
+(\245) 81.65 572.95 T
+0 F
+-0.43 (ESC  /  compl\217te automatiquement  un mot dans le texte en recherchant tous les autres mots) 95.39 572.95 P
+(qui commencent de la m\220me fa\215on.) 95.39 558.95 T
+3 F
+(\245) 81.65 538.95 T
+0 F
+(ESC $  permet de v\216ri\336er l\325orthographe) 95.39 538.95 T
+2 14 Q
+(5.9  Help Interactif) 81.65 491.62 T
+3 12 Q
+(\245) 81.65 470.95 T
+0 F
+(^H ou Control bouton 2: help interactif) 95.39 470.95 T
+3 F
+(\245) 81.65 450.95 T
+0 F
+(^HK suivi d\325un code commande: indique ce que fait cette commande) 95.39 450.95 T
+3 F
+(\245) 81.65 430.95 T
+0 F
+(^H^H^H: help du Help) 95.39 430.95 T
+3 F
+(\245) 81.65 410.95 T
+0 F
+(Esc X puis make-command-summary : edite la liste des commandes Emacs) 95.39 410.95 T
+2 14 Q
+(5.10  Sortie d\325Emacs) 81.65 363.62 T
+3 12 Q
+(\245) 81.65 342.95 T
+0 F
+(^X^C: sort d\325Emacs APRES v\216ri\336cation que les buf) 95.39 342.95 T
+(fers ont \216t\216 sauvegard\216s.) 346.08 342.95 T
+2 F
+(Attention) 81.65 316.95 T
+0 F
+(: si l\325on sort en utilisant le menu de la fen\220tre Motif, aucune v\216ri\336cation n\325est faite.) 130.31 316.95 T
+2 14 Q
+(5.1) 81.65 269.62 T
+(1  Con\336guration) 98.38 269.62 T
+0 12 Q
+(Le \336chier de con\336guration d\325emacs se trouve dans votre \322home directorie\323 et s\325appelle) 81.65 242.95 T
+3 F
+(.emacs) 81.65 228.95 T
+0 F
+(. Ce \336chier est automatiquement cr\216e lorsque l\325on installe Motif par la commande) 124.85 228.95 T
+(~domst/TP-Motif/install-motif \050commande que vous avez du ex\216cuter en d\216but de TP\051.) 81.65 214.95 T
+(Noter que toutes les fonctions d\325Emacs sont r\216pertori\216es par des noms ASCII et qu\325il est pos-) 81.65 188.95 T
+(sible d\325associer ces noms \210 n\325importe quelle touche ou combinaison de touches du clavier) 81.65 174.95 T
+(\050voir exemples dans le \336chier) 81.65 160.95 T
+5 F
+(.emacs) 226.62 160.95 T
+0 F
+(\051.) 269.82 160.95 T
+FMENDPAGE
+%%EndPage: "12" 12
+%%Trailer
+%%BoundingBox: 0 0 595.3 841.9
+%%PageOrder: Ascend
+%%Pages: 12
+%%DocumentFonts: Times-Roman
+%%+ Times-Italic
+%%+ Times-Bold
+%%+ Courier-Bold
+%%+ Times-BoldItalic
+%%+ Courier
+%%+ Courier-BoldOblique
+%%+ Courier-Oblique
+%%EOF

@@ -1,0 +1,134 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+/* tree.uil -- demonstrate the user-defined tree widget. */
+
+module tree
+
+include file 'XawTree.uih';
+include file 'XawPanner.uih';
+
+procedure
+  pan (widget);
+
+object root : XmForm {
+  controls {
+     user_defined panner;
+     XmDrawingArea viewport;
+  };
+  arguments {
+    XmNdialogTitle = "Motif Widget Classes";
+  };
+};
+
+object panner : user_defined procedure XawCreatePannerWidget {
+  arguments {
+    XtNdefaultScale   = 10;
+    XtNcanvasWidth    = 325;
+    XtNcanvasHeight   = 300;
+    XtNsliderWidth    = 200;
+    XtNsliderHeight   = 200;
+    XmNleftAttachment = XmATTACH_FORM;
+    XmNtopAttachment  = XmATTACH_FORM;
+  };
+  callbacks {
+    XtNreportCallback = procedure pan (motif_widgets);
+  };
+};
+
+object viewport : XmDrawingArea {
+  arguments {
+    XmNmarginWidth      = 0;
+    XmNmarginHeight     = 0;
+    XmNwidth            = 200;
+    XmNheight           = 200;
+    XmNtopAttachment    = XmATTACH_FORM;
+    XmNbottomAttachment = XmATTACH_FORM;
+    XmNleftAttachment   = XmATTACH_FORM;
+    XmNrightAttachment  = XmATTACH_FORM;
+  };
+  controls {
+    user_defined motif_widgets;
+  };
+};
+
+object motif_widgets : user_defined procedure XawCreateTreeWidget {
+  controls {
+    Primitive : XmLabel { };
+    ArrowButton : XmLabel { 
+      arguments { 
+        XtNtreeParent = Primitive; 
+      }; 
+    };
+    Label : XmLabel { 
+      arguments { 
+        XtNtreeParent = Primitive; 
+      }; 
+    };
+    CascadeButton : XmLabel {
+      arguments {
+        XtNtreeParent = Label;
+       }; 
+    };
+    DrawnButton : XmLabel {
+      arguments { 
+        XtNtreeParent = Label; 
+      }; 
+    };
+    PushButton : XmLabel {
+      arguments {
+        XtNtreeParent = Label;
+      };
+    };
+    ToggleButton : XmLabel {
+      arguments {
+        XtNtreeParent = Label;
+      };
+    };
+    List : XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+    Sash : XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+    ScrollBar : XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+    Separator : XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+    Text : XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+    TextField: XmLabel {
+      arguments {
+        XtNtreeParent = Primitive;
+      };
+    };
+  };
+  arguments {
+    XtNlineWidth = 2;
+    XmNborderWidth = 0;
+    XtNhSpace = 22;
+    XtNvSpace = 10;
+  };
+};
+
+end module;

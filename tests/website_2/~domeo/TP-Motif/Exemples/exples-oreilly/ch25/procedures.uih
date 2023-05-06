@@ -1,0 +1,44 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+! procedures.uih - declarations of editor callbacks and their arguments
+
+procedure
+  register_widget (any);
+
+procedure
+  file_cb (integer);
+  file_select_cb (integer);
+
+value
+  FILE_OPEN : 0;
+  FILE_SAVE : 1;
+  FILE_EXIT : 2;
+
+procedure
+  edit_cb (integer);
+
+value
+  EDIT_CUT   : 0;
+  EDIT_COPY  : 1;
+  EDIT_PASTE : 2;
+  EDIT_CLEAR : 3;
+
+procedure
+  search_cb (integer);
+
+value
+  SEARCH_FIND_NEXT : 0;
+  SEARCH_SHOW_ALL  : 1;
+  SEARCH_REPLACE   : 2;
+  SEARCH_CLEAR     : 3;
+
+procedure
+  popdown_cb();

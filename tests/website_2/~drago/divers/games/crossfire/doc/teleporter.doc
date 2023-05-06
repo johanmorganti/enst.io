@@ -1,0 +1,22 @@
+keywords:  word-activated teleporters
+           triggered teleporters
+
+By default, teleporters teleport anything which steps
+on them to x,y,map (see map editor)
+
+If you'd like to make teleporters trigger off of 
+something, you must:
+
+make sure that the teleporter object has a speed of 0.
+pentagrams have a speed of zero by default, other
+teleporters must be modified using the map editor
+
+give the teleporter a connected value.  You may use
+any object to trigger the teleporter.  This includes
+magic ears, which recognize words, buttons, levers,
+altars, pedestals, perhaps even monsters.
+
+When the connected object is triggered, the teleporter
+will trigger also, teleporting whomever is on it
+someplace.
+

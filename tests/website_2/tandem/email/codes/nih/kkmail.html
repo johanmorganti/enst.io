@@ -1,0 +1,219 @@
+<HTML>
+<HEAD>
+	<TITLE>Kanji in Email</TITLE>
+</HEAD>
+<BODY BACKGROUND="a11.gif">
+
+<P>Markus Gunske von K&ouml;lln<BR>
+Co-ordinator Subnet Deu-Nih of Intnl. E-Mail Tandem Network<BR>
+422 Shizuoka-shi, Shikiji 1-8-6, Sakka Manshon 205, Japan<BR>
+Tel: (+81)054-238-0999<BR>
+email markusvk@cc.matsuyama-u.ac.jp<BR>
+WWW http://cc.matsuyama-u.ac.jp/~markusvk</P>
+
+Last Updated: Friday April, 26th 1996
+<P>
+<A NAME="top"><CENTER>
+	<H1>Kanji in email</H1>
+	<H3>or How to set things up</H3>
+</CENTER></A>
+
+<UL>
+	<LI><A HREF="#allgem">1) Important for all systems!</A>
+	<LI><A HREF="#Unix">2) Unix (with Japanese language support)</A>
+	<LI><A HREF="#PC98">3) NEC PC 98xx/Fujitsu FM Town</A>
+	<LI><A HREF="#PCJ">4) IBM compatible PC (with Japanese language support)</A>
+	<LI><A HREF="#PC">5) IBM compatible PC (without Japanese language support)</A>
+	<LI><A HREF="#Mac">6) Macintosh (with Japanese language support)</A>
+	<LI><A HREF="#more">7) More information about Japanese on computers</A>
+	<LI><A HREF="#contact">How to contact me</A>
+</UL>
+<HR>
+<P>The information in this page and the collected software mentioned below is especially for those people, teachers, system-administrators 
+and users with own systems, who are involved in setting up hardware and software, so that we can work with kanji-email in the 
+<A href="http://cc.matsuyama-u.ac.jp/~markusvk/deunihde.html"> Subnet "Deu-Nih"</A> of the 
+<A href="http://www.slf.ruhr-uni-bochum.de/email/infde.html"> International Email Tandem Network</A>.</P>
+
+<P>The collected software is available at two locations. Both locations have the software in the same directory structure. Users in Japan 
+should download from:<BR>
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/">ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/</A>.
+This link has the shortcut "<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/">MA</A>".<BR>
+Users from Europa should download from:<BR>
+<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/">ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/</A>. This link has the shortcut
+"<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/">BO</A>".<BR>
+Users from the rest of the world ;-) should use the faster one of the above mentioned links.<BR>
+Throughout the text I give you the name of the appropriate subdirectory together with the two shortcuts. The shortcuts then point to this 
+subdirectory (eg. You can find the program xyz.exe in the directory pc/win 
+(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/win">BO</A>/
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/win">MA</A>)).
+
+<H3><A name="allgem">1) Important for all systems!</A></H3>
+<P>Data on a computer consists of "bits". A bit either has a status of 0 (zero) or 1. The bits are arranged in groups. The most usual group 
+is a "byte" which consists of 8 bit. Due to mathematics a byte can have 256 states (2^8). With this 256 possibilities of a byte the usual 
+character set (ISO 646-1991 and ISO 8859) can be displayed. It not only consists of alphanumericals (0-9, a-z, A-Z) but also of special 
+sequences and special characters, e.g. the umlaute (because of the lack of the umlaute in the forum Deu-Nih (see below) we display them 
+as "o, "a, "u, "s, "O, "A and "U). </P>
+<P>But many languages (like the Japanese one) not only consists of 256 symbols but much more. Because of this, the characters are not 
+handled with 1 byte but with 2 byte (16 bit) offering space for up to 65000 symbols. There are different ways of how this number of 
+characters is arranged and how these characters are adressed or encoded.</P>
+<P>For the Japanese language there is one main electronic character set standard, JIS X 0208-1990 (with 6879 characters including 
+6355 kanji) and a supplemental set JIS X 0212-1990 (with 6067 characters including 5801 kanji). For the first there are three encoding 
+methods available: JIS, EUC and Shift-JIS (s. below), for the latter two: JIS and EUC. For JIS X 0208-1990 there are also two preceding 
+sets: JIS C 6226-1978 and JIS X 0208-1983 (which was renamed from JIS C 6226-1983).</P>
+<P>These character sets can be encoded on computers in different ways. The best known and most common used are Shift-JIS 
+(also SJIS), EUC (ISO 2022-1993) and JIS (ISO 2022). While EUC is used mainly on unix-machines, Shift-JIS can mainly be found on 
+Macintosh, PC (Dos/J, Win/V, Windows-J) and Japanese PC (NEC PC98xx, Fujitsu FM Towns).</P>
+<P>While most computers internally work with 8 bit, the communication on the internet with email is usually done with 7 bit. The 8th bit is 
+simply cut off. More and more hosts change their mail programs to also use and work with 8 bit, but this is not yet common.</P>
+<P>The disadvantage of this is, that the kanji and also the german umlaute have to be send as 7 bit encoded data. For kanji there is an 
+appropriate encoding method, JIS, but for umlaute this is not possible. They are in the upper half of the 8 bit standard character set which 
+is covered by the 8th bit and thus cut off.</P>
+<P>The JIS encoding works with only 7 bit. This leaves space for 16384 characters, including kanji, kana, romaji, numerals, 
+special characters and sequences. The characters in the Japanese standard character sets are accessed with so called escape 
+sequences. For each standard character set there are different sets of escape sequences. The escape sequence set for JIS C 6226-1978 is
+called Old-JIS the one for JIS X 0208-1983 is called New-JIS. Many people address the set for JIS X 0208-1990 also with New-JIS.</P>
+<P>So, what we need is software which works internally with whatever coding it things is OK but externally only sends 7 bit JIS coded 
+data onto the net.</P>
+
+<H3><A name="Unix">2) Unix</A></H3>
+<P>Unix-Systems most often use the EUC encoding internally. With a mail program you have to filter the mail and convert it to JIS.
+<A HREF="http://cc.matsuyama-u.ac.jp/~fredb/">Fred Bremmer</A> at 
+<A HREF="http://www.matsuyama-u.ac.jp/">Matsuyama University</A> (Japan) has written a pine-patch which handles the conversion 
+automatically. The host running at Matsuyama University runs <A href="http://sunsite.sut.ac.jp/">SunOS</A> Release&nbsp;<EM>4.1.3-J
+LE1.1.3</EM>_U1. Together with Pine&nbsp;V3.90 and this patch we are cabable of doing Japanese email with 7 bit JIS. More information 
+on the patch you can find at <A href="ftp://ftp.cc.matsuyama-u.ac.jp/pub/pine/">ftp://ftp.cc.matsuyama-u.ac.jp/pub/pine/</A> and in the 
+directory unix/ (<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/unix">BO</A> /
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/unix">MA</A>) you can find the Pine&nbsp;3.90 sources, so you can compile your 
+version of this patched pine. For SunOS with the "Japanese Language Extension" it is important that the <EM>KCODE</EM> enviroment 
+variable is set to <EM>EUC</EM> (e.g. setenv KCODE EUC). Please make sure that setterm is <EM>NOT</EM> set to SJIS. Now 
+everybody working on the host console can do Japanese email.<BR>
+The equivalent should also work on other unix systems with Japanese language support and the modified pine (though not yet testet). 
+Please remember to compile everything!</P>
+
+<H3><A name="PC98">3) NEC PC 98xx / Fujitsu FM Towns</A></H3>
+<P>At Matsuyama University the students work mostly with PC 98xx. They (the PC ;-) are connected with a lan to the host. On this side 
+work can be done with a modified <A href="http://www.ncsa.uiuc.edu/General/NCSAHome.html">NCSA</A> Telnet. The NCSA Telnet 
+and the language modification can be found at in the directory pc98xx/dos/ 
+(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc98xx/dos/">BO</A> / 
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc98xx/dos/">MA</A>). With this telnet we log onto the host and work with a modified 
+pine (see <A href="#Unix">Chapter 2</A>) in our accounts. For this, unix must have been set up as described <A href="#Unix">above</A>.</P>
+<P>Another way is working with Windows on this machines. For this, a Japanese mail program must be installed on the computer. 
+Examples of this programs you can find in the directory pc98xx/win/ 
+(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc98xx/win/">BO</A> / 
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc98xx/win/">MA</A>).</P>
+
+<H3><A name="PCJ">4) IBM compatible PC (with Japanese language support)</A></H3>
+<P>These PC usually have software like Dos/V, Win/V or Windows-J. The procedure is similar to that of the Japanese computers 
+(NEC, Fujitsu). For information about how to set things up, please look in <A HREF="#PC98">chapter 3</A> (NEC PC 98xx / Fujitsu FM 
+Towns).</P>
+<P>Software which can be used on this computers can be found in directory pc/winvj/ 
+(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/winvj/">BO</A> / 
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/winvj/">MA</A>) for Windows (/V, -J) and in directory pc/dosvj/ 
+(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/dosvj/">BO</A> / 
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/dosvj/">MA</A>) for Dos/V.</P>
+
+<H3><A name="PC">5) IBM compatible PC (without Japanese language support)</A></H3>
+<P>This section is divided into two parts, one for the DOS-World and one for the Windows-World (also Windows95). The main procedures 
+for both are almost identical. Working with the PC offers two choices, either you work with a telnet on a Unix-Host and you are mailing there 
+or you get your email on your local system with a dedicated mail program and mail there. Windows has one great advantage. There are 
+programs with which you can <EM>view</EM> Japanese texts (E-Mail, News, WWW) even if you don't have any other support for Japanese 
+languages on your computer. The disadvantage of these programs is that you can't enter or edit text in Japanese. For more about this see
+the practical part below.</P>
+<P>Working with telnet means that you have to save your Japanese mail in your unix-mailer (e.g. elm, pine) to a file, then download this 
+file with ftp to your local PC. Here you can read this file with a Japanese word-processor. Writing the message is the same procedure 
+backward. You have to write the message with the word-processor and save it to a file.<BR>
+Now the important part: You <EM>must</EM> save this file in <EM>JIS</EM> format!!<BR>
+After this you can transfer the file with ftp to your remote Unix-Host and load it in your mail program. You will only see garbage on the 
+screen, but this is what it looks like in JIS format without language support. Your mail is now ready to be sent.</P>
+<P>Working with a local mail program is more simple. You receive the Japanese mail and looking at it will reveal you lots of garbage (if you 
+have not enabled the Windows Japanese language view facility). In your mail program save this mail to a file and load this file in your 
+Japanese word-processor. Now it should look like kanji. Sending mail is vice versa. Write the mail with your word-processor, save it to a file 
+(don't forget to use <EM>JIS</EM> format!) and then load it into your mailer. Now the message is ready to go.<BR>
+Due to the fact that most PC software working with kanji uses Shift-JIS coding internally, don't be confused if your word-processor converts 
+the incoming JIS coded file to Shift-JIS. This is only for its internal work. Save your new file in <EM>JIS</EM> format!</P>
+<P>
+The practical part looks like this:
+<UL>
+	<LI><H4>The Dos-World:</H4>
+	<P>If you work with a telnet, you can use <A href="http://www.ncsa.uiuc.edu/General/NCSAHome.html">NCSA</A> Telnet without the 
+	language support, files can be found in the directory pc/dos/ (<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/dos/">BO
+	</A> / <A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/dos/">MA</A>). In this package an ftp-client is also available. The 
+	shareware Japanese word-processor NJStar 3.0 for DOS is also available in the directory pc/dos/ 
+	(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/ pc/dos/">BO</A> / 
+	<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/ pc/dos/">MA</A>). A dedicated mail program for Dos is "Pegasus Mail for Dos".</P>
+	<LI><H4>The Windows-World</H4> <H5> (if there are Windows95 programs available you find them in the directory pc/win95/ 
+		(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/win95/">BO</A> / 
+		<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/win95/">MA</A>)):</H5>
+	<P>A telnet and ftp client is usually in the software package which connects you to Internet. If you want some more and probably better 
+	choices, have a look at <A href="http://www.cwsapps.com/"> Strout's Consummate Winsock Apps List</A>. There you can also find 
+	mail clients. The, in my humble opinion, best mail client "Pegasus Mail for Windows V2.x" can also be found in the directory pc/win/ 
+	(<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/win/">BO</A> / 
+	<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/win/">MA</A>). The probably best Japanese word-processor for windows "JWP" 
+	can also be found in the directory pc/win/ (<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/win/">BO</A> / 
+	<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/win/">MA</A>).</P>
+	<P>In Windows you can also work with "Cut/Copy and Paste". If you do this, and your word-processor gives you the opportunity, 
+	please don't forget to change the clipboard-format to JIS. In JWP this can be done with the "Utilities|Options" menu entry. In JWP 
+	you can choose between Old-JIS and New-JIS, please use New-JIS (see also information about encoding systems in 
+	<A HREF="#allgem">chapter 1</A>).</P>
+	<P>For Windows there are programs which enable you to view Japanese texts (Shift-JIS, JIS and EUC) in WWW pages, Usenet 
+	news and e-mail. With this programs you can preview the incoming Japanese mail and only when there is an important mail or one 
+	you would like to answer to then you have to use the above described methods to write a new message (or reply to one). This 
+	programs can be found in the directory pc/win/ (<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/pc/win/">BO</A> / 
+	<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/pc/win/">MA</A>).
+</UL>
+
+<H3><A name="Mac">6) Macintosh</A></H3>
+<P>On the Macintosh at Matsuyama University the English System 7.5.1 with Japanese Language Kit is running. The users of this 
+machines either connect with a telnet program or with Mac Eudora 1.3.7-J12, the Japanese version of this freeware program, to the internet. 
+With telnet they work with the modified pine (see also the information about <A href="#Unix">Unix</A>), with Eudora they directly work on 
+Japanese email and Eudora automatically converts it to JIS code. In Germany equivalent systems are running. The difference is, that they 
+use German Systems 7.5.1 or 7.1 but also with Japanese Language Kit and mostly Eudora-J software. I provide a copy of Mac Eudora-J 
+and NCSA Telnet in the directoy mac/ (<A HREF="ftp://ftp.slf.ruhr-uni-bochum.de/email/codes/nih/mac/">BO</A> / 
+<A HREF="ftp://ftp.cc.matsuyama-u.ac.jp/pub/nih/mac/">MA</A>).</P>
+
+<H3><A name="more">7) More information about Japanese on computers</A></H3>
+<P>Here I would like to give you some more resources of where to find valuable information on processing the Japanese language on 
+computers. Some of this resources I used to compile this text.
+<UL>
+	<LI>First of all I would like to mention <A href="http://jasper.ora.com/lunde/">Ken Lunde</A>. His book "
+	<A href="http://jasper.ora.com/lunde/#ujip"> Understanding Japanese Information Processing</A>" helped me very much in 
+	understanding how computers "speak" Japanese. He is now working on 
+	<A href="ftp://ftp.ora.com/pub/examples/nutshell/ujip/doc/cjk.inf">CJK.INF</A>, the online companion to the above mentioned book. 
+	CJK stands for Chinese, Japanese and Korean.
+	<LI>The next one is <A href="http://www.rdt.monash.edu.au/~jwb/">Jim Breen</A>. He not only maintains an archive of Japanese 
+	related computer materials (it can be found at <A href="ftp://ftp.cc.monash.edu.au/pub/nihongo">
+	ftp://ftp.cc.monash.edu.au/pub/nihongo</A>) but also did the initial work on the "Edict Project" (Japanese/English dictionary files).
+	<LI>The <A href="http://condor.stcloud.msus.edu:20020/tojpn.html">"Gateway to Japan"</A> (http://condor.stcloud.msus.edu:
+	20020/tojpn.html) is an excellent collection of other resources related to this topic. From this collection I would like to state some 
+	points explicitly in this listing.
+	<LI>The "<A href="http://condor.stcloud.msus.edu:20020/netscape.html">netscape-j.info.eng</A>" File (http://condor.stcloud.msus.
+	edu:20020/netscape.html) gives you detailed information on how to access WWW-Server in Japan with Netscape. It is mainly aimed 
+	at Macintosh users but there is much info for other systems, too.
+	<LI>If you want to know more about Japanese on PC then have a look at the "<A href="http://www.panix.com/~tn/j-pc.html">
+	Using Japanese with a PC Running English Windows</A>" page (http://www.panix.com/~tn/j-pc.html, German Windows also works 
+	well with most options). Here you find interesting information on how to use different operating systems (it does not mention 
+	Japanese Linux).
+	<LI>And information on how to use Japanese on Internet for PC can be found at "<A href="http://www.jweb.com/~hirayama/">Hideki's 
+	Home Page: Japanese on Internet!</A>" (http://www.jweb.com/~hirayama/) along with links to many other interesting pages.
+</UL>
+
+<P>All the software mentioned above can also be obtained at different sources. A good archive to start searching is always the 
+<A href="ftp://ftp.cc.monash.edu.au/pub/nihongo"> Monash University Nihongo Archive</A> (ftp://ftp.cc.monash.edu.au/pub/nihongo) and 
+the other in chapter 7 mentioned resources.</P>
+
+<A NAME="contact">
+<P><IMG SRC="lookrul2.gif" ALT="----------------------------------------------------------------" BORDER=0 WIDTH=582 HEIGHT=9></P></A> 
+
+<H4><A NAME="kom">Send comments to:</A></H4>
+If you have any comments, suggestions, questions, if you need help or just
+want to tell me about your successfull installation, please contact me:
+<P><A HREF="http://cc.matsuyama-u.ac.jp/~markusvk/"> Markus Gunske vonK&ouml;lln</A><BR>
+E-Mail: <A HREF="mailto:markusvk@cc.matsuyama-u.ac.jp">markusvk@cc.matsuyama-u.ac.jp</A><BR>
+422 Shizuoka-shi, Shikiji 1-8-6, Sakka Manshon 205, Japan <BR>
+Tel: (+81) 054-238-0999<BR></P>
+<P>
+
+Last Updated: Monday, 24. February 1997 - 04:44 MET</P>
+<P>To <A HREF="#anfang">top of page</A>.</P>
+</BODY>
+</HTML>

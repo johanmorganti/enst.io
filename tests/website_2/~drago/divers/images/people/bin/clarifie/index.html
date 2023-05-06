@@ -1,0 +1,4 @@
+#!/bin/sh
+/usr/local/images/people/bin/clair < $1 > /tmp/clair.$$
+rm -f $1
+mv /tmp/clair.$$ $1

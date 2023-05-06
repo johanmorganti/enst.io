@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>
+modele de m&eacute;thodes formelles - Arnaud Fevrier
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Arnaud Fevrier ">
+<meta name="Titre" content=" modele de m&eacute;thodes formelles ">
+<meta name="Title" content=" dtr  ">
+<meta name="Departement" content=" Réseaux ">
+
+<meta name="Directeur" content=" Elie Najm  ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content=" 
+La thse propose un langage formel pour spcifier des applications distribues Orientes
+objets avec des contraintes temporelles. Nous prsentons l'utilisation de ce langage sur
+un objet de liaison qui resynchronise un flux multimdia. Nous montrons comment avec
+ce langage il est possible de formaliser les notions de Qualit de Service, et comment il
+est possible de dcrire le comportement d'un objet comme un contrat pass avec
+l'environnement. Nous montrons aussi comment vrifier formellement si la
+spcification de l'objet respecte le contrat pass avec l'environnement. 
+
+Les mthodes formelles sont utilises pour dcrire les processus communicants et
+constituent une base thorique pour prouver certaines proprits. Pour l'instant les
+techniques formelles comme LOTOS sont fondes sur les calculs de processus comme
+CCS ou CSP. Ces techniques reposent sur des fondations thoriques solides mais elles
+ne permettent pas de rendre compte de problmes cruciaux de la vraie vie comme le
+temps rel ou les agents distribus. 
+
+ODP (Open Distributed Processing) est une norme en cours de dfinition  l'OSI (ISO?)
+qui dfini un cadre de travail pour spcifier des applications rparties qui peuvent
+interagir facilement. ODP etant une norme pour dfinir des spcifications, l'ISO
+recommande que les techniques formelles soient utilises autant que possible. 
+
+Dans le groupe de normalisation ODP  l'ISO, un groupe d'expert travaille plus
+particulirement sur les extensions  apporter  LOTOS. Parmi les extensions il y a: 
+
+ o temps rel ; 
+ o mobilit ; 
+ o modularit ; 
+ o Interruption. 
+
+Je travaille principalement sur la mobilit et le temps rel. Ces concepts sont requis
+pour spcifier correctement le comportement d'un systme d'information moderne dans
+lequel la topologie du rseau peut voluer dynamiquement, et o les contraintes
+temporelles sont critiques. 
+
+
+
+La mobilit est fonde sur le Pi-calcul dfini par Milner. Ce calcul permet la cration
+de nouveaux agents, de nouvelles interfaces (ou portes de communications) par
+lesquelles l'environnement peut interagir avec les agents. De plus les rfrences
+d'interfaces peuvent tre transmises afin de mettre en relation deux agents existants. 
+
+Nous avons adapt le Pi calcul  LOTOS [NSF95b]. Cette extension est une contribution
+au document de travail de l'ISO (numro JTC1/ SC21/ WG1 LG9. ISO/IEC). 
+
+Une autre extension  LOTOS est l'extension temporise. Cette extension a t dfinie
+par les experts Belges et Espagnols. Cette extension ajoute un type de donne spcial 
+TIME qui permet de tenir compte du temps. Le dclenchement des actions peut tre
+restreint  un intervalle temporel, le moment du dclenchement d'une action peut tre
+enregistr et un oprateur d'attente est ajout. 
+
+Nous avons ralis l'intgration de ces deux extensions afin de crer le langage
+MT-LOTOS [FNL94][NF96]. 
+
+De plus nous avons travaill  la notion d'interruption et prsent une contribution 
+l'OSI  la runion de Kansas City en mai 1996. 
+
+ ">
+<meta name="Abstract" content="  ">
+<meta name="Motcle" content=" LOTOS, Temps r&eacute;el, ODP, Orient&eacute; Objet, specification, verification, Formal Description Techniques.   ">
+<meta name="Photo" content=" http://www.res.enst.fr/.icons/AF.gif ">
+<meta name="Page" content=" http://www.res.enst.fr ">
+<meta name="Statut" content=" non Soutenue ">
+<meta name="Date" content="  dec 1996  ">
+<meta name="Lieu" content="  ">
+<meta name="Login" content=" fevrier ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  modele de m&eacute;thodes formelles  </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br> <img align="left" src="http://www.res.enst.fr/.icons/AF.gif"><h2 align="right"> Auteur :   Arnaud Fevrier<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Réseaux<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3>
+La thse propose un langage formel pour spcifier des applications distribues Orientes
+objets avec des contraintes temporelles. Nous prsentons l'utilisation de ce langage sur
+un objet de liaison qui resynchronise un flux multimdia. Nous montrons comment avec
+ce langage il est possible de formaliser les notions de Qualit de Service, et comment il
+est possible de dcrire le comportement d'un objet comme un contrat pass avec
+l'environnement. Nous montrons aussi comment vrifier formellement si la
+spcification de l'objet respecte le contrat pass avec l'environnement. 
+
+Les mthodes formelles sont utilises pour dcrire les processus communicants et
+constituent une base thorique pour prouver certaines proprits. Pour l'instant les
+techniques formelles comme LOTOS sont fondes sur les calculs de processus comme
+CCS ou CSP. Ces techniques reposent sur des fondations thoriques solides mais elles
+ne permettent pas de rendre compte de problmes cruciaux de la vraie vie comme le
+temps rel ou les agents distribus. 
+
+ODP (Open Distributed Processing) est une norme en cours de dfinition  l'OSI (ISO?)
+qui dfini un cadre de travail pour spcifier des applications rparties qui peuvent
+interagir facilement. ODP etant une norme pour dfinir des spcifications, l'ISO
+recommande que les techniques formelles soient utilises autant que possible. 
+
+Dans le groupe de normalisation ODP  l'ISO, un groupe d'expert travaille plus
+particulirement sur les extensions  apporter  LOTOS. Parmi les extensions il y a: 
+
+ o temps rel ; 
+ o mobilit ; 
+ o modularit ; 
+ o Interruption. 
+
+Je travaille principalement sur la mobilit et le temps rel. Ces concepts sont requis
+pour spcifier correctement le comportement d'un systme d'information moderne dans
+lequel la topologie du rseau peut voluer dynamiquement, et o les contraintes
+temporelles sont critiques. 
+
+
+
+La mobilit est fonde sur le Pi-calcul dfini par Milner. Ce calcul permet la cration
+de nouveaux agents, de nouvelles interfaces (ou portes de communications) par
+lesquelles l'environnement peut interagir avec les agents. De plus les rfrences
+d'interfaces peuvent tre transmises afin de mettre en relation deux agents existants. 
+
+Nous avons adapt le Pi calcul  LOTOS [NSF95b]. Cette extension est une contribution
+au document de travail de l'ISO (numro JTC1/ SC21/ WG1 LG9. ISO/IEC). 
+
+Une autre extension  LOTOS est l'extension temporise. Cette extension a t dfinie
+par les experts Belges et Espagnols. Cette extension ajoute un type de donne spcial 
+TIME qui permet de tenir compte du temps. Le dclenchement des actions peut tre
+restreint  un intervalle temporel, le moment du dclenchement d'une action peut tre
+enregistr et un oprateur d'attente est ajout. 
+
+Nous avons ralis l'intgration de ces deux extensions afin de crer le langage
+MT-LOTOS [FNL94][NF96]. 
+
+De plus nous avons travaill  la notion d'interruption et prsent une contribution 
+l'OSI  la runion de Kansas City en mai 1996. 
+
+
+              <H3> Mot-Cl&eacute;s :</H3> LOTOS, Temps r&eacute;el, ODP, Orient&eacute; Objet, specification, verification, Formal Description Techniques.  
+               <h3> <br> Directeur de la th&egrave;se : Elie Najm  </h3>
+               <hr> <h3> Th&egrave;se non Soutenue  <br><i>
+            Date de soutenance pr&eacute;vue:    dec 1996 <br>
+            Lieu de la soutenance:    </i>
+           </h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : dtr </H2> <H3> Abstract :</H3>  <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:fevrier@enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www.res.enst.fr">ma page</A>
+                     </h4>
+                </body>
+                </html>

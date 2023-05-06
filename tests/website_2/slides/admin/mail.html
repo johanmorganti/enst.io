@@ -1,0 +1,49 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version 2.6 -->
+<title>Mail</title>
+</head>
+
+<body bgcolor="#dddddd">
+
+<h2><b><i>Sendmail</i></b></h2>
+
+<ul>
+<li>	Principe : agent MTA<p>
+<ul>
+<li>	 aiguillage du mail selon son adresse dans le champ To:
+<li>	 d&eacute;livrance du mail selon son adresse dans le champ From:
+<li>	 r&eacute;&eacute;criture de l'adresse sous forme canonique
+<li>	 d&eacute;termination du triplet (mailer, relai, user)
+</ul>
+<li>	Fichiers<p>
+<ul>
+<li>	 /etc/sendmail.cf
+<li>	 /var/spool/mail/
+<li>	 /var/spool/mqueue/
+<li>	 /etc/aliases
+<li>	 ~/.forward
+</ul>
+<li>	Commandes<p>
+<ul>
+<li>	 /usr/lib/sendmail -bd -q1h (lancement du daemon smtp)
+<li>	 /usr/lib/sendmail -q (reprocessing des queues)
+<li>	 /usr/lib/sendmail -bt (tests des r&egrave;gles)
+<li>	 mailq (lister les queues)
+<li>	 mail -v user
+<li>	 telnet host smtp
+</ul>
+</ul>
+
+<img src="gif/vertjaune.gif">
+
+<img src="mailhost.gif">
+
+<img src="gif/vertjaune.gif">
+<a href="index.html"><img src="gif/balle_verte.gif" valign=top> Retour au Plan</
+a>
+<img src="gif/vertjaune.gif">
+<address>Philippe Dax / dax@inf.enst.fr</address>
+
+</body>
+</html>

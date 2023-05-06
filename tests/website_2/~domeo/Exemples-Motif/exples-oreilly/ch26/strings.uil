@@ -1,0 +1,22 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+! strings.uil - English version of interface strings
+
+module strings
+
+value
+  ok_text          : exported compound_string ("Ok");
+  cancel_text      : exported compound_string ("Cancel");
+  help_text        : exported compound_string ("Help");
+  save_title_text  : exported compound_string ("Save Dialog");
+  save_prompt_text : exported compound_string ("File Name:");
+
+end module;

@@ -1,0 +1,128 @@
+<!*****************************************************************************
+*                                                                             *
+*                                                                             *
+*                    THESES de l'ENST sur le WEB                              *
+*                                                                             *
+*                   theses_enst.html    version 1.3                           *
+*                                                                             *
+*                                                                             *
+*   Cette page est la page publique des theses de l'ENST, elle est donc       *
+*   accessible a tous.                                                        *
+*   Elle va permettre a l'utilisateur de faire des recherches sur les theses  *
+*   de l'ecole que ce soit par titre de these, nom d'auteur, departement ou   *
+*   mot-cle. Il s'agit d'un formulaire dont l'action sera de faire appel a    *
+*   SF-Gate qui effectuera les recherches et affichera les resultats.         *
+*                                                                             *
+*                                                                             *
+*******************************************************************************
+>
+
+<html><head>
+<title>Recherche de th&egrave;ses de l'Enst
+</title>
+<!-- Changed by: Enregistrement Theses,  6-Jun-1996 -->
+
+</head>
+<body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" VLINK="#7070ff">
+<font size=+1>
+<form method="get" action="http://www-inf.enst.fr/cgi-bin/SFgate">
+
+<input type="hidden" name="database" value="wais.enst.fr/theses/theses">
+<input type="hidden" name="application" value="theses">
+<input type="hidden" name="language" value="french">
+
+	            <!*** Presentation ***>
+
+
+<H2 align="center">
+<img src="http://www.enst.fr/f3/icone/graduate.gif" align=left border=0>
+Consultation des <a href="http://emma.enst.fr/~doctorat/these.html">th&egrave;ses de l'ENST</a>
+</H2>
+<br clear="all">
+La base des fiches bibliographiques est index&eacute;e avec 
+<a href="/SFgate/author.html"> freeWAIS-sf</a>.
+On peut rentrer des mots clefs, fran&ccedil;ais ou anglais, dans un ou plusieurs 
+champs.
+<br>
+<IMG SRC="gif/lignes/oranj.gif" align=left >
+
+<br>
+<h3>
+Recherche des th&egrave;ses de l'&eacute;cole par :</h3>
+
+
+	      <!*** Champs du formulaire ***>
+
+<h4>D&eacute;partement :
+<select name="departement">
+	<option selected>
+        <option>Communications
+	<option>Economie
+	<option>Electronique
+        <option>Image
+	<option>Informatique
+	<option>Signal
+	<option>R&eacute;seaux
+        <option>Com. spatiales
+	
+</select>
+<input type="hidden" name="departement_tie" value="and">
+</h4>
+
+<h4 align="left">Titre :
+<input name="ti">
+<input type="hidden" name="titre_tie" value="and">
+</h4>
+
+<h4 align="left">Auteur :
+<input name="au">
+<input type="hidden" name="auteur_tie" value="and">
+</h4>
+
+
+<h4 align="left">Mot clef :
+<input name="kw">
+<input type="hidden" name="motcle_tie" value="and">
+</h4>
+
+<h4 align="left">Mots du texte :
+<input name="res">
+<input type="hidden" name="res_tie" value="and">
+</h4>
+
+
+
+<b><input type="submit" value="       Rechercher la th&egrave;se       "></b>
+<input type="reset" value="       Effacer       ">
+<br>
+
+
+</form>
+
+
+	              <!*** Liens possibles ***>
+  
+
+
+<IMG SRC="gif/lignes/oranj.gif" align=left >
+<br>
+
+<center>
+<a href="http://www.enst.fr/index.html"><img src="http://www.enst.fr/menu/homepage.gif" border=0 alt="home"></a>
+<a href="http://www.enst.fr/ecole.html"><IMG SRC="http://www.enst.fr/menu/mecole.gif"border=0 alt="ecole"></a>
+<a href="http://www.enst.fr/formation.html"><IMG SRC="http://www.enst.fr/menu/mformation.gif"border=0 alt="formation"></a>
+<a href="http://www.enst.fr/recherche.html"><IMG SRC="http://www.enst.fr/menu/mrech.gif"border=0 al="recherche"></a>
+<a href="http://www.enst.fr/actu.html"><IMG SRC="http://www.enst.fr/menu/mactu.gif"border=0 alt=actu></a>
+<a href="http://www.enst.fr/indexx.html"><IMG SRC="http://www.enst.fr/menu/mindex.gif"border=0 alt="index"></a>
+<a href="http://www.enst.fr/serveur.html"><img src="http://www.enst.fr/menu/mweb.gif" border=0 alt="serveur"></a>
+<a href="http://www-stud.enst.fr/french/">
+<IMG SRC="http://www.enst.fr/menu/meleves.gif"border=0 alt="eleves"></a>
+</center>
+<br><font size=-1><i>
+10 juin 1996,  page maintenue par  
+<A HREF="mailto:vercken@inf.enst.fr">Christine.Vercken@inf.enst.fr</A></i>
+</font>
+
+
+</body>
+</html>

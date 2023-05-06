@@ -1,0 +1,16 @@
+int  *bid_rac_1 (int *Ptr_Ent) 
+{
+        ...
+	double sqrt();
+
+        ...
+}
+
+
+int  *bid_carre_1 ( int  *Ptr_Ent)
+{
+        ...	
+ 	... =   (*Ptr_Ent) * (*Ptr_Ent) ; 
+	...
+}
+

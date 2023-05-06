@@ -1,0 +1,54 @@
+# ##########################################################
+#
+#  Exemple de Makefile pour compilation separee
+#  (!! ANCIENNE VERSION !!)
+#
+# ##########################################################
+
+
+# ##########################################################
+# Emplacement des Librairies X et Motif
+#
+XDIR = /usr/local/X11
+
+# ##########################################################
+# Mise a jour automatique
+#
+# KEEP_STATE => verification automatique des dependances
+# et des options de compilation. ==> ne PAS faire "make depend".
+#
+.KEEP_STATE:
+
+
+# ##########################################################
+# Compilation:
+#
+# Notes:
+# - gcc = compilateur ANSI C
+# - l'option -g est necessaire pour utiliser le debugger
+# - l'option -O permet d'optimiser l'executable
+#
+CC = gcc
+CFLAGS += -g
+
+# Preciser l'emplacement des includes X, Motif, etc :
+#
+CFLAGS += -I${XDIR}/include
+
+
+# ##########################################################
+# Edition de Liens
+#
+# Notes:
+# - nom de l'editeur de liens = nom du compilateur employe'
+# - option -L : path des librairies a l'edition de liens
+# - option -R : path des librairies a l'execution (QUE POUR SOLARIS !)
+#
+LD = $(CC)
+# SUNOS 4 :
+# LDLIBS = -L${XDIR} -lXm -lXt -lX11 -lm
+#
+# SOLARIS :
+LDLIBS = -L${XDIR}/lib -R${XDIR}/lib -lXm -lXt -lX11 -lsocket -lnsl -lgen -lm
+
+

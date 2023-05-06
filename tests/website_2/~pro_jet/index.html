@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>PRO-JET '96</TITLE>
+</HEAD>
+<BODY BGCOLOR="#B7D0B7" BACKGROUND="jpg/green.gif" VLINK=4444FF LINK=4444FF>
+
+<CENTER>
+<BR>
+<TABLE BORDER="5" CELLSPACING="4" CELLPADDING="0"><TR><TD COLSPAN=2><P ALIGN=Center><IMG SRC="jpg/logo++.gif" WIDTH="406" HEIGHT="170">
+</TD></TR><TR><TD><TABLE BORDER="3" CELLSPACING="3" CELLPADDING="0"><TR><TD
+COLSPAN=2><P ALIGN=Center>&nbsp; &nbsp; &nbsp;<FONT SIZE=+1>&nbsp; &nbsp;
+&nbsp; Une nouvelle association : </FONT>&nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<P ALIGN=Center><FONT SIZE=+1><FONT SIZE=+2>J.E.T. </FONT>et
+<FONT SIZE=+2>Pro~Jet'96</FONT></FONT>
+</TD></TR><TR><TD COLSPAN=2><UL><BR><LI><a href=jeckoi.html>La JE, c'est koi ?</a>
+<P><LI>Pro~Jet'96 :
+<UL><LI><a href=procki.html>C'est ki ?</a>
+<LI><a href=proprog.html>Son programme</a>
+<LI><a href=propartner.html>Ses partenaires
+</UL></UL></TD></TR></TABLE></TD><TD><TABLE BORDER="3" CELLSPACING="3" CELLPADDING="0"><TR
+VALIGN="Middle"><TD COLSPAN="2" VALIGN="Middle"><P ALIGN=Center><FONT SIZE=+1>Les
+<FONT SIZE=+2>Jet~News</FONT> de la semaine</FONT>
+<BR>&nbsp;
+<P ALIGN=Center>
+</TD></TR><TR><TD COLSPAN=2><UL><BR><LI><a href=bilan.html>Résultats des loteries</a>
+<P><LI>Cool things :
+<UL><LI><a href=les_photos.html>Les photos</a>
+<LI><a href=tbdj.html>Best of des blagues</a>
+<LI><a href=image.html>L'image de la semaine</a>
+</UL></UL></TD></TR></TABLE></TD></TR></TABLE>
+<BR>
+
+<H4><a href="mailto:pro_jet@email.enst.fr">pro_jet@email.enst.fr</a></H4>
+<H5>page realisée par <a href="mailto:anes@email.enst.fr">Cédric Anes</a></H5></CENTER>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Beginning of JavaScript Applet -------------------
+
+/* Copyright (C)1996 Web Integration Systems, Inc. DBA Websys, Inc.
+   All Rights Reserved.
+
+   This applet can be re-used or modified, if credit is given in 
+   the source code.
+
+   We will not be held responsible for any unwanted effects due to the 
+   usage of this applet or any derivative.  No warrantees for usability 
+   for any specific application are given or implied.
+
+   Chris Skinner, January 30th, 1996.
+   
+   Hacked for CNNfn by RD, Jan. 31, 1996
+*/
+
+function scrollit_r2l(seed)
+{
+        var m1  = "Toute l'équipe de la Pro~Jet vous souhaite la bienvenue ";
+        var m2  = "et vous remercie de visiter son site. ";  
+        var m3  = "Vous y trouverez les photos de la semaine de campagne, ";
+	var m4  = "une présentation de notre équipe, ";
+	var m5  = "de la J.E., ainsi que beaucoup d'autres choses...";
+	
+        var msg=m1+m2+m3+m4+m5;
+        var out = " ";
+        var c   = 1;
+
+        if (seed > 100) {
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 100 && seed > 0) {
+                for (c=0 ; c < seed ; c++) {
+                        out+=" ";
+                }
+                out+=msg;
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                    window.status=out;
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 0) {
+                if (-seed < msg.length) {
+                        out+=msg.substring(-seed,msg.length);
+                        seed--;
+                        var cmd="scrollit_r2l(" + seed + ")";
+                        window.status=out;
+                        timerTwo=window.setTimeout(cmd,100);
+                }
+                else {
+                        window.status=" ";
+                        timerTwo=window.setTimeout("scrollit_r2l(100)",75);
+                }
+        }
+}
+// -- End of JavaScript code -------------- -->
+
+</SCRIPT>
+
+
+<BODY onLoad="timerONE=window.setTimeout('scrollit_r2l(100)',500);">
+
+</HTML>
+</BODY>
+
+
+
+
+
+

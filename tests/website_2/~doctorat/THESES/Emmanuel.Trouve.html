@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>
+Imagerie interférentielle en radar à ouverture synthétique  - Emmanuel Trouve
+</title>
+
+	       <!*** Definition des meta pour l'indexation ***>
+
+<meta name="Auteur" content=" Emmanuel Trouve ">
+<meta name="Titre" content=" Imagerie interférentielle en radar à ouverture synthétique  ">
+<meta name="Title" content=" Synthetic Aperture Radar Interferometry  ">
+<meta name="Departement" content=" Image ">
+
+<meta name="Directeur" content=" Henri MAÎTRE  ">
+<meta name="Laboratoire" content="  ">
+<meta name="Universite" content="  ">
+
+<meta name="Resume" content=" En formant la différence de phase entre deux images, 
+l'interférométrie en radar à ouverture synthétique (InROS) peut mesurer 
+le relief ou les mouvements du sol avec une très grande précision. 
+Cette technique nécessite cependant de lever l'ambiguïté de la phase 
+au travers d'une étape dite de  développement de phase. 
+Dans le cas de données satellitaires, cette étape est 
+rendue difficile par l'importance du bruit ainsi que par la présence de zones  
+décorrélées et de discontinuités liées au  capteur radar.
+
+
+Cette thèse a pour objectif de franchir la distance 
+qui existe entre les interférogrammes initiaux 
+et les données fiables requises par un développement 
+automatique de la phase. 
+Après avoir rappelé les caractéristiques de l'InROS et les principales techniques employées dans ce domaine, nous proposons plusieurs algorithmes 
+adaptés aux spécificités des données InROS 
+et dont l'enchaînement constitue une méthode robuste de traitement 
+des interférogrammes.
+
+
+La première étape de notre approche est l'estimation des fréquences locales 
+bidimensionnelles du signal de phase complexifié 
+par un algorithme d'analyse spectrale multi-échelles. 
+Nous déterminons ainsi la largeur et l'orientation des franges   
+tout en mesurant la confiance associée à chaque estimation.
+
+Nous exploitons ce resultat tout d'abord  dans une étape de filtrage 
+visant à supprimer le bruit de la phase repliée, à l'aide d'un algorithme 
+adaptatif vis-à-vis du motif des franges :
+la compensation locale de la pente du terrain ou du champ de déplacement 
+permet de moyenner, en fonction du niveau de corrélation, 
+le nombre d'échantillons nécéssaire pour réduire la variance de la phase estimée.  
+
+
+Les perturbations irréversibles subsistant dans les zones où la phase 
+géométrique est inaccessible ou sous-échantillonnée sont ensuite détectées 
+dans une étape de classification exploitant la mesure de confiance précédente 
+et les données de corrélation et d'amplitude associées aux interférogrammes.
+La fusion de mesures révélatrices des diverses perturbations 
+prend en compte l'information contextuelle au travers d'un modèle markovien 
+adapté à la détection de structures fines liées aux zones de compression. 
+
+Les résultats de ces trois étapes permettent alors de développer la phase 
+par des techniques locales de propagation ou globales de moindres carrés pondérés. 
+Leurs performances sont évaluées en fonction 
+du masque issu de la classification 
+et de l'utilisation du gradient de phase mesuré soit
+par les différences de phase après filtrage, 
+soit directement par les fréquences locales.
+
+
+Les méthodes proposées sont testées sur des produits 
+interférométriques formés par le CNES à partir d'images du satellite ERS-1.  
+Nous validons ainsi cette approche sur des données réelles
+de type topographique et différentiel ayant des caractéristiques variées
+représentatives des perturbations les plus fréquemment rencontrées. 
+
+
+ ">
+<meta name="Abstract" content="  Phase differences between two images are used in synthetic aperture radar interferometry (InSAR) to measure topography or ground motion with very high accuracy. However, this technique requires the removal of phase ambiguity by the so-called phase unwrapping process. Satellite data make this process quite difficult because of increased noise, decorrelated areas and discontinuities due to the radar sensor. The goal of this thesis is to bridge the gap between raw interferograms and reliable information required for automatic phase unwrapping. After reviewing InSAR characteristics and the main techniques used in this field, we shall propose several algorithms adapted to interferometric data, which together constitute a robust processing method. Our approach starts with an estimation process which measures the local two-dimensional frequency of the complex phase signal. A multi-scale spectral analysis algorithm provides fringe width and orientation, together with a measure of confidence in each estimate. We first use these results in a filtering process meant to remove the wrapped phase noise. Our algorithm is adapted to the fringe pattern by performing a local compensation of the terrain slope or the field displacement. This enables us to average the right number of complex samples required to reduce the variance in the estimated phase, as a function of the correlation level. Irreversible perturbations persist in areas where the geometric phase is inaccessable or under-sampled. Such areas are detected by a classification process using the previous measure of confidence and the correlation and amplitude images available along with interferograms. Fusion of the several measures characterizing the different perturbations takes into account contextual information through a markovien model adapted to the detection of thin structures linked to foreshortening effects. The results of the above three processes allow us to unwrap the phase by local propagation techniques or weighted least squares global solutions. Their performances are evaluated when using the mask obtained by classification and the phase gradient measured, either by filtered phase differences, or directly by the local frequencies. The proposed algorithms have been tested on interferometric products generated by CNES (the french space agency) from ERS-1 satellite images. Thus, the whole approach is validated on both topographic and differential real data with various characteristics which cover the most often encountered perturbations.  ">
+<meta name="Motcle" content=" Radar à ouverture synthétique, Interférométrie, Analyse spectrale, Classification Markovienne, Développement de phase  ">
+<meta name="Photo" content=" http://www-ima.enst.fr:80/~trouve/photo.jpg ">
+<meta name="Page" content=" http://www-ima.enst.fr:80/~trouve/ ">
+<meta name="Statut" content=" Soutenue ">
+<meta name="Date" content="  19 juillet 1996  ">
+<meta name="Lieu" content=" E.N.S.T., Paris  ">
+<meta name="Login" content=" trouve ">
+
+
+</head>
+
+  <body BGCOLOR="#ffffff" text="#101077" LINK="#000fff" 
+  VLINK="#9900ff"><font size=+1></body>
+
+	            <!*** Presentation ***>
+
+  <h1 align=center>
+  <IMG SRC="../gif/graduate.gif" align=left border=0>
+  <A HREF="#anglais">
+  <IMG SRC="http://www.enst.fr/images/english.gif" align=right border=0>
+  </A>
+  Imagerie interférentielle en radar à ouverture synthétique   </h1>
+  <IMG SRC="../gif/lignes/oranj.gif" align=left>
+  <br> <br> <img align="left" src="http://www-ima.enst.fr:80/~trouve/photo.jpg"><h2 align="right"> Auteur :   Emmanuel Trouve<br></h2>
+             <h3 align="right">Th&egrave;se de  l'ENST </h3> 
+             <h3 align="right">D&eacute;partement    Image<br>
+             </h3><br clear=all> <h3><br>R&eacute;sum&eacute : </h3>En formant la différence de phase entre deux images, 
+l'interférométrie en radar à ouverture synthétique (InROS) peut mesurer 
+le relief ou les mouvements du sol avec une très grande précision. 
+Cette technique nécessite cependant de lever l'ambiguïté de la phase 
+au travers d'une étape dite de  développement de phase. 
+Dans le cas de données satellitaires, cette étape est 
+rendue difficile par l'importance du bruit ainsi que par la présence de zones  
+décorrélées et de discontinuités liées au  capteur radar.
+
+
+Cette thèse a pour objectif de franchir la distance 
+qui existe entre les interférogrammes initiaux 
+et les données fiables requises par un développement 
+automatique de la phase. 
+Après avoir rappelé les caractéristiques de l'InROS et les principales techniques employées dans ce domaine, nous proposons plusieurs algorithmes 
+adaptés aux spécificités des données InROS 
+et dont l'enchaînement constitue une méthode robuste de traitement 
+des interférogrammes.
+
+
+La première étape de notre approche est l'estimation des fréquences locales 
+bidimensionnelles du signal de phase complexifié 
+par un algorithme d'analyse spectrale multi-échelles. 
+Nous déterminons ainsi la largeur et l'orientation des franges   
+tout en mesurant la confiance associée à chaque estimation.
+
+Nous exploitons ce resultat tout d'abord  dans une étape de filtrage 
+visant à supprimer le bruit de la phase repliée, à l'aide d'un algorithme 
+adaptatif vis-à-vis du motif des franges :
+la compensation locale de la pente du terrain ou du champ de déplacement 
+permet de moyenner, en fonction du niveau de corrélation, 
+le nombre d'échantillons nécéssaire pour réduire la variance de la phase estimée.  
+
+
+Les perturbations irréversibles subsistant dans les zones où la phase 
+géométrique est inaccessible ou sous-échantillonnée sont ensuite détectées 
+dans une étape de classification exploitant la mesure de confiance précédente 
+et les données de corrélation et d'amplitude associées aux interférogrammes.
+La fusion de mesures révélatrices des diverses perturbations 
+prend en compte l'information contextuelle au travers d'un modèle markovien 
+adapté à la détection de structures fines liées aux zones de compression. 
+
+Les résultats de ces trois étapes permettent alors de développer la phase 
+par des techniques locales de propagation ou globales de moindres carrés pondérés. 
+Leurs performances sont évaluées en fonction 
+du masque issu de la classification 
+et de l'utilisation du gradient de phase mesuré soit
+par les différences de phase après filtrage, 
+soit directement par les fréquences locales.
+
+
+Les méthodes proposées sont testées sur des produits 
+interférométriques formés par le CNES à partir d'images du satellite ERS-1.  
+Nous validons ainsi cette approche sur des données réelles
+de type topographique et différentiel ayant des caractéristiques variées
+représentatives des perturbations les plus fréquemment rencontrées. 
+
+
+
+              <H3> Mot-Cl&eacute;s :</H3> Radar à ouverture synthétique, Interférométrie, Analyse spectrale, Classification Markovienne, Développement de phase 
+               <h3> <br> Directeur de la th&egrave;se : Henri MAÎTRE  </h3>
+               <hr> <h3> Th&egrave;se Soutenue  
+                    <br><i>Date de soutenance :   19 juillet 1996 </i></h3> <A NAME="anglais"> <br><align="left">
+              <IMG SRC="../gif/lignes/oranj.gif">
+              <H2> Title : Synthetic Aperture Radar Interferometry </H2> <H3> Abstract :</H3>  Phase differences between two images are used in synthetic aperture radar interferometry (InSAR) to measure topography or ground motion with very high accuracy. However, this technique requires the removal of phase ambiguity by the so-called phase unwrapping process. Satellite data make this process quite difficult because of increased noise, decorrelated areas and discontinuities due to the radar sensor. The goal of this thesis is to bridge the gap between raw interferograms and reliable information required for automatic phase unwrapping. After reviewing InSAR characteristics and the main techniques used in this field, we shall propose several algorithms adapted to interferometric data, which together constitute a robust processing method. Our approach starts with an estimation process which measures the local two-dimensional frequency of the complex phase signal. A multi-scale spectral analysis algorithm provides fringe width and orientation, together with a measure of confidence in each estimate. We first use these results in a filtering process meant to remove the wrapped phase noise. Our algorithm is adapted to the fringe pattern by performing a local compensation of the terrain slope or the field displacement. This enables us to average the right number of complex samples required to reduce the variance in the estimated phase, as a function of the correlation level. Irreversible perturbations persist in areas where the geometric phase is inaccessable or under-sampled. Such areas are detected by a classification process using the previous measure of confidence and the correlation and amplitude images available along with interferograms. Fusion of the several measures characterizing the different perturbations takes into account contextual information through a markovien model adapted to the detection of thin structures linked to foreshortening effects. The results of the above three processes allow us to unwrap the phase by local propagation techniques or weighted least squares global solutions. Their performances are evaluated when using the mask obtained by classification and the phase gradient measured, either by filtered phase differences, or directly by the local frequencies. The proposed algorithms have been tested on interferometric products generated by CNES (the french space agency) from ERS-1 satellite images. Thus, the whole approach is validated on both topographic and differential real data with various characteristics which cover the most often encountered perturbations.  <br>
+              <align="left">
+               <IMG SRC="../gif/lignes/oranj.gif">
+	              <!*** Liens possibles ***>
+
+             <h4> <A HREF="../theses_enst.html">
+              Effectuer une nouvelle recherche ?</A>
+              <br></h4>
+               <h4> Pour me contacter, envoyez-moi un 
+               <A HREF="mailto:trouve@enst.fr">mail</A> <br>
+                  ... si vous voulez voir <A HREF="http://www-ima.enst.fr:80/~trouve/">ma page</A>
+                     </h4>
+                </body>
+                </html>

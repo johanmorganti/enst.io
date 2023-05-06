@@ -1,0 +1,152 @@
+ 
+<HTML>
+<BODY
+BGCOLOR="FFFFFF">
+
+<H4>
+	Une approche r&eacute;seau
+</H4>
+
+L'objectif initialement fix&eacute; au Groupe Sp&eacute;cial Mobile (signification premi&egrave;re de l'abr&eacute;viation GSM, qui fut plus tard anglicis&eacute;e) &eacute;tait de sp&eacute;cifier un service de t&eacute;l&eacute;phonie mobile de voix et de donn&eacute;es, compatible avec les r&eacute;seaux t&eacute;l&eacute;phoniques fixes, qu'ils soient analogiques ou num&eacute;riques comme le RNIS.
+GSM g&eacute;n&eacute;ralise &eacute;galement un certain nombre d'innovation tant techniques que commerciales: l'utilisation de la carte &agrave; puce banalise les terminaux et rend la souscription d'un abonnement ind&eacute;pendante de l'achat d'un terminal par exemple.<BR>
+Pour atteindre un interfonctionnement complet, il faut identifier les composants, les fonctions et les interfaces du r&eacute;seau. La norme GSM sp&eacute;cifie ainsi compl&egrave;tement l'architecture mat&eacute;rielle d'un PLMN, avec une distinction claire entre le sous-syst&egrave;me radio et le sous-syst&egrave;me r&eacute;seau, et les interfaces entre les &eacute;l&eacute;ments du syst&egrave;me.<BR>
+Au sein du r&eacute;seau fixe, les &eacute;changes de signalisation sont compl&egrave;tement d&eacute;crits. Le GSM est un des premiers cas d'application syst&eacute;matique de la signalisation s&eacute;maphore CCITT n¡7, qui permet de g&eacute;rer avec efficacit&eacute; l'itin&eacute;rance des abonn&eacute;s.<BR>
+Un abonn&eacute; &agrave; un r&eacute;seau GSM donn&eacute; peut acc&eacute;der &agrave; des r&eacute;seaux d'autres pays sous r&eacute;serve d'accord entre op&eacute;rateurs. Cette possibilit&eacute; est appel&eacute;e roaming international ou itin&eacute;rance internationale.
+<H4>
+	Une interface radio &eacute;labor&eacute;e
+</H4>
+L'une des contraintes importantes des syst&egrave;mes radiomobiles est la faible consommation en spectre hertzien. La r&eacute;utilisation des fr&eacute;quences est bas&eacute;e sur une d&eacute;coupe en cellules hexagonales du territoire national.<BR>
+La d&eacute;finition d'une interface radio s'appuie sur quelques grands choix (multiplexage, duplexage, largeur de bande) r&eacute;sum&eacute;s dans le tableau ci-dessous. La norme innove sur de nombreux points: transmission num&eacute;rique, partage en temps,<A HREF="cadrevocoding.html" TARGET="_parent"> codage de la parole</A> r&eacute;duit &agrave; 13 kbit/s (&agrave; 5,6 kbit/s dans un proche futur), sondage de canal, transmission discontinue,...<BR>
+En quelques mots, GSM est un syst&egrave;me TDMA bande moyenne (200 kHz) &agrave; duplexage fr&eacute;quentiel o&ugrave; huit communications simultan&eacute;es peuvent &ecirc;tre multiplex&eacute;es sur un m&ecirc;me couple de fr&eacute;quences.
+<TABLE BORDER>
+<CAPTION>Le GSM et le DCS: donn&eacute;es techniques</CAPTION>
+
+<TR><TH></TH><TD ALIGN=CENTER><STRONG>GSM</STRONG></TD><TD ALIGN=CENTER><STRONG>DCS</STRONG></TD></TR> <TR>
+<TH>Bande de fr&eacute;quence	</TH>	<TD>	890-915 Mhz 935-960 MHz</TD>	<TD>	1710-1785 Mhz 1805-1880 MHz</TD></TR>
+<TR> <TH>
+Nombre d'intervalles de temps par trame TDMA</TH><TD ALIGN=CENTER>						8</TD><TD ALIGN=CENTER>						8</TD></TR><TH>
+Ecart duplex</TH><TD ALIGN=CENTER>					45 MHZ</TD><TD ALIGN=CENTER>				95 MHz</TD></TR><TR><TH>
+Rapidit&eacute; de modulation	</TH>				<TD ALIGN=CENTER>	271 kbit/s</TD><TD ALIGN=CENTER>	271 kbit/s</TD</TR><TR><TH>
+D&eacute;bit de la parole</TH><TD ALIGN=CENTER>						13 kbit/s (5,6 kbit/s)</TD><TD ALIGN=CENTER>						13 kbit/s (5,6 kbit/s)</TD</TR><TR><TH>
+D&eacute;bit maximale de donn&eacute;es		</TH><TD ALIGN=CENTER>				12 kbit/s</TD><TD ALIGN=CENTER>				12 kbit/s</TD</TR><TR><TH>
+Acc&egrave;s Multiple		</TH><TD ALIGN=CENTER>			Multiplexage fr&eacute;quentiel et temporel
+								et duplexage fr&eacute;quentiel</TD><TD ALIGN=CENTER>			Multiplexage fr&eacute;quentiel et temporel
+								et duplexage fr&eacute;quentiel</TD</TR><TR><TH>
+Rayon des cellules	</TH><TD ALIGN=CENTER>			0,3 &agrave; 30 km	</TD><TD ALIGN=CENTER>			0,1 &agrave; 4 km</TD></TR><TR><TH>
+Puissance des terminaux</TH><TD ALIGN=CENTER>			2 &agrave; 8 W	</TD><TD ALIGN=CENTER>			0,25 &agrave; 1 W</TD></TR>
+</TABLE><P>
+L'interface radio, qui repr&eacute;sente le maillon faible de la cha&icirc;ne de transmission reliant un utilisateur mobile au r&eacute;seau, a &eacute;t&eacute; particuli&egrave;rement &eacute;tudi&eacute;e. Tout au long de la cha&icirc;ne, des traitements permettent l'&eacute;tablissement d'un lien sur un canal perturb&eacute;. Le syst&egrave;me GSM est plus r&eacute;sistant aux brouillages et aux &eacute;vanouissement que les syst&egrave;mes analogiques ou sans cordon. Ceci exige une transmission num&eacute;rique: les dispositifs de codage de canal permettent d'abaisser le seuil du rapport signal sur bruit de fonctionnement. La redondance introduite double le d&eacute;bit transmis. Le faible d&eacute;bit de sortie du codec de parole rend tol&eacute;rable cet accroissement.
+Dans un syst&egrave;me radiomobile, le lien entre le terminal et le r&eacute;seau est fluctuant du fait de l'instabilit&eacute; du canal radio et du d&eacute;placement du terminal. Un architecture sp&eacute;cifique est d&eacute;finie sur l'interface radio afin de permettre &agrave; chaque station mobile de surveiller constamment son environnement. Au sein du sous-syst&egrave;me radio, elle r&eacute;utilise en les adaptant des protocoles d&eacute;velopp&eacute;s dans le cadre des r&eacute;seaux fixes.
+<H4>
+	GSM 900 et DCS 1800
+</H4>
+Dans la suite de notre expos&eacute;, le vocable " GSM " rassemble le syst&egrave;me originel &agrave; 900 Mhz et les variantes DCS &agrave; 1800 ou 1900 Mhz. Les diff&eacute;rences ne portent que sur les bandes utilis&eacute;es.<BR>
+Il est possible d'utiliser une carte SIM d'un op&eacute;rateur DCS 1800 sur un terminal GSM 900 (et r&eacute;ciproquement) sous r&eacute;serve d'un accord d'itin&eacute;rance entre les op&eacute;rateurs. L'inter-op&eacute;rabilit&eacute; entre GSM 900 et DCS 1800 (en cours de normalisation) n'introduit aucun nouveau probl&egrave;me au niveau technique. A condition d'une licence sur les deux bandes de fr&eacute;quence, un op&eacute;rateur peut d&eacute;ploy&eacute; des stations de bases 900 Mhz et 1800 Mhz connect&eacute;es au m&ecirc;me sous-syst&egrave;me r&eacute;seau.<BR>
+En conclusion, GSM 900 et DCS 1800 reposent sur une architecture et des interfaces identiques, et ne diff&egrave;rent que sur l'aspect du d&eacute;ploiement cellulaire.
+<BR>
+<H4>
+Pr&eacute;sentation de l'architecture du r&eacute;seau GSM
+</H4>
+
+Le r&eacute;seau GSM est constitu&eacute; de plusieurs entit&eacute;s dont les fonctions et les interfaces sont rigoureusement sp&eacute;cifi&eacute;es. Ce r&eacute;seau s'articule autour de trois sous-syst&egrave;mes:
+<UL>
+
+<LI>La station mobile (MS): elle regroupe l'&eacute;quipement mobile (le terminal)  et une carte SIM permettant &agrave; l'utilisateur d'acc&eacute;der au service GSM<P>
+<LI>
+ La BSS (Base Station Subsystem): elle comporte 2 entit&eacute;s distinctes, la BTS (Base Transceiver Station)
+<P>
+<LI>  la BSC (Base Station Controller). Celles-ci g&egrave;rent les diff&eacute;rentes liaisons radio entre la MS et le r&eacute;seau. Leur rayon d'action correspond &agrave; une surface hexagonale plus ou moins grande suivant la g&eacute;ographie des lieux.
+
+ Le sous-syst&egrave;me r&eacute;seau (Network Subsystem): elle g&egrave;re toutes les fonctionnalit&eacute;s n&eacute;cessaires &agrave; la prise en charge d'un abonn&eacute; GSM: abonnement, identification, localisation, routage. Ce sous-syst&egrave;me est reli&eacute; au r&eacute;seau t&eacute;l&eacute;phonique classique par une passerelle li&eacute;e &agrave; la MSC.
+<P>
+<IMG SRC="reseau.gif">
+<P>
+<H4>
+Les canaux logiques
+</H4>
+Un intervalle &eacute;l&eacute;mentaire de temps peut supporter une combinaison de canaux logiques. Les canaux logiques transportent soit les donn&eacute;es d'une communication, soit des informations de signalisation qui s'adressent &agrave; la station mobile ou &agrave; la station de base. Deux familles de canaux logiques sont d&eacute;finies:
+· trafic pour les donn&eacute;es de communication
+· signalisation pour les donn&eacute;es de services entre les &eacute;quipements
+<H4>
+	Les canaux de trafic
+</H4>
+Ils transportent soit de la phonie soit des donn&eacute;es et se divisent en deux familles:
+· canaux &agrave; plein d&eacute;bit (full-rate)
+· canaux &agrave; demi-d&eacute;bit (half-rate)
+
+L'utilisation des canaux &agrave; demi-d&eacute;bit permet de doubler la capacit&eacute; du r&eacute;seau. Un canal plein-d&eacute;bit poss&egrave;de une capacit&eacute; de transmission de 13 kbit/s pour la parole.
+Un canal de traffic est appel&eacute; " TCH ". Le tableau ci-dessous pr&eacute;sente les diff&eacute;rents canaux de trafic.
+<TABLE BORDER>
+	
+<TR><TH></TH>		<TD>		Acronyme	</TD><TD>Sens</TD></TR>
+<TR><TH>Parole plein-d&eacute;bit</TH><TD>		        TCH/FS	</TD><TD>       BS<->MS</TD></TR>
+<TR><TH>Parole demi-d&eacute;bit	</TH><TD>		TCH/HS	 </TD><TD>      BS<->MS</TD></TR>
+<TR><TH>Donn&eacute;es &agrave; 9,6 kbit/s plein-d&eacute;bit	</TH><TD>TCH/F 9,6</TD><TD>	BS<->MS</TD></TR>
+<TR><TH>Donn&eacute;es &agrave; 4,8 kbit/s plein-d&eacute;bit	</TH><TD>TCH/F4,8</TD><TD>	BS<->MS</TD></TR>
+<TR><TH>Donn&eacute;es &agrave; 9,6 kbit/s demi-d&eacute;bit</TH><TD>            TCH/H4,8	</TD><TD>BS<->MS</TD></TR>
+<TR><TH>Donn&eacute;es &agrave; 2,4 kbit/s plein-d&eacute;bit</TH><TD>	TCH/F2,4	</TD><TD>BS<->MS</TD></TR>
+<TR><TH>Donn&eacute;es &agrave; 2,4 kbit/s demi-d&eacute;bit	</TH><TD>TCH/H2,4</TD><TD>	BS<->MS</TD></TR>
+</TABLE>
+</PRE>
+<H4>
+Les canaux de signalisation
+</H4>
+Les canaux de signalisation peuvent &ecirc;tre regroup&eacute;s en quatre familles<BR>
+<UL>
+<LI>· Les canaux de diffusion
+<LI>· Les canaux de contr&ocirc;le commun
+<LI>· Les canaux d&eacute;di&eacute;s
+<LI>· Les canaux associ&eacute;s
+</UL>
+
+Un canal de trafic transporte de l'information, cette information est soit de la phonie, soit des donn&eacute;es. Pendant une communication, un canal de signalisation est associ&eacute; au canal de trafic. Un canal de signalisation permet le pilotage de la liaison radio entre le terminal et la station de base (r&eacute;glage de la puissance d'&eacute;mission, mesure de la qualit&eacute; de transmission, etc...).<BR> Il supporte des messages non urgents. Durant les phases d'&eacute;tablissement et de lib&eacute;ration d'une communication un canal de trafic est provisoirement utilis&eacute; comme un canal de signalisation rapide.<BR>
+En dehors des p&eacute;riodes de communication les canaux de signalisation remplissent les fonctions suivantes. Les acronymes usuels des canaux correspondant &agrave; chacune de ces fonctions sont indiqu&eacute;s entre guillemets.<BR>
+<UL>
+<LI>· synchronisation du terminal avec le canal: " SDCH "
+
+<LI>· identification de la station de base " BCCH " (Broadcast Control Channel)
+<LI>· appel d'un terminal: " PCH " (Paging Channel)
+<LI>· signalisation point &agrave; point " SDCCH " (Standalone Dedicated Control Channel)
+<LI>· autorisation d'acc&egrave;s &agrave; un abonn&eacute; " AGCH " (Access Grant Channel)
+<LI>· demande d'un terminal " RACH " (Random Access Channel)
+</UL>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<H4>
+
+Les diff&eacute;rents aspects de la liaison radio
+</H4>
+L'Union Internationale des T&eacute;l&eacute;communication (ITU) a accord&eacute; la bande de fr&eacute;quence 890-915 Mhz pour la liaison MS vers BTS (uplink) ainsi que la bande 935-960 Mhz pour la liaison BTS vers MS (downlink).
+<H4>
+	Les canaux physiques
+</H4>
+Le spectre &eacute;tant une ressource limit&eacute;e, la norme GSM a utilis&eacute; un multiplexage temporel aussi bien que fr&eacute;quentiel afin de permettre une utilisation optimale de ce spectre. Au niveau de l'interface " Um ", le GSM met en oeuvre deux techniques de multiplexage, un multiplexage fr&eacute;quentiel " AMRF " (FDMA), acc&egrave;s multiple &agrave; r&eacute;partition en fr&eacute;quence, et un multiplexage temporel " AMRT " (TDMA), acc&egrave;s multiple &agrave; r&eacute;partition dans le temps.<P>
+Le multiplexage fr&eacute;quentiel divise les deux plages de fr&eacute;quences correspondant aux liaisons montantes et descendantes en 124 canaux de 200 kHz. On obtient ainsi 124 voies de communication duplex en parall&egrave;le.<BR>
+Le multiplexage temporel partage l'usage d'une voie de transmission entre 8 communications diff&eacute;rentes. Si un canal de transmission offre un d&eacute;bit D par unit&eacute; de temps, les diff&eacute;rentes communications seront transmises avec un d&eacute;bit D/8. Chaque communication occupe un intervalle de temps de 577 ms, l'ensemble des 8 intervalles de temps forment l'unit&eacute; temporelle de base ou trame. Dans le cas du GSM, une trame dure 4,615 ms. En t&eacute;l&eacute;phonie, le d&eacute;bit moyen est faible. En effet les silences sont nombreux au cours d'une conversation, de plus un seul locuteur est actif &agrave; un instant donn&eacute;. Le multiplexage temporel permet d'optimiser l'utilisation de la capacit&eacute; de transmission d'une voie.<BR>
+<IMG SRC="multitrame.gif"><BR>
+<STRONG>FIGURE : Organisation des unit&eacute;s temporelles, des trames TDMA et des Multitrames</STRONG><P><P>
+La norme GSM d&eacute;finie pr&eacute;cis&eacute;ment la structure d'une trame. Elle se divise en huit intervalles de temps d'une dur&eacute;e de 577 ms et chaque intervalle constitue un canal de communication dans lequel un message &eacute;l&eacute;mentaire appel&eacute; paquet est transmis p&eacute;riodiquement. Ce paquet est un ensemble structur&eacute; de bits, il est porteur des informations utiles pr&eacute;c&eacute;d&eacute;es et suivies par une zone " TB " qui marquent le d&eacute;but et la fin de la partie utile du paquet. La queue est une p&eacute;riode de garde " GP " qui sert &agrave; compenser la dur&eacute;e de transmission, variable pour un r&eacute;cepteur d'un paquet &agrave; l'autre du fait de la mobilit&eacute; de l'&eacute;metteur et du r&eacute;cepteur.
+<P>
+La norme GSM d&eacute;finit trois  types de paquets:
+<UL>
+<LI> acc&egrave;s: prise de contact d'un mobile avec le r&eacute;seau
+<LI>synchronisation: porteur des donn&eacute;es relatives &agrave; la localisation et &agrave; la fr&eacute;quence dans le r&eacute;seau
+<LI>normal: transporte les donn&eacute;es d'un abonn&eacute; (parole, donn&eacute;es,...)
+
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+FILES LIST FOR JWP VER. 1.31
+============================
+
+JWP13PRG.ZIP
+------------
+    JWP.EXE       JWP 1.31 main program  (16-bits version)
+    JWP.HLP       JWP on-line help
+    CTL3DV2.DLL   DLL to create 3D dialog boxes (Microsoft)
+    GLOSSARY.DAT  User glossary
+    README.TXT    Introduction file
+    FILES.LST     This files list
+
+JWP13W32.ZIP
+------------
+    JWP32.EXE     JWP 1.31 main program (32-bits version)
+    JWP.HLP       JWP on-line help
+    CTL3D32.DLL   WIN32 DLL to create 3D dialog boxes (Microsoft)
+    GLOSSARY.DAT  User glossary
+    README.TXT    Introduction file
+    FILES.LST     This files list
+    JWP32.TXT     Installation notes for the 32-bits version
+
+JWP13WNN.ZIP
+------------
+    WNN.DCT       Kana-to-kanji conversion dictionary
+    WNN.IDX       Index to WNN.DCT
+
+JWP13RAD.ZIP
+------------
+    RADKANJI.DAT  Michael Raine's Radical Lookup Database
+    RADKANJI.IDX  Index to RADKANJI.DAT
+    STROKNJI.DAT  Michael Raine's Radical Lookup Database
+    STROKNJI.IDX  Index to STROKNJI.DAT
+
+JWP13FNT.ZIP
+------------
+    K16X16.F00    16x16 kanji font
+    K24X24.F00    24x24 kanji font
+    K48X48.F00    48x48 kanji font
+
+JWP13KI.ZIP
+-----------
+    KINFO.DAT     Kanji information database (version 2.4)
+    KINFOSTR.IDX  Index to KINFO.DAT (sorted by stroke counts)
+    KINFOBSH.IDX  Index to KINFO.DAT (sorted by bushu's)
+
+JWP13EDT.ZIP
+------------
+    EDICT         Jim Breen's Japanese-English dictionary
+    EDICT.JDX     Index to EDICT
+    EDICT.DOC     Introduction file (in Microsoft Word for
+                  Windows 2.0 format)
+
+JWP13DOC.ZIP
+------------
+    MANUAL.DOC    This User's Manual (in Microsoft Word for
+                  Windows 2.0 format)
+    MANUAL.EXE    Self-viewing User's Manual (Replica)
+    COPYRGHT.TXT  Copyright notices (straight text)
+    GNUGPL.WRI    The GNU General Public License (in Windows
+                  Write format)
+    GNUGPL.DOC    The GNU General Public License (in Microsoft
+                  Word for Windows 6.0 format)
+    GNUGPL.RTF    The GNU General Public License (in RTF format)
+    GNUGPL.TXT    The GNU General Public License (straight text)
+    CJK.INF       Ken Lunde's document on Japanese information
+                  processing
+
+JWP13REC.ZIP
+------------
+    BTNMAD.EXE    Recreational program: Button Madness!
+    BTNMAD.DOC    Documentation to Button Madness!
+    PUZZLE.EXE    Recreational program: Puzzle
+    PUZZLE.HLP    Help file for Puzzle
+    MB.EXE        Recreational program: Mile Bones
+

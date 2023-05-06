@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title></title>
+
+<SCRIPT>
+      var j=6;
+      function changeImage(num) {
+      var i=0;
+      for(i=0;i<8;i++) {
+      document.images[i].src =
+      "http://www.enst.fr/~declercq/balls/yellow.gif";
+      }
+      document.images[num].src =
+      "http://www.enst.fr/~declercq/balls/red.gif";
+      
+      }
+      function changeImages(num) {
+      var i=0;
+      for(i=6;i<9;i++) {
+      document.images[i].src =
+      "http://www.enst.fr/~declercq/balls/blue.gif";
+      }
+     
+      document.images[num].src =
+      "http://www.enst.fr/~declercq/balls/red.gif";
+      
+      }
+      
+
+      function animateImage() {      
+      changeImages(j);
+      j++;
+      if(j==9) j=6;
+      setTimeout( "animateImage(j)", 400 );
+      
+      }
+
+        
+
+</SCRIPT>
+    
+
+  </head>
+
+  <body background=../faidherbe/fondo.gif bgcolor=black link=cyan
+  vlink=white text=white alink=white>
+  <CENTER>  
+    <H3> Page Officielle De Baptiste Declercq </H3>
+     <HR><BR>
+     <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+	ALIGN=left>
+      <A href=index2.html TARGET="corps" onMouseOver="changeImage(0);
+window.status='Visualisation du Menu'; return true;"> MENU
+      </A><BR CLEAR=LEFT>
+    <BR>  
+    <HR>
+      <BR>
+     <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+	 ALIGN=left>
+      <A href=qui.html TARGET="corps" onMouseOver="changeImage(1);
+      window.status='Br&egrave;ve pr&eacute;sentation de moi'; return true;"> 
+      MOI </A><BR CLEAR=LEFT><BR>
+      <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+	ALIGN=left>
+      <A href=links.html TARGET="corps" onMouseOver="changeImage(2);
+      window.status='Mes Go&ucirc;ts, essentiellement musicaux';
+      return true;">
+      GO&Ucirc;TS </A><BR CLEAR=LEFT>
+    <BR>  
+    <HR>
+    <BR>
+    <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+      ALIGN=left>
+    <A href=irc2.html TARGET="corps" onMouseOver="changeImage(3);
+      window.status='IRC: Commandes de bases,moi sur IRC'; return true;"> 
+      IRC </A>
+    <BR CLEAR=LEFT>
+    <BR>
+    <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+      ALIGN=left>
+    <A href=unix.html TARGET="corps" onMouseOver="changeImage(4);
+      window.status='UNIX: Commandes de base, environnements...';
+      return true;"> UNIX </A>
+    <BR CLEAR=LEFT>
+    <BR>  
+    <HR>
+    <BR>
+    <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+      ALIGN=left>
+    <A href=liens.html TARGET="corps" onMouseOver="changeImage(5);
+      window.status='Liens divers et vari&eacute;s'; return true;"> 
+      LINKS </A>
+    <BR CLEAR=LEFT>
+    <BR>
+    <HR>
+    <BR>
+    <IMG SRC="http://www.enst.fr/~declercq/balls/yellow.gif"
+      ALIGN=left>
+    <A href=../chatzone TARGET="corps" onMouseOver="changeImage(6);
+      window.status='ChatZone: zone de discussion'; return true;"> 
+      ChatZone </A>
+    <BR CLEAR=LEFT>
+    <BR>
+    
+    <BR>
+    <HR>
+  </BODY>
+</HTML>

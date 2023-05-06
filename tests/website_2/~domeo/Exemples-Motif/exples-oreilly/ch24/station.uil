@@ -1,0 +1,71 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+/* station.uil -- Example of using lists in lists */
+
+module dialog
+
+list basic_buttons : controls {
+  OK     : XmPushButton { };
+  Cancel : XmPushButton { };
+};
+
+list extended_buttons : controls {
+  controls basic_buttons;
+  Help : XmPushButton { };
+};
+
+list attach_all : arguments {
+  XmNtopAttachment    = XmATTACH_FORM;
+  XmNbottomAttachment = XmATTACH_FORM;
+  XmNleftAttachment   = XmATTACH_FORM;
+  XmNrightAttachment  = XmATTACH_FORM;
+};
+
+
+object stations : XmRadioBox {
+  controls {
+    WAQY : XmToggleButton { };  KLBJ : XmToggleButton { };
+    WPLR : XmToggleButton { };  KRCK : XmToggleButton { };
+    WHCN : XmToggleButton { };  KPEZ : XmToggleButton { };  
+  };
+  arguments {
+    XmNorientation = XmHORIZONTAL;
+    XmNnumColumns = 3;
+    XmNmarginWidth = 20;
+    arguments attach_all;
+    XmNbottomAttachment = XmATTACH_NONE;
+  };
+};
+
+
+object panel : XmRowColumn {
+  controls extended_buttons;
+  arguments {
+    XmNorientation = XmHORIZONTAL;
+    XmNentryAlignment = XmALIGNMENT_CENTER;
+    XmNpacking = XmPACK_COLUMN;
+    arguments attach_all;
+    XmNtopAttachment = XmATTACH_WIDGET;
+    XmNtopWidget = stations;
+  };
+};
+
+object root : XmFormDialog {
+  controls {
+    XmRadioBox stations;
+    XmRowColumn panel;
+  };
+  arguments {
+    XmNdialogTitle = "Station Chooser";
+  };
+};
+
+end module;

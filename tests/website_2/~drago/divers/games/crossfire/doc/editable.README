@@ -1,0 +1,33 @@
+Editable groups:
+
+One item can belong zero or more groups. Editable doesn't really mean 
+that item is meant to use in the maps, but rather that is possibly use 
+it in the special circumstance. It's preferred to use random items 
+as treasures in the maps.
+
+Rather, the value of editable determines what category(s) the item
+is put in in crossedit.  For example, if the editable value in the 
+archetype, then the item will appear in the monster area under 'arch'
+in crossedit.
+
+Also, when looking at this table to determine what the value of
+editable should be, it is 2^(num-1).  That is to say if you want
+it to appear in the 'shop' menu, it would be 2^6 and not 2^7.
+
+Asterisk(*) marks groups that are really editable.
+
+ 0. None		- Internal archetypes (spells, abilities, map, etc.)
+*1. Monsters		- all monsters, generators and NPC's
+*2. Exits		- all buildings, towns, teleprorts and other exits
+*3. Treasures		- Normally used maps as treasures
+*4. Backgrounds		- different backgrounds (floors, woods, etc.)
+*5. Gates and door	- everything that can be opened or closed 
+*6. Special		- directors, spinners, firewalls 
+*7. Shop		- All items needed in shops.
+*8. Normal objects	- sacks, signs, gravestone, furnitures etc.
+*9. False walls		- sacks, signs, gravestone, furnitures etc.
+10. Walls		- different walls, caves, dungeons etc.
+11. Equipments		- mainly weapons and armours
+12. Rest treasures	- foods, scrolls, potions, jewels, etc
+13. Artifacts		- Named weapons, special armors, etc
+

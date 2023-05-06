@@ -1,0 +1,8 @@
+CFLAGS= -g -I/usr/openwin/include
+
+Ol1 : Ol1.o
+	cc -g -o Ol1 Ol1.o -I/usr/openwin/include -lXol -lXt -lXmu -lXext -lX11
+
+clean:
+	/bin/rm Ol1 Ol1.o
+

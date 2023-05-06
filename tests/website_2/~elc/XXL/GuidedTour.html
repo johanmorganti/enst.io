@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<title>XXL Guided Tour</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+
+<p>
+<table cellspacing=5 cellpadding=5 border=0>
+<tr valign=top>
+<td align=right>
+<a href="http://www.enst.fr/~elc/XXL">
+<img hspace=5 src="http://www.enst.fr/~elc/XXL/xlicon.gif">
+</a>
+<td align=left>
+<h3>XXL: A Dual Approach for Building User Interfaces</h3>
+<h1><i>XXL Guided Tour</i></h1>
+<h3>
+<a href="http://www.enst.fr/~elc">Eric Lecolinet</a>
+<a href="mailto:Eric.Lecolinet@enst.fr">(elc@enst.fr)</a>
+</h3>
+</table>
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<p>
+<br>
+
+<b>XXL</b> is a new interactive development system for building user interfaces 
+that provides:
+<ul>
+<li>
+An interactive <b>Interface Builder</b> based on Visual Programming
+<p><li>
+A simple <b>Specification Language</b> that is both:
+<p><ul>
+<li>
+Compilable by an <b>ANSI C</b> or a <b>C++</b> compiler
+<li>
+Interpretable by means of the <b>XXL Shell</b>
+</ul>
+</ul>
+<b>XXL</b> does not implement a new toolkit but consists of an object oriented 
+software layer which relies on <b>X-Window</b> and the <b>Motif</b> toolkit.
+<p>
+The <b>XXL</b> Language not only allows users to specify the widget part of the interface 
+but can also be used to manage widget <b>behaviors</b> and to create 
+<b>distributed interfaces</b>.
+<p>
+<img hspace=75  src="http://www.enst.fr/~elc/XXL/xlbuild75.gif">
+<p>
+<br>
+
+<h2>Textual and Visual Equivalence</h2>
+<p>
+XXL is based on the concept of <b>textual and visual equivalence</b>.
+XXL interfaces can either be edited textually, visually or both in an equivalent way:
+<ul>
+<li>
+The XXL Builder produces legible C source code in an <b>incremental way</b>
+<p><li>
+The XXL Builder is able to establish the <b>reverse correspondence</b> 
+between the graphical objects that are created dynamically by a C/C++ program
+and the <b>original source code</b> that produced these objects.
+</ul>
+This means the source code of a C/C++ program can be modified incrementally
+when using the XXL Builder even if this code <b>was not originally produced</b> 
+by the Builder. The system will always be able to retrieve the XXL interface descriptions
+in the source code even if they are mixed with other C/C++ constructs and/or
+if they are located in several files.
+<p>
+So, textual and visual programming can be alterned at any stage of the development
+process: for instance XXL Interfaces can be specified textually, then modified visually, 
+then modified textually again and so on in any order. This capability apply
+for C, C++ and XXL Script files, thus allowing a truly iterative development scheme.
+<p>
+<br>
+
+<h2>Three-View Edition</h2>
+<p>
+The XXL Visual Builder is based on a 3-view paradigm:
+<ul>
+<li>
+the <b>Widget View</b> shows the graphical user interface(s) (GUIs)
+<li>
+The <b>Text View</b> shows the source code that corresponds
+to the active GUIs
+<li>
+The <b>Graph View</b> is an abstract iconic representation of the GUIs
+</ul>
+All three views are <b>linked together</b> and are updated 
+in an <b>incremental way</b> (any change in any view is immediately reflected
+in the other views).
+<p>
+The Graph View is fully editable and is handled in a direct manipulation style.
+<p>
+The Text View can be modified by directly editing the source code.
+These modifications are locally performed "on the spot" (the source code is not
+entirely re-interpreted but just the subpart that has been changed).
+<p>
+<br>
+
+<h2>Complete Motif Resource Editor</h2>
+<p>
+The <b>XXL Builder</b> provides a complete <b>Resource Editor</b> that 
+can show and modify interactively almost all the resources of Motif widgets.
+<p>
+<img hspace=150 src="http://www.enst.fr/~elc/XXL/Builder/resedit.gif">
+<p>
+
+<h2>Liveness: No Building and Testing Phases</h2>
+<p>
+There are no "building" and "testing" phases: the GUIs displayed in the Widget View
+are <b>always active</b> and the user can interact with them in the usual way.
+When editing C or C++ programs, the three views are
+<b>modified dynamically</b> while the program is running.
+Re-compilation is just needed at the end of the edition process.
+<p>
+<img hspace=150 src="http://www.enst.fr/~elc/XXL/Builder/text.gif">
+<p>
+
+<h2>The XXL Specification Language</h2>
+<p> 
+Besides the fact that it is both interpretable and compilable
+the <b>XXL Specification Language</b> is also intended to be
+simpler and much concise than usual X-Window or Motif code.
+In fact, it can be considered as a kind of <b>"Simple Motif"</b>
+in that sense that it respects the general philosophy of the Motif toolkit
+while hiding or simplifying many implementation details.
+<p> 
+As Motif GUIs consist of trees of  widgets, we have decided to adopt a list 
+formalism to represent the textual descriptions of XXL objects. 
+So, each XXL object is represented by means of a list whose first member 
+indicates the class of this object. The following members of the list depend on 
+the meta-class of the considered object. For instance, in the case of widget objects, 
+the class name must be followed by the name of the newly created instance
+ and by the possible children of this object (if any). The parenthood between 
+XXL objects is thus implicitly defined. 
+<p>
+
+<h2>Script files and Prototyping</h2>
+<p>
+XXL Interface description are not only C-compilable but can also be <b>interpreted</b>
+by means of <b>xlsh</b>, the <b>XXL Shell</b>.
+XXL Script files can be executed in the same ways as usual Unix Scripts (by specifying
+the proper shell at the first line of the script file).
+This feature provides a simple way to add simple graphical interfaces to Unix commands
+or other programs (the XXL Language provides simple mechanisms to call
+Unix commands and exchange data with them).
+<p>
+Furthermore, XXL Scripts can also be used for <b>early prototyping</b>.
+Here, the major difference with other scripting language (like for instance Tcl/Tk)
+is that this text can then be <b>directly included into C or C++ source code</b>
+without any modification or translation. And of course, interactive modification
+of this code will still be possible by using the XXL Builder.
+
+<h2>Run-Time Interpretation and Distributed Interfaces</h2>
+<p>
+Scripts files can also be <b>dynamically loaded from C/C++ programs</b>,
+in which case the included descriptions are interpreted at run-time. 
+These descriptions can then access the call-back functions of the program 
+and share static variables with it.
+<p>
+Moreover, XXL Interfaces can also be <b>exchanged dynamically</b> between 
+<b>separate (possibly remote) programs</b>.
+The corresponding descriptions are sent through the network 
+by using sockets and are interpreted at run-time by the receiving program.
+This mechanism can also be used for modifying widget resources,  updating variables
+or executing functions that reside in remote programs.
+<p>
+
+<h2>Compilation and Interpretation</h2>
+<p>
+It is interesting to note that this system mixes compilation and interpretation:
+<ul>
+<li>
+Interfaces located in C/C++ files are initially compiled, but they are also
+<b>dynamically post-interpreted</b> when editing them visually
+with the XXL Builder (this means that interpretation is guided by the dynamical
+data created through the compilation and the execution processes)
+<li>
+Interfaces located in XXL Script files are interpreted by the XXL Shell
+<li>
+Interfaces loaded at-run time or exchanged between separate program
+are also interpreted by the library version of the XXL Shell.
+</ul>
+
+
+<h2>XXL Classes: Graphical and Abstract  Objects</h2>
+<p>
+XXL follows an object-oriented architecture.
+XXL components are not limited to widgets (the graphical objects) but
+also include objects for specifying widget presentation and behavior,
+widget layout and control statements (such as conditions and repetitions).
+<p>
+New XXL subclasses can be derived from these predefined classes
+in order to integrate into the XXL systems widgets other 
+than those primarily provided by the Motif toolkit. 
+<p>
+Lastly, XXL  Interfaces can be decomposed into a hierarchy of <b>Sub-Interfaces</b>.
+Interfaces (or Sub-Interfaces) can be encapsulated into "pseudo-classes".
+and be considered as if they were a single object. This mechanism helps to structure 
+the whole interface into homogeneous and reusable subparts. 
+<p>
+
+<h2>Behaviors</h2>
+<p>
+Besides call-back functions, XXL provides several ways to specify
+various behaviors:
+<ul>
+<Li>Implicit Behaviors
+<li>Conditional Evaluation
+<li> Active Values.
+</ul>
+(to be completed)
+<p>
+
+<h2>Implicit Type Conversion and Expressions</h2>
+<p>
+Widget resources have internal representations which are all different 
+(for instance a "size" will be represented by an integer, a "color" will be a
+numerical index in a color map, a "string" may even be encoded by means of a 
+special purpose representation in order to take into account various kinds of languages). 
+XXL provides a double conversion mechanism that is able to transform most resource 
+values into standard ASCII strings and vice-versa. This single feature can considerably 
+simplify interaction between widgets as it avoids having to write callback functions 
+(whose only role would be to convert resource values into different types).
+<p>
+Moreover, complex expressions can be computed by evaluation and concatenation
+of (converted) widget resource values, the data returned from the evaluation of
+Unix commans, etc.
+
+<h3>Application Specific Objects</h3>
+<p>
+XXL includes an optionallibrary that includes functions and objects to deal with
+images, icons, graphs and low-level graphical primitives (lines, rectangles, circles, etc.).
+XXL provides objects that let the user deal with simple graphical primitives 
+as if they were actual widgets. This library also includes functions that 
+can read and display images  and manage the color tables in an appropriate way. 
+<p>
+Furthermore, it is also possible to make widgets movable under certain conditions
+The following figure shows a graph made of movable icons. 
+These icons are linked by arrows that follow the icons when 
+moved interactively by the user.
+<p>
+
+<img src="//www.enst.fr/gif/lignes/rouj.gif">
+<address>
+<img align=middle src="//www.enst.fr/~elc/gif/palette.gif"> 
+Page maintained by <a href="http://www.enst.fr/~elc">Eric Lecolinet</a>
+ <i><a href="mailto:elc@enst.fr">(elc@enst.fr)</a></i>. Jan 97. 
+
+</body>
+</html>

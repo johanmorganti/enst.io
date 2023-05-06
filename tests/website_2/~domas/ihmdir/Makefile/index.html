@@ -1,0 +1,82 @@
+# ##########################################################
+# Emplacement des Librairies X et Motif
+#
+# XDIR = /usr/local/X11
+
+XDIR  = /usr/openwin
+XMDIR = /usr/dt
+
+# ##########################################################
+# Compilation:
+
+CC = gcc
+CFLAGS += -I${XDIR}/include -I${XMDIR}/include
+CFLAGS += -Wall -g
+
+# ##########################################################
+# Edition de Liens
+#
+# - option -L : path des librairies a l'edition de liens
+# - option -R : path des librairies a l'execution (QUE POUR SOLARIS !)
+#
+
+LDLIBS = -L${XMDIR}/lib -R${XMDIR}/lib -lXm -L${XDIR}/lib -R${XDIR}/lib -lXt -lX11 -lsocket -lnsl -lgen -lm
+
+# ##########################################################
+# Applications
+#
+
+GC1 = gc.o disp1.o
+GC2 = gc.o disp2.o
+GC3 = gc.o disp3.o
+GC4 = gc4.o disp4.o
+GC5 = gc4.o disp5.o
+
+SERVX = servx.o dispx.o
+SERVTH = servth.o dispx.o
+SERVTH_TO = servth.o dispth_to.o
+SERVTH_SE = servth.o dispth_se.o
+CLIENT = client.o
+CLIENT2 = client2.o
+
+# ##########################################################
+# Regles
+#
+
+all: gc1 gc2 gc3 gc4 servx servth_to servth_se client client2
+
+gc1: $(GC1)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(GC1) $(LDLIBS)
+
+gc2: $(GC2)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(GC2) $(LDLIBS)
+
+gc3: $(GC3)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(GC3) $(LDLIBS)
+
+gc4: $(GC4)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(GC4) $(LDLIBS)
+
+gc5: $(GC5)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(GC5) $(LDLIBS)
+
+servx: $(SERVX)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SERVX) $(LDLIBS)
+
+servth: $(SERVTH)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SERVTH) $(LDLIBS) -lthread
+
+servth_to: $(SERVTH_TO)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SERVTH_TO) $(LDLIBS) -lthread
+
+servth_se: $(SERVTH_SE)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(SERVTH_SE) $(LDLIBS) -lthread
+
+client: $(CLIENT)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(CLIENT) -lsocket -lnsl
+
+client2: $(CLIENT2)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(CLIENT2) -lsocket -lnsl
+
+clean:
+	-@$(RM) *.o

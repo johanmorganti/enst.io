@@ -1,0 +1,38 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version 2.6 -->
+<title>Administration de la s&eacute;curit&eacute;</title>
+</head>
+<body bgcolor="#dddddd">
+
+<h2><b><i>S&eacute;curit&eacute;</i></b></h2>
+
+<ul>
+<LI><H3>S&eacute;curit&eacute; locale</H3>
+<ul>
+<li>pas de login root
+<li>supprimer <tt>secure</tt> dans <tt>/etc/ttytab</tt>
+<li>password demand&eacute; en passage mode sigle-user (boot)
+<li>password eeprom : <tt>eeprom secure-mode=command</tt>
+</ul>
+<p>
+
+<LI><H3>S&eacute;curit&eacute; r&eacute;seau</H3>
+<ul>
+<li><tt>/etc/inetd.conf</tt>
+<li>tcp-wrappers : <tt>tcpd</tt>, <tt>in.gate</tt>
+<li><tt>/etc/hosts.allow</tt>, <tt>/etc/hosts.deny</tt> (tcpd)
+<li><tt>/etc/in.gate.conf</tt> (in.gate)
+<li><tt>/etc/identd.key</tt> (service auth : in.identd)
+<li><tt>/etc/publickey</tt> (couple cl&eacute; publique/cl&eacute; secr&egrave;te)
+</ul>
+</ul>
+
+<img src="gif/vertjaune.gif">
+<a href="index.html"><img src="gif/balle_verte.gif" valign=top> Retour au Plan</
+a>
+<img src="gif/vertjaune.gif">
+<address>Philippe Dax / dax@inf.enst.fr</address>
+
+</body>
+</html>

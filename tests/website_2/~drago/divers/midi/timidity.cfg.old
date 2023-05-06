@@ -1,0 +1,258 @@
+##############################################################################
+# 
+# Instrument configuration file for timidity
+#
+# Specify library directory:		dir <directory>
+#
+# - Multiple library directories may be given. The ones given last will be
+#   searched first so you can override them in later configuration files.
+#   Extra configuration files and MIDI files will also be searched in these
+#   directories.
+#
+# Set tone bank or drum set to modify:	bank <number>
+#					drumset <number>
+#
+# Map program number to patch map:	<program number> <patch name>
+#
+# - If the patch can't be found in the library directories, TiMidity will 
+#   search again with ".pat" appended to the name.
+#   Programs without a loaded patch will be silent, except that for
+#   banks/drumsets >0, the corresponding patch in  bank/drumset 0 will
+#   be used (if one exists).
+#
+# Read another configuration file:	source <file name>
+#
+
+dir /usr/local/timidity/patch
+
+bank 0
+
+# Piano
+0 acpiano.pat.shn
+1 acpiano.pat.shn
+2 synpiano.pat.sav.shn
+3 honky.pat.gz
+4 epiano1.pat.shn
+5 epiano2.pat.shn
+6 hrpschrd.pat.sav.shn
+7 clavinet.pat.sav.gz
+
+# ********** harmo percu
+
+8 celeste.pat.shn
+9 glocken.pat.shn
+10 musicbox.pat.shn
+11 vibes.pat.shn
+12 marimba.pat.shn
+13 xylophon.pat.shn
+14 tubebell.pat.shn
+15 santur.pat.shn
+
+#************ organ
+16 homeorg.pat.sav.shn
+17 percorg.pat.shn
+18 rockorg.pat.shn
+19 church.pat.shn
+20 reedorg.pat.sav.shn
+21 accordn.pat.shn
+22 harmonca.pat.shn
+23 concrtna.pat.shn
+
+#************** guitars
+24 nyguitar.pat.shn
+25 acguitar.pat.shn
+26 jazzgtr.pat.shn
+27 cleangtr.pat.shn
+28 mutegtr.pat.shn
+29 odguitar.pat.sav.shn
+30 distgtr.pat.shn
+31 gtrharm.pat.shn
+
+#**************** basses
+32 acbass.pat.shn
+33 fngrbass.pat.shn
+34 pickbass.pat.shn
+35 fretless.pat.shn
+36 slapbas1.pat.shn
+37 slapbas2.pat.shn
+38 synbass1.pat.shn
+39 synbass2.pat.shn
+
+#************* violin
+40 violin.pat.shn
+41 viola.pat.shn
+42 cello.pat.shn
+43 contraba.pat.shn
+44 tremstr.pat.shn
+45 pizzcato.pat.shn
+#45  pipes.pat.shn
+46 harp.pat.shn
+47 timpani.pat.shn
+
+#************* strings
+48 marcato.pat.sav.shn
+49 slowstr.pat.shn
+50 synstr1.pat.shn
+51 synstr2.pat.shn
+52 choir.pat.shn
+53 doo.pat.shn
+54 voices.pat.shn
+55 orchhit.pat.shn
+
+#*********** brass
+56 trumpet.pat.shn
+57 trombone.pat.shn
+58 tuba.pat.shn
+59 mutetrum.pat.shn
+60 frenchrn.pat.shn
+61 hitbrass.pat.shn
+62 synbras1.pat.shn
+63 synbras2.pat.shn
+
+#********** woods
+64 sprnosax.pat.shn
+65 altosax.pat.shn
+66 tenorsax.pat.shn
+67 barisax.pat.shn
+68 oboe.pat.shn
+69 englhorn.pat.shn
+70 bassoon.pat.shn
+71 clarinet.pat.shn
+
+#*********** pipes
+72 piccolo.pat.shn 
+73 flute.pat.shn
+74 recorder.pat.shn
+75 woodflut.pat.gz
+76 bottle.pat.shn
+77 shakazul.pat.shn
+78 whistle.pat.shn
+79 ocarina.pat.shn
+
+#************** Synth
+80 sqrwave.pat.shn
+81 sawwave.pat.shn
+82 calliope.pat.shn
+83 chiflead.pat.shn
+84 charang.pat.gz
+85 voxlead.pat.shn
+85  calliope.pat.shn
+86 lead5th.pat.shn
+87 basslead.pat.shn
+
+#**************** Effects
+
+88 fantasia.pat.shn
+89 warmpad.pat.shn
+90 polysyn.pat.shn
+91 ghostie.pat.shn
+92 bowglass.pat.shn
+93 metalpad.pat.shn
+94 halopad.pat.shn
+95 sweeper.pat.shn
+
+#**************** maxi synth
+96 aurora.pat.gz
+97 soundtrk.pat.shn
+98 crystal.pat.shn
+99 atmosphr.pat.shn
+100 freshair.pat.shn
+101 unicorn.pat.gz
+102 echovox.pat.shn
+103 startrak.pat.shn
+
+#************** Ethnic
+104 sitar.pat.gz
+105 banjo.pat.gz
+106 shamisen.pat.gz
+107 koto.pat.shn
+108 kalimba.pat.shn
+109 bagpipes.pat.shn
+110 fiddle.pat.shn
+111 shannai.pat.shn
+
+#************** percu
+112 carillon.pat.gz
+113 agogo.pat.gz
+114 steeldrm.pat.shn
+115 woodblk.pat.shn
+116 taiko.pat.shn
+117 toms.pat.shn
+118 syntom.pat.shn
+119 revcym.pat.gz
+
+120 fx-fret.pat.gz
+121 fx-blow.pat.gz
+122 seashore.pat.gz
+123 jungle.pat.gz
+124 telephon.pat.shn
+125 helicptr.pat.shn
+126 applause.pat.gz
+127 gunshot.pat.gz
+
+##############################################################################
+# The GUS drum 
+
+drumset 0
+
+27 highq.pat.shn
+28 slap.pat.gz
+29 scratch1.pat.gz
+30 scratch2.pat.gz
+31 sticks.pat.gz
+32 sqrclick.pat.gz
+33 metclick.pat.gz
+34 metbell.pat.gz
+35 kick1.pat.shn
+36 kick2.pat.shn
+37 stickrim.pat.gz
+38 snare1.pat.gz
+39 claps.pat.gz
+40 snare2.pat.gz
+41 tomlo2.pat.shn
+42 hihatcl.pat.gz
+43 tomlo1.pat.shn
+44 hihatpd.pat.gz
+45 tommid2.pat.shn
+46 hihatop.pat.gz
+47 tommid1.pat.shn
+48 tomhi2.pat.shn
+49 cymcrsh1.pat.gz
+50 tomhi1.pat.shn
+51 cymride1.pat.gz
+52 cymchina.pat.gz
+53 cymbell.pat.gz
+54 tamborin.pat.gz
+55 cymsplsh.pat.gz
+56 cowbell.pat.gz
+57 cymcrsh2.pat.gz
+58 vibslap.pat.gz
+59 cymride2.pat.gz
+60 bongohi.pat.gz
+61 bongolo.pat.gz
+62 congahi1.pat.gz
+63 congahi2.pat.shn
+64 congalo.pat.shn
+65 timbaleh.pat.gz
+66 timbalel.pat.shn
+67 agogohi.pat.gz
+68 agogolo.pat.gz
+69 cabasa.pat.gz
+70 maracas.pat.gz
+71 whistle1.pat.shn
+72 whistle2.pat.gz
+73 guiro1.pat.gz
+74 guiro2.pat.gz
+75 clave.pat.gz
+76 woodblk1.pat.gz
+77 woodblk2.pat.shn
+78 cuica1.pat.shn
+79 cuica2.pat.shn
+80 triangl1.pat.gz
+81 triangl2.pat.gz
+82 shaker.pat.gz
+83 jingles.pat.gz
+84 belltree.pat.gz
+85 castinet.pat.gz
+86 surdo1.pat.shn
+87 surdo2.pat.shn

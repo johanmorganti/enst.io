@@ -1,0 +1,121 @@
+# Package de compatibilite avec l'ancienne interface
+
+nl = '
+'
+fun savepos {lastgoto = $_abspos}
+
+savepos
+
+fun switchpos {
+    local a = $_abspos
+    goto [$lastgoto - $_abspos + $_pos]
+    lastgoto = $a
+}
+
+fun inscoo {
+    local a = $_pos
+    for i $a {
+	if [$i < 0] then insert "++"^[0 - $i]^" "; else insert "--"^$i^" "
+    }
+}
+
+fun gotothere {
+    local a = ` (' ' $nl) {grab 30 1}
+    savepos
+    goto $a(0) $a(1)
+}
+
+fun mywarp {warp; savepos}
+
+map "^A"	maxleft
+map "^B"	pgleft
+map "^D"	maxdown
+map "^E"	maxright
+map "^F"	pgright
+map "^H"	backspace
+map tab		tab
+map ret		ret
+map "^M"	ret
+map "^N"	pgdown 0.5
+map "^P"	pgup 0.5
+map "^R"	redraw
+map "^U"	maxup
+map "esc ^C"	inscoo
+map "esc ^D"	raise "Pas de commande direction..."
+map "esc ^F"	raise "Pas de commande find..."
+map "esc ^G"	{savepos; goto `" "{input "goto: "}}
+map "esc ^H"	raise "Pas d'help...  RTFM"
+map "esc ^K"	raise "Pas de dump keymap..."
+map "esc ^M"	raise "Pas de mapping..."
+map "esc ^N"	raise "Pas de count..."
+map "esc ^R"	flush
+map "esc ^U"	switchpos
+map "esc ^V"	gotothere
+map "esc ^W"	mywarp
+map "esc ^Z"	_pos = (0 0)
+map "esc esc ^Q" exit
+map "esc esc q"	exit
+map "esc esc Q"	exit
+map "esc space" eval `{input ""}
+map "esc ?"	stats
+map "esc C"	inscoo
+map "esc D"	raise "Pas de commande direction..."
+map "esc F"	raise "Pas de commande find..."
+map "esc G"	{savepos; goto `" "{input "goto: "}}
+map "esc H"	raise "Pas d'help...  RTFM"
+map "esc K"	raise "Pas de dump keymap..."
+map "esc M"	raise "Pas de mapping..."
+map "esc N"	raise "Pas de count..."
+map "esc R"	flush
+map "esc U"	switchpos
+map "esc V"	gotothere
+map "esc W"	mywarp
+map "esc Z"	_pos = (0 0)
+map "esc [ 2 1 8 z"	raise "Pas de recount..."
+map "esc c"	inscoo
+map "esc d"	raise "Pas de commande direction..."
+map "esc f"	raise "Pas de commande find..."
+map "esc g"	{savepos; goto `" "{input "goto: "}}
+map "esc h"	raise "Pas d'help...  RTFM"
+map "esc k"	raise "Pas de dump keymap..."
+map "esc m"	raise "Pas de mapping..."
+map "esc n"	raise "Pas de count..."
+map "esc r"	flush
+map "esc u"	switchpos
+map "esc v"	gotothere
+map "esc w"	mywarp
+map "esc z"	_pos = (0 0)
+
+map "M-C"	inscoo
+map "M-D"	raise "Pas de commande direction..."
+map "M-F"	raise "Pas de commande find..."
+map "M-G"	{savepos; goto `" "{input "goto: "}}
+map "M-H"	raise "Pas d'help...  RTFM"
+map "M-K"	raise "Pas de dump keymap..."
+map "M-M"	raise "Pas de mapping..."
+map "M-N"	raise "Pas de count..."
+map "M-R"	flush
+map "M-U"	switchpos
+map "M-V"	gotothere
+map "M-W"	mywarp
+map "M-Z"	_pos = (0 0)
+
+map "M-c"	inscoo
+map "M-d"	raise "Pas de commande direction..."
+map "M-f"	raise "Pas de commande find..."
+map "M-g"	{savepos; goto `" "{input "goto: "}}
+map "M-h"	raise "Pas d'help...  RTFM"
+map "M-k"	raise "Pas de dump keymap..."
+map "M-m"	raise "Pas de mapping..."
+map "M-n"	raise "Pas de count..."
+map "M-r"	flush
+map "M-u"	switchpos
+map "M-v"	gotothere
+map "M-w"	mywarp
+map "M-z"	_pos = (0 0)
+
+_scrolldelta = (7 0)
+_mousestate = 0
+_minilines = 1
+_mode = inter
+

@@ -1,0 +1,102 @@
+/* Written by Dave Brennan.
+ * Copyright 1994, O'Reilly & Associates, Inc.
+ * Permission to use, copy, and modify this program without
+ * restriction is hereby granted, as long as this copyright
+ * notice appears in each copy of the program source code.
+ * This program is freely distributable without licensing fees and
+ * is provided without guarantee or warrantee expressed or implied.
+ * This program is -not- in the public domain.
+ */
+
+! editor.uil - editor application main user interface definition
+
+module editor
+
+include file 'procedures.uih';
+include file 'identifiers.uih';
+
+object menubar : imported XmMenuBar;
+
+object main_window : XmMainWindow {
+  controls {
+    XmMenuBar menubar;
+    XmForm    form;
+  };
+};
+
+object form : XmForm {
+  controls {
+    XmRowColumn    search_panel;
+    XmTextField    text_output;
+    XmScrolledText text_edit;
+  };
+};
+
+list attachments : arguments {
+  XmNtopAttachment = XmATTACH_FORM;
+  XmNbottomAttachment = XmATTACH_FORM;
+  XmNleftAttachment = XmATTACH_FORM;
+  XmNrightAttachment = XmATTACH_FORM;
+};
+
+object search_panel : exported XmRowColumn {
+  controls {
+    search_prompt : XmLabel gadget {
+      arguments { 
+        XmNlabelString = "Search Pattern:"; 
+      };
+    };
+    search_text : XmTextField {
+      callbacks {
+        MrmNcreateCallback = procedure register_widget (w_search_text);
+      };
+    };
+    replace_prompt : XmLabel gadget {
+      arguments { 
+        XmNlabelString = "     Replace Pattern:"; 
+      };
+    };
+    replace_text : XmTextField {
+      callbacks {
+        MrmNcreateCallback = procedure register_widget (w_replace_text);
+      };
+    };
+  };
+  arguments {
+    XmNorientation = XmHORIZONTAL;
+    XmNpacking = XmPACK_TIGHT;
+    arguments attachments;
+    XmNbottomAttachment = XmATTACH_NONE;
+  };
+};
+
+object text_edit : XmScrolledText {
+  arguments {
+    XmNrows = 10;
+    XmNcolumns = 80;
+    XmNeditMode = XmMULTI_LINE_EDIT;
+    arguments attachments;
+    XmNtopAttachment = XmATTACH_WIDGET;
+    XmNtopWidget = search_panel;
+    XmNbottomAttachment = XmATTACH_WIDGET;
+    XmNbottomWidget = text_output;
+  };
+  callbacks {
+    MrmNcreateCallback = procedure register_widget (w_text_edit);
+  };
+};
+
+object text_output : XmTextField {
+  arguments {
+    XmNeditable = false;
+    XmNcursorPositionVisible = false;
+    XmNshadowThickness = 0;
+    arguments attachments;
+    XmNtopAttachment = XmATTACH_NONE;
+  };
+  callbacks {
+    MrmNcreateCallback = procedure register_widget (w_text_output);
+  };
+};
+
+end module;

@@ -1,0 +1,48 @@
+<html>
+<head>
+<!-- This document was created from RTF source by rtftohtml version 2.6 -->
+<title>NIS</title>
+</head>
+<body bgcolor="#dddddd">
+
+<h2><b><i>NIS</i></b></h2>
+
+<ul>
+<li>	Principe : administration centralis&eacute;e<p>
+<ul>
+<li>	 avantage : faciliter l'administration
+<li>	 inconv&eacute;nient : charge du r&eacute;seau, probl&egrave;mes de 
+s&eacute;curit&eacute;
+</ul>
+<li>	Fichiers<p>
+<ul>
+<li>	 tables de r&eacute;f&eacute;rence dans /etc
+<li>	 passwd, group, netgroup, hosts, rpc, services, networks,...
+<li>	 d&eacute;terminer un domaine : domainame
+<li>	 maps NIS dans /var/yp/nom_du_domaine
+<li>	 /var/yp/Makefile
+</ul>
+<li>	Commandes<p>
+<ul>
+<li>	 serveur ma&icirc;tre (daemons : ypserv, ypxfrd)
+<li>	 refaire les maps : ypmake map ...
+<li>	 serveur esclave (daemons : ypserv, rpc.ypupdated)
+<li>	 client (daemon : ypbind)
+<li>	 changement de mots de passe (daemon : rpc.yppasswdd)
+<li>	 lister une map : ypcat -k mapname
+<li>	 conna&icirc;tre son serveur : ypwhich
+</ul>
+</ul>
+
+<img src="gif/vertjaune.gif">
+
+<img src="nis.gif">
+
+<img src="gif/vertjaune.gif">
+<a href="index.html"><img src="gif/balle_verte.gif" valign=top> Retour au Plan</
+a>
+<img src="gif/vertjaune.gif">
+<address>Philippe Dax / dax@inf.enst.fr</address>
+
+</body>
+</html>
